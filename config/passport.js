@@ -146,7 +146,7 @@ module.exports = function(passport) {
         clientID        : facebookAuth.clientID,
         clientSecret    : facebookAuth.clientSecret,
         callbackURL     : facebookAuth.callbackURL,
-        profileFields   : ['id', 'name', 'email'],
+        profileFields   : ['id', 'displayName', 'email'],
         passReqToCallback : true // allows us to pass in the req from our route (lets us check if a user is logged in or not)
 
     },
@@ -185,9 +185,8 @@ module.exports = function(passport) {
 
                         newUser.facebook.id    = profile.id;
                         newUser.facebook.token = token;
-                        newUser.facebook.name  = profile.name.givenName + ' ' + profile.name.familyName;
+                        newUser.facebook.name  = profile.displayName;
                         newUser.facebook.email = (profile.emails[0].value || '').toLowerCase();
-
                         newUser.save(function(err) {
                             if (err)
                                 return done(err);

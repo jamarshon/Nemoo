@@ -52,6 +52,8 @@
                         <strong>name</strong>: <%= user.facebook.name %><br>
                     </p>
 
+                    <img src="https://graph.facebook.com/<%=user.facebook.id%>/picture?return_ssl_resources=1" alt="" />
+
                     <a href="/unlink/facebook" class="btn btn-primary">Unlink</a>
                 <% } else { %>
                     <a href="/connect/facebook" class="btn btn-primary">Connect Facebook</a>
