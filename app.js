@@ -10,6 +10,7 @@ var path            = require('path');
 var session         = require('express-session');
 
 var configDB        = require('./config/database.js');
+var routes          = require('./routes/routes.js');
 
 var app = express();
 
@@ -27,7 +28,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // required for passport
-app.use(session({ secret: 'iamlightningtheraintransformed' })); // session secret
+app.use(session({ secret: 'iamlightningtheraintransformed', resave: false})); // session secret
 require('./config/passport')(passport); // pass passport for configuration
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
@@ -35,7 +36,7 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-require('./routes/index.js')(app, passport); // load our routes and pass in our app and fully configured passport
+routes(app, passport); // load our routes and pass in our app and fully configured passport
 
 // error handlers
 

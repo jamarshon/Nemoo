@@ -1,0 +1,1324 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Loa",
+				"LoadingPage"
+			],
+			[
+				"ret",
+				"retObj"
+			],
+			[
+				"arr",
+				"arrOfObj"
+			],
+			[
+				"pad",
+				"padding-bottom"
+			],
+			[
+				"calcul",
+				"calculateMarkup"
+			],
+			[
+				"rawPrice",
+				"rawPriceAll"
+			],
+			[
+				"over",
+				"overflow-y"
+			],
+			[
+				"spl",
+				"splitArr"
+			],
+			[
+				"margin",
+				"margin-bottom"
+			],
+			[
+				"overflow-",
+				"overflow-y"
+			],
+			[
+				"use",
+				"userName"
+			],
+			[
+				"price",
+				"pricePromise"
+			],
+			[
+				"style",
+				"styleCode"
+			],
+			[
+				"min",
+				"minValue"
+			],
+			[
+				"j",
+				"jValue"
+			],
+			[
+				"is",
+				"isPalindrome"
+			],
+			[
+				"sta",
+				"startIndex"
+			],
+			[
+				"n2",
+				"n2Val"
+			],
+			[
+				"b",
+				"bValue"
+			],
+			[
+				"a",
+				"aValue"
+			],
+			[
+				"en",
+				"enclosedElement"
+			],
+			[
+				"in",
+				"invalidCase"
+			],
+			[
+				"flex",
+				"flex-direction"
+			],
+			[
+				"game",
+				"gamescreen"
+			],
+			[
+				"flatt",
+				"flattenHelper"
+			],
+			[
+				"curr",
+				"currRow"
+			],
+			[
+				"cur",
+				"currRow"
+			],
+			[
+				"left",
+				"leftCell"
+			],
+			[
+				"pi",
+				"pivotIndex"
+			],
+			[
+				"pivo",
+				"pivotInd"
+			],
+			[
+				"mid",
+				"midIndex"
+			],
+			[
+				"i",
+				"iLen"
+			],
+			[
+				"per",
+				"permutationHelper"
+			],
+			[
+				"binar",
+				"binarySearchHelper"
+			],
+			[
+				"qi",
+				"quickSortHelper"
+			],
+			[
+				"pivot",
+				"pivotInd"
+			],
+			[
+				"piv",
+				"pivotInd"
+			],
+			[
+				"asc",
+				"asciiStr"
+			],
+			[
+				"find",
+				"findEncodings"
+			],
+			[
+				"new",
+				"newValue"
+			],
+			[
+				"parent",
+				"parentNode"
+			],
+			[
+				"merge",
+				"mergeSort"
+			],
+			[
+				"proto",
+				"prototype"
+			],
+			[
+				"A",
+				"AVLTree"
+			],
+			[
+				"mer",
+				"mergeSort"
+			],
+			[
+				"rotArr",
+				"rotArrRow"
+			],
+			[
+				"quickSor",
+				"quickSortHelper"
+			],
+			[
+				"par",
+				"parseValue"
+			],
+			[
+				"value",
+				"valuesLen"
+			],
+			[
+				"Ut",
+				"utilHelper"
+			],
+			[
+				"transit",
+				"transition-duration"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"get",
+				"getPageId"
+			],
+			[
+				"_arrow",
+				"_arrowHelper"
+			],
+			[
+				"Arr",
+				"ArrowHelper"
+			],
+			[
+				"navi",
+				"navigateCallback"
+			],
+			[
+				"tile",
+				"tileModel"
+			],
+			[
+				"ex",
+				"externalLink"
+			],
+			[
+				"boot",
+				"bootstrapModal"
+			],
+			[
+				"start",
+				"startPage"
+			],
+			[
+				"util",
+				"UtilHelper"
+			],
+			[
+				"star",
+				"startPage"
+			],
+			[
+				"Starte",
+				"startPageView"
+			],
+			[
+				"pol",
+				"polyhedronDiv"
+			],
+			[
+				"navig",
+				"navigation-bar"
+			],
+			[
+				"template",
+				"templateLoader"
+			],
+			[
+				"prot",
+				"prototype"
+			],
+			[
+				"templa",
+				"templateId"
+			],
+			[
+				"remove",
+				"removeArrows"
+			],
+			[
+				"prev",
+				"previousEnv"
+			],
+			[
+				"st",
+				"startPage"
+			],
+			[
+				"pre",
+				"previousArrowStr"
+			],
+			[
+				"env",
+				"environment"
+			],
+			[
+				"previ",
+				"previousArrow"
+			],
+			[
+				"inlin",
+				"inline-block"
+			],
+			[
+				"banner",
+				"bannerDiv"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/User/CustomC++Build.sublime-build",
+					""
+				],
+				[
+					"Packages/User/CustomC++Build.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/User/CustomC++Build.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 360.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 344.0
+	},
+	"console":
+	{
+		"height": 153.0,
+		"history":
+		[
+			"subl",
+			"subl -v",
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/simon/Documents/Web Dev/nemoo"
+	],
+	"file_history":
+	[
+		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/lib/frexServer.ex",
+		"/C/Users/simon/Documents/Web Dev/react-hot-boilerplate/src/App.jsx",
+		"/C/Users/simon/Documents/Web Dev/react-hot-boilerplate/server.js",
+		"/C/Users/simon/Documents/Web Dev/react-hot-boilerplate/index.html",
+		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/index.html",
+		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/js/components/EpisodeTile.jsx",
+		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/css/loadingPage.css",
+		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/js/components/FlippableSentence.jsx",
+		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/js/components/AboutPage.jsx",
+		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/js/components/MatchingGameContainer.jsx",
+		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/js/components/EpisodeTileGalleryContainer.jsx",
+		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/js/components/NavigationBar.jsx",
+		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/css/navigationBar.css",
+		"/C/Users/simon/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/css/navigationBarLegacy.css",
+		"/C/Users/simon/Documents/Web Dev/nemoo/server.js",
+		"/G/hello.js",
+		"/C/Users/simon/Documents/Web Dev/FP-Tech-Challenge/public/js/app.js",
+		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/lib/BabbelgamesDb.ex",
+		"/C/Users/simon/Documents/Web Dev/FP-Tech-Challenge/public/js/controllers.js",
+		"/C/Users/simon/Documents/Web Dev/FP-Tech-Challenge/public/js/directives.js",
+		"/C/Users/simon/Documents/Web Dev/FP-Tech-Challenge/public/js/filters.js",
+		"/C/Users/simon/Documents/Web Dev/FP-Tech-Challenge/public/js/services.js",
+		"/C/Users/simon/Documents/Web Dev/FP-Tech-Challenge/app.js",
+		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/drop_and_redirect.html",
+		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/js/components/MatchingGame.jsx",
+		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/data/screenplay/sherlock/s01e02.txt",
+		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/data/subtitles/de-got-s01e01.srt",
+		"/C/Users/simon/Downloads/dft.java",
+		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/js/components/LoadingPage.jsx",
+		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/js/components/App.jsx",
+		"/C/Users/simon/Documents/Web Dev/react-hot-boilerplate/src/App.js",
+		"/C/Users/simon/Documents/Web Dev/react-hot-boilerplate/src/index.js",
+		"/C/Users/simon/Documents/Web Dev/react-hot-boilerplate/webpack.config.js",
+		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/js/components/ShuffledGameSlab.jsx",
+		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/css/episodeTile.css",
+		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/package.json",
+		"/C/Users/simon/Documents/1/BME252/FT.m",
+		"/C/Users/simon/Documents/1/BME252/findAK.m",
+		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/.gitignore",
+		"/C/Users/simon/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/simon/AppData/Roaming/Sublime Text 3/Packages/User/CustomC++Build.sublime-build",
+		"/C/Users/simon/Documents/1/BME252/Assignment2/Program/findPeaks.m",
+		"/C/Users/simon/Documents/1/BME252/Assignment2/Program/DFT.m",
+		"/C/Users/simon/Documents/1/BME252/Assignment2/Program/determineTone.m",
+		"/C/Users/simon/Downloads/test2 (2).m",
+		"/C/Users/simon/Downloads/test2 (1).m",
+		"/C/Users/simon/Documents/MATLAB/261/findPeaks.m",
+		"/C/Users/simon/Documents/MATLAB/261/extrema.m",
+		"/C/Users/simon/Downloads/test2.m",
+		"/C/Users/simon/Downloads/DFT.m",
+		"/C/Users/simon/Documents/1/BME252/DFT.m",
+		"/C/Users/simon/Documents/GitHub/leetcode/1-9/1TwoSum.cpp",
+		"/C/Users/simon/Dropbox/WATERLOO/Programming/GeneralConcepts/postvsget.txt",
+		"/C/Users/simon/Dropbox/WATERLOO/Programming/GeneralConcepts/ssl.txt",
+		"/C/Users/simon/Dropbox/WATERLOO/Programming/JSConcepts/inheritance.js",
+		"/C/Users/simon/Dropbox/WATERLOO/Programming/GeneralConcepts/http.txt",
+		"/C/Users/simon/Dropbox/WATERLOO/Programming/GeneralConcepts/userauthentication.txt",
+		"/C/Users/simon/Dropbox/WATERLOO/Programming/DataStructures/levelOrder.js",
+		"/C/Users/simon/Documents/1/ParticleSwarm/ParticleSwarm3d.m",
+		"/C/Users/simon/Documents/1/K-Means/kmeanscluster.m",
+		"/C/Users/simon/Documents/1/ParticleSwarm/ParticleSwarm.m",
+		"/C/Users/simon/Dropbox/WATERLOO/Programming/Algorithm/longestCommonSubstring.js",
+		"/C/Users/simon/Dropbox/WATERLOO/Programming/InterviewQuestions.txt",
+		"/C/Users/simon/Dropbox/WATERLOO/Programming/Algorithm/allSubstring.js",
+		"/C/Users/simon/Dropbox/WATERLOO/Programming/JSConcepts/apply-call-bind.js",
+		"/C/Users/simon/Dropbox/WATERLOO/Programming/JSConcepts/ascii.js",
+		"/C/Users/simon/Dropbox/WATERLOO/Programming/SampleProblem/applyOperationsToArray.js",
+		"/C/Users/simon/Dropbox/WATERLOO/Programming/Sorting/insertionSort.js",
+		"/C/Users/simon/Dropbox/WATERLOO/Programming/test.js",
+		"/C/Users/simon/Dropbox/WATERLOO/Programming/JSConcepts/shift-unshift.js",
+		"/C/Users/simon/Dropbox/WATERLOO/Programming/Algorithm/permutation.js",
+		"/C/Users/simon/Documents/Web Dev/FP-Tech-Challenge/public/css/app.css",
+		"/C/Users/simon/Documents/Web Dev/FP-Tech-Challenge/public/js/lib/angular/angular.js",
+		"/C/Users/simon/Documents/Web Dev/FP-Tech-Challenge/views/index2.jade",
+		"/C/Users/simon/Documents/Web Dev/FP-Tech-Challenge/package.json",
+		"/C/Users/simon/Dropbox/WATERLOO/Programming/Sorting/quickSort.js",
+		"/C/Users/simon/Dropbox/WATERLOO/Programming/Sorting/mergeSort.js",
+		"/C/Users/simon/Dropbox/WATERLOO/Programming/Sorting/bubbleSort.js",
+		"/C/Users/simon/Dropbox/WATERLOO/Programming/Algorithm/toBinary.js",
+		"/C/Users/simon/Dropbox/WATERLOO/Programming/SampleProblem/findLargestLexicographicalString.js",
+		"/C/Users/simon/Dropbox/WATERLOO/Programming/GeneralConcepts/httpheaders.txt",
+		"/C/Users/simon/Dropbox/WATERLOO/Programming/GeneralConcepts/urlresponse.txt",
+		"/C/Users/simon/Dropbox/WATERLOO/Programming/SampleProblem/lowestCommonAncestor.js",
+		"/C/Users/simon/Dropbox/WATERLOO/Programming/SampleProblem/longestPalindrome.js",
+		"/C/Users/simon/Dropbox/WATERLOO/Programming/Algorithm/randomAndRound.js",
+		"/C/Users/simon/Dropbox/WATERLOO/Programming/CSSConcepts/font.css",
+		"/C/Users/simon/Documents/Web Dev/webpack-express-boilerplate/server.js",
+		"/C/Users/simon/Documents/Web Dev/webpack-express-boilerplate/package.json",
+		"/C/Users/simon/Dropbox/WATERLOO/Programming/SampleProblem/printParenthesis.js",
+		"/C/Users/simon/Dropbox/WATERLOO/Programming/Algorithm/findLargestLexicographicalString.js",
+		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/css/flippableSentence.css",
+		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/css/gameScreen.css",
+		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/js/components/GameScreen.jsx",
+		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/css/matchingGame.css",
+		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/js/components/EpisodeTileGallery.jsx",
+		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/screenplayGame.html",
+		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/css/screenplayGame.css",
+		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/css/episodeTileGallery.css",
+		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/js/utility/gameScreenHelper.jsx",
+		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/js/utility/screenPlayGameHelper.jsx",
+		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/js/utility/googleAnalytics.jsx",
+		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/js/utility/googleAnalytics.js",
+		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/css/navbar.css",
+		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/css/app.css",
+		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/js/googleAnalytics.jsx",
+		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/webpack.config.babel.js",
+		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/js/screenplayGame.jsx",
+		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/js/NavigationBar.jsx",
+		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/js/EpisodeTile.jsx",
+		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/js/App.jsx",
+		"/C/Users/simon/Dropbox/WATERLOO/Programming/Algorithm/longestUniqSubstring.js",
+		"/C/Users/simon/Dropbox/WATERLOO/Programming/SampleProblem/reverseSingleLinkedList.js",
+		"/C/Users/simon/Dropbox/WATERLOO/Programming/Algorithm/flatten.js",
+		"/C/Users/simon/Dropbox/WATERLOO/Programming/Algorithm/reverseString.js",
+		"/C/Users/simon/Dropbox/WATERLOO/Programming/Algorithm/factorial.js",
+		"/C/Users/simon/Dropbox/WATERLOO/Programming/CSSConcepts/text.css",
+		"/C/Users/simon/Dropbox/WATERLOO/Programming/Algorithm/longestCommonSubSequence.js",
+		"/C/Users/simon/Dropbox/WATERLOO/Programming/Sorting/selectionSort.js",
+		"/C/Users/simon/Dropbox/WATERLOO/Programming/Algorithm/squareRoot.js",
+		"/C/Users/simon/Dropbox/WATERLOO/Programming/Algorithm/binarySearch.js",
+		"/C/Users/simon/Dropbox/WATERLOO/Programming/OOPConcepts/ThreePillarsOOP.txt",
+		"/C/Users/simon/Dropbox/WATERLOO/Programming/OOPConcepts/GeneralOOP.txt",
+		"/C/Users/simon/Dropbox/WATERLOO/Programming/OOPConcepts/GeneralOOP.cs",
+		"/C/Users/simon/Dropbox/WATERLOO/Programming/DataStructures/treeTraversals.js",
+		"/C/Users/simon/Dropbox/WATERLOO/Programming/DataStructures/avlTree.js",
+		"/C/Users/simon/Dropbox/WATERLOO/Programming/SampleProblem/stringAlphabetEncoding.js",
+		"/C/Users/simon/Dropbox/WATERLOO/Programming/JSConcepts/javascript-vs-jQuery.js"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 96.0,
+		"where_history":
+		[
+			"",
+			"C:\\Users\\simon\\Documents\\Web Dev\\frex-backend\\frex-backend\\frontend",
+			"C:\\Users\\simon\\Dropbox\\WATERLOO\\Programming",
+			"C:\\Users\\simon\\Documents\\Web Dev\\jamarshon.appspot.com\\",
+			"C:\\Users\\simon\\Documents\\Web Dev\\jamarshon.appspot.com\\static\\styles\\",
+			"C:\\Users\\simon\\Documents\\Web Dev\\jamarshon.appspot.com\\static\\stylespre#sour\\",
+			"C:\\Users\\simon\\Documents\\Web Dev\\jamarshon.appspot.com\\static\\scripts\\",
+			"C:\\Users\\simon\\Documents\\Web Dev\\jamarshon.appspot.com\\static\\scripts\\modules"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"@uwaterloo.ca",
+			"ca>",
+			",",
+			"facebook",
+			"facebook/auth",
+			"/auth/facebook/callback",
+			"image_url",
+			"production",
+			"injectTapEventPlugin",
+			"react-tap-event-plugin",
+			"Redirect",
+			"Route",
+			"Router",
+			"Route",
+			"Redirect",
+			"browserHistory",
+			"ReactDOM",
+			"isSelected",
+			"srcOfMousedOverTile",
+			"styles",
+			"currentEpisode",
+			"$",
+			"link",
+			"style=",
+			"styles",
+			"babbelgames_profile_image_url",
+			"styles.",
+			"isSmallMode",
+			"imgName",
+			"desktopMode",
+			"clickedOnHamburger",
+			"imgName",
+			"desktopMode",
+			"isSmallMode",
+			"createDropDown",
+			"retrieveState",
+			"handleHamburgerClick",
+			"clickedOnHamburger",
+			"isSmallmode",
+			"insertEpisodePair",
+			"BabbelgamesDb",
+			"db",
+			"session",
+			"session_token",
+			"isLoggedIn",
+			"resizehandler",
+			"imgName",
+			"isSmallMode",
+			"desktopmode",
+			"styles.",
+			"createDropDown",
+			"handlehamburgerclick",
+			"handlehamb",
+			"styles.",
+			"isSmallMode",
+			"desktopmode",
+			"styles",
+			"drop_and_redirect",
+			"localStorage",
+			"editmode",
+			"https",
+			"link",
+			"display",
+			"block",
+			"\"display\"",
+			"clickedOnHamburger",
+			"FlatButton",
+			"handleSubmit",
+			"styles",
+			"langCode",
+			"l2code",
+			"editMode",
+			"currentEpisode",
+			"400ms",
+			"300ms",
+			"200ms",
+			"100ms",
+			"/css/",
+			"img/",
+			"if",
+			"matchedPairs",
+			"props.",
+			"</input",
+			"display:",
+			"visibility",
+			"updateState",
+			"tiledata",
+			"Loading",
+			"loading",
+			"blueimp-md5",
+			"import md5",
+			"md5",
+			"localhost",
+			"Link",
+			"Route",
+			"Router",
+			"react.router",
+			"router",
+			"rest",
+			"traversal",
+			"sort",
+			"console.log",
+			"rawPrice",
+			"rawPriceOne",
+			":",
+			" {",
+			"n1",
+			"|",
+			"font",
+			"font-size:",
+			"1.42857143",
+			"#3EA87F",
+			"html",
+			".html",
+			"flippableSentenceContainer",
+			"dimOnHover",
+			"styles.tilestyle",
+			"tilestyle",
+			".gamescreen",
+			"redirect",
+			"metadata",
+			"this.props",
+			"key",
+			".html",
+			"dataSource",
+			"episodes",
+			"dataSource",
+			"style="
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"right",
+			"left",
+			"<span class=\"red keyword\">return</span>",
+			"<span class=\"red keyword\">new</span>",
+			"<span class=\"blue keyword\">var</span>",
+			"<span class=\"blue keyword\">",
+			"class=\"jamarshon-tile hvr-grow\"",
+			"/downloads/p0/",
+			"class=\"jamarshon-tile\" id=\"tile-\""
+		],
+		"reverse": false,
+		"show_context": false,
+		"use_buffer2": false,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 228.0
+	},
+	"output.find_results":
+	{
+		"height": 258.0
+	},
+	"pinned_build_system": "",
+	"project": "nemoo.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"navigat",
+				"frontend\\js\\components\\NavigationBar.jsx"
+			],
+			[
+				"nav",
+				"frontend\\js\\components\\NavigationBar.jsx"
+			],
+			[
+				"epiosdetile",
+				"frontend\\js\\components\\EpisodeTile.jsx"
+			],
+			[
+				"episode",
+				"frontend\\js\\components\\EpisodeTileGalleryContainer.jsx"
+			],
+			[
+				"mgcont",
+				"frontend\\js\\components\\MatchingGameContainer.jsx"
+			],
+			[
+				"matching",
+				"frontend\\js\\components\\MatchingGame.jsx"
+			],
+			[
+				"aboup",
+				"frontend\\js\\components\\AboutPage.jsx"
+			],
+			[
+				"navi",
+				"frontend\\js\\components\\NavigationBar.jsx"
+			],
+			[
+				"app.jsx",
+				"frontend\\js\\components\\App.jsx"
+			],
+			[
+				".srt",
+				"data\\subtitles\\de-got-s01e01.srt"
+			],
+			[
+				".txt",
+				"data\\screenplay\\sherlock\\s01e02.txt"
+			],
+			[
+				"episo",
+				"frontend\\js\\components\\EpisodeTile.jsx"
+			],
+			[
+				"matchingc",
+				"frontend\\js\\components\\MatchingGameContainer.jsx"
+			],
+			[
+				"app.js",
+				"frontend\\js\\components\\App.jsx"
+			],
+			[
+				"matchinggamecon",
+				"frontend\\js\\components\\MatchingGameContainer.jsx"
+			],
+			[
+				"loading",
+				"frontend\\js\\components\\LoadingPage.jsx"
+			],
+			[
+				"inde",
+				"frontend\\index.html"
+			],
+			[
+				"load",
+				"frontend\\css\\loadingPage.css"
+			],
+			[
+				"loadi",
+				"frontend\\css\\loadingPage.css"
+			],
+			[
+				"eptil",
+				"frontend\\css\\episodeTile.css"
+			],
+			[
+				"test",
+				"test.js"
+			],
+			[
+				"inher",
+				"JSConcepts\\inheritance.js"
+			],
+			[
+				"order",
+				"DataStructures\\levelOrder.js"
+			],
+			[
+				"shif",
+				"JSConcepts\\shift-unshift.js"
+			],
+			[
+				"all",
+				"Algorithm\\allSubstring.js"
+			],
+			[
+				"perm",
+				"Algorithm\\permutation.js"
+			],
+			[
+				"insert",
+				"Sorting\\insertionSort.js"
+			],
+			[
+				"app.css",
+				"public\\css\\app.css"
+			],
+			[
+				"angular.js",
+				"public\\js\\lib\\angular\\angular.js"
+			],
+			[
+				"app.cs",
+				"public\\css\\app.css"
+			],
+			[
+				"cont",
+				"public\\js\\controllers.js"
+			],
+			[
+				"index.",
+				"views\\index.jade"
+			],
+			[
+				"api.",
+				"routes\\api.js"
+			],
+			[
+				"call",
+				"JSConcepts\\apply-call-bind.js"
+			],
+			[
+				"q",
+				"Sorting\\quickSort.js"
+			],
+			[
+				"so",
+				"Sorting\\mergeSort.js"
+			],
+			[
+				"bub",
+				"Sorting\\bubbleSort.js"
+			],
+			[
+				"insertion",
+				"Sorting\\insertionSort.js"
+			],
+			[
+				"sele",
+				"Sorting\\selectionSort.js"
+			],
+			[
+				"large",
+				"SampleProblem\\findLargestLexicographicalString.js"
+			],
+			[
+				"per",
+				"Algorithm\\permutation.js"
+			],
+			[
+				"mer",
+				"Sorting\\mergeSort.js"
+			],
+			[
+				"test.",
+				"test.js"
+			],
+			[
+				"quic",
+				"Sorting\\quickSort.js"
+			],
+			[
+				"merge",
+				"Sorting\\mergeSort.js"
+			],
+			[
+				"test.js",
+				"test.js"
+			],
+			[
+				"matchi",
+				"frontend\\css\\matchingGame.css"
+			],
+			[
+				"flip",
+				"frontend\\css\\flippableSentence.css"
+			],
+			[
+				"flipp",
+				"frontend\\js\\components\\FlippableSentence.jsx"
+			],
+			[
+				"flippa",
+				"frontend\\js\\components\\FlippableSentence.jsx"
+			],
+			[
+				"flippab",
+				"frontend\\css\\flippableSentence.css"
+			],
+			[
+				"game",
+				"frontend\\css\\gameScreen.css"
+			],
+			[
+				"scree",
+				"frontend\\css\\screenplayGame.css"
+			],
+			[
+				"episod",
+				"frontend\\js\\components\\EpisodeTile.jsx"
+			],
+			[
+				"app.",
+				"frontend\\js\\components\\App.jsx"
+			],
+			[
+				"long",
+				"Algorithm\\longestUniqSubstring.js"
+			],
+			[
+				"var",
+				"JSConcepts\\identying-variable-type.js"
+			],
+			[
+				"qu",
+				"Sorting\\quickSort.js"
+			],
+			[
+				"bina",
+				"Algorithm\\binarySearch.js"
+			],
+			[
+				"sel",
+				"Sorting\\selectionSort.js"
+			],
+			[
+				"b",
+				"Sorting\\bubbleSort.js"
+			],
+			[
+				"ins",
+				"Sorting\\insertionSort.js"
+			],
+			[
+				"selec",
+				"Sorting\\selectionSort.js"
+			],
+			[
+				"merg",
+				"Sorting\\mergeSort.js"
+			],
+			[
+				"al",
+				"Algorithm\\allSubstring.js"
+			],
+			[
+				"binar",
+				"Algorithm\\binarySearch.js"
+			],
+			[
+				"inser",
+				"Sorting\\insertionSort.js"
+			],
+			[
+				"bi",
+				"Algorithm\\binarySearch.js"
+			],
+			[
+				"root",
+				"Algorithm\\squareRoot.js"
+			],
+			[
+				"qi",
+				"Sorting\\quickSort.js"
+			],
+			[
+				"bs.",
+				"Sorting\\bubbleSort.js"
+			],
+			[
+				"sq",
+				"Algorithm\\squareRoot.js"
+			],
+			[
+				"jquer",
+				"JSConcepts\\javascript-vs-jQuery.js"
+			],
+			[
+				"avl",
+				"DataStructures\\avlTree.js"
+			],
+			[
+				"bs",
+				"Sorting\\bubbleSort.js"
+			],
+			[
+				"se",
+				"Sorting\\selectionSort.js"
+			],
+			[
+				"sqr",
+				"Algorithm\\squareRoot.js"
+			],
+			[
+				"",
+				"test.js"
+			],
+			[
+				"ms",
+				"Sorting\\mergeSort.js"
+			],
+			[
+				"ide",
+				"JSConcepts\\identying-variable-type.js"
+			],
+			[
+				"pos",
+				"Algorithm\\postOrderTraversal.js"
+			],
+			[
+				"in",
+				"Algorithm\\inOrderTraversal.js"
+			],
+			[
+				"pre",
+				"Algorithm\\preOrderTraversal.js"
+			],
+			[
+				"post",
+				"Algorithm\\postOrderTraversal.js"
+			],
+			[
+				"pot",
+				"Algorithm\\preOrderTraversal.js"
+			],
+			[
+				"iot",
+				"Algorithm\\inOrderTraversal.js"
+			],
+			[
+				"port",
+				"Algorithm\\preOrderTraversal.js"
+			],
+			[
+				"quics",
+				"Sorting\\quickSort.js"
+			],
+			[
+				"main.js",
+				"static\\scripts\\main.js"
+			],
+			[
+				".css",
+				"static\\styles\\main.css"
+			],
+			[
+				"anal",
+				"static\\scripts\\utils\\analytics.js"
+			],
+			[
+				"pag",
+				"static\\json\\page0.json"
+			],
+			[
+				"ma",
+				"templates\\main.html"
+			],
+			[
+				"main.py",
+				"main.py"
+			],
+			[
+				"arrowhlp",
+				"static\\scripts\\utils\\arrowHelper.js"
+			],
+			[
+				"analys",
+				"static\\scripts\\utils\\analytics.js"
+			],
+			[
+				"p0.",
+				"static\\json\\page0.json"
+			],
+			[
+				"p1",
+				"static\\legacy-modules\\source-code\\page1.html"
+			],
+			[
+				"page1",
+				"static\\legacy-modules\\source-code\\page1.html"
+			],
+			[
+				"router",
+				"static\\scripts\\router.js"
+			],
+			[
+				"pag2",
+				"static\\legacy-modules\\source-code\\page2.html"
+			],
+			[
+				"polyhedro",
+				"static\\scripts\\views\\polyhedronView.js"
+			],
+			[
+				"page3.",
+				"static\\legacy-modules\\source-code\\page3.html"
+			],
+			[
+				"arrowhe",
+				"static\\scripts\\utils\\arrowHelper.js"
+			],
+			[
+				"anla",
+				"static\\scripts\\utils\\analytics.js"
+			],
+			[
+				"main2.",
+				"main2.py"
+			],
+			[
+				"frone",
+				"static\\frontendprocess.js"
+			],
+			[
+				"butto",
+				"static\\legacy-modules\\button.html"
+			],
+			[
+				"n",
+				"static\\legacy-modules\\navigation-bar.html"
+			],
+			[
+				"main.",
+				"templates\\main.html"
+			],
+			[
+				"arv",
+				"static\\scripts\\views\\arrowView.js"
+			],
+			[
+				"soc",
+				"static\\styles\\source-code.css"
+			],
+			[
+				"ja",
+				"static\\styles\\jamarshon.css"
+			],
+			[
+				"main.cs",
+				"static\\styles\\main.css"
+			],
+			[
+				"p8",
+				"static\\legacy-modules\\source-code\\page8.html"
+			],
+			[
+				"p9",
+				"static\\legacy-modules\\source-code\\page9.html"
+			],
+			[
+				"dr",
+				"draw2.py"
+			],
+			[
+				"a.p",
+				"a.py"
+			],
+			[
+				"po",
+				"static\\styles\\polyhedron.css"
+			],
+			[
+				"bv",
+				"static\\scripts\\views\\buttonView.js"
+			],
+			[
+				"mpv",
+				"static\\scripts\\pages\\mainPageView.js"
+			],
+			[
+				"spv",
+				"static\\scripts\\pages\\sourcePageView.js"
+			],
+			[
+				"ar",
+				"static\\styles\\arrow.css"
+			],
+			[
+				"p2",
+				"static\\legacy-modules\\source-code\\page2.html"
+			],
+			[
+				"p3",
+				"static\\legacy-modules\\source-code\\page3.html"
+			],
+			[
+				"utilhe",
+				"static\\scripts\\utils\\utilHelper.js"
+			],
+			[
+				"polv",
+				"static\\scripts\\views\\polyhedronView.js"
+			],
+			[
+				"main",
+				"templates\\main.html"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"C:\\Users\\simon\\Documents\\Web Dev\\react-hot-boilerplate\\boilerplate.sublime-project"
+			]
+		],
+		"width": 526.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 278.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
