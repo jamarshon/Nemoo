@@ -1,27 +1,25 @@
+var Util = require('../util/util');
+
 module.exports = function(app, passport) {
 
 // normal routes ===============================================================
 
     app.get('/', function(req, res) {
-        console.log('redirect');
         res.redirect('/page/home');
     });
 
     // Used by the routeProvider to include it in the html
     app.get('/partials/:filename', function(req, res){
-        var filename = req.params.filename,
-            rootFileName = filename[0].toUpperCase() + filename.slice(1, filename.indexOf(".")),
-            title = rootFileName === "Home" ? "Random Discussion": rootFileName;
-        // res.render(filename, {title: title, user: getUser()}); gets and loads
-        res.render(filename, {title: title});
+        var filename = req.params.filename;
+        res.render(filename);
     });
 
     // Always render the index to allow the routeProvider to match with the correct route
     app.get('/page/:filename', function(req, res){
-        var info = req.isAuthenticated() ? "authenticated": "not authenticated",
-            user = req.user;
-        console.log(req.isAuthenticated());
-        res.render('index', {info: info, user: user});
+        var loggedIn = req.isAuthenticated(),
+            user = loggedIn ? req.user : Util.generateAnonUser();
+        console.log(user);
+        res.render('index', {user: user, loggedIn: loggedIn});
     });
 
     // Files to be imported in using ng-include
@@ -34,7 +32,8 @@ module.exports = function(app, passport) {
     // LOGOUT ==============================
     app.get('/logout', function(req, res) {
         req.logout();
-        res.json({redirect: '/'});
+        res.redirect('/');
+        //res.json({redirect: '/'});
     });
 
 // =============================================================================
@@ -79,12 +78,3 @@ module.exports = function(app, passport) {
                 failureRedirect : '/'
             }));
 };
-
-// route middleware to ensure user is logged in
-function isLoggedIn(req, res, next) {
-    if (req.isAuthenticated()) {
-        return next();
-    }
-
-    res.redirect('/');
-}

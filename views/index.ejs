@@ -2,46 +2,35 @@
     <!DOCTYPE html>
 
     <!-- define angular app -->
-    <html ng-app="scotchApp">
+    <html ng-app="App">
     <head>
-      <!-- SCROLLS -->
-      <!-- load bootstrap and fontawesome via CDN -->
-      <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
-      <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+      
+      <!-- Angular Material style sheet -->
+      <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-      <!-- SPELLS -->
       <!-- load angular via CDN -->
-      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.js"></script>
-          <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+          <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
+          <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+          <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+          <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+
+      <!-- Angular Material Library -->
+      <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+      
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+      <link rel="stylesheet" href="/stylesheets/style.css">
+      <script src="/javascripts/initApp.js"></script>
       <script src="/javascripts/script.js"></script>
     </head>
 
     <!-- define angular controller -->
-    <body ng-controller="mainController as mctrl">
-
-     <!-- HEADER AND NAVBAR -->
-        <header>
-            <nav class="navbar navbar-default">
-            <div class="container">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="/">Angular Routing Example</a>
-                </div>
-
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/page/home"><i class="fa fa-home"></i> Home</a></li>
-                    <li><a href="/page/login"><i class="fa fa-shield"></i> Login Temp</a></li>
-                    <li><a href="/page/signup"><i class="fa fa-comment"></i> Sign Up Temp</a></li>
-                    <li><a ng-click="mctrl.facebook()"><i class="fa fa-comment"></i> Facebook Temp</a></li>
-                    <li><a ng-click="mctrl.logout()"><i class="fa fa-comment"></i> Logout</a></li>
-                </ul>
-            </div>
-            </nav>
-        </header>
-        <h1><%= user %> </h1>
-        <h1><%= info %> </h1>
-      <!-- MAIN CONTENT AND INJECTED VIEWS -->
+    <body ng-controller="MainController as main" ng-init="main.user = <%=JSON.stringify(user)%>; main.loggedIn = <%=loggedIn%>" class="ng-cloak">
+      <nemoo-header></nemoo-header>
       <div id="main">
-        <!-- angular templating -->
         <!-- this is where content will be injected -->
         <div ng-view></div>
     </div>

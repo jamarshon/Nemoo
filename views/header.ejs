@@ -1,0 +1,43 @@
+<header>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <md-button aria-label="Menu" ng-click="header.test()">
+        <md-icon class="material-icons">menu</md-icon>
+      </md-button>
+      <h1> Logo </h1>
+      <span flex></span>
+      <span style="padding-right: 15px">{{main.user.displayName}}</span>
+      <img ng-src="{{main.user.profilePic}}" style="border-radius: 50%; width: 50px; height: 50px" ng-style="{'background-color': '{{main.user.backgroundColor}}' } "/>
+
+      <div> <!-- image, display name, login/logout, search -->
+          <md-button href="/page/home" style="padding-right: 15px">Home</md-button> 
+          <md-button ng-hide="main.loggedIn" ng-click="header.showTabDialog($event)" style="padding-right: 15px">Login/Sign-Up</md-button> 
+          <md-button ng-show="main.loggedIn" ng-click="header.redirect('/logout')" style="padding-right: 15px">Logout</md-button> 
+      </div>
+    </div>
+  </md-toolbar>
+  <div layout="column" style="height:500px;">
+    <section layout="row" flex>
+      <md-sidenav
+          class="md-sidenav-left"
+          md-component-id="left"
+          md-is-open="header.open"
+          md-is-locked-open="$mdMedia('gt-md') && header.open"
+          md-whiteframe="4">
+        <md-toolbar class="md-theme-indigo">
+          <h1 class="md-toolbar-tools">Sidenav Left</h1>
+        </md-toolbar>
+        <md-content layout-padding>
+          <p> Content </p>
+        </md-content>
+      </md-sidenav>
+      <md-content flex layout-padding>
+        <div layout="column" layout-fill layout-align="top center">
+          <p> {{main.user}} </p>
+          <p> {{main.loggedIn}} </p>
+        </div>
+        <div flex></div>
+      </md-content>
+    </section>
+  </div>
+</header>

@@ -1,44 +1,67 @@
 // script.js
+    var app = angular.module('App');
 
-    // create the module and name it scotchApp
-        // also include ngRoute for all our routing needs
-    var scotchApp = angular.module('scotchApp', ['ngRoute']);
-
-    // configure our routes
-    scotchApp.config(function($routeProvider, $locationProvider) {
-        $routeProvider
-            // route for the home page
-            .when('/page/:filename', {
-                templateUrl : function(params){ return '/partials/' + params.filename + '.ejs'; },
-                controller  : 'test',
-                controllerAs: 'ctrl'
-            });
-        $locationProvider.html5Mode(true);
+    app.controller('MainController', function() {
+        
     });
 
-    // create the controller and inject Angular's $scope
-    scotchApp.controller('test', function($http) {
-        // create a message to display in our view
-        var self = this;
-        this.secondMessage = 'Everyone come and see how good I look!';
-        this.formData = {email: '', password: ''};
-        this.processForm = function(url) {
-            $http.post(url, this.formData).success(function(data){
-                self.secondMessage = data.message;
-                if(data.redirect){ window.location = data.redirect; }
-            });
-        };
+    app.controller('DiscussionCtrl', function($routeParams) {
+        console.log($routeParams.page);
+        this.message = $routeParams.page + ' Page';
     });
 
-    scotchApp.controller('mainController', function($http) {
-        // create a message to display in our view
-        this.message="main";
-        this.logout = function() {
-            $http.get('/logout').success(function(data){
-                window.location = data.redirect;
+    app.controller('HeaderController', function($window, $mdSidenav, $mdMedia, $mdDialog) {
+        var that = this;
+        that.open = $mdMedia('gt-md');
+        $(window).resize(function(){ 
+            that.open = !$mdMedia('gt-md'); });
+        this.test = function() {
+            var sideNav = $mdSidenav('left'),
+                large = $mdMedia('gt-md');
+            if(large) {
+                that.open = !that.open;
+            } else {
+                sideNav.toggle();
+            }
+        };
+        this.redirect = function(path) {
+            $window.location.href = path;
+            //$http.get('/logout').success(function(data){ window.location = data.redirect; });
+        };
+
+        this.showTabDialog = function(ev) {
+            console.log('hi');
+            $mdDialog.show({
+              controller: function($mdDialog, $window){
+                this.hide = function() {
+                  $mdDialog.hide();
+                };
+                this.cancel = function() {
+                    $mdDialog.cancel();
+                };
+                this.answer = function(answer) {
+                  $mdDialog.hide(answer);
+                };
+                this.redirect = function(path) {
+                    $window.location.href = path;
+                };
+              },
+              controllerAs: 'dlg',
+              templateUrl: '/views/login.ejs',
+              parent: angular.element(document.body),
+              targetEvent: ev,
+              clickOutsideToClose:true
             });
         };
-        this.facebook = function() {
-            window.location = "/auth/facebook";
+        
+        
+    });
+
+    app.directive('nemooHeader', function() {
+        return {
+            restrict: 'E',
+            templateUrl: '/views/header.ejs',
+            controller: 'HeaderController',
+            controllerAs: 'header'
         };
     });
