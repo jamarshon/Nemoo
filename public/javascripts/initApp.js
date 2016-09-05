@@ -1,5 +1,5 @@
   // initApp.js  
-    var app = angular.module('App', ['ngRoute', 'ngMaterial']);
+    var app = angular.module('App', ['ngRoute', 'ngMaterial', 'ngMessages']);
 
     // configure our routes
     app.config(function($routeProvider, $locationProvider, $mdThemingProvider) {

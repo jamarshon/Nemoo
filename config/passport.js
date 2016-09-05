@@ -44,7 +44,7 @@ module.exports = function(passport) {
 
         // asynchronous
         process.nextTick(function() {
-            User.findOne({ '_email' :  email }, function(err, user) {
+            User.findOne({ '_localEmail' :  email }, function(err, user) {
                 if (err) // if there are any errors, return the error
                     return done(err);
                 if (!user) // if no user is found, return the message
@@ -75,7 +75,7 @@ module.exports = function(passport) {
 
         // asynchronous
         process.nextTick(function() {
-            User.findOne({ '_email' :  email }, function(err, user) {
+            User.findOne({ '_localEmail' :  email }, function(err, user) {
                 if (err) // if there are any errors, return the error
                     return done(err);
                 if (user) { // check to see if theres already a user with that email
@@ -84,7 +84,7 @@ module.exports = function(passport) {
                     // create the user
                     var newUser             = new User();
 
-                    newUser._email          = email;
+                    newUser._localEmail     = email;
                     newUser._password       = newUser.generateHash(password);
                     newUser._lastActive     = Date.now();
                     newUser.displayName     = email.slice(0, email.indexOf('@'));
@@ -126,9 +126,10 @@ module.exports = function(passport) {
                     user.setProperties({_lastActive: Date.now() });
                     return done(null, user); 
                 } else { // if there is no user, create them
-                    var newUser            = new User();
-
-                    newUser._email          = (profile.emails[0].value || '').toLowerCase();
+                    var newUser            = new User(),
+                        email              = profile.emails ? profile.emails[0] : '';
+                        
+                    newUser._fbEmail        = (email.value || '').toLowerCase();
                     newUser._fbId           = profile.id;
                     newUser._fbToken        = token;
                     newUser._lastActive     = Date.now();

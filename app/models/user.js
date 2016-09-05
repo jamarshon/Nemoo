@@ -5,8 +5,9 @@ var _        = require('underscore');
 
 // define the schema for our user model
 var userSchema = mongoose.Schema({
-    _email: String,
-    _password: String, // optional for facebook users
+    _localEmail: String,
+    _password: String,
+    _fbEmail: String,
     _fbId: String,
     _fbToken: String,
     _lastActive: Number,
@@ -32,7 +33,6 @@ userSchema.methods.setProperties = function(props) {
             console.error('Update user failure');
     });
 };
-
 
 // create the model for users and expose it to our app
 module.exports = mongoose.model('User', userSchema);

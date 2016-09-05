@@ -28,9 +28,11 @@
     </head>
 
     <!-- define angular controller -->
-    <body ng-controller="MainController as main" ng-init="main.user = <%=JSON.stringify(user)%>; main.loggedIn = <%=loggedIn%>" class="ng-cloak">
+    <body ng-controller="MainCtrl as main" ng-init="main.user = <%=JSON.stringify(user)%>; main.loggedIn = <%=loggedIn%>" class="ng-cloak">
       <nemoo-header></nemoo-header>
       <div id="main">
         <!-- this is where content will be injected -->
         <div ng-view></div>
-    </div>
+      </div>
+  </body>
+</html>

@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"is",
+				"isAuthenticated"
+			],
+			[
 				"pro",
 				"profileImg"
 			],
@@ -86,10 +90,6 @@
 			[
 				"j",
 				"jValue"
-			],
-			[
-				"is",
-				"isPalindrome"
 			],
 			[
 				"sta",
@@ -340,34 +340,10 @@
 	"buffers":
 	[
 		{
-			"file": "config/passport.js",
-			"settings":
-			{
-				"buffer_size": 6392,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "views/home.ejs",
-			"settings":
-			{
-				"buffer_size": 63,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "views/login.ejs",
-			"settings":
-			{
-				"buffer_size": 517,
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "public/javascripts/script.js",
 			"settings":
 			{
-				"buffer_size": 1605,
+				"buffer_size": 2077,
 				"line_ending": "Windows"
 			}
 		},
@@ -375,40 +351,49 @@
 			"file": "routes/routes.js",
 			"settings":
 			{
-				"buffer_size": 3449,
+				"buffer_size": 3025,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "util/util.js",
+			"file": "public/javascripts/initApp.js",
 			"settings":
 			{
-				"buffer_size": 1220,
+				"buffer_size": 1529,
 				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/models/user.js",
-			"settings":
-			{
-				"buffer_size": 1051,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app.js",
-			"settings":
-			{
-				"buffer_size": 2196,
-				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "views/index.ejs",
 			"settings":
 			{
-				"buffer_size": 1974,
+				"buffer_size": 1885,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "views/header.ejs",
+			"settings":
+			{
+				"buffer_size": 1731,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "views/login.ejs",
+			"settings":
+			{
+				"buffer_size": 3443,
+				"line_ending": "Windows",
+				"name": "<md-dialog aria-label=\"Mango (Fruit)\">"
+			}
+		},
+		{
+			"file": "public/stylesheets/style.css",
+			"settings":
+			{
+				"buffer_size": 110,
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -500,32 +485,40 @@
 	"expanded_folders":
 	[
 		"/C/Users/simon/Documents/Web Dev/nemoo",
-		"/C/Users/simon/Documents/Web Dev/nemoo/app/models",
 		"/C/Users/simon/Documents/Web Dev/nemoo/config",
 		"/C/Users/simon/Documents/Web Dev/nemoo/public",
-		"/C/Users/simon/Documents/Web Dev/nemoo/public/images",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/images/anonymous",
 		"/C/Users/simon/Documents/Web Dev/nemoo/public/images/user",
 		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/stylesheets",
 		"/C/Users/simon/Documents/Web Dev/nemoo/routes",
 		"/C/Users/simon/Documents/Web Dev/nemoo/util",
 		"/C/Users/simon/Documents/Web Dev/nemoo/views"
 	],
 	"file_history":
 	[
+		"/C/Users/simon/Documents/Web Dev/nemoo/util/util.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/views/home.ejs",
+		"/C/Users/simon/Documents/Web Dev/nemoo/views/login.ejs",
+		"/C/Users/simon/Documents/Web Dev/nemoo/app/models/user.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/initApp.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/views/header.ejs",
+		"/C/Users/simon/Documents/Web Dev/nemoo/config/passport.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/stylesheets/style.css",
+		"/C/Users/simon/Downloads/test/public/javascripts/script.js",
+		"/C/Users/simon/Downloads/test/views/index.ejs",
+		"/C/Users/simon/Documents/Web Dev/nemoo/app.js",
+		"/C/Users/simon/AppData/Local/Temp/7zO2678.tmp/index.ejs",
 		"/C/Users/simon/Documents/Web Dev/nemoo/views/signup.ejs",
 		"/C/Users/simon/Documents/Web Dev/nemoo/routes/index.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/config/passport2.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/views/home.ejs",
 		"/C/Users/simon/Documents/Web Dev/nemoo/views/profile.ejs",
-		"/C/Users/simon/Documents/Web Dev/nemoo/app/models/user.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/util/util.js",
 		"/C/Users/simon/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/C/Users/simon/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
 		"/C/Users/simon/Documents/Web Dev/nemoo/views/main.ejs",
 		"/C/Users/simon/AppData/Local/Temp/7zOE02D.tmp/index.html",
 		"/C/Users/simon/Documents/Web Dev/nemoo/views/index.ejs",
 		"/C/Users/simon/AppData/Local/Temp/7zO5C67.tmp/index.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/app.js",
 		"/C/Users/simon/AppData/Local/Temp/7zO26C9.tmp/script.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/views/main.ejs.html",
 		"/C/Users/simon/Documents/Web Dev/nemoo/views/main.js",
@@ -631,15 +624,7 @@
 		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/js/utility/gameScreenHelper.jsx",
 		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/js/utility/screenPlayGameHelper.jsx",
 		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/js/utility/googleAnalytics.jsx",
-		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/js/utility/googleAnalytics.js",
-		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/css/navbar.css",
-		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/css/app.css",
-		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/js/googleAnalytics.jsx",
-		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/webpack.config.babel.js",
-		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/js/screenplayGame.jsx",
-		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/js/NavigationBar.jsx",
-		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/js/EpisodeTile.jsx",
-		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/js/App.jsx"
+		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/js/utility/googleAnalytics.js"
 	],
 	"find":
 	{
@@ -665,6 +650,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"auto-fo",
+			"ng-",
+			"55px",
+			"75px",
+			"24px",
+			"#",
 			"getRandomAnonymousImg",
 			"getAnonymousImg",
 			"Missing credentials",
@@ -786,13 +777,7 @@
 			" {",
 			"n1",
 			"|",
-			"font",
-			"font-size:",
-			"1.42857143",
-			"#3EA87F",
-			"html",
-			".html",
-			"flippableSentenceContainer"
+			"font"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -819,112 +804,24 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 5,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "config/passport.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6392,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								220,
-								220
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "views/home.ejs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 63,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								63,
-								63
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "views/login.ejs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 517,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								379,
-								446
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
 					"file": "public/javascripts/script.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1605,
+						"buffer_size": 2077,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1305,
-								1305
+								1138,
+								1138
 							]
 						],
 						"settings":
@@ -934,27 +831,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 576.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 1,
 					"file": "routes/routes.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3449,
+						"buffer_size": 3025,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1459,
-								1459
+								1165,
+								1165
 							]
 						],
 						"settings":
@@ -964,47 +861,140 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 120.0,
+						"translation.y": 163.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "util/util.js",
+					"buffer": 2,
+					"file": "public/javascripts/initApp.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1220,
+						"buffer_size": 1529,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								788,
-								788
+								1127,
+								1127
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 117.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "app/models/user.js",
+					"buffer": 3,
+					"file": "views/index.ejs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1051,
+						"buffer_size": 1885,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								685,
+								685
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 19.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "views/header.ejs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1731,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								850,
+								850
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 305.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "views/login.ejs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3443,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3298,
+								3298
+							]
+						],
+						"settings":
+						{
+							"auto_name": "<md-dialog aria-label=\"Mango (Fruit)\">",
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 192.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "public/stylesheets/style.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 110,
 						"regions":
 						{
 						},
@@ -1017,75 +1007,13 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/CSS/CSS.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "app.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2196,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1104,
-								1119
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 527.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "views/index.ejs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1974,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1481,
-								1481
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 14.0,
-						"translation.y": 293.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
+					"stack_index": 6,
 					"type": "text"
 				}
 			]
@@ -1144,20 +1072,40 @@
 		"selected_items":
 		[
 			[
-				"route",
-				"routes\\routes.js"
+				"ind",
+				"views\\index.ejs"
 			],
 			[
-				"user",
-				"app\\models\\user.js"
+				"uti",
+				"util\\util.js"
 			],
 			[
 				"util",
 				"util\\util.js"
 			],
 			[
-				"uti",
-				"util\\util.js"
+				"us",
+				"app\\models\\user.js"
+			],
+			[
+				"routes",
+				"routes\\routes.js"
+			],
+			[
+				"pass",
+				"config\\passport.js"
+			],
+			[
+				"index",
+				"views\\index.ejs"
+			],
+			[
+				"route",
+				"routes\\routes.js"
+			],
+			[
+				"user",
+				"app\\models\\user.js"
 			],
 			[
 				"proifle",
@@ -1634,26 +1582,6 @@
 			[
 				"dr",
 				"draw2.py"
-			],
-			[
-				"a.p",
-				"a.py"
-			],
-			[
-				"po",
-				"static\\styles\\polyhedron.css"
-			],
-			[
-				"bv",
-				"static\\scripts\\views\\buttonView.js"
-			],
-			[
-				"mpv",
-				"static\\scripts\\pages\\mainPageView.js"
-			],
-			[
-				"spv",
-				"static\\scripts\\pages\\sourcePageView.js"
 			]
 		],
 		"width": 0.0
