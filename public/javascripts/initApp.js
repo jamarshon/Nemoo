@@ -14,16 +14,16 @@
             requireBase: false
         });
         
-        var customBlueMap =     $mdThemingProvider.extendPalette('light-blue', {
+        var customMap = $mdThemingProvider.extendPalette('deep-purple', {
             'contrastDefaultColor': 'light',
             'contrastDarkColors': ['50'],
             '50': 'ffffff'
         });
-        $mdThemingProvider.definePalette('customBlue', customBlueMap);
+        $mdThemingProvider.definePalette('custom', customMap);
         $mdThemingProvider.theme('default')
-            .primaryPalette('customBlue', {
-            'default': '500',
-            'hue-1': '50'
+            .primaryPalette('custom', {
+                'default': '500',
+                'hue-1': '50'
             })
             .accentPalette('amber');
         $mdThemingProvider.theme('input', 'default')

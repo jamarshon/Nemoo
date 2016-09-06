@@ -6,12 +6,13 @@
       </md-button>
       <h1> Logo </h1>
       <span flex></span>
-      <span style="padding-right: 15px">{{main.user.displayName}}</span>
-      <img ng-src="{{main.user.profilePic}}" style="border-radius: 50%; width: 50px; height: 50px" ng-style="{'background-color': '{{main.user.backgroundColor}}' } "/>
+      <span hide-xs style="padding-right: 15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{main.user.displayName}}</span>
+      <img hide-xs ng-src="{{main.user.profilePic}}" style="border-radius: 50%; width: 50px; height: 50px" ng-style="{'background-color': '{{main.user.backgroundColor}}' } "/>
 
-      <div>
+      <div hide-xs>
           <md-button href="/page/home" style="padding-right: 15px">Home</md-button> 
-          <md-button ng-hide="main.loggedIn" ng-click="header.showTabDialog($event)" style="padding-right: 15px">Login/Sign-Up</md-button> 
+          <md-button ng-hide="main.loggedIn" ng-click="header.showTabDialog($event, 0)" style="padding-right: 15px">Login</md-button> 
+          <md-button ng-hide="main.loggedIn" ng-click="header.showTabDialog($event, 1)" style="padding-right: 15px">Signup</md-button> 
           <md-button ng-show="main.loggedIn" ng-click="header.redirect('/logout')" style="padding-right: 15px">Logout</md-button> 
       </div>
     </div>
@@ -24,9 +25,17 @@
             md-is-open="header.open"
             md-is-locked-open="$mdMedia('gt-sm') && header.open"
             md-whiteframe="4">
-          <md-toolbar class="md-theme-indigo">
-            <h1 class="md-toolbar-tools">Sidenav Left</h1>
+          <md-toolbar  class="md-primary">
+            <h1 hide-gt-xs class="md-toolbar-tools"> {{main.user.displayName}} 
+              <img ng-src="{{main.user.profilePic}}" style="border-radius: 50%; width: 50px; height: 50px; margin-left: 10px;" ng-style="{'background-color': '{{main.user.backgroundColor}}' } "/>
+            </h1>
+            <p hide-xs style="text-align: center;"> 500 users online </p>
           </md-toolbar>
+          <div style="border: 1px solid lightgrey">
+          <nemoo-search-box></nemoo-search-box>
+          </div>
+
+          
           <md-content layout-padding>
             <p> Content </p>
           </md-content>

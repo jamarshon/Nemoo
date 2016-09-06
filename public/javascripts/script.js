@@ -10,30 +10,17 @@
         this.message = $routeParams.page + ' Page';
     });
 
-    app.controller('AuthenticationCtrl', function($http, $window) {
+    app.controller('HeaderCtrl', function($scope, $window, $mdSidenav, $mdMedia, $mdDialog) {
         var that = this;
-        this.data = {email: '', password: '', password2: ''};
-        this.submit = function(url) {
-            console.log(url);
-            $http.post(url, that.data).success(function(data){
-                if(data.redirect) {
-                    $window.location.href = data.redirect;
-                } else {
-                    that.message = data.message;
-                }
-            });
-        };
-    });
+        var windowsResizeHandler = function(){ that.height = $(window).height() - $("#nemoo-toolbar").height(); };
 
-    app.controller('HeaderCtrl', function($window, $mdSidenav, $mdMedia, $mdDialog) {
-        var that = this;
-        that.open = $mdMedia('gt-sm');
-        that.height = $(window).height() - $("#nemoo-toolbar").height();
-
-        $(window).resize(function(){ 
-            that.open = !$mdMedia('gt-sm');
-            that.height = $(window).height() - $("#nemoo-toolbar").height();
+        $scope.$watch(function() { return $mdMedia('gt-sm'); }, function(open) {
+            that.open = open;
         });
+
+        $(window).resize(windowsResizeHandler);
+        windowsResizeHandler();
+
         this.togglePanel = function() {
             var sideNav = $mdSidenav('left'),
                 large = $mdMedia('gt-sm');
@@ -46,7 +33,7 @@
 
         this.redirect = function(path) { $window.location.href = path; };
 
-        this.showTabDialog = function(ev) {
+        this.showTabDialog = function(ev, tabIdx) {
             $mdDialog.show({
               controller: function($mdDialog, $window){
                 this.hide = function() {
@@ -55,14 +42,12 @@
                 this.cancel = function() {
                     $mdDialog.cancel();
                 };
-                this.answer = function(answer) {
-                  $mdDialog.hide(answer);
-                };
                 this.redirect = function(path) {
                     $window.location.href = path;
                 };
+                this.selected = tabIdx;
               },
-              controllerAs: 'dlg',
+              controllerAs: 'dlgCtrl',
               templateUrl: '/views/loginDialog.ejs',
               parent: angular.element(document.body),
               targetEvent: ev,
@@ -77,23 +62,5 @@
             templateUrl: '/views/header.ejs',
             controller: 'HeaderCtrl',
             controllerAs: 'header'
-        };
-    });
-
-    app.directive('nemooLogin', function() {
-        return {
-            restrict: 'E',
-            templateUrl: '/views/login.ejs',
-            controller: 'AuthenticationCtrl',
-            controllerAs: 'loginCtrl'
-        };
-    });
-
-    app.directive('nemooSignUp', function() {
-        return {
-            restrict: 'E',
-            templateUrl: '/views/signup.ejs',
-            controller: 'AuthenticationCtrl',
-            controllerAs: 'signUpCtrl'
         };
     });
