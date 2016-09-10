@@ -1,17 +1,30 @@
-var Util = require('../util/util');
+var Q                   = require('q');
+
+var DiscussionHandler   = require('../util/discussionHandler');
+var Util                = require('../util/util');
 
 module.exports = function(app, passport) {
 
 // normal routes ===============================================================
 
     app.get('/', function(req, res) {
+        console.log('redirect');
         res.redirect('/page/home');
     });
 
     // Used by the routeProvider to include it in the html
-    app.get('/partials/:filename', function(req, res){
-        var filename = req.params.filename;
-        res.render(filename);
+    app.get('/partials/:discussion', function(req, res){
+        var discussion = req.params.discussion;
+        DiscussionHandler.getDiscussion(discussion).then(function(discussion){
+            res.render('discussion', {name: discussion.name, data: discussion.data});
+        }, function(err) {
+            res.render('error', {message: err, error: {} });
+        });
+    });
+
+    app.get('/test', function(req, res){
+        DiscussionHandler.populateDummy();
+        res.render('error', {message: 'Populated Data', error: {} });
     });
 
     // Always render the index to allow the routeProvider to match with the correct route

@@ -5,16 +5,16 @@
     app.config(function($routeProvider, $locationProvider, $mdThemingProvider) {
         $routeProvider
             .when('/page/:page', {
-                templateUrl : function(params){ return '/partials/' + params.page + '.ejs'; } ,
+                templateUrl : function(params){ return '/partials/' + params.page; } ,
                 controller  : 'DiscussionCtrl',
-                controllerAs: 'ctrl'
+                controllerAs: 'discussion'
             });
         $locationProvider.html5Mode({
             enabled: true,
             requireBase: false
         });
         
-        var customMap = $mdThemingProvider.extendPalette('deep-purple', {
+        var customMap = $mdThemingProvider.extendPalette('indigo', {
             'contrastDefaultColor': 'light',
             'contrastDarkColors': ['50'],
             '50': 'ffffff'

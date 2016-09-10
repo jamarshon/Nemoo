@@ -1,0 +1,14 @@
+<md-content ng-init="discussion.data = <%=JSON.stringify(data)%>">
+  <h1><%=name%></h1>
+  <md-list>
+    <md-list-item class="md-3-line" ng-repeat="item in discussion.data">
+      <img ng-src="{{item.profilePic}}" class="md-avatar">
+      <div class="md-list-item-text">
+        <h3>{{item.displayName}}</h3>
+        <h4>{{item.created | date : 'h:mm a MMM dd, yyyy'}}</h4>
+        <h4>{{item.message}}</h4>
+      </div>
+      <md-divider md-inset ng-if="!$last"></md-divider>
+    </md-list-item>
+  </md-list>
+</md-content>

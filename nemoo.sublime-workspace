@@ -340,26 +340,68 @@
 	"buffers":
 	[
 		{
+			"file": "views/header.ejs",
+			"settings":
+			{
+				"buffer_size": 2469,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "views/searchBox.ejs",
+			"settings":
+			{
+				"buffer_size": 1475,
+				"line_ending": "Windows",
+				"name": "<div layout=\"column\" ng-cloak>"
+			}
+		},
+		{
+			"file": "public/stylesheets/style.css",
+			"settings":
+			{
+				"buffer_size": 713,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "util/util.js",
+			"settings":
+			{
+				"buffer_size": 2887,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "public/javascripts/searchBox.js",
+			"settings":
+			{
+				"buffer_size": 2861,
+				"line_ending": "Windows",
+				"name": "(function () {"
+			}
+		},
+		{
+			"contents": "<html lang=\"en\" ng-app=\"StarterApp\">\n  <head>\n    <link rel=\"stylesheet\" href=\"//ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.css\">\n  </head>\n  <body layout=\"row\" ng-controller=\"AppCtrl\">\n    <md-sidenav layout=\"column\" class=\"md-sidenav-left md-whiteframe-z2\" md-component-id=\"left\" md-is-locked-open=\"$mdMedia('gt-md')\">\n      <md-toolbar class=\"md-tall md-hue-2\">\n        <span flex></span>\n        <div layout=\"column\" class=\"md-toolbar-tools-bottom inset\">\n          <user-avatar></user-avatar>\n          <span></span>\n          <div>Firstname Lastname</div>\n          <div>email@domainname.com</div>\n        </div>\n      </md-toolbar>\n      <md-list>\n      <md-item ng-repeat=\"item in menu\">\n        <a>\n          <md-item-content md-ink-ripple layout=\"row\" layout-align=\"start center\">\n            <div class=\"inset\">\n              <ng-md-icon icon=\"{{item.icon}}\"></ng-md-icon>\n            </div>\n            <div class=\"inset\">{{item.title}}\n            </div>\n          </md-item-content>\n        </a>\n      </md-item>\n      <md-divider></md-divider>\n      <md-subheader>Management</md-subheader>\n      <md-item ng-repeat=\"item in admin\">\n        <a>\n          <md-item-content md-ink-ripple layout=\"row\" layout-align=\"start center\">\n            <div class=\"inset\">\n              <ng-md-icon icon=\"{{item.icon}}\"></ng-md-icon>\n            </div>\n            <div class=\"inset\">{{item.title}}\n            </div>\n          </md-item-content>\n        </a>\n      </md-item>\n    </md-list>\n    </md-sidenav>\n    <div layout=\"column\" class=\"relative\" layout-fill role=\"main\">\n      <md-button class=\"md-fab md-fab-bottom-right\" aria-label=\"Add\" ng-click=\"showAdd($event)\">\n        <ng-md-icon icon=\"add\"></ng-md-icon>\n      </md-button>\n      <md-toolbar ng-show=\"!showSearch\">\n        <div class=\"md-toolbar-tools\">\n          <md-button ng-click=\"toggleSidenav('left')\" hide-gt-md aria-label=\"Menu\">\n            <ng-md-icon icon=\"menu\"></ng-md-icon>\n          </md-button>\n          <h3>\n            Dashboard\n          </h3>\n          <span flex></span>\n          <md-button aria-label=\"Search\" ng-click=\"showSearch = !showSearch\">\n            <ng-md-icon icon=\"search\"></ng-md-icon>\n          </md-button>\n          <md-button aria-label=\"Open Settings\" ng-click=\"showListBottomSheet($event)\">\n            <ng-md-icon icon=\"more_vert\"></ng-md-icon>\n          </md-button>\n        </div>\n        <md-tabs md-stretch-tabs class=\"md-primary\" md-selected=\"data.selectedIndex\">\n          <md-tab id=\"tab1\" aria-controls=\"tab1-content\">\n            Latest\n          </md-tab>\n          <md-tab id=\"tab2\" aria-controls=\"tab2-content\">\n            Favorites\n          </md-tab>\n        </md-tabs>\n      </md-toolbar>\n      <md-toolbar class=\"md-hue-1\" ng-show=\"showSearch\">\n        <div class=\"md-toolbar-tools\">\n          <md-button ng-click=\"showSearch = !showSearch\" aria-label=\"Back\">\n            <ng-md-icon icon=\"arrow_back\"></ng-md-icon>\n          </md-button>\n          <h3 flex=\"10\">\n            Back\n          </h3>\n          <md-input-container md-theme=\"input\" flex>\n            <label>&nbsp;</label>\n            <input ng-model=\"search.who\" placeholder=\"enter search\">\n          </md-input-container>\n          <md-button aria-label=\"Search\" ng-click=\"showSearch = !showSearch\">\n            <ng-md-icon icon=\"search\"></ng-md-icon>\n          </md-button>\n          <md-button aria-label=\"Open Settings\" ng-click=\"showListBottomSheet($event)\">\n            <ng-md-icon icon=\"more_vert\"></ng-md-icon>\n          </md-button>\n        </div>\n       \n      </md-toolbar>\n      <md-content flex md-scroll-y>\n        <ui-view layout=\"column\" layout-fill layout-padding>\n          <div class=\"inset\" hide-sm></div>\n            <ng-switch on=\"data.selectedIndex\" class=\"tabpanel-container\">\n              <div role=\"tabpanel\"\n                   id=\"tab1-content\"\n                   aria-labelledby=\"tab1\"\n                   ng-switch-when=\"0\"\n                   md-swipe-left=\"next()\"\n                   md-swipe-right=\"previous()\"\n                   layout=\"row\" layout-align=\"center center\">\n                  <md-card flex-gt-sm=\"90\" flex-gt-md=\"80\">\n                    <md-card-content>\n                      <h2>Activity</h2>\n                      <md-list>\n                        <md-item ng-repeat=\"item in activity | filter:search\">\n                          <md-item-content>\n                            <div class=\"md-tile-left inset\" hide-sm>\n                                <user-avatar></user-avatar>\n                            </div>\n                            <div class=\"md-tile-content\">\n                              <h3>{{item.what}}</h3>\n                              <h4>{{item.who}}</h4>\n                              <p>\n                                {{item.notes}}\n                              </p>\n                            </div>\n                          </md-item-content>\n                          <md-divider md-inset hide-sm ng-if=\"!$last\"></md-divider>\n                          <md-divider hide-gt-sm ng-if=\"!$last\"></md-divider>\n                        </md-item>\n                        <md-divider></md-divider>\n                        <md-item layout class=\"inset\">\n                            <md-button layout layout-align=\"start center\" flex class=\"md-primary\">\n                              <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z\"/></svg> More\n                            </md-button>\n                        </md-item>\n                      </md-list>\n                    </md-card-content>\n                  </md-card>\n              </div>\n              <div role=\"tabpanel\"\n                   id=\"tab2-content\"\n                   aria-labelledby=\"tab2\"\n                   ng-switch-when=\"1\"\n                   md-swipe-left=\"next()\"\n                   md-swipe-right=\"previous()\" \n                   layout=\"row\" layout-align=\"center center\">\n                  <md-card flex-gt-sm=\"90\" flex-gt-md=\"80\">\n                    <md-card-content>\n                      <h2>Favorites</h2>\n                      <md-list>\n                        <md-item ng-repeat=\"item in activity | filter:search | orderBy:'-what'\">\n                          <md-item-content>\n                            <div class=\"md-tile-left inset\" hide-sm>\n                                <user-avatar></user-avatar>\n                            </div>\n                            <div class=\"md-tile-content\">\n                              <h3>{{item.what}}</h3>\n                              <h4>{{item.who}}</h4>\n                              <p>\n                                {{item.notes}}\n                              </p>\n                            </div>\n                          </md-item-content>\n                          <md-divider md-inset hide-sm ng-if=\"!$last\"></md-divider>\n                          <md-divider hide-gt-sm ng-if=\"!$last\"></md-divider>\n                        </md-item>\n                        <md-divider></md-divider>\n                        <md-item layout class=\"inset\">\n                            <md-button layout layout-align=\"start center\" flex class=\"md-primary\">\n                              <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z\"/></svg> More\n                            </md-button>\n                        </md-item>\n                      </md-list>\n                    </md-card-content>\n                  </md-card>\n              </div>\n              \n          </ng-switch>\n          \n        </ui-view>\n      </md-content>\n    </div>\n    <!-- Angular Material Dependencies -->\n    <script src=\"//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular.min.js\"></script>\n    <script src=\"//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-animate.min.js\"></script>\n    <script src=\"//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular-aria.min.js\"></script>\n\n    <script src=\"//ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.js\"></script>\n    \n    <script src=\"//cdn.jsdelivr.net/angular-material-icons/0.4.0/angular-material-icons.min.js\"></script> \n  </body>\n</html>",
+			"settings":
+			{
+				"buffer_size": 8329,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "<md-list>\n      <md-item ng-repeat=\"item in menu\">\n        <a>\n          <md-item-content md-ink-ripple layout=\"row\" layout-align=\"start center\">\n            <div class=\"inset\">\n              <ng-md-icon icon=\"{{item.icon}}\"></ng-md-icon>\n            </div>\n            <div class=\"inset\">{{item.title}}\n            </div>\n          </md-item-content>\n        </a>\n      </md-item>\n      <md-divider></md-divider>\n      <md-subheader>Management</md-subheader>\n      <md-item ng-repeat=\"item in admin\">\n        <a>\n          <md-item-content md-ink-ripple layout=\"row\" layout-align=\"start center\">\n            <div class=\"inset\">\n              <ng-md-icon icon=\"{{item.icon}}\"></ng-md-icon>\n            </div>\n            <div class=\"inset\">{{item.title}}\n            </div>\n          </md-item-content>\n        </a>\n      </md-item>\n    </md-list>",
+			"settings":
+			{
+				"buffer_size": 847,
+				"line_ending": "Windows"
+			}
+		},
+		{
 			"file": "public/javascripts/script.js",
 			"settings":
 			{
-				"buffer_size": 2077,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "routes/routes.js",
-			"settings":
-			{
-				"buffer_size": 3025,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "public/javascripts/initApp.js",
-			"settings":
-			{
-				"buffer_size": 1529,
+				"buffer_size": 2054,
 				"line_ending": "Windows"
 			}
 		},
@@ -367,15 +409,15 @@
 			"file": "views/index.ejs",
 			"settings":
 			{
-				"buffer_size": 1885,
+				"buffer_size": 2023,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "views/header.ejs",
+			"file": "views/home.ejs",
 			"settings":
 			{
-				"buffer_size": 1731,
+				"buffer_size": 11,
 				"line_ending": "Windows"
 			}
 		},
@@ -383,17 +425,25 @@
 			"file": "views/login.ejs",
 			"settings":
 			{
-				"buffer_size": 3443,
-				"line_ending": "Windows",
-				"name": "<md-dialog aria-label=\"Mango (Fruit)\">"
+				"buffer_size": 840,
+				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "public/stylesheets/style.css",
+			"file": "views/signup.ejs",
 			"settings":
 			{
-				"buffer_size": 110,
-				"line_ending": "Unix"
+				"buffer_size": 1972,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "views/loginDialog.ejs",
+			"settings":
+			{
+				"buffer_size": 851,
+				"line_ending": "Windows",
+				"name": "<md-dialog aria-label=\"Mango (Fruit)\">"
 			}
 		}
 	],
@@ -487,8 +537,6 @@
 		"/C/Users/simon/Documents/Web Dev/nemoo",
 		"/C/Users/simon/Documents/Web Dev/nemoo/config",
 		"/C/Users/simon/Documents/Web Dev/nemoo/public",
-		"/C/Users/simon/Documents/Web Dev/nemoo/public/images/anonymous",
-		"/C/Users/simon/Documents/Web Dev/nemoo/public/images/user",
 		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts",
 		"/C/Users/simon/Documents/Web Dev/nemoo/public/stylesheets",
 		"/C/Users/simon/Documents/Web Dev/nemoo/routes",
@@ -497,19 +545,26 @@
 	],
 	"file_history":
 	[
+		"/C/Users/simon/AppData/Local/Temp/7zO1D82.tmp/index.html",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/initApp.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/authenticationDialog.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/util/util.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/views/index.ejs",
+		"/C/Users/simon/Documents/Web Dev/nemoo/routes/routes.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/app/models/user.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/config/passport.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/views/home.ejs",
 		"/C/Users/simon/Documents/Web Dev/nemoo/views/login.ejs",
-		"/C/Users/simon/Documents/Web Dev/nemoo/app/models/user.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/initApp.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/views/header.ejs",
-		"/C/Users/simon/Documents/Web Dev/nemoo/config/passport.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/views/signup.ejs",
 		"/C/Users/simon/Documents/Web Dev/nemoo/public/stylesheets/style.css",
+		"/C/Users/simon/AppData/Local/Temp/7zO69F2.tmp/signup.ejs",
+		"/C/Users/simon/AppData/Local/Temp/7zO2323.tmp/script.js",
+		"/C/Users/simon/AppData/Local/Temp/7zO604C.tmp/login.ejs",
+		"/C/Users/simon/Documents/Web Dev/nemoo/views/header.ejs",
 		"/C/Users/simon/Downloads/test/public/javascripts/script.js",
 		"/C/Users/simon/Downloads/test/views/index.ejs",
 		"/C/Users/simon/Documents/Web Dev/nemoo/app.js",
 		"/C/Users/simon/AppData/Local/Temp/7zO2678.tmp/index.ejs",
-		"/C/Users/simon/Documents/Web Dev/nemoo/views/signup.ejs",
 		"/C/Users/simon/Documents/Web Dev/nemoo/routes/index.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/config/passport2.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/views/profile.ejs",
@@ -517,7 +572,6 @@
 		"/C/Users/simon/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
 		"/C/Users/simon/Documents/Web Dev/nemoo/views/main.ejs",
 		"/C/Users/simon/AppData/Local/Temp/7zOE02D.tmp/index.html",
-		"/C/Users/simon/Documents/Web Dev/nemoo/views/index.ejs",
 		"/C/Users/simon/AppData/Local/Temp/7zO5C67.tmp/index.js",
 		"/C/Users/simon/AppData/Local/Temp/7zO26C9.tmp/script.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/views/main.ejs.html",
@@ -618,13 +672,7 @@
 		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/js/components/GameScreen.jsx",
 		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/css/matchingGame.css",
 		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/js/components/EpisodeTileGallery.jsx",
-		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/screenplayGame.html",
-		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/css/screenplayGame.css",
-		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/css/episodeTileGallery.css",
-		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/js/utility/gameScreenHelper.jsx",
-		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/js/utility/screenPlayGameHelper.jsx",
-		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/js/utility/googleAnalytics.jsx",
-		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/js/utility/googleAnalytics.js"
+		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/screenplayGame.html"
 	],
 	"find":
 	{
@@ -650,6 +698,16 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"lightgoldenrodyellow",
+			"ctrl",
+			"friends",
+			"tolowercase()",
+			"dlg",
+			"ctrl",
+			"login",
+			"toLowerCase",
+			"ctrl",
+			"LoginCtrl",
 			"auto-fo",
 			"ng-",
 			"55px",
@@ -767,17 +825,7 @@
 			"Router",
 			"react.router",
 			"router",
-			"rest",
-			"traversal",
-			"sort",
-			"console.log",
-			"rawPrice",
-			"rawPriceOne",
-			":",
-			" {",
-			"n1",
-			"|",
-			"font"
+			"rest"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -804,144 +852,24 @@
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "public/javascripts/script.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2077,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1138,
-								1138
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "routes/routes.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3025,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1165,
-								1165
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 163.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "public/javascripts/initApp.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1529,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1127,
-								1127
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 117.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "views/index.ejs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1885,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								685,
-								685
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 19.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
 					"file": "views/header.ejs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1731,
+						"buffer_size": 2469,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								850,
-								850
+								1274,
+								1274
 							]
 						],
 						"settings":
@@ -951,58 +879,58 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 305.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "views/login.ejs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3443,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3298,
-								3298
-							]
-						],
-						"settings":
-						{
-							"auto_name": "<md-dialog aria-label=\"Mango (Fruit)\">",
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 192.0,
+						"translation.y": 494.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "public/stylesheets/style.css",
+					"buffer": 1,
+					"file": "views/searchBox.ejs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 110,
+						"buffer_size": 1475,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								364,
+								364
+							]
+						],
+						"settings":
+						{
+							"auto_name": "<div layout=\"column\" ng-cloak>",
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "public/stylesheets/style.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 713,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								598,
+								628
 							]
 						],
 						"settings":
@@ -1013,7 +941,303 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "util/util.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2887,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								798,
+								798
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 1476.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "public/javascripts/searchBox.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2861,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2829,
+								2829
+							]
+						],
+						"settings":
+						{
+							"auto_name": "(function () {",
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1559.0,
+						"zoom_level": 1.0
+					},
 					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8329,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2768,
+								2768
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1424.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 847,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								158,
+								322
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "public/javascripts/script.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2054,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2054,
+								2054
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "views/index.ejs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2023,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1590,
+								1590
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 259.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "views/home.ejs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								11,
+								11
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "views/login.ejs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 840,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								260,
+								213
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "views/signup.ejs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1972,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								818,
+								818
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "views/loginDialog.ejs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 851,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								405,
+								412
+							]
+						],
+						"settings":
+						{
+							"auto_name": "<md-dialog aria-label=\"Mango (Fruit)\">",
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 19.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
 					"type": "text"
 				}
 			]
@@ -1021,7 +1245,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 27.0
+		"height": 35.0
 	},
 	"input":
 	{
@@ -1056,13 +1280,13 @@
 	},
 	"output.find_results":
 	{
-		"height": 228.0
+		"height": 90.0
 	},
 	"pinned_build_system": "",
 	"project": "nemoo.sublime-project",
 	"replace":
 	{
-		"height": 50.0
+		"height": 64.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -1072,12 +1296,36 @@
 		"selected_items":
 		[
 			[
-				"ind",
+				"ut",
+				"util\\util.js"
+			],
+			[
+				"inde",
 				"views\\index.ejs"
 			],
 			[
 				"uti",
 				"util\\util.js"
+			],
+			[
+				"init",
+				"public\\javascripts\\initApp.js"
+			],
+			[
+				"ind",
+				"views\\index.ejs"
+			],
+			[
+				"user",
+				"app\\models\\user.js"
+			],
+			[
+				"pass",
+				"config\\passport.js"
+			],
+			[
+				"routes",
+				"routes\\routes.js"
 			],
 			[
 				"util",
@@ -1088,24 +1336,12 @@
 				"app\\models\\user.js"
 			],
 			[
-				"routes",
-				"routes\\routes.js"
-			],
-			[
-				"pass",
-				"config\\passport.js"
-			],
-			[
 				"index",
 				"views\\index.ejs"
 			],
 			[
 				"route",
 				"routes\\routes.js"
-			],
-			[
-				"user",
-				"app\\models\\user.js"
 			],
 			[
 				"proifle",
@@ -1178,10 +1414,6 @@
 			[
 				"loading",
 				"frontend\\js\\components\\LoadingPage.jsx"
-			],
-			[
-				"inde",
-				"frontend\\index.html"
 			],
 			[
 				"load",
@@ -1574,14 +1806,6 @@
 			[
 				"p8",
 				"static\\legacy-modules\\source-code\\page8.html"
-			],
-			[
-				"p9",
-				"static\\legacy-modules\\source-code\\page9.html"
-			],
-			[
-				"dr",
-				"draw2.py"
 			]
 		],
 		"width": 0.0

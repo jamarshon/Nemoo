@@ -4,7 +4,7 @@
       <md-button aria-label="Menu" ng-click="header.togglePanel()">
         <md-icon class="material-icons">menu</md-icon>
       </md-button>
-      <h1> Logo </h1>
+      <h1> Nemoo </h1>
       <span flex></span>
       <span hide-xs style="padding-right: 15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{main.user.displayName}}</span>
       <img hide-xs ng-src="{{main.user.profilePic}}" style="border-radius: 50%; width: 50px; height: 50px" ng-style="{'background-color': '{{main.user.backgroundColor}}' } "/>
@@ -42,8 +42,7 @@
         </md-sidenav>
         <md-content flex layout-padding>
           <div layout="column" layout-fill layout-align="top center" style="overflow-x: hidden; overflow-y: auto;">
-            <p> {{main.user}} </p>
-            <p> {{main.loggedIn}} </p>
+            <div ng-view style="width: 100%;"></div>
           </div>
         </md-content>
       </section>
