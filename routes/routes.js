@@ -1,9 +1,13 @@
 var Q                   = require('q');
 
+var AppHandler          = require('../util/appHandler');
 var DiscussionHandler   = require('../util/discussionHandler');
 var Util                = require('../util/util');
 
 module.exports = function(app, passport) {
+    var io = app.io;
+    var globalDiscussion;
+    var globalApp;
 
 // normal routes ===============================================================
 
@@ -16,30 +20,33 @@ module.exports = function(app, passport) {
     app.get('/partials/:discussion', function(req, res){
         var discussion = req.params.discussion;
         DiscussionHandler.getDiscussion(discussion).then(function(discussion){
-            res.render('discussion', {name: discussion.name, data: discussion.data});
+            globalDiscussion = discussion;
+            res.render('components/discussion', {name: discussion.name, description: discussion.description, data: discussion.data});
         }, function(err) {
             res.render('error', {message: err, error: {} });
         });
-    });
-
-    app.get('/test', function(req, res){
-        DiscussionHandler.populateDummy();
-        res.render('error', {message: 'Populated Data', error: {} });
     });
 
     // Always render the index to allow the routeProvider to match with the correct route
     app.get('/page/:filename', function(req, res){
         var loggedIn = req.isAuthenticated(),
             user = loggedIn ? req.user : Util.generateAnonUser();
+
         console.log(user);
-        res.render('index', {user: user, loggedIn: loggedIn});
+        AppHandler.getApp().then(function(app){
+            globalApp = app;
+            res.render('index', {user: user, loggedIn: loggedIn, currentNumOnline: app.currentNumOnline});
+        }, function(errDefaultValue) {
+            res.render('index', {user: user, loggedIn: loggedIn, currentNumOnline: errDefaultValue});
+        });
+        
     });
 
     // Files to be imported in using ng-include
     app.get('/views/:filename', function(req, res){
         var filename = req.params.filename,
             data = req.params.data;
-        res.render(filename, {data: data});
+        res.render('components/' + filename, {data: data});
     });
 
     // LOGOUT ==============================
@@ -48,6 +55,35 @@ module.exports = function(app, passport) {
         res.redirect('/');
     });
 
+    app.get('/test', function(req, res){
+        DiscussionHandler.empty();
+        AppHandler.empty();
+        DiscussionHandler.populateDummy();
+        AppHandler.populateDummyApp();
+        res.render('error', {message: 'Populated Data', error: {} });
+    });
+
+    io.on('connection', function(socket){
+        if(globalApp) {
+            io.emit('user connected');
+            globalApp.adjustNumOnline(1);
+        }
+        socket.on('message sent', function(msg, user){
+            if(globalDiscussion) {
+                var currentTime = Date.now();
+                user.created = currentTime;
+                globalDiscussion.addMessage(user.displayName, user.profilePic, msg, 
+                                            user.backgroundColor, currentTime);
+                io.emit('message received', msg, user);
+            }
+        });
+        socket.on('disconnect', function(){
+            if(globalApp) {
+                io.emit('user disconnected');
+                globalApp.adjustNumOnline(-1);
+            }
+        });
+    });
 // =============================================================================
 // AUTHENTICATE (FIRST LOGIN) ==================================================
 // =============================================================================

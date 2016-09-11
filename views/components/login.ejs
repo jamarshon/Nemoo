@@ -1,0 +1,15 @@
+<md-content class="md-padding" style="width:500px">
+	<form name="loginForm" ng-submit="loginCtrl.submit('/login')">
+		<div style="margin-bottom:5px"><h2>Login</h2></div>
+		<md-input-container class="md-block">
+			<md-icon class="material-icons">email</md-icon>
+			<input ng-model="loginCtrl.data.email" type="email" name="email" placeholder="Email" required>
+		</md-input-container>
+		<md-input-container class="md-block" style="margin-bottom:7px">
+			<md-icon class="material-icons">vpn_key</md-icon>
+			<input ng-model="loginCtrl.data.password" type="password" name="password" placeholder="Password" required>
+		</md-input-container>
+		<div style="color: red; font-style: italic;">{{loginCtrl.message}}</div>
+		<md-button type="submit" class="md-accent md-raised" ng-disabled="loginForm.$invalid">Login</md-button>
+	</form>
+</md-content>

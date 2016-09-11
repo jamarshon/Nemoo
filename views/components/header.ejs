@@ -1,0 +1,46 @@
+<header style="overflow-x: hidden;"">
+  <md-toolbar id="nemoo-toolbar">
+    <div class="md-toolbar-tools">
+      <md-button aria-label="Menu" ng-click="header.togglePanel()">
+        <md-icon class="material-icons">menu</md-icon>
+      </md-button>
+      <h1> Nemoo </h1>
+      <span flex></span>
+      <span hide show-gt-sm style="padding-right: 15px;" class="ellipsis">{{main.user.displayName}}</span>
+      <img hide show-gt-sm ng-src="{{main.user.profilePic}}" style="border-radius: 50%; width: 50px; height: 50px" ng-style="{'background-color': '{{main.user.backgroundColor}}' } "/>
+
+      <div hide show-gt-sm>
+          <md-button href="/page/home" style="padding-right: 15px">Home</md-button> 
+          <md-button ng-hide="main.loggedIn" ng-click="header.showTabDialog($event, 0)" style="padding-right: 15px">Login</md-button> 
+          <md-button ng-hide="main.loggedIn" ng-click="header.showTabDialog($event, 1)" style="padding-right: 15px">Signup</md-button> 
+          <md-button ng-show="main.loggedIn" ng-click="header.redirect('/logout')" style="padding-right: 15px">Logout</md-button> 
+      </div>
+    </div>
+  </md-toolbar>
+    <div layout="column" ng-style="{height: header.height}">
+      <section layout="row" flex>
+        <md-sidenav
+            class="md-sidenav-left"
+            md-component-id="left"
+            md-is-open="header.open"
+            md-is-locked-open="$mdMedia('gt-sm') && header.open"
+            md-whiteframe="4">
+          <md-toolbar  class="md-primary">
+            <h1 hide-gt-xs class="md-toolbar-tools"> {{main.user.displayName}} 
+              <img ng-src="{{main.user.profilePic}}" style="border-radius: 50%; width: 50px; height: 50px; margin-left: 10px;" ng-style="{'background-color': '{{main.user.backgroundColor}}' } "/>
+            </h1>
+            <p hide-xs style="text-align: center;"> {{main.currentNumOnline}} users online </p>
+          </md-toolbar>
+          <div style="border: 1px solid lightgrey">
+          <nemoo-search-box></nemoo-search-box>
+          </div>
+
+          
+          <md-content layout-padding>
+            <p> Content </p>
+          </md-content>
+        </md-sidenav>
+        <md-content flex layout-padding ng-view> </md-content>
+      </section>
+    </div>
+</header>

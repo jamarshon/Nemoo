@@ -1,0 +1,13 @@
+<form layout layout-align="center" ng-init="messageCtrl.init(main)">
+    <div layout="row" flex>
+        <md-input-container flex class="md-no-momentum no-error" md-no-float>
+          <input id="message-input-box" ng-model="messageCtrl.message" 
+                type="text" placeholder="Enter message here!"
+                on-enter-pressed="messageCtrl.send()" autocomplete="off">
+        </md-input-container>
+        <div>
+            <md-button class="md-accent md-raised" ng-click="messageCtrl.send()" 
+                        ng-disabled="messageCtrl.message.length === 0">Send</md-button>
+        </div>
+    </div>  
+</form>

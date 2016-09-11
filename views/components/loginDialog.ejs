@@ -1,0 +1,27 @@
+<md-dialog>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>Login</h2>
+      <span flex></span>
+      <md-button class="md-icon-button" ng-click="dlgCtrl.cancel()">
+        <md-icon class="material-icons">close</md-icon>
+      </md-button>
+    </div>
+  </md-toolbar>
+  <md-dialog-content style="max-width:800px;max-height:810px; ">
+    <md-tabs md-dynamic-height md-border-bottom md-selected="dlgCtrl.selected">
+      <md-tab label="login">
+        <nemoo-login></nemoo-login>
+      </md-tab>
+      <md-tab label="sign-up">
+        <nemoo-sign-up></nemoo-sign-up>
+      </md-tab>
+    </md-tabs>
+  </md-dialog-content>
+  <md-dialog-actions layout="row">
+    <md-button ng-click="dlgCtrl.redirect('/auth/facebook')">
+      <i class="fa fa-facebook-official"></i>
+      Login with Facebook
+    </md-button>
+  </md-dialog-actions>
+</md-dialog>

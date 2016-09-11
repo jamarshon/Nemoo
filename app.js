@@ -9,10 +9,16 @@ var passport        = require('passport');
 var path            = require('path');
 var session         = require('express-session');
 
+
 var configDB        = require('./config/database.js');
 var routes          = require('./routes/routes.js');
+var socket_io    = require( "socket.io" );
 
 var app = express();
+
+// Socket.io
+var io           = socket_io();
+app.io           = io;
 
 mongoose.connect(configDB.url()); // connect to our database
 

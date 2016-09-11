@@ -1,3 +1,22 @@
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
 }
+
+.ellipsis {
+	text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+md-tooltip.custom-tool-tip .md-content {
+    height: auto;
+    white-space: normal;
+}
+
+md-tooltip.custom-tool-tip {
+    max-width: 400px;
+}
+
+.no-error > .md-errors-spacer {
+	display: none;
+}
