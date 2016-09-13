@@ -1,7 +1,10 @@
 // script.js
     var app = angular.module('App');
 
-    var scrollBottom = function(scrollContainer) {
+    var MAX_QUEUE_LENGTH = 25;
+
+    var scrollBottom = function() {
+        var scrollContainer = document.getElementById('scrollable-container');
         $(scrollContainer).scrollTop(scrollContainer.scrollHeight);
     };
 
@@ -17,14 +20,17 @@
         });
     });
 
-    app.controller('DiscussionCtrl', function($routeParams, $timeout, $scope) {
+    app.controller('DiscussionCtrl', function($routeParams, $timeout, $scope, $templateCache) {
         var that = this;
-        console.log($routeParams.page);
+        var page = $routeParams.page;
+        console.log(page);
+        $templateCache.remove('/partials/' + page);
         // Scroll the container to the bottom
         var scrollContainer = document.getElementById('scrollable-container');
-        $timeout(function(){ scrollBottom(scrollContainer); }, 0);
+        $timeout(function(){ scrollBottom(); }, 0);
 
         this.init = function(main){
+            main.page = page;
             this.main = main;
             this.main.socket.on('message received', function(msg, user){
                 var message = {
@@ -34,6 +40,9 @@
                     created: user.created,
                     message: msg
                 };
+                if(that.data.length > MAX_QUEUE_LENGTH) {
+                    that.data.shift();
+                }
                 that.data.push(message);
                 $scope.$apply();
             });
@@ -41,12 +50,21 @@
         
     });
 
+    app.filter('breakFilter', function (){
+        return function (text) {
+            if (text !== undefined) {
+                console.log(text);
+                console.log(text.replace(/\n/g, '<br />'));
+                return text.replace(/\n/g, '<br />');
+            }
+        };
+    });
+
     app.animation('.animate-message', [function() {
-        var scrollContainer = document.getElementById('scrollable-container');
         return {
             enter: function(element) {
                 $(element).addClass('animated bounce');
-                scrollBottom(scrollContainer);
+                scrollBottom();
             }
         };
     }]);

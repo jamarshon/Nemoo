@@ -1,5 +1,5 @@
   // initApp.js  
-    var app = angular.module('App', ['ngRoute', 'ngMaterial', 'ngMessages', 'ngAnimate']);
+    var app = angular.module('App', ['ngRoute', 'ngMaterial', 'ngMessages', 'ngAnimate', 'ngSanitize']);
 
     // configure our routes
     app.config(function($routeProvider, $locationProvider, $mdThemingProvider) {
@@ -8,6 +8,9 @@
                 templateUrl : function(params){ return '/partials/' + params.page; } ,
                 controller  : 'DiscussionCtrl',
                 controllerAs: 'discussionCtrl'
+            })
+            .when('/', {
+                templateUrl : '/views/home.ejs'
             });
         $locationProvider.html5Mode({
             enabled: true,

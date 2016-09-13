@@ -1,5 +1,5 @@
 var Q			= require('q');
-var Discussion  = require('../app/models/discussion');
+var Discussion  = require('../app/models/discussionModel');
 
 var discussionHandler = {};
 

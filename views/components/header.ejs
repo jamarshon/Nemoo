@@ -1,4 +1,4 @@
-<header style="overflow-x: hidden;"">
+<header>
   <md-toolbar id="nemoo-toolbar">
     <div class="md-toolbar-tools">
       <md-button aria-label="Menu" ng-click="header.togglePanel()">
@@ -10,10 +10,10 @@
       <img hide show-gt-sm ng-src="{{main.user.profilePic}}" style="border-radius: 50%; width: 50px; height: 50px" ng-style="{'background-color': '{{main.user.backgroundColor}}' } "/>
 
       <div hide show-gt-sm>
-          <md-button href="/page/home" style="padding-right: 15px">Home</md-button> 
+          <md-button ng-click="header.softRedirect('/')" style="padding-right: 15px">Home</md-button> 
           <md-button ng-hide="main.loggedIn" ng-click="header.showTabDialog($event, 0)" style="padding-right: 15px">Login</md-button> 
           <md-button ng-hide="main.loggedIn" ng-click="header.showTabDialog($event, 1)" style="padding-right: 15px">Signup</md-button> 
-          <md-button ng-show="main.loggedIn" ng-click="header.redirect('/logout')" style="padding-right: 15px">Logout</md-button> 
+          <md-button ng-show="main.loggedIn" ng-click="header.hardRedirect('/logout')" style="padding-right: 15px">Logout</md-button> 
       </div>
     </div>
   </md-toolbar>
@@ -32,12 +32,11 @@
             <p hide-xs style="text-align: center;"> {{main.currentNumOnline}} users online </p>
           </md-toolbar>
           <div style="border: 1px solid lightgrey">
-          <nemoo-search-box></nemoo-search-box>
+            <nemoo-search-box></nemoo-search-box>
           </div>
 
-          
-          <md-content layout-padding>
-            <p> Content </p>
+          <md-content>
+            <nemoo-panel></nemoo-panel>
           </md-content>
         </md-sidenav>
         <md-content flex layout-padding ng-view> </md-content>

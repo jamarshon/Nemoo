@@ -1,5 +1,5 @@
 var Q			= require('q');
-var App  		= require('../app/models/app');
+var App  		= require('../app/models/appModel');
 
 var APP_ID = 'Iamlightningtheraintransformed';
 var DEFAULT_NUM_ONLINE = 12;

@@ -3,7 +3,7 @@ var LocalStrategy    = require('passport-local').Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
 
 // load up the user model
-var User       = require('../app/models/user');
+var User       = require('../app/models/userModel');
 var Util       = require('../util/util');
 
 // load the auth variables

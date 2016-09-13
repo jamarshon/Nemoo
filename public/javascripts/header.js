@@ -1,9 +1,21 @@
 	
 	var app = angular.module('App');
 	
-	app.controller('HeaderCtrl', function($scope, $window, $mdSidenav, $mdMedia, $mdDialog) {
+	app.controller('HeaderCtrl', function($scope, $window, $mdSidenav, $mdMedia, $mdDialog, $location) {
         var that = this;
-        var windowsResizeHandler = function(){ that.height = $(window).height() - $("#nemoo-toolbar").height(); };
+        var isAndroid = getMobileOperatingSystem() === 'Android';
+
+        var windowsResizeHandler = function(event){
+            var newHeight = $(window).height() - $("#nemoo-toolbar").height();
+            if(isAndroid) {
+                if(!that.height) {
+                    that.height = newHeight;
+                    alert(newHeight);
+                }
+            } else {
+                that.height = newHeight;
+            }
+        };
 
         $scope.$watch(function() { return $mdMedia('gt-sm'); }, function(open) {
             that.open = open;
@@ -22,13 +34,14 @@
             }
         };
 
-        this.redirect = function(path) { $window.location.href = path; };
+        this.hardRedirect = function(path) { $window.location.href = path; };
+        this.softRedirect = function(path) { $location.url(path); };
 
         this.showTabDialog = function(ev, tabIdx) {
             $mdDialog.show({
               controller: function($mdDialog, $window){
                 this.hide = function() {
-                  $mdDialog.hide();
+                    $mdDialog.hide();
                 };
                 this.cancel = function() {
                     $mdDialog.cancel();
@@ -55,3 +68,29 @@
             controllerAs: 'header'
         };
     });
+
+    /**
+     * Determine the mobile operating system.
+     * This function returns one of 'iOS', 'Android', 'Windows Phone', or 'unknown'.
+     *
+     * @returns {String}
+     */
+    function getMobileOperatingSystem() {
+      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+          // Windows Phone must come first because its UA also contains "Android"
+        if (/windows phone/i.test(userAgent)) {
+            return "Windows Phone";
+        }
+
+        if (/android/i.test(userAgent)) {
+            return "Android";
+        }
+
+        // iOS detection from: http://stackoverflow.com/a/9039885/177710
+        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+            return "iOS";
+        }
+
+        return "unknown";
+    }

@@ -14,7 +14,7 @@
         <div class="md-list-item-text">
           <h3 style="display:inline;">{{item.displayName}}</h3>
           <h4 style="float: right;">{{item.created | date : 'h:mm a MMM dd, yyyy'}}</h4>
-          <h4>{{item.message}}</h4>
+          <h4 ng-bind-html="item.message"></h4>
         </div>
         <md-divider md-inset ng-if="!$last"></md-divider>
       </md-list-item>

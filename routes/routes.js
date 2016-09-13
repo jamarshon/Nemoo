@@ -8,27 +8,8 @@ module.exports = function(app, passport) {
     var io = app.io;
     var globalDiscussion;
     var globalApp;
-
-// normal routes ===============================================================
-
-    app.get('/', function(req, res) {
-        console.log('redirect');
-        res.redirect('/page/home');
-    });
-
-    // Used by the routeProvider to include it in the html
-    app.get('/partials/:discussion', function(req, res){
-        var discussion = req.params.discussion;
-        DiscussionHandler.getDiscussion(discussion).then(function(discussion){
-            globalDiscussion = discussion;
-            res.render('components/discussion', {name: discussion.name, description: discussion.description, data: discussion.data});
-        }, function(err) {
-            res.render('error', {message: err, error: {} });
-        });
-    });
-
-    // Always render the index to allow the routeProvider to match with the correct route
-    app.get('/page/:filename', function(req, res){
+    var globalDiscussionName;
+    var renderIndex = function(req, res) {
         var loggedIn = req.isAuthenticated(),
             user = loggedIn ? req.user : Util.generateAnonUser();
 
@@ -39,7 +20,30 @@ module.exports = function(app, passport) {
         }, function(errDefaultValue) {
             res.render('index', {user: user, loggedIn: loggedIn, currentNumOnline: errDefaultValue});
         });
-        
+    }
+
+// normal routes ===============================================================
+    
+    app.get('/', function(req, res) {
+        console.log('Root page');
+        renderIndex(req, res);
+    });
+
+    // Used by the routeProvider to include it in the html
+    app.get('/partials/:discussion', function(req, res){
+        globalDiscussionName = req.params.discussion;
+        var discussion = globalDiscussionName;
+        DiscussionHandler.getDiscussion(discussion).then(function(discussion){
+            globalDiscussion = discussion;
+            res.render('components/discussion', {name: Util.toTitleCase(discussion.name), description: discussion.description, data: discussion.data});
+        }, function(err) {
+            res.render('error', {message: err, error: {} });
+        });
+    });
+
+    // Always render the index to allow the routeProvider to match with the correct route
+    app.get('/page/:filename', function(req, res){
+        renderIndex(req, res);
     });
 
     // Files to be imported in using ng-include
@@ -58,6 +62,10 @@ module.exports = function(app, passport) {
     app.get('/test', function(req, res){
         DiscussionHandler.empty();
         AppHandler.empty();
+        var sockets = io.sockets.sockets;
+        for(var key in sockets) {
+            sockets[key].disconnect(true);
+        }
         DiscussionHandler.populateDummy();
         AppHandler.populateDummyApp();
         res.render('error', {message: 'Populated Data', error: {} });
@@ -68,7 +76,7 @@ module.exports = function(app, passport) {
             io.emit('user connected');
             globalApp.adjustNumOnline(1);
         }
-        socket.on('message sent', function(msg, user){
+        socket.on('message sent', function(msg, user) {
             if(globalDiscussion) {
                 var currentTime = Date.now();
                 user.created = currentTime;

@@ -1,9 +1,11 @@
 <form layout layout-align="center" ng-init="messageCtrl.init(main)">
     <div layout="row" flex>
         <md-input-container flex class="md-no-momentum no-error" md-no-float>
-          <input id="message-input-box" ng-model="messageCtrl.message" 
+          <textarea id="message-input-box" ng-model="messageCtrl.message" 
                 type="text" placeholder="Enter message here!"
-                on-enter-pressed="messageCtrl.send()" autocomplete="off">
+                on-enter-pressed="messageCtrl.send()" autocomplete="off"
+                on-ctrl-enter-pressed="messageCtrl.increaseRows()" rows="messageCtrl.rows"
+                ng-trim="false" custom-key-press></textarea>
         </md-input-container>
         <div>
             <md-button class="md-accent md-raised" ng-click="messageCtrl.send()" 

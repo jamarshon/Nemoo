@@ -11,6 +11,8 @@
 md-tooltip.custom-tool-tip .md-content {
     height: auto;
     white-space: normal;
+    background-color: rgba(0,0,0,1.0);
+    font-size: 12px;
 }
 
 md-tooltip.custom-tool-tip {
@@ -19,4 +21,13 @@ md-tooltip.custom-tool-tip {
 
 .no-error > .md-errors-spacer {
 	display: none;
+}
+
+md-item-content[md-ink-ripple] {
+  position: relative;
+}
+
+.fa.greyFA {
+  font-size: 20px;
+  color: rgba(0,0,0,0.54);
 }
