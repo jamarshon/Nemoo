@@ -1,7 +1,7 @@
 // authenticationDialog.js
 	var app = angular.module('App');
 
-	app.controller('AuthenticationCtrl', function($http, $window) {
+	app.controller('AuthenticationCtrl', ['$http', '$window', function($http, $window) {
         var that = this;
         this.data = {email: '', password: '', password2: ''};
         this.submit = function(url) {
@@ -13,7 +13,7 @@
                 }
             });
         };
-    });
+    }]);
 
     app.directive('nemooLogin', function() {
         return {

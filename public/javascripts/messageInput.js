@@ -1,6 +1,6 @@
     var app         = angular.module('App');
 
-	app.controller('MessageInputCtrl', function($timeout, $scope) {
+	app.controller('MessageInputCtrl', ['$timeout', '$scope', function($timeout, $scope) {
         var that = this;
         this.message = '';
         this.rows = 1;
@@ -19,7 +19,7 @@
             this.main = main;
         };
         this.increaseRows = function(){  this.message += '\n'; };
-    });
+    }]);
 
     app.directive('customKeyPress', function () {
         return function (scope, element, attrs) {

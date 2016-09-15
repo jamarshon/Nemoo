@@ -16,7 +16,8 @@
     { title: 'Some Article About Food' }
   ];
 
-  app.controller('PanelCtrl', function($location, $mdDialog, $window) {
+  app.controller('PanelCtrl', ['$location', '$mdDialog', '$window', 
+                    function($location, $mdDialog, $window) {
     var that = this;
     var createDiscussion = {
       callback : function(ev) {
@@ -68,13 +69,13 @@
     };
 
     this.softRedirect = function(path) { $location.url(path); };
-  });
+  }]);
 
-  app.controller('UserNavCtrl', function($window, $location) {
+  app.controller('UserNavCtrl', ['$window', '$location', function($window, $location) {
     this.hardRedirect = function(path) { $window.location.href = path; };
     this.softRedirect = function(path) { $location.url(path); };
     this.unfocus = function($event) { $($event.target).blur(); console.log($($event.target)); };
-  });
+  }]);
 
   app.directive('nemooPanel', function() {
       return {

@@ -2,7 +2,7 @@
     var app = angular.module('App', ['ngRoute', 'ngMaterial', 'ngMessages', 'ngAnimate', 'ngSanitize']);
 
     // configure our routes
-    app.config(function($routeProvider, $locationProvider, $mdThemingProvider) {
+    app.config(['$routeProvider', '$locationProvider', '$mdThemingProvider', function($routeProvider, $locationProvider, $mdThemingProvider) {
         $routeProvider
             .when('/page/:page', {
                 templateUrl : function(params){ return '/partials/' + params.page; } ,
@@ -31,7 +31,7 @@
             .accentPalette('amber');
         $mdThemingProvider.theme('input', 'default')
             .primaryPalette('grey');
-    });
+    }]);
 
     // Fix for facebook issue where after authentication it adds #_=_ to the url
     $(window).on('load', function(e){

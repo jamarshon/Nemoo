@@ -9,7 +9,7 @@
     };
 
     // For the user
-    app.controller('MainCtrl', function($scope) {
+    app.controller('MainCtrl', ['$scope', function($scope) {
         var that = this;
         this.socket = io();
         this.socket.on('user connected', function(){
@@ -18,9 +18,10 @@
         this.socket.on('user disconnected', function(){
             $scope.$apply(function(){ that.currentNumOnline--; });
         });
-    });
+    }]);
 
-    app.controller('DiscussionCtrl', function($routeParams, $timeout, $scope, $templateCache) {
+    app.controller('DiscussionCtrl', ['$routeParams', '$timeout', '$scope', '$templateCache',
+                        function($routeParams, $timeout, $scope, $templateCache) {
         var that = this;
         var page = $routeParams.page;
         console.log(page);
@@ -48,17 +49,7 @@
             });
         };
         
-    });
-
-    app.filter('breakFilter', function (){
-        return function (text) {
-            if (text !== undefined) {
-                console.log(text);
-                console.log(text.replace(/\n/g, '<br />'));
-                return text.replace(/\n/g, '<br />');
-            }
-        };
-    });
+    }]);
 
     app.animation('.animate-message', [function() {
         return {

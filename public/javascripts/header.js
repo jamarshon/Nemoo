@@ -1,7 +1,8 @@
 	
 	var app = angular.module('App');
 	
-	app.controller('HeaderCtrl', function($scope, $window, $mdSidenav, $mdMedia, $mdDialog, $location) {
+	app.controller('HeaderCtrl', ['$scope', '$window', '$mdSidenav', '$mdMedia', '$mdDialog', '$location', 
+                        function($scope, $window, $mdSidenav, $mdMedia, $mdDialog, $location) {
         var that = this;
         var isAndroid = getMobileOperatingSystem() === 'Android';
 
@@ -58,7 +59,7 @@
               clickOutsideToClose:true
             });
         };
-    });
+    }]);
 
     app.directive('nemooHeader', function() {
         return {

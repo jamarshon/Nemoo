@@ -1,7 +1,7 @@
 // searchBox.js
   var app = angular.module('App');
 
-  app.controller('SearchBoxCtrl', function($timeout, $q, $log) {
+  app.controller('SearchBoxCtrl', ['$timeout', '$q', '$log', function($timeout, $q, $log) {
     var self = this;
 
     self.simulateQuery = false;
@@ -93,7 +93,7 @@
       };
 
     }
-  });
+  }]);
 
   app.directive('nemooSearchBox', function() {
       return {

@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start": "nodemon ./bin/www",
+    "minify": "node ./scripts/minify"
   },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
@@ -14,7 +15,11 @@
     "ejs": "^2.5.1",
     "express": "~4.13.4",
     "express-session": "^1.14.0",
+    "imagemin": "^5.2.2",
+    "imagemin-mozjpeg": "^6.0.0",
+    "imagemin-pngquant": "^5.0.0",
     "method-override": "^2.3.6",
+    "minifier": "^0.8.0",
     "mongoose": "^4.5.9",
     "morgan": "~1.7.0",
     "passport": "^0.3.2",
