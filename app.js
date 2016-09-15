@@ -12,7 +12,7 @@ var session         = require('express-session');
 
 var configDB        = require('./config/database.js');
 var routes          = require('./routes/routes.js');
-var socket_io    = require( "socket.io" );
+var socket_io       = require( "socket.io" );
 
 var app = express();
 
