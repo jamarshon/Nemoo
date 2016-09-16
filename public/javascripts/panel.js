@@ -74,7 +74,7 @@
   app.controller('UserNavCtrl', ['$window', '$location', function($window, $location) {
     this.hardRedirect = function(path) { $window.location.href = path; };
     this.softRedirect = function(path) { $location.url(path); };
-    this.unfocus = function($event) { $($event.target).blur(); console.log($($event.target)); };
+    this.unfocus = function($event) { $($event.target).blur(); };
   }]);
 
   app.directive('nemooPanel', function() {

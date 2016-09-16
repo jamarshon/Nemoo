@@ -10,7 +10,6 @@
         this.send = function() {
             if(this.message) {
                 this.message = this.message.replace(/(?:\r\n|\r|\n)/g, '<br />');
-                console.log('hi ' + this.message);
                 this.main.socket.emit('message sent', this.message, this.main.user);
                 this.message = '';
             }

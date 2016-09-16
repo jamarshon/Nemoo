@@ -39,7 +39,7 @@
 
         this.showTabDialog = function(ev, tabIdx) {
             $mdDialog.show({
-              controller: function($mdDialog, $window){
+              controller: ['$mdDialog', '$window', function($mdDialog, $window){
                 this.hide = function() {
                     $mdDialog.hide();
                 };
@@ -50,7 +50,7 @@
                     $window.location.href = path;
                 };
                 this.selected = tabIdx;
-              },
+              }],
               controllerAs: 'dlgCtrl',
               templateUrl: '/views/loginDialog.ejs',
               parent: angular.element(document.body),
