@@ -11,7 +11,6 @@
             if(isAndroid) {
                 if(!that.height) {
                     that.height = newHeight;
-                    alert(newHeight);
                 }
             } else {
                 that.height = newHeight;
