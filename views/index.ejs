@@ -1,48 +1,49 @@
-<!-- index.html -->
-    <!DOCTYPE html>
+<!DOCTYPE html>
 
-    <!-- define angular app -->
-    <html ng-app="App">
-    <head>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Nemoo</title>
+<!-- define angular app -->
+<html ng-app="App">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nemoo</title>
 
-      <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
-      <script src="https://cdn.socket.io/socket.io-1.0.0.js"></script>
-      
-      <!-- Angular Material style sheet -->
-      <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+  <script src="https://cdn.socket.io/socket.io-1.0.0.js"></script>
+  
+  <!-- Angular Material style sheet -->
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-      <!-- load angular via CDN -->
-      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
-          <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
-          <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
-          <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
-          <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
-          <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-sanitize.min.js"></script>
+  <!-- load angular via CDN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-sanitize.min.js"></script>
 
-      <!-- Angular Material Library -->
-      <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
-      
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-      
-      <link rel="stylesheet" href="/stylesheets/style.css">
-      <script src="/javascripts/initApp.js"></script>
-      <script src="/javascripts/authenticationDialog.js"></script>
-      <script src="/javascripts/searchBox.js"></script>
-      <script src="/javascripts/panel.js"></script>
-      <script src="/javascripts/header.js"></script>
-      <script src="/javascripts/messageInput.js"></script>
-      <script src="/javascripts/script.js"></script>
-      <script src="/javascripts/ga.js"> </script>
-    </head>
+  <!-- Angular Material Library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <script src="/javascripts/initApp.js"></script>
+  <script src="/javascripts/authenticationDialogCtrl.js"></script>
+  <script src="/javascripts/searchBoxCtrl.js"></script>
+  <script src="/javascripts/panelCtrl.js"></script>
+  <script src="/javascripts/headerCtrl.js"></script>
+  <script src="/javascripts/messageInputCtrl.js"></script>
+  <script src="/javascripts/discussionCtrl.js"></script>
+  <script src="/javascripts/mainCtrl.js"></script>
+  <script src="/javascripts/ga.js"> </script>
+</head>
 
-    <!-- define angular controller -->
-    <body ng-controller="MainCtrl as main" 
-          ng-init="main.user = <%=JSON.stringify(user)%>; main.loggedIn = <%=loggedIn%>; main.currentNumOnline = <%=currentNumOnline%>;" 
-          class="ng-cloak">
+<!-- define angular controller -->
+<body ng-controller="MainCtrl as main" 
+      ng-init="main.user = <%=JSON.stringify(user)%>; main.loggedIn = <%=loggedIn%>; main.currentNumOnline = <%=currentNumOnline%>;" 
+      class="ng-cloak">
       <nemoo-header></nemoo-header>
-  </body>
+</body>
+
 </html>

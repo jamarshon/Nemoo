@@ -1,7 +1,17 @@
 var anonList = "alligator, anteater, armadillo, auroch, axolotl, badger, bat, beaver, buffalo, camel, chameleon, cheetah, chipmunk, chinchilla, chupacabra, cormorant, coyote, crow, dingo, dinosaur, dolphin, duck, elephant, ferret, fox, frog, giraffe, gopher, grizzly, hedgehog, hippo, hyena, jackal, ibex, ifrit, iguana, koala, kraken, lemur, leopard, liger, llama, manatee, mink, monkey, narwhal, nyan cat, orangutan, otter, panda, penguin, platypus, python, pumpkin, quagga, rabbit, raccoon, rhino, sheep, shrew, skunk, slow loris, squirrel, turtle, walrus, wolf, wolverine, wombat";
 anonList = anonList.split(", ");
 
-var colorList = "AntiqueWhite, Aqua, Aquamarine, Azure, Bisque, Black, BlanchedAlmond, Blue, BlueViolet, Brown, BurlyWood, CadetBlue, Chartreuse, Chocolate, Coral, CornflowerBlue, Crimson, Cyan, DarkBlue, DarkCyan, DarkGoldenRod, DarkGray, DarkGrey, DarkGreen, DarkKhaki, DarkMagenta, DarkOliveGreen, DarkOrange, DarkOrchid, DarkRed, DarkSalmon, DarkSeaGreen, DarkSlateBlue, DarkSlateGray, DarkSlateGrey, DarkTurquoise, DarkViolet, DeepPink, DeepSkyBlue, DimGray, DimGrey, DodgerBlue, FireBrick, FloralWhite, ForestGreen, Fuchsia, Gainsboro, Gold, GoldenRod, Gray, Grey, Green, GreenYellow, HotPink, IndianRed , Indigo , Ivory, Khaki, Lavender, LavenderBlush, LawnGreen, LightBlue, LightCoral, LightGray, LightGrey, LightGreen, LightPink, LightSalmon, LightSeaGreen, LightSkyBlue, LightSlateGray, LightSlateGrey, LightSteelBlue, LightYellow, Lime, LimeGreen, Magenta, Maroon, MediumAquaMarine, MediumBlue, MediumOrchid, MediumPurple, MediumSeaGreen, MediumSlateBlue, MediumSpringGreen, MediumTurquoise, MediumVioletRed, MidnightBlue, MistyRose, Moccasin, NavajoWhite, Navy, Olive, OliveDrab, Orange, OrangeRed, Orchid, PaleGoldenRod, PaleGreen, PaleTurquoise, PaleVioletRed, PeachPuff, Peru, Pink, Plum, PowderBlue, Purple, RebeccaPurple, Red, RosyBrown, RoyalBlue, SaddleBrown, Salmon, SandyBrown, SeaGreen, SeaShell, Sienna, Silver, SkyBlue, SlateBlue, SlateGray, SlateGrey, SpringGreen, SteelBlue, Tan, Teal, Thistle, Tomato, Turquoise, Violet, Wheat, Yellow, YellowGreen";
+var colorList = "Aqua, Aquamarine, Black, Blue, BlueViolet, Brown, BurlyWood, CadetBlue, Chartreuse, Chocolate, Coral, " +
+		"CornflowerBlue, Crimson, Cyan, DarkBlue, DarkCyan, DarkGoldenRod, DarkGrey, DarkGreen, DarkKhaki, DarkMagenta, " +
+		"DarkOliveGreen, DarkOrange, DarkOrchid, DarkRed, DarkSalmon, DarkSeaGreen, DarkSlateBlue, DarkSlateGrey, DarkTurquoise, DarkViolet, " +
+		"DeepPink, DeepSkyBlue, DimGray, DodgerBlue, FireBrick, ForestGreen, Fuchsia, Gold, GoldenRod, Gray, " +
+		"Green, GreenYellow, HotPink, IndianRed, Indigo, LawnGreen, LightBlue, LightCoral, LightGreen, LightPink, " +
+		"LightSalmon, LightSeaGreen, LightSkyBlue, LightSlateGray, Lime, LimeGreen, Magenta, Maroon, MediumAquaMarine, MediumBlue, " +
+		"MediumOrchid, MediumPurple, MediumSeaGreen, MediumSlateBlue, MediumSpringGreen, MediumTurquoise, MediumVioletRed, MidnightBlue, Navy, Olive, " +
+		"OliveDrab, Orange, OrangeRed, Orchid, PaleVioletRed, Peru, Plum, PowderBlue, Purple, RebeccaPurple, " +
+		"Red, RosyBrown, RoyalBlue, SaddleBrown, Salmon, SandyBrown, SeaGreen, Sienna, Silver, SkyBlue, " +
+		"SlateBlue, SlateGray, SpringGreen, SteelBlue, Tan, Teal, Tomato, Turquoise, Violet, Yellow, " +
+		"YellowGreen";
 colorList = colorList.split(", ");
 
 var userList = [
