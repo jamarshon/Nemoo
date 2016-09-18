@@ -11,31 +11,20 @@
       icon: 'settings'
     }
   ];
-  var trending = [
-    { title: 'Cats', },
-    { title: 'Some Article About Food' }
-  ];
 
-  app.controller('PanelCtrl', ['$location', '$mdDialog', '$window', 
-                    function($location, $mdDialog, $window) {
+  app.controller('PanelCtrl', ['$location', '$mdDialog', '$mdSidenav', '$mdMedia', '$http',
+                    function($location, $mdDialog, $mdSidenav, $mdMedia, $http) {
     var that = this;
     var createDiscussion = {
       callback : function(ev) {
           $mdDialog.show({
-            controller: function($mdDialog, $window){
-              this.hide = function() {
-                $mdDialog.hide();
-              };
-              this.cancel = function() {
-                $mdDialog.cancel();
-              };
-              this.redirect = function(path) {
-                $window.location.href = path;
-              };
-            },
+            controller: 'DiscussionDialogCtrl',
             controllerAs: 'dlgCtrl',
             templateUrl: '/views/createDiscussionDialog.ejs',
             parent: angular.element(document.body),
+            locals: {
+              user: that.main.user,
+            },
             targetEvent: ev,
             clickOutsideToClose:true
           });
@@ -45,7 +34,15 @@
     };
     general.unshift(createDiscussion);
     this.general = general;
-    this.trending = trending;
+    $http.get('/trendingDiscussions').then(function(res){
+      that.trending = res.data.discussions.map(function(e){
+        return {title: e};
+      });
+    });
+
+    this.init = function(main){
+      that.main = main;
+    };
 
     this.unfocus = function($event, item) {
       // This is for the Create Discussion
@@ -53,10 +50,22 @@
         item.callback($event);
       } else {
         // Just redirect when click on a trending discussion or a redirect page
-        var path = item.url || "/page/" + item.title.toLowerCase().split(" ").join("");      
+        var path = item.url || "/page/" + item.title.toLowerCase().split(' ').join('-');      
         that.softRedirect(path);
+        // If it is a discussion page, the input will mess up small screens so togglePanel
+        if(!item.url) {
+          that.togglePanel();
+        }
       }
       $($event.target).blur();
+    };
+
+    this.togglePanel = function() {
+      var sideNav = $mdSidenav('left'),
+          large = $mdMedia('gt-sm');
+      if(!large) {
+        sideNav.close();
+      }
     };
 
     // Removes the setting option from the panel if the user is not logged in
@@ -79,19 +88,19 @@
   }]);
 
   app.directive('nemooPanel', function() {
-      return {
-          restrict: 'E',
-          templateUrl: '/views/panel.ejs',
-          controller: 'PanelCtrl',
-          controllerAs: 'panelCtrl'
-      };
+    return {
+      restrict: 'E',
+      templateUrl: '/views/panel.ejs',
+      controller: 'PanelCtrl',
+      controllerAs: 'panelCtrl'
+    };
   });
 
   app.directive('nemooUserNavPanel', function() {
-      return {
-          restrict: 'E',
-          templateUrl: '/views/userNavPanel.ejs',
-          controller: 'UserNavCtrl',
-          controllerAs: 'userNavCtrl'
-      };
+    return {
+      restrict: 'E',
+      templateUrl: '/views/userNavPanel.ejs',
+      controller: 'UserNavCtrl',
+      controllerAs: 'userNavCtrl'
+    };
   });

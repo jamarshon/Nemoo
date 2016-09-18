@@ -26,7 +26,7 @@ appHandler.populateDummyApp = function() {
 	console.log('Populate App Dummy Script')
 	var newApp			      		= new App();
     newApp.id     					= APP_ID;
-    newApp.currentNumOnline     	= 0;
+    newApp.currentNumOnline = 0;
     newApp.save(function (err) {
         if(err) 
             console.error('Populate App Dummy Failure: ' + err);

@@ -53,7 +53,7 @@ module.exports = function(app, passport) {
     res.render('components/' + filename, {data: data});
   });
 
-  // LOGOUT ==============================
+  // Logout
   app.get('/logout', function(req, res) {
     req.logout();
     res.redirect('/');
@@ -66,6 +66,26 @@ module.exports = function(app, passport) {
     AppHandler.populateDummyApp();
     res.render('error', {message: 'Populated Data', error: {} });
   });
+
+  app.post('/createDiscussion', function(req, res){
+    var body = req.body;
+    DiscussionHandler.createDiscussion(body.category, body.name, body.description, body.user).then(function(discussion){
+      res.json( {redirect: '/page/' + discussion.name });
+    }, function(err){
+      res.json( { message: err });
+    });
+  });
+
+  app.get('/trendingDiscussions', function(req, res){
+    DiscussionHandler.getTrending().then(function(discussions){
+      var discussionNames = discussions.map(function(discussion){
+        return Util.toTitleCase(discussion.name);
+      });
+      res.json({discussions: discussionNames});
+    }, function(err){
+      res.json({discussions: []});
+    });
+  })
 
   io.on('connection', function(socket){
     if(globalApp) {
