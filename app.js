@@ -34,7 +34,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // required for passport
-app.use(session({ secret: 'iamlightningtheraintransformed', resave: false})); // session secret
+var sessionInstance = session({ secret: 'iamlightningtheraintransformed', resave: false});
+app.use(sessionInstance);
+
 require('./config/passport')(passport); // pass passport for configuration
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions

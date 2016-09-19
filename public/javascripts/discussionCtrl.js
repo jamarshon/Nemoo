@@ -20,7 +20,7 @@ app.controller('DiscussionCtrl', ['$routeParams', '$timeout', '$scope', '$templa
   this.init = function(main){
     main.page = page;
     this.main = main;
-    this.main.socket.on('message received', function(msg, user){
+    this.main.socket.on(this.main.page + ' message received', function(msg, user){
       var message = {
         displayName: user.displayName,
         profilePic: user.profilePic,

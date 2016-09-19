@@ -10,7 +10,7 @@ app.controller('MessageInputCtrl', ['$timeout', '$scope', function($timeout, $sc
   this.send = function() {
     if(this.message) {
       this.message = this.message.replace(/(?:\r\n|\r|\n)/g, '<br />');
-      this.main.socket.emit('message sent', this.message, this.main.user);
+      this.main.socket.emit('message sent', this.message, this.main.user, this.main.page);
       this.message = '';
     }
   };

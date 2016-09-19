@@ -7,16 +7,12 @@ var Util                = require('../util/util');
 
 module.exports = function(app, passport) {
   var io = app.io;
-  var globalDiscussion;
-  var globalApp;
-  var globalDiscussionName;
   var renderIndex = function(req, res) {
     var loggedIn = req.isAuthenticated(),
         user = loggedIn ? req.user : Util.generateAnonUser();
 
     console.log(user);
     AppHandler.getApp().then(function(app){
-      globalApp = app;
       res.render('index', {user: user, loggedIn: loggedIn, currentNumOnline: app.currentNumOnline});
     }, function(errDefaultValue) {
       res.render('index', {user: user, loggedIn: loggedIn, currentNumOnline: errDefaultValue});
@@ -31,10 +27,8 @@ module.exports = function(app, passport) {
 
   // Used by the routeProvider to include it in the html
   app.get('/partials/:discussion', function(req, res){
-    globalDiscussionName = req.params.discussion;
-    var discussion = globalDiscussionName;
-    DiscussionHandler.getDiscussion(discussion).then(function(discussion){
-      globalDiscussion = discussion;
+    var discussionName = req.params.discussion;
+    DiscussionHandler.getDiscussion(discussionName).then(function(discussion){
       res.render('components/discussion', {name: Util.toTitleCase(discussion.name), description: discussion.description, data: discussion.data});
     }, function(err) {
       res.render('error', {message: err, error: {} });
@@ -88,17 +82,21 @@ module.exports = function(app, passport) {
   })
 
   io.on('connection', function(socket){
-    if(globalApp) {
-      globalApp.adjustNumOnline(1);
-    }
-    socket.on('message sent', function(msg, user) {
-      if(globalDiscussion) {
-          var currentTime = Date.now();
-          user.created = currentTime;
-          globalDiscussion.addMessage(user.displayName, user.profilePic, msg, 
-                                      user.backgroundColor, currentTime);
-          io.emit('message received', msg, user);
-      }
+    AppHandler.getApp().then(function(app){
+      app.adjustNumOnline(1);
+    }, function(err){ console.log('[IO-APP-ERROR] ' + err); });
+
+    socket.on('message sent', function(msg, user, discussionName) {
+      console.log(discussionName);
+      DiscussionHandler.getDiscussion(discussionName).then(function(discussion){
+        var currentTime = Date.now();
+        user.created = currentTime;
+        discussion.addMessage(user.displayName, user.profilePic, msg, 
+                              user.backgroundColor, currentTime);
+        io.emit(discussionName + ' message received', msg, user);
+      }, function(err) {
+        console.log('[IO-DISCUSSION-ERROR] ' + err);
+      });
     });
   });
 
