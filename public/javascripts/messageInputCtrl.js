@@ -9,6 +9,11 @@ app.controller('MessageInputCtrl', ['$timeout', '$scope', function($timeout, $sc
   }, 0);
   this.send = function() {
     if(this.message) {
+      var emotifiedMsg = emojify.replace(this.message);
+      if(this.message !== emotifiedMsg) {
+        emotifiedMsg += '\n\n';
+      }
+      this.message = emotifiedMsg;
       this.message = this.message.replace(/(?:\r\n|\r|\n)/g, '<br />');
       this.main.socket.emit('message sent', this.message, this.main.user, this.main.page);
       this.message = '';

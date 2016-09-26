@@ -15,33 +15,62 @@ var colorList = "Aqua, Aquamarine, Black, Blue, BlueViolet, Brown, BurlyWood, Ca
 colorList = colorList.split(", ");
 
 var userList = [
-	"grey.png",
-	"orange.png",
-	"tabby.png"
+	{fileName: "grey.png", displayName: "grey-cat"},
+	{fileName: "orange.png", displayName: "orange-cat"},
+	{fileName: "tabby.png", displayName: "tabby-cat"}
 ];
 
-var getRandomInt = function(min, max) {
+var Util = {};
+Util.anonList = anonList;
+Util.colorList = colorList;
+Util.userList = userList;
+
+Util.getRandomInt = function(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
-module.exports = {
-	getRandomUserImg: function(){ return '/images/user/' + userList[getRandomInt(0, userList.length - 1)]; },
-	generateAnonUser: function() {
-		var id = getRandomInt(100, 1000),
-			imgNum = getRandomInt(0, userList.length),
-			backgroundColor = colorList[getRandomInt(0, colorList.length - 1)],
-			animal = anonList[imgNum];
+Util.getRandomUserImg = function(){ 
+	return '/images/user/' + Util.userList[Util.getRandomInt(0, Util.userList.length - 1)].fileName; 
+};
 
-		var anonUser = {
-			displayName: 'anonymous-' + animal + id,
-			profilePic: '/images/anonymous/' + animal + '_lg.png',
-			backgroundColor: backgroundColor.toLowerCase()
-		};
-		return anonUser;
-	},
-	getRandomInt: getRandomInt,
-	toTitleCase: function(str) {
-			str = str.split('-').join(' ');
-	    return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+Util.generateAnonUser = function(){
+	var day = (new Date()).getDay();
+	if(day % 2 === 0) {
+		return Util.generateAnonUserCat();
+	} else {
+		return Util.generateAnonUserGenericAnimal();
 	}
-}
+};
+
+Util.generateAnonUserCat = function() {
+	var id = Util.getRandomInt(100, 1000),
+			imgNum = Util.getRandomInt(0, Util.userList.length - 1),
+			cat = Util.userList[imgNum];
+
+	var anonUser = {
+		displayName: 'anonymous-' + cat.displayName + id,
+		profilePic: '/images/user/' + cat.fileName
+	};
+	return anonUser;
+};
+
+Util.generateAnonUserGenericAnimal = function() {
+	var id = Util.getRandomInt(100, 1000),
+			imgNum = Util.getRandomInt(0, Util.anonList.length),
+			backgroundColor = Util.colorList[Util.getRandomInt(0, Util.colorList.length - 1)],
+			animal = Util.anonList[imgNum];
+
+	var anonUser = {
+		displayName: 'anonymous-' + animal + id,
+		profilePic: '/images/anonymous/' + animal + '_lg.png',
+		backgroundColor: backgroundColor.toLowerCase()
+	};
+	return anonUser;
+},
+
+Util.toTitleCase = function(str) {
+	str = str.split('-').join(' ');
+  return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+};
+
+module.exports = Util;

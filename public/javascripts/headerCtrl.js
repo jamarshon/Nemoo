@@ -1,7 +1,8 @@
 var app = angular.module('App');
 
-app.controller('HeaderCtrl', ['$scope', '$window', '$mdSidenav', '$mdMedia', '$mdDialog', '$location', 
-                    function($scope, $window, $mdSidenav, $mdMedia, $mdDialog, $location) {
+app.controller('HeaderCtrl', ['$scope', '$window', '$mdSidenav', '$mdMedia', '$mdDialog', '$location',
+                    'loaderAnimation',
+                    function($scope, $window, $mdSidenav, $mdMedia, $mdDialog, $location, loaderAnimation) {
   var that = this;
   var isAndroid = getMobileOperatingSystem() === 'Android';
 
@@ -33,7 +34,7 @@ app.controller('HeaderCtrl', ['$scope', '$window', '$mdSidenav', '$mdMedia', '$m
     }
   };
 
-  this.hardRedirect = function(path) { $window.location.href = path; };
+  this.hardRedirect = function(path) { loaderAnimation.show(); $window.location.href = path; };
   this.softRedirect = function(path) { $location.url(path); };
 
   this.showTabDialog = function(ev, tabIdx) {

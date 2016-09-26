@@ -59,7 +59,6 @@ discussionHandler.populateDummy = function() {
 	var dummyUser = {
 		displayName: 'jasonl96',
 		profilePic: '/images/user/tabby.png',
-		backgroundColor: 'blue'
 	};
 	var discussions = ['cats', 'dogs', 'finance', 'memes'];
 	var description = 'A discussion about ';

@@ -1,6 +1,6 @@
 <form layout layout-align="center" ng-init="messageCtrl.init(main)">
   <div layout="row" flex>
-    <md-input-container flex class="md-no-momentum no-error" md-no-float>
+    <md-input-container flex class="md-no-momentum no-error no-resizer" md-no-float>
       <textarea id="message-input-box" ng-model="messageCtrl.message" 
             type="text" placeholder="Enter message here!"
             on-enter-pressed="messageCtrl.send()" autocomplete="off"

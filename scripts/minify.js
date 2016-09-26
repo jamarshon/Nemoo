@@ -10,7 +10,7 @@ var rootDir = './public';
 var outputDir = '../production';
 
 var inputs = ['/javascripts/', '/stylesheets/'];
-var imgDir = ['', 'anonymous/', 'user/'];
+var imgDir = ['', 'anonymous/', 'user/', 'emoji/'];
 
 // Minify the Javascript and CSS files
 minifier.on('error', function(err) {

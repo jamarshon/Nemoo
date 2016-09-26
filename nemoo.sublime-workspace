@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"dis",
+				"discussionName"
+			],
+			[
+				"globa",
+				"globalDiscussion"
+			],
+			[
+				"gol",
+				"globalDiscussion"
+			],
+			[
+				"new",
+				"newDiscussion"
+			],
+			[
+				"text",
+				"textarea	Tag"
+			],
+			[
 				"is",
 				"isAndroid"
 			],
@@ -196,10 +216,6 @@
 				"findEncodings"
 			],
 			[
-				"new",
-				"newValue"
-			],
-			[
 				"parent",
 				"parentNode"
 			],
@@ -351,70 +367,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "public/production/javascripts/header.js",
-			"settings":
-			{
-				"buffer_size": 1296,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "public/javascripts/searchBox.js",
-			"settings":
-			{
-				"buffer_size": 2889,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "public/javascripts/messageInput.js",
-			"settings":
-			{
-				"buffer_size": 1508,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "views/components/loginDialog.ejs",
-			"settings":
-			{
-				"buffer_size": 851,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "public/javascripts/authenticationDialog.js",
-			"settings":
-			{
-				"buffer_size": 1037,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "public/javascripts/header.js",
-			"settings":
-			{
-				"buffer_size": 3095,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "views/index.ejs",
-			"settings":
-			{
-				"buffer_size": 2516,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "public/javascripts/ga.js",
-			"settings":
-			{
-				"buffer_size": 402,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -504,52 +456,65 @@
 	"expanded_folders":
 	[
 		"/C/Users/simon/Documents/Web Dev/nemoo",
+		"/C/Users/simon/Documents/Web Dev/nemoo/app",
+		"/C/Users/simon/Documents/Web Dev/nemoo/app/models",
+		"/C/Users/simon/Documents/Web Dev/nemoo/bin",
 		"/C/Users/simon/Documents/Web Dev/nemoo/public",
 		"/C/Users/simon/Documents/Web Dev/nemoo/public/images",
 		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts",
-		"/C/Users/simon/Documents/Web Dev/nemoo/public/production/images",
-		"/C/Users/simon/Documents/Web Dev/nemoo/public/production/images/user",
-		"/C/Users/simon/Documents/Web Dev/nemoo/public/production/stylesheets",
-		"/C/Users/simon/Documents/Web Dev/nemoo/views/components"
+		"/C/Users/simon/Documents/Web Dev/nemoo/routes",
+		"/C/Users/simon/Documents/Web Dev/nemoo/views"
 	],
 	"file_history":
 	[
-		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/panel.ejs",
-		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/authenticationDialog.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/discussionCtrl.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/messageInputCtrl.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/util/util.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/routes/routes.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/app/models/discussionModel.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/app.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/header.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/public/images/anonymous/generator.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/messageInput.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/public/production/javascripts/messageInput.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/panel.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/public/production/javascripts/authenticationDialog.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/discussion.ejs",
-		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/initApp.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/script.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/searchBox.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/messageInput.ejs",
+		"/C/Users/simon/Documents/Web Dev/nemoo/bin/www",
 		"/C/Users/simon/Documents/Web Dev/nemoo/util/discussionHandler.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/createDiscussionDialog.ejs",
+		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/panel.ejs",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/panelCtrl.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/discussionDialogCtrl.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/header.ejs",
+		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/messageInput.ejs",
+		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/discussion.ejs",
+		"/C/Users/simon/Documents/Web Dev/nemoo/views/index.ejs",
+		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/signup.ejs",
+		"/C/Users/simon/Documents/Web Dev/nemoo/config/passport.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/stylesheets/style.css",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/headerCtrl.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/discussionDialogCtrl",
+		"/C/Users/simon/Documents/Web Dev/nemoo/util/appHandler.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/mainCtrl.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/userNavPanel.ejs",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/header.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/authenticationDialog.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/routes/passportRoutes.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/panel.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/initApp.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/messageInput.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/ga.js",
+		"/C/Users/simon/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/production/javascripts/header.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/searchBox.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/script.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/loginDialog.ejs",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/images/anonymous/generator.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/production/javascripts/messageInput.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/production/javascripts/authenticationDialog.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/scripts/minify.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/package.json",
-		"/C/Users/simon/Documents/Web Dev/nemoo/views/index.ejs",
 		"/C/Users/simon/Documents/Web Dev/nemoo/public/production/images/anonymous/badger_lg.png",
-		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/userNavPanel.ejs",
-		"/C/Users/simon/Documents/Web Dev/nemoo/routes/routes.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/createDiscussionDialog.ejs",
 		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/login.ejs",
-		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/header.ejs",
-		"/C/Users/simon/Documents/Web Dev/nemoo/util/util.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/home.ejs",
-		"/C/Users/simon/Documents/Web Dev/nemoo/public/stylesheets/style.css",
-		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/loginDialog.ejs",
 		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/searchBox.ejs",
-		"/C/Users/simon/Documents/Web Dev/nemoo/app/models/discussionModel.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/util/appHandler.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/config/passport.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/nemoo.sublime-workspace",
 		"/C/Users/simon/Documents/Web Dev/nemoo/app/models/app.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/app/models/discussion.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/bin/www",
 		"/C/Users/simon/Documents/Web Dev/nemoo/app/models/user.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/views/loginDialog.ejs",
 		"/C/Users/simon/Documents/Web Dev/nemoo/views/signup.ejs",
@@ -568,7 +533,6 @@
 		"/C/Users/simon/Documents/Web Dev/nemoo/routes/index.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/config/passport2.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/views/profile.ejs",
-		"/C/Users/simon/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/C/Users/simon/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
 		"/C/Users/simon/Documents/Web Dev/nemoo/views/main.ejs",
 		"/C/Users/simon/AppData/Local/Temp/7zOE02D.tmp/index.html",
@@ -630,18 +594,7 @@
 		"/C/Users/simon/Documents/GitHub/leetcode/1-9/1TwoSum.cpp",
 		"/C/Users/simon/Dropbox/WATERLOO/Programming/GeneralConcepts/postvsget.txt",
 		"/C/Users/simon/Dropbox/WATERLOO/Programming/GeneralConcepts/ssl.txt",
-		"/C/Users/simon/Dropbox/WATERLOO/Programming/JSConcepts/inheritance.js",
-		"/C/Users/simon/Dropbox/WATERLOO/Programming/GeneralConcepts/http.txt",
-		"/C/Users/simon/Dropbox/WATERLOO/Programming/GeneralConcepts/userauthentication.txt",
-		"/C/Users/simon/Dropbox/WATERLOO/Programming/DataStructures/levelOrder.js",
-		"/C/Users/simon/Documents/1/ParticleSwarm/ParticleSwarm3d.m",
-		"/C/Users/simon/Documents/1/K-Means/kmeanscluster.m",
-		"/C/Users/simon/Documents/1/ParticleSwarm/ParticleSwarm.m",
-		"/C/Users/simon/Dropbox/WATERLOO/Programming/Algorithm/longestCommonSubstring.js",
-		"/C/Users/simon/Dropbox/WATERLOO/Programming/InterviewQuestions.txt",
-		"/C/Users/simon/Dropbox/WATERLOO/Programming/Algorithm/allSubstring.js",
-		"/C/Users/simon/Dropbox/WATERLOO/Programming/JSConcepts/apply-call-bind.js",
-		"/C/Users/simon/Dropbox/WATERLOO/Programming/JSConcepts/ascii.js"
+		"/C/Users/simon/Dropbox/WATERLOO/Programming/JSConcepts/inheritance.js"
 	],
 	"find":
 	{
@@ -667,6 +620,31 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"global",
+			"req.session",
+			"console.log",
+			"globalapp",
+			"console.log",
+			"globalDiscussion",
+			"globalDiscussionName",
+			"socket",
+			"solid lightgrey",
+			"$http.post",
+			"$http.get",
+			".get",
+			"ng-init",
+			"init",
+			"trending",
+			"$route",
+			"main",
+			"Automotive",
+			"/logout",
+			"$window",
+			"$mdDialog",
+			"$window",
+			"Android",
+			"currentNumOnline",
+			"removeSettings",
 			"console.log",
 			"unfocus",
 			"console.log",
@@ -769,32 +747,7 @@
 			"isSmallMode",
 			"createDropDown",
 			"retrieveState",
-			"handleHamburgerClick",
-			"clickedOnHamburger",
-			"isSmallmode",
-			"insertEpisodePair",
-			"BabbelgamesDb",
-			"db",
-			"session",
-			"session_token",
-			"isLoggedIn",
-			"resizehandler",
-			"imgName",
-			"isSmallMode",
-			"desktopmode",
-			"styles.",
-			"createDropDown",
-			"handlehamburgerclick",
-			"handlehamb",
-			"styles.",
-			"isSmallMode",
-			"desktopmode",
-			"styles",
-			"drop_and_redirect",
-			"localStorage",
-			"editmode",
-			"https",
-			"link"
+			"handleHamburgerClick"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -821,251 +774,14 @@
 	"groups":
 	[
 		{
-			"selected": 7,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "public/production/javascripts/header.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1296,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								264,
-								269
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
-						},
-						"translation.x": 10544.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "public/javascripts/searchBox.js",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 2889,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "public/javascripts/messageInput.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1508,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 215.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "views/components/loginDialog.ejs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 851,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "public/javascripts/authenticationDialog.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1037,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								103,
-								107
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 306.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "public/javascripts/header.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3095,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1839,
-								1839
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "views/index.ejs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2516,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2190,
-								2190
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 624.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "public/javascripts/ga.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 402,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								402,
-								402
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 35.0
+		"height": 27.0
 	},
 	"input":
 	{
@@ -1100,13 +816,13 @@
 	},
 	"output.find_results":
 	{
-		"height": 406.0
+		"height": 486.0
 	},
 	"pinned_build_system": "",
 	"project": "nemoo.sublime-project",
 	"replace":
 	{
-		"height": 64.0
+		"height": 50.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -1116,16 +832,136 @@
 		"selected_items":
 		[
 			[
-				"index",
-				"views\\index.ejs"
+				"utils",
+				"util\\util.js"
+			],
+			[
+				"app",
+				"app.js"
+			],
+			[
+				"dis",
+				"app\\models\\discussionModel.js"
+			],
+			[
+				"discu",
+				"app\\models\\discussionModel.js"
+			],
+			[
+				"discuss",
+				"public\\javascripts\\discussionCtrl.js"
+			],
+			[
+				"message",
+				"public\\javascripts\\messageInputCtrl.js"
+			],
+			[
+				"routes",
+				"routes\\routes.js"
+			],
+			[
+				"discussiondia",
+				"public\\javascripts\\discussionDialogCtrl.js"
+			],
+			[
+				"panel",
+				"views\\components\\panel.ejs"
 			],
 			[
 				"hea",
-				"public\\javascripts\\header.js"
+				"views\\components\\header.ejs"
+			],
+			[
+				"pane",
+				"views\\components\\panel.ejs"
+			],
+			[
+				"create",
+				"views\\components\\createDiscussionDialog.ejs"
+			],
+			[
+				"d",
+				"util\\discussionHandler.js"
+			],
+			[
+				"util",
+				"util\\util.js"
+			],
+			[
+				"",
+				"public\\javascripts\\panelCtrl.js"
+			],
+			[
+				"discussionct",
+				"public\\javascripts\\discussionCtrl.js"
+			],
+			[
+				"messa",
+				"public\\javascripts\\messageInputCtrl.js"
+			],
+			[
+				"discussion",
+				"public\\javascripts\\discussionCtrl.js"
+			],
+			[
+				"discus",
+				"views\\components\\discussion.ejs"
+			],
+			[
+				"disc",
+				"public\\javascripts\\discussionCtrl.js"
+			],
+			[
+				"messag",
+				"public\\javascripts\\messageInputCtrl.js"
+			],
+			[
+				"discussionmode",
+				"app\\models\\discussionModel.js"
+			],
+			[
+				"pass",
+				"config\\passport.js"
+			],
+			[
+				"ind",
+				"views\\index.ejs"
 			],
 			[
 				"head",
-				"public\\production\\javascripts\\header.js"
+				"views\\components\\header.ejs"
+			],
+			[
+				"route",
+				"routes\\routes.js"
+			],
+			[
+				"sty",
+				"public\\stylesheets\\style.css"
+			],
+			[
+				"sig",
+				"views\\components\\signup.ejs"
+			],
+			[
+				"discussionm",
+				"app\\models\\discussionModel.js"
+			],
+			[
+				"h",
+				"views\\components\\header.ejs"
+			],
+			[
+				"apphand",
+				"util\\appHandler.js"
+			],
+			[
+				"user",
+				"views\\components\\userNavPanel.ejs"
+			],
+			[
+				"index",
+				"views\\index.ejs"
 			],
 			[
 				"dialog",
@@ -1160,20 +996,8 @@
 				"views\\components\\panel.ejs"
 			],
 			[
-				"app",
-				"app.js"
-			],
-			[
-				"dis",
-				"views\\components\\discussion.ejs"
-			],
-			[
 				"mesa",
 				"public\\javascripts\\messageInput.js"
-			],
-			[
-				"disc",
-				"views\\components\\discussion.ejs"
 			],
 			[
 				"min",
@@ -1192,20 +1016,8 @@
 				"public\\javascripts\\script.js"
 			],
 			[
-				"discuss",
-				"util\\discussionHandler.js"
-			],
-			[
 				"mes",
 				"views\\components\\messageInput.ejs"
-			],
-			[
-				"panel",
-				"views\\components\\panel.ejs"
-			],
-			[
-				"routes",
-				"routes\\routes.js"
 			],
 			[
 				"authe",
@@ -1220,24 +1032,8 @@
 				"views\\components\\discussion.ejs"
 			],
 			[
-				"discus",
-				"views\\components\\discussion.ejs"
-			],
-			[
-				"message",
-				"public\\javascripts\\messageInput.js"
-			],
-			[
 				"routs",
 				"routes\\routes.js"
-			],
-			[
-				"util",
-				"util\\util.js"
-			],
-			[
-				"discussion",
-				"views\\components\\discussion.ejs"
 			],
 			[
 				"usernav",
@@ -1256,32 +1052,12 @@
 				"views\\components\\header.ejs"
 			],
 			[
-				"messag",
-				"public\\javascripts\\messageInput.js"
-			],
-			[
-				"sty",
-				"public\\stylesheets\\style.css"
-			],
-			[
 				".ejs",
 				"views\\components\\login.ejs"
 			],
 			[
-				"ind",
-				"views\\index.ejs"
-			],
-			[
 				"script",
 				"public\\javascripts\\script.js"
-			],
-			[
-				"discu",
-				"util\\discussionHandler.js"
-			],
-			[
-				"apphand",
-				"util\\appHandler.js"
 			],
 			[
 				"apphan",
@@ -1294,10 +1070,6 @@
 			[
 				"inde",
 				"views\\index.ejs"
-			],
-			[
-				"",
-				"app\\models\\app.js"
 			],
 			[
 				"discuh",
@@ -1320,14 +1092,6 @@
 				"views\\components\\messageInput.ejs"
 			],
 			[
-				"route",
-				"routes\\routes.js"
-			],
-			[
-				"messa",
-				"views\\components\\messageInput.ejs"
-			],
-			[
 				"loi",
 				"views\\components\\login.ejs"
 			],
@@ -1344,10 +1108,6 @@
 				"app.js"
 			],
 			[
-				"pass",
-				"config\\passport.js"
-			],
-			[
 				"use",
 				"app\\models\\user.js"
 			],
@@ -1358,10 +1118,6 @@
 			[
 				"uti",
 				"util\\util.js"
-			],
-			[
-				"user",
-				"app\\models\\user.js"
 			],
 			[
 				"us",
@@ -1586,46 +1342,6 @@
 			[
 				"app.",
 				"frontend\\js\\components\\App.jsx"
-			],
-			[
-				"long",
-				"Algorithm\\longestUniqSubstring.js"
-			],
-			[
-				"var",
-				"JSConcepts\\identying-variable-type.js"
-			],
-			[
-				"qu",
-				"Sorting\\quickSort.js"
-			],
-			[
-				"bina",
-				"Algorithm\\binarySearch.js"
-			],
-			[
-				"sel",
-				"Sorting\\selectionSort.js"
-			],
-			[
-				"b",
-				"Sorting\\bubbleSort.js"
-			],
-			[
-				"ins",
-				"Sorting\\insertionSort.js"
-			],
-			[
-				"selec",
-				"Sorting\\selectionSort.js"
-			],
-			[
-				"merg",
-				"Sorting\\mergeSort.js"
-			],
-			[
-				"al",
-				"Algorithm\\allSubstring.js"
 			]
 		],
 		"width": 0.0
@@ -1638,7 +1354,7 @@
 		[
 			[
 				"",
-				"C:\\Users\\simon\\Documents\\Web Dev\\react-hot-boilerplate\\boilerplate.sublime-project"
+				"C:\\Users\\simon\\Documents\\GitHub\\leetcode\\leetcode.sublime-project"
 			]
 		],
 		"width": 526.0

@@ -4,8 +4,8 @@
 
 .ellipsis {
 	text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 md-tooltip.custom-tool-tip .md-content {
@@ -30,4 +30,8 @@ md-item-content[md-ink-ripple] {
 .fa.greyFA {
   font-size: 20px;
   color: rgba(0,0,0,0.54);
+}
+
+.no-resizer > .md-resize-handle {
+  cursor: auto;
 }

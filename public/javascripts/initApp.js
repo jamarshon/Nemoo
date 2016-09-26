@@ -15,6 +15,7 @@ app.config(['$routeProvider', '$locationProvider', '$mdThemingProvider', functio
     enabled: true,
     requireBase: false
   });
+
   
   var customMap = $mdThemingProvider.extendPalette('indigo', {
     'contrastDefaultColor': 'light',
@@ -28,8 +29,31 @@ app.config(['$routeProvider', '$locationProvider', '$mdThemingProvider', functio
         'hue-1': '50'
     })
     .accentPalette('amber');
-  $mdThemingProvider.theme('input', 'default')
-    .primaryPalette('grey');
+  // var customPrimary = {
+  //       '50': '#ffe6d3',
+  //       '100': '#ffd7ba',
+  //       '200': '#ffc9a0',
+  //       '300': '#ffba87',
+  //       '400': '#ffac6d',
+  //       '500': '#ff9d54',
+  //       '600': '#ff8e3a',
+  //       '700': '#ff8021',
+  //       '800': '#ff7107',
+  //       '900': '#ed6500',
+  //       'A100': '#fff5ed',
+  //       'A200': '#ffffff',
+  //       'A400': '#ffffff',
+  //       'A700': '#d35a00',
+  //       'contrastDefaultColor': 'light',
+  //       'contrastDarkColors': ['50'],
+  //   };
+
+  //   $mdThemingProvider
+  //       .definePalette('customPrimary', 
+  //                       customPrimary);
+  //   $mdThemingProvider.theme('default')
+  //      .primaryPalette('customPrimary')
+  //      .accentPalette('amber');
 }]);
 
 // Fix for facebook issue where after authentication it adds #_=_ to the url
