@@ -1,0 +1,1 @@
+var app=angular.module("App");app.factory("loaderAnimation",function(){var n={};return n.show=function(){$("#loadingAnimation").css("display","block")},n.hide=function(){$("#loadingAnimation").css("display","none")},n});
