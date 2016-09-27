@@ -87,7 +87,6 @@ module.exports = function(app, passport) {
     }, function(err){ console.log('[IO-APP-ERROR] ' + err); });
 
     socket.on('message sent', function(msg, user, discussionName) {
-      console.log(discussionName);
       DiscussionHandler.getDiscussion(discussionName).then(function(discussion){
         var currentTime = Date.now();
         user.created = currentTime;

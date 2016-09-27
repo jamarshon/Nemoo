@@ -13,7 +13,8 @@
         <img ng-src="{{item.profilePic}}" class="md-avatar" ng-style="{'background-color': '{{item.backgroundColor}}' } "/>
         <div class="md-list-item-text">
           <h3 style="display:inline;">{{item.displayName}}</h3>
-          <h4 style="float: right;">{{item.created | date : 'h:mm a MMM dd, yyyy'}}</h4>
+          <h4 hide show-gt-sm style="float: right;">{{item.created | date : 'h:mm a MMM dd, yyyy'}}</h4>
+          <h4 hide-gt-sm style="float: right;">{{item.created | date : 'hh:mm'}}</h4>
           <p ng-bind-html="item.message" style="color: rgba(0,0,0,0.87); word-break: break-word;"></p>
         </div>
         <md-divider md-inset ng-if="!$last"></md-divider>
