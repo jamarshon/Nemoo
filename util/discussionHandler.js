@@ -59,7 +59,7 @@ discussionHandler.populateDummy = function() {
 	console.log('Populate Dummy Script')
 	var dummyUser = {
 		displayName: 'jasonl96',
-		profilePic: '/images/user/tabby.png',
+		profilePic: '/images/user/tabby.jpg',
 	};
 	var discussions = ['cats', 'dogs', 'finance', 'memes'];
 	var description = 'A discussion about ';

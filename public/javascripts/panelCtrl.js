@@ -52,18 +52,19 @@
       } else {
         // Just redirect when click on a trending discussion or a redirect page
         var path = item.url || "/page/" + item.title.toLowerCase().split(' ').join('-');      
-        that.softRedirect(path);
         // If it is a discussion page, the input will mess up small screens so togglePanel
-        that.togglePanel();
+        that.togglePanel(function(){
+          that.softRedirect(path);
+        });
       }
       $($event.target).blur();
     };
 
-    this.togglePanel = function() {
+    this.togglePanel = function(callback) {
       var sideNav = $mdSidenav('left'),
           large = $mdMedia('gt-sm');
       if(!large) {
-        sideNav.close();
+        sideNav.close().then(callback);
       }
     };
 

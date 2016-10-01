@@ -1,6 +1,7 @@
 var app = angular.module('App');
 
-app.controller('MessageInputCtrl', ['$timeout', '$scope', '$mdSidenav', function($timeout, $scope, $mdSidenav) {
+app.controller('MessageInputCtrl', ['$timeout', '$scope', 
+                            function($timeout, $scope) {
   var that = this;
   this.message = '';
   this.rows = 1;

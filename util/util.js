@@ -15,9 +15,9 @@ var colorList = "Aqua, Aquamarine, Black, Blue, BlueViolet, Brown, BurlyWood, Ca
 colorList = colorList.split(", ");
 
 var userList = [
-	{fileName: "grey.png", displayName: "grey-cat"},
-	{fileName: "orange.png", displayName: "orange-cat"},
-	{fileName: "tabby.png", displayName: "tabby-cat"}
+	{fileName: "grey.jpg", displayName: "grey-cat"},
+	{fileName: "orange.jpg", displayName: "orange-cat"},
+	{fileName: "tabby.jpg", displayName: "tabby-cat"}
 ];
 
 var Util = {};

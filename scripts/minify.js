@@ -11,31 +11,40 @@ var rootDir = './public';
 var outputDir = '../production';
 
 var inputs = ['/javascripts/', '/stylesheets/'];
-var imgDir = ['', 'anonymous/', 'user/', 'emoji/'];
+//var imgDir = ['', 'anonymous/', 'user/', 'emoji/'];
+var imgDir = ['user/'];
 var minfiyImg = process.env.npm_config_i;
 
-// Minify the Javascript and CSS files
-minifier.on('error', function(err) {
-    // handle any potential error
-    console.log('[ERROR]: ' + err);
-});
-
-for(var i = 0; i < inputs.length; i++) {
-	var input = inputs[i];
-	console.log('Minifying ' + input);
-	minifier.minify(rootDir + input, {template: outputDir + input + '{{filename}}.{{ext}}'});
+if(minfiyImg) {
+	minifyImages();
+} else {
+	minifyAssets();
 }
 
-if(minfiyImg) {
+function minifyAssets() {
+	// Minify the Javascript and CSS files
+	minifier.on('error', function(err) {
+	    // handle any potential error
+	    console.log('[ERROR]: ' + err);
+	});
+
+	for(var i = 0; i < inputs.length; i++) {
+		var input = inputs[i];
+		console.log('Minifying ' + input);
+		minifier.minify(rootDir + input, {template: outputDir + input + '{{filename}}.{{ext}}'});
+	}
+}
+
+function minifyImages() {
 	// Compress the images
 	var imgPath = rootDir + '/images/';
 	var outputImgPath = rootDir + '/production/images/';
-
+	var test = [];
 	for(var i = 0; i < imgDir.length; i++) {
 		var input = imgDir[i];
 		imagemin([imgPath + input + '*.{jpg,PNG,png}'], outputImgPath + input, {
 		    plugins: [
-		        imageminMozjpeg({targa: true}),
+		        imageminMozjpeg(),
 		        imageminPngquant({quality: '65-80'})
 		    ]
 		}).then(function(files) {
@@ -43,11 +52,12 @@ if(minfiyImg) {
 			console.log('Compressing Images: ' + files[0].path + ' - ' + len);
 			for(var i = 0; i < len; i++) {
 				var file = files[i],
-					path = file.path;
+						path = file.path;
 				file.mv(file.path, function(err) {
-			        if (err) { console.log('[ERROR]: ' + err); }
-			    });
+			    if (err) { console.log('[ERROR]: ' + err); }
+				});
 			}
 		});
 	}
+
 }
