@@ -1,10 +1,11 @@
 var app = angular.module('App');
 
-app.controller('MessageInputCtrl', ['$timeout', '$scope', 
-                            function($timeout, $scope) {
+app.controller('MessageInputCtrl', ['$timeout', '$scope', '$mdMedia',
+                            function($timeout, $scope, $mdMedia) {
   var that = this;
   this.message = '';
   this.rows = 1;
+
   $timeout(function(){
       $('#message-input-box').focus();
   }, 0);
@@ -28,6 +29,9 @@ app.controller('MessageInputCtrl', ['$timeout', '$scope',
     this.rows++;
     this.message += '\n'; 
   };
+
+  this.enterHandler = $mdMedia('xs') ? this.increaseRows : this.send;
+  this.ctrlEnterHandler = $mdMedia('xs') ? this.send : this.increaseRows;
 
   $scope.$watch(function(){ return $('#message-input-box').height(); }, 
                 function(newVal, oldVal){

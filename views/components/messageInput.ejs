@@ -4,8 +4,8 @@
       <textarea
             md-no-resize id="message-input-box" ng-model="messageCtrl.message" 
             type="text" placeholder="Enter message here!"
-            on-enter-pressed="messageCtrl.send()" autocomplete="off"
-            on-ctrl-enter-pressed="messageCtrl.increaseRows()" rows="1"
+            on-enter-pressed="messageCtrl.enterHandler()" autocomplete="off"
+            on-ctrl-enter-pressed="messageCtrl.ctrlEnterHandler()" rows="1"
             ng-trim="false" custom-key-press></textarea>
     </md-input-container>
     <div>
