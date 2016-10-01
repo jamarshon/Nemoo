@@ -379,7 +379,16 @@
 			"file": "views/components/home.ejs",
 			"settings":
 			{
-				"buffer_size": 2277,
+				"buffer_size": 1669,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "views/index.ejs",
+			"settings":
+			{
+				"buffer_size": 3043,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -804,26 +813,57 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2277,
+						"buffer_size": 1669,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								897,
-								897
+								1669,
+								1669
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
-						"translation.x": 428.0,
+						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "views/index.ejs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3043,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								365,
+								365
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 53.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -881,6 +921,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"ind",
+				"views\\index.ejs"
+			],
 			[
 				"util",
 				"util\\util.js"
@@ -944,10 +988,6 @@
 			[
 				"message",
 				"public\\javascripts\\messageInputCtrl.js"
-			],
-			[
-				"ind",
-				"views\\index.ejs"
 			],
 			[
 				"authen",

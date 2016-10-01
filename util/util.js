@@ -57,7 +57,7 @@ Util.generateAnonUserCat = function() {
 
 Util.generateAnonUserGenericAnimal = function() {
 	var id = Util.getRandomInt(100, 1000),
-			imgNum = Util.getRandomInt(0, Util.anonList.length),
+			imgNum = Util.getRandomInt(0, Util.anonList.length - 1),
 			backgroundColor = Util.colorList[Util.getRandomInt(0, Util.colorList.length - 1)],
 			animal = Util.anonList[imgNum];
 

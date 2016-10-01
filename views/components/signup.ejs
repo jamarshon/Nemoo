@@ -1,7 +1,7 @@
-<md-content class="md-padding" style="width:500px">
+<md-content class="md-padding">
   <form name="signupForm" ng-submit="signUpCtrl.submit('/signup')">
-    <div style="margin-bottom:7px; margin-top:7px"><h2>Sign Up</h2></div>
-    <md-input-container class="md-block" style="margin-bottom:7px; margin-top:7px">
+    <!-- <div style="margin-bottom:7px; margin-top:7px"><h2>Sign Up</h2></div> -->
+    <md-input-container class="md-block" style="margin-bottom:7px; margin-top:18px">
       <md-icon class="material-icons">email</md-icon>
       <input ng-model="signUpCtrl.data.email" type="email" name="email" placeholder="Email" required>
     </md-input-container>
@@ -10,7 +10,7 @@
       <input ng-model="signUpCtrl.data.password" type="password" name="password" placeholder="Password" 
               minlength="8" ng-pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/" required>
     </md-input-container>
-    <md-input-container class="md-block" style="margin-bottom:7px; margin-top:7px">
+    <md-input-container class="md-block" style="margin-bottom:0px; margin-top:7px">
       <md-icon class="material-icons" style="visibility: hidden">vpn_key</md-icon>
       <input ng-model="signUpCtrl.data.password2" type="password" name="password2" placeholder="Confirm password" 
            ng-pattern="{{signUpCtrl.data.password}}" required>

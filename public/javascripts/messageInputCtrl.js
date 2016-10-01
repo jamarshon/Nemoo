@@ -1,28 +1,40 @@
 var app = angular.module('App');
 
-app.controller('MessageInputCtrl', ['$timeout', '$scope', function($timeout, $scope) {
+app.controller('MessageInputCtrl', ['$timeout', '$scope', '$mdSidenav', function($timeout, $scope, $mdSidenav) {
   var that = this;
   this.message = '';
   this.rows = 1;
   $timeout(function(){
       $('#message-input-box').focus();
   }, 0);
+
   this.send = function() {
     if(this.message) {
       var emotifiedMsg = emojify.replace(this.message);
-      if(this.message !== emotifiedMsg) {
-        emotifiedMsg += '\n\n';
-      }
       this.message = emotifiedMsg;
       this.message = this.message.replace(/(?:\r\n|\r|\n)/g, '<br />');
       this.main.socket.emit('message sent', this.message, this.main.user, this.main.page);
       this.message = '';
+      this.rows = 1;
     }
   };
+
   this.init = function(main){
     this.main = main;
   };
-  this.increaseRows = function(){  this.message += '\n'; };
+
+  this.increaseRows = function(){  
+    this.rows++;
+    this.message += '\n'; 
+  };
+
+  $scope.$watch(function(){ return $('#message-input-box').height(); }, 
+                function(newVal, oldVal){
+    if(newVal) {
+      var newHeight = Math.min(that.rows * 30, newVal);
+      $('#message-input-box').attr("rows", that.rows).height(newHeight);
+    }
+  });
 }]);
 
 app.directive('customKeyPress', function () {

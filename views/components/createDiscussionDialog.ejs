@@ -1,4 +1,4 @@
-<md-dialog>
+<md-dialog flex="80" flex-gt-sm="40">
   <md-toolbar>
     <div class="md-toolbar-tools">
       <h2>Create Discussion</h2>
@@ -8,8 +8,8 @@
       </md-button>
     </div>
   </md-toolbar>
-  <md-dialog-content style="max-width:800px;max-height:810px; ">
-    <md-content class="md-padding" style="width:500px">
+  <md-dialog-content>
+    <md-content class="md-padding">
       <form name="discussionForm" ng-submit="dlgCtrl.submit('/createDiscussion', main)">
 
         <md-input-container class="md-block" style="margin-bottom:18px; margin-top:7px" md-no-float>

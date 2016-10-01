@@ -32,6 +32,7 @@ discussionHandler.createDiscussion = function(category, name, description, user)
 				    newDiscussion.name     				= name;
 				    newDiscussion.description     = description;
 				    newDiscussion.category				= category;
+				    newDiscussion.messageCount		= 0;
 				    newDiscussion.data						= [];
 				newDiscussion.addMessage(user.displayName, user.profilePic, description, user.backgroundColor, Date.now());
 	    	deferred.resolve(newDiscussion);
@@ -44,7 +45,7 @@ discussionHandler.createDiscussion = function(category, name, description, user)
 
 discussionHandler.getTrending = function() {
 	var deferred = Q.defer();
-	Discussion.find({}).sort({ _id : -1 }).limit(7).exec(function(err, discussions) {
+	Discussion.find({}).sort({ messageCount : 'desc' }).limit(7).exec(function(err, discussions) {
 		if(err) {
 			deferred.reject(err);
 		} else{

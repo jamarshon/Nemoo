@@ -13,19 +13,9 @@
 		<div class="inset">
 			<md-icon class="material-icons">account_box</md-icon>
 		</div>
-		<div class="inset">Login</div>
+		<div class="inset">Login / Sign-Up</div>
 	</md-item-content>
 </a>
-
-<a ng-click="userNavCtrl.unfocus($event); header.showTabDialog($event, 1)">
-	<md-item-content md-ink-ripple layout="row" layout-align="start center" ng-hide="main.loggedIn" style="cursor: pointer;">
-		<div class="inset">
-			<i class="fa fa-sign-in greyFA"></i>
-		</div>
-		<div class="inset">Sign-Up</div>
-	</md-item-content>
-</a>
-
 
 <a ng-click="userNavCtrl.hardRedirect('/logout')">
 	<md-item-content md-ink-ripple layout="row" layout-align="start center" ng-show="main.loggedIn" style="cursor: pointer;" >

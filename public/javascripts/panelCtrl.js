@@ -1,9 +1,9 @@
   var app = angular.module('App');
   var general = [
     {
-      url : '/contact',
-      title: 'Contact Us',
-      icon: 'email'
+      url : '/explore',
+      title: 'Explore',
+      icon: 'cloud'
     },
     {
       url : '/settings',
@@ -17,6 +17,7 @@
     var that = this;
     var createDiscussion = {
       callback : function(ev) {
+          that.togglePanel();
           $mdDialog.show({
             controller: 'DiscussionDialogCtrl',
             controllerAs: 'dlgCtrl',
@@ -53,9 +54,7 @@
         var path = item.url || "/page/" + item.title.toLowerCase().split(' ').join('-');      
         that.softRedirect(path);
         // If it is a discussion page, the input will mess up small screens so togglePanel
-        if(!item.url) {
-          that.togglePanel();
-        }
+        that.togglePanel();
       }
       $($event.target).blur();
     };
@@ -81,10 +80,19 @@
     this.softRedirect = function(path) { $location.url(path); };
   }]);
 
-  app.controller('UserNavCtrl', ['$window', '$location', function($window, $location) {
+  app.controller('UserNavCtrl', ['$window', '$location', '$mdSidenav', '$mdMedia',
+                        function($window, $location, $mdSidenav, $mdMedia) {
+    var that = this;
     this.hardRedirect = function(path) { $window.location.href = path; };
     this.softRedirect = function(path) { $location.url(path); };
-    this.unfocus = function($event) { $($event.target).blur(); };
+    this.unfocus = function($event) { that.togglePanel(); $($event.target).blur(); };
+    this.togglePanel = function() {
+      var sideNav = $mdSidenav('left'),
+          large = $mdMedia('gt-sm');
+      if(!large) {
+        sideNav.close();
+      }
+    };
   }]);
 
   app.directive('nemooPanel', function() {

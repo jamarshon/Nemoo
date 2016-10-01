@@ -4,25 +4,10 @@ app.controller('HeaderCtrl', ['$scope', '$window', '$mdSidenav', '$mdMedia', '$m
                     'loaderAnimation',
                     function($scope, $window, $mdSidenav, $mdMedia, $mdDialog, $location, loaderAnimation) {
   var that = this;
-  var isAndroid = getMobileOperatingSystem() === 'Android';
-
-  var windowsResizeHandler = function(event){
-    var newHeight = $(window).height() - $("#nemoo-toolbar").height();
-    if(isAndroid) {
-      if(!that.height) {
-        that.height = newHeight;
-      }
-    } else {
-      that.height = newHeight;
-    }
-  };
 
   $scope.$watch(function() { return $mdMedia('gt-sm'); }, function(open) {
     that.open = open;
   });
-
-  $(window).resize(windowsResizeHandler);
-  windowsResizeHandler();
 
   this.togglePanel = function() {
     var sideNav = $mdSidenav('left'),

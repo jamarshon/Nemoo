@@ -6,6 +6,7 @@ var discussionSchema = mongoose.Schema({
     name: String,
     description: String,
     category: String,
+    messageCount: Number,
     data: [{
         displayName: String,
         profilePic: String,
@@ -27,6 +28,7 @@ discussionSchema.methods.addMessage = function(displayName, profilePic, message,
         this.data.shift();
     }
     this.data.push(message);
+    this.messageCount++;
     this.save(function (err) {
         if(err) 
             console.error('addMessage failure: ' + err);

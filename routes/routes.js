@@ -6,7 +6,6 @@ var PassportRoutes      = require('./passportRoutes');
 var Util                = require('../util/util');
 
 module.exports = function(app, passport) {
-  var io = app.io;
   var renderIndex = function(req, res) {
     var loggedIn = req.isAuthenticated(),
         user = loggedIn ? req.user : Util.generateAnonUser();
@@ -81,7 +80,7 @@ module.exports = function(app, passport) {
     });
   })
 
-  io.on('connection', function(socket){
+  app.io.on('connection', function(socket){
     AppHandler.getApp().then(function(app){
       app.adjustNumOnline(1);
     }, function(err){ console.log('[IO-APP-ERROR] ' + err); });
@@ -92,7 +91,7 @@ module.exports = function(app, passport) {
         user.created = currentTime;
         discussion.addMessage(user.displayName, user.profilePic, msg, 
                               user.backgroundColor, currentTime);
-        io.emit(discussionName + ' message received', msg, user);
+        app.io.emit(discussionName + ' message received', msg, user);
       }, function(err) {
         console.log('[IO-DISCUSSION-ERROR] ' + err);
       });

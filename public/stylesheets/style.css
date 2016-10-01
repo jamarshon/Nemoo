@@ -32,6 +32,6 @@ md-item-content[md-ink-ripple] {
   color: rgba(0,0,0,0.54);
 }
 
-.no-resizer > .md-resize-handle {
-  cursor: auto;
+p > img.emoji {
+  margin-bottom: 0px;
 }
