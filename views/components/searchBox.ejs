@@ -1,35 +1,28 @@
-<!-- <md-input-container layout-padding md-no-float>
-  <input class="nemoo-search-box" ng-model="searchBoxCtrl.title" placeholder="Search discussions">
-</md-input-container> -->
-
 <md-content>
   <form ng-submit="$event.preventDefault()" style="overflow: hidden;" layout="row">
     <md-icon class="material-icons">search</md-icon>
     <div flex>
     <md-autocomplete
-        ng-disabled="searchBoxCtrl.isDisabled"
-        md-no-cache="searchBoxCtrl.noCache"
+        md-no-cache="true"
         md-selected-item="searchBoxCtrl.selectedItem"
         md-search-text-change="searchBoxCtrl.searchTextChange(searchBoxCtrl.searchText)"
         md-search-text="searchBoxCtrl.searchText"
         md-selected-item-change="searchBoxCtrl.selectedItemChange(item)"
         md-items="item in searchBoxCtrl.querySearch(searchBoxCtrl.searchText)"
-        md-item-text="item.name"
-        md-min-length="0"
+        md-item-text="item.displayName"
+        md-min-length="3"
         placeholder="Search for a discussion"
-        md-menu-class="autocomplete-custom-template">
+        ng-model-options="{debounce: 500}"
+        md-menu-class="autocomplete-template">
     
       <md-item-template>
-        <span class="item-title">
-          <i class="fa fa-github"></i>
-          <span> {{item.name}} </span>
+        <span class="item-title ellipsis">
+          <i class="fa fa-angle-double-right"></i>
+          <strong> {{item.displayName}} </strong><span>{{' (' + item.category + ')'}}</span>
         </span>
-        <span class="item-metadata">
+        <span class="item-metadata ellipsis">
           <span class="item-metastat">
-            <strong>{{item.watchers}}</strong> watchers
-          </span>
-          <span class="item-metastat">
-            <strong>{{item.forks}}</strong> forks
+            <span>{{item.description}}</span>
           </span>
         </span>
       </md-item-template>

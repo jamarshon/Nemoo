@@ -35,3 +35,15 @@ md-item-content[md-ink-ripple] {
 p > img.emoji {
   margin-bottom: 0px;
 }
+
+.autocomplete-template li {
+  border-bottom: 1px solid #ccc;
+  height: auto; }
+
+.autocomplete-template li:last-child {
+  border-bottom-width: 0; }
+
+.autocomplete-template .item-title,
+.autocomplete-template .item-metadata {
+  display: block;
+  line-height: 2; }

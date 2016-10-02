@@ -4,6 +4,7 @@ var MAX_QUEUE_LENGTH = 25;
 
 var discussionSchema = mongoose.Schema({
     name: String,
+    displayName: String,
     description: String,
     category: String,
     messageCount: Number,

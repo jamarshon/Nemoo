@@ -8,7 +8,7 @@
 	</md-item-content>
 </a>
 
-<a ng-click="userNavCtrl.unfocus($event); header.showTabDialog($event, 0)">
+<a ng-click="userNavCtrl.unfocus($event, header.showTabDialog);">
 	<md-item-content md-ink-ripple layout="row" layout-align="start center" ng-hide="main.loggedIn" style="cursor: pointer;">
 		<div class="inset">
 			<md-icon class="material-icons">account_box</md-icon>

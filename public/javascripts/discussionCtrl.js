@@ -7,19 +7,23 @@ var scrollBottom = function() {
   $(scrollContainer).scrollTop(scrollContainer.scrollHeight);
 };
 
-app.controller('DiscussionCtrl', ['$routeParams', '$timeout', '$scope', '$templateCache',
-                    function($routeParams, $timeout, $scope, $templateCache) {
+app.controller('DiscussionCtrl', ['$routeParams', '$timeout', '$scope', '$templateCache', 'toastManager',
+                    function($routeParams, $timeout, $scope, $templateCache, toastManager) {
   var that = this;
   var page = $routeParams.page;
   console.log(page);
   $templateCache.remove('/partials/' + page);
   // Scroll the container to the bottom
   var scrollContainer = document.getElementById('scrollable-container');
-  $timeout(function(){ scrollBottom(); }, 0);
+  $timeout(function(){ 
+    scrollBottom();
+    toastManager.showSimple('Currently viewing "' + that.pageName + '"', 3000);
+  });
 
-  this.init = function(main){
+  this.init = function(main, name){
     main.page = page;
     this.main = main;
+    this.pageName = name;
     this.main.socket.on(this.main.page + ' message received', function(msg, user){
       var message = {
         displayName: user.displayName,

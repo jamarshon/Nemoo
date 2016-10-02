@@ -1,5 +1,6 @@
-var Q			= require('q');
+var Q						= require('q');
 var Discussion  = require('../app/models/discussionModel');
+var Util				= require('../util/util');
 
 var discussionHandler = {};
 
@@ -30,6 +31,7 @@ discussionHandler.createDiscussion = function(category, name, description, user)
 	    	console.log('New discussion created: ' + name);
 	    	var newDiscussion       					= new Discussion();
 				    newDiscussion.name     				= name;
+				    newDiscussion.displayName     = Util.toTitleCase(name);
 				    newDiscussion.description     = description;
 				    newDiscussion.category				= category;
 				    newDiscussion.messageCount		= 0;
@@ -46,6 +48,20 @@ discussionHandler.createDiscussion = function(category, name, description, user)
 discussionHandler.getTrending = function() {
 	var deferred = Q.defer();
 	Discussion.find({}).sort({ messageCount : 'desc' }).limit(7).exec(function(err, discussions) {
+		if(err) {
+			deferred.reject(err);
+		} else{
+			deferred.resolve(discussions);
+		}
+	});
+	return deferred.promise;
+};
+
+discussionHandler.search = function(query) {
+	var deferred = Q.defer();
+	var searchName = {name: {$regex : query}};
+	var searchDescription = {description: {$regex : query}};
+	Discussion.find({$or: [searchName, searchDescription]}).limit(7).exec(function(err, discussions){
 		if(err) {
 			deferred.reject(err);
 		} else{

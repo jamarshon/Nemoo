@@ -4,6 +4,7 @@ var AppHandler          = require('../util/appHandler');
 var DiscussionHandler   = require('../util/discussionHandler');
 var PassportRoutes      = require('./passportRoutes');
 var Util                = require('../util/util');
+var _                   = require('underscore');
 
 module.exports = function(app, passport) {
   var renderIndex = function(req, res) {
@@ -28,7 +29,7 @@ module.exports = function(app, passport) {
   app.get('/partials/:discussion', function(req, res){
     var discussionName = req.params.discussion;
     DiscussionHandler.getDiscussion(discussionName).then(function(discussion){
-      res.render('components/discussion', {name: Util.toTitleCase(discussion.name), description: discussion.description, data: discussion.data});
+      res.render('components/discussion', {name: discussion.displayName, description: discussion.description, data: discussion.data});
     }, function(err) {
       res.render('error', {message: err, error: {} });
     });
@@ -71,14 +72,25 @@ module.exports = function(app, passport) {
 
   app.get('/trendingDiscussions', function(req, res){
     DiscussionHandler.getTrending().then(function(discussions){
-      var discussionNames = discussions.map(function(discussion){
-        return Util.toTitleCase(discussion.name);
-      });
+      var discussionNames = _.pluck(discussions, 'displayName');
       res.json({discussions: discussionNames});
     }, function(err){
       res.json({discussions: []});
     });
-  })
+  });
+
+  app.post('/searchDiscussion', function(req, res){
+    var searchText = req.body.searchText.toLowerCase();
+    DiscussionHandler.search(searchText).then(function(discussions){
+      var searchResults = _.map(discussions, function(discussion){ 
+        return _.pick(discussion, 'name', 'displayName', 'description', 'category');
+      });
+      res.json({discussions: searchResults});
+    }, function(err){
+      console.log('[SEARCH-DISCUSSION-ERROR] ' + err);
+      res.json({discussions: []});
+    })
+  });
 
   app.io.on('connection', function(socket){
     AppHandler.getApp().then(function(app){
