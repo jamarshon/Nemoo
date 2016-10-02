@@ -6,16 +6,16 @@ var PassportRoutes      = require('./passportRoutes');
 var Util                = require('../util/util');
 var _                   = require('underscore');
 
-module.exports = function(app, passport) {
+module.exports = function(app, passport, index) {
   var renderIndex = function(req, res) {
     var loggedIn = req.isAuthenticated(),
         user = loggedIn ? req.user : Util.generateAnonUser();
 
     console.log(user);
     AppHandler.getApp().then(function(app){
-      res.render('index', {user: user, loggedIn: loggedIn, currentNumOnline: app.currentNumOnline});
+      res.render(index, {user: user, loggedIn: loggedIn, currentNumOnline: app.currentNumOnline});
     }, function(errDefaultValue) {
-      res.render('index', {user: user, loggedIn: loggedIn, currentNumOnline: errDefaultValue});
+      res.render(index, {user: user, loggedIn: loggedIn, currentNumOnline: errDefaultValue});
     });
   };
 

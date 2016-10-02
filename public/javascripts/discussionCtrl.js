@@ -8,7 +8,8 @@ var scrollBottom = function() {
 };
 
 app.controller('DiscussionCtrl', ['$routeParams', '$timeout', '$scope', '$templateCache', 'toastManager',
-                    function($routeParams, $timeout, $scope, $templateCache, toastManager) {
+                    '$mdMedia',
+                    function($routeParams, $timeout, $scope, $templateCache, toastManager, $mdMedia) {
   var that = this;
   var page = $routeParams.page;
   console.log(page);
@@ -17,7 +18,9 @@ app.controller('DiscussionCtrl', ['$routeParams', '$timeout', '$scope', '$templa
   var scrollContainer = document.getElementById('scrollable-container');
   $timeout(function(){ 
     scrollBottom();
-    toastManager.showSimple('Currently viewing "' + that.pageName + '"', 3000);
+    if($mdMedia('gt-xs')){
+      toastManager.showSimple('Currently viewing "' + that.pageName + '"', 3000);
+    }
   });
 
   this.init = function(main, name){

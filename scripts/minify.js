@@ -2,6 +2,7 @@
 // npm run minify --i
 
 var minifier = require('minifier');
+var fs = require('fs');
 
 var imagemin = require('imagemin');
 var imageminMozjpeg = require('imagemin-mozjpeg');
@@ -10,7 +11,8 @@ var imageminPngquant = require('imagemin-pngquant');
 var rootDir = './public';
 var outputDir = '../production';
 
-var inputs = ['/javascripts/', '/stylesheets/'];
+var jsPath = '/javascripts/';
+var cssPath = '/stylesheets/';
 //var imgDir = ['', 'anonymous/', 'user/', 'emoji/'];
 var imgDir = ['user/'];
 var minfiyImg = process.env.npm_config_i;
@@ -28,11 +30,18 @@ function minifyAssets() {
 	    console.log('[ERROR]: ' + err);
 	});
 
-	for(var i = 0; i < inputs.length; i++) {
-		var input = inputs[i];
-		console.log('Minifying ' + input);
-		minifier.minify(rootDir + input, {template: outputDir + input + '{{filename}}.{{ext}}'});
-	}
+	fs.readdir(rootDir + jsPath, function(err, files){
+		console.log('Minifying JS');
+		files.splice(files.indexOf('initApp.js'), 1);
+		files.unshift('initApp.js');
+		var jsFiles = files.map(file => rootDir + jsPath + file);
+		minifier.minify(jsFiles, {template: outputDir + jsPath + 'bundle.min.js'});
+	});
+	// console.log('Minifying JS');
+	// minifier.minify(rootDir + jsPath, {template: outputDir + jsPath + '{{filename}}.{{ext}}'});
+
+	console.log('Minifying CSS');
+	minifier.minify(rootDir + cssPath, {template: outputDir + cssPath + '{{filename}}.{{ext}}'});
 }
 
 function minifyImages() {

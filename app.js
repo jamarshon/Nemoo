@@ -4,6 +4,7 @@ var express         = require('express');
 var favicon         = require('serve-favicon');
 var flash           = require('connect-flash');
 var logger          = require('morgan');
+var mime            = require('mime-types')
 var mongoose        = require('mongoose');
 var passport        = require('passport');
 var path            = require('path');
@@ -42,10 +43,22 @@ app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
 
-var suffix = app.get('env') === 'production' ? '/production' : '';
-app.use(express.static(path.join(__dirname, 'public' + suffix)));
+var isProduction = app.get('env') === 'production';
+var suffix = isProduction ? '/production' : '';
+var index = isProduction ? 'productionIndex': 'index';
+var cacheTime = 1000*60*60;
+var productionCache = {setHeaders: function (res, path) {
+    var type = mime.lookup(path);
+    if(type === 'application/javascript' || type === 'text/css') {
+      console.log('cache');
+      res.setHeader('Cache-Control', 'public, max-age=' + cacheTime);
+    }
+  }
+};
+var options = isProduction ? productionCache : {};
+app.use(express.static(path.join(__dirname, 'public' + suffix), options));
 
-routes(app, passport); // load our routes and pass in our app and fully configured passport
+routes(app, passport, index); // load our routes and pass in our app and fully configured passport
 
 // error handlers
 

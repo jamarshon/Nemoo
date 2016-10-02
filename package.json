@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www",
-    "minify": "node ./scripts/minify"
+    "minify": "node ./scripts/minify",
+    "p": "npm start --production"
   },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
@@ -19,6 +20,7 @@
     "imagemin-mozjpeg": "^6.0.0",
     "imagemin-pngquant": "^5.0.0",
     "method-override": "^2.3.6",
+    "mime-types": "^2.1.12",
     "minifier": "^0.8.0",
     "mongoose": "^4.5.9",
     "morgan": "~1.7.0",

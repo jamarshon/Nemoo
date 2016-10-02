@@ -1,1 +1,0 @@
-var app=angular.module("App");app.factory("toastManager",["$mdToast",function(t){var o={};return o.showSimple=function(o,a){t.show(t.simple().textContent(o).position("bottom right").hideDelay(a))},o}]);

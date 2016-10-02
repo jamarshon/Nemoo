@@ -7,8 +7,10 @@ app.controller('MessageInputCtrl', ['$timeout', '$scope', '$mdMedia',
   this.rows = 1;
 
   $timeout(function(){
-      $('#message-input-box').focus();
-  }, 0);
+      if($mdMedia('gt-xs')){
+        $('#message-input-box').focus();
+      }
+  });
 
   this.send = function() {
     if(this.message) {
