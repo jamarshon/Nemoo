@@ -1,15 +1,17 @@
 var app = angular.module('App');
 
-app.controller('MessageInputCtrl', ['$timeout', '$scope', '$mdMedia',
-                            function($timeout, $scope, $mdMedia) {
+app.controller('MessageInputCtrl', ['$timeout', '$scope', '$mdMedia', '$compile',
+                            function($timeout, $scope, $mdMedia, $compile) {
   var that = this;
   this.message = '';
   this.rows = 1;
+  this.doneLoading = false;
 
   $timeout(function(){
       if($mdMedia('gt-xs')){
         $('#message-input-box').focus();
       }
+      that.doneLoading = true;
   });
 
   this.send = function() {
@@ -34,6 +36,11 @@ app.controller('MessageInputCtrl', ['$timeout', '$scope', '$mdMedia',
 
   this.enterHandler = $mdMedia('xs') ? this.increaseRows : this.send;
   this.ctrlEnterHandler = $mdMedia('xs') ? this.send : this.increaseRows;
+
+  this.emoticonHandler = function(parameter) {
+    var b = that.message;
+    //debugger;
+  };
 
   $scope.$watch(function(){ return $('#message-input-box').height(); }, 
                 function(newVal, oldVal){

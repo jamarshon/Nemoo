@@ -5,6 +5,7 @@
   "scripts": {
     "start": "nodemon ./bin/www",
     "minify": "node ./scripts/minify",
+    "emoji": "node ./scripts/generateEmoji",
     "p": "npm start --production"
   },
   "dependencies": {

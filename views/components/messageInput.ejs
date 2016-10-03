@@ -6,11 +6,15 @@
             type="text" placeholder="Enter message here!"
             on-enter-pressed="messageCtrl.enterHandler()" autocomplete="off"
             on-ctrl-enter-pressed="messageCtrl.ctrlEnterHandler()" rows="1"
-            ng-trim="false" custom-key-press></textarea>
+            ng-trim="false" custom-key-press>
+            </textarea>
+            <nemoo-message-additional-options 
+              emoticonHandler="messageCtrl.emoticonHandler">
+            </nemoo-message-additional-options>
     </md-input-container>
     <div>
       <md-button class="md-accent md-raised" ng-click="messageCtrl.send()" 
-                  ng-disabled="messageCtrl.message.length === 0">Send</md-button>
+                  ng-disabled="!messageCtrl.doneLoading || messageCtrl.message.length === 0">Send</md-button>
     </div>
   </div>  
 </form>

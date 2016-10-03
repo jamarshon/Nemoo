@@ -47,3 +47,14 @@ p > img.emoji {
 .autocomplete-template .item-metadata {
   display: block;
   line-height: 2; }
+
+#message-additional-button > .material-icons{
+  color: rgba(0,0,0,0.38);
+}
+#message-additional-button > .material-icons:hover{
+  color: black;
+}
+#message-additional-button:focus > .material-icons{
+  color: black;
+}
+

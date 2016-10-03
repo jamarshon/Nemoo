@@ -1,0 +1,9 @@
+<div id="message-additional-button" ng-click="messageAddCtrl.showMenu()"
+  style="position: absolute; right: 5px; top: -5px; line-height: 26px; cursor: pointer; background: rgb(250,250,250); padding-bottom: 5px;">
+  <md-icon class="material-icons" style="">tag_faces</md-icon>
+</div>
+
+<div id="myContent" style="display: none" layout="row">
+	<div ng-repeat="emoji in messageAddCtrl.cheatSheet" ng-bind-html="emoji" flex="10">
+	</div>
+</div>
