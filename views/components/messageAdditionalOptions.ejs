@@ -3,7 +3,12 @@
   <md-icon class="material-icons" style="">tag_faces</md-icon>
 </div>
 
-<div id="myContent" style="display: none" layout="row">
-	<div ng-repeat="emoji in messageAddCtrl.cheatSheet" ng-bind-html="emoji" flex="10">
+<div id="myContent" style="display: none;"
+				ng-style="messageAddCtrl.isLarge ? {'width': '550px'} : {width: '250px'}">
+	<div class="flex-container" 
+				ng-style="!messageAddCtrl.isLarge ? {'max-height': '40vh', 'overflow-y': auto} : {}">
+		<div ng-repeat="emoji in messageAddCtrl.cheatSheet" ng-bind-html="emoji" ng-click="messageAddCtrl.addEmoji($event)"
+				style="width: 10%; margin-top: 5px; margin-bottom: 5px; cursor: pointer;">
+		</div>
 	</div>
 </div>
