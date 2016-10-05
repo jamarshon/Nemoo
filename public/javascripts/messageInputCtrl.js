@@ -20,6 +20,7 @@ app.controller('MessageInputCtrl', ['$timeout', '$scope', '$mdMedia', '$compile'
       this.main.socket.emit('message sent', this.message, this.main.user, this.main.page);
       this.message = '';
       this.rows = 1;
+      $('#message-additional-button').webuiPopover('hide');
     }
   };
 
