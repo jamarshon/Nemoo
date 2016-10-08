@@ -1,13 +1,14 @@
-<div id="message-additional-button" ng-click="messageAddCtrl.showMenu()"
+<div id="message-additional-button" ng-mousedown="messageAddCtrl.showMenu($event)"
   style="position: absolute; right: 5px; top: -5px; line-height: 26px; cursor: pointer; background: rgb(250,250,250); padding-bottom: 5px;">
   <md-icon class="material-icons" style="">tag_faces</md-icon>
 </div>
 
 <div id="myContent" style="display: none;"
 				ng-style="messageAddCtrl.isLarge ? {'width': '550px'} : {width: '250px'}">
+	<nemoo-additional-options-dropdown id="additional-options-dropdown" style="width: 100%;"></nemoo-additional-options-dropdown>
 	<div class="flex-container" 
 				style="max-height: 40vh; overflow-y: auto;">
-		<div ng-repeat="emoji in messageAddCtrl.emoticons[messageAddCtrl.emoticonIndex].value" 
+		<div ng-if="messageAddCtrl.inEmoticonView" ng-repeat="emoji in messageAddCtrl.emoticons[messageAddCtrl.emoticonIndex]" 
 				style="min-width:10%; margin-top: 5px; margin-bottom: 5px;">
 				<div ng-bind-html="emoji" ng-mousedown="messageAddCtrl.addEmoji($event)" 
 						style="display: inline-block; cursor: pointer;">

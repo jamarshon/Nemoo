@@ -1,7 +1,12 @@
 var app = angular.module('App');
 
-app.controller('MessageInputCtrl', ['$timeout', '$scope', '$mdMedia', '$compile',
-                            function($timeout, $scope, $mdMedia, $compile) {
+var scrollBottom = function() {
+  var scrollContainer = document.getElementById('scrollable-container');
+  $(scrollContainer).scrollTop(scrollContainer.scrollHeight);
+};
+
+app.controller('MessageInputCtrl', ['$timeout', '$scope', '$mdMedia', 'toastManager',
+                            function($timeout, $scope, $mdMedia, toastManager) {
   var that = this;
   this.message = '';
   this.rows = 1;
@@ -10,7 +15,12 @@ app.controller('MessageInputCtrl', ['$timeout', '$scope', '$mdMedia', '$compile'
   $timeout(function(){
       if(that.isLarge){
         $('#message-input-box').focus();
+        var bottom = $('#message-input-box').offset().top + 26 + 48;
+        if(bottom < $(window).height()){
+          toastManager.showSimpleWithAction('Currently on ' + that.main.page, 1000);
+        }
       }
+      scrollBottom();
   });
 
   this.send = function() {
@@ -34,8 +44,8 @@ app.controller('MessageInputCtrl', ['$timeout', '$scope', '$mdMedia', '$compile'
     this.message += '\n'; 
   };
 
-  this.enterHandler = this.isLarge ? this.increaseRows : this.send;
-  this.ctrlEnterHandler = this.isLarge ? this.send : this.increaseRows;
+  this.enterHandler = this.isLarge ? this.send : this.increaseRows;
+  this.ctrlEnterHandler = this.isLarge ? this.increaseRows: this.send;
 
   $scope.emoticonHandler = function(emoticon) {
     that.message += ' ' + emoticon + ' ';
