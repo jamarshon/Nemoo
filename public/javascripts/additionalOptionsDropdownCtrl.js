@@ -4,35 +4,29 @@ app.controller('AdditionalOptionsDropdownCtrl', function($scope) {
     $scope.ddSelectOptions = [
         {
             text: 'Emoticon (People)',
-            inEmoticonView: true,
-            emoticonIndex: 0
+            pageKey: 'people'
         },
         {
             text: 'Emoticon (Nature)',
-            inEmoticonView: true,
-            emoticonIndex: 1
+            pageKey: 'nature'
         },
         {
             text: 'Emoticon (Object)',
-            inEmoticonView: true,
-            emoticonIndex: 2
+            pageKey: 'object'
         },
         {
             text: 'Emoticon (Places)',
-            inEmoticonView: true,
-            emoticonIndex: 3
+            pageKey: 'places'
         },
         {
             text: 'Emoticon (Symbol)',
-            inEmoticonView: true,
-            emoticonIndex: 4
+            pageKey: 'symbol'
         },
     ];
 
     $scope.ddSelectSelected = {
         text: 'Emoticon (People)',
-        inEmoticonView: true,
-        emoticonIndex: 0
+        pageKey: 'people'
     };
 
     $scope.selectHandler = function(selected) {

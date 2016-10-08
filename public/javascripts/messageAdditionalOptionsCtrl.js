@@ -1,13 +1,11 @@
 var app = angular.module('App');
 
-app.controller('MessageAdditionalOptionsCtrl', ['$scope', '$templateCache', '$mdMedia', 'emoticons',
-												function($scope, $templateCache, $mdMedia, emoticons){
+app.controller('MessageAdditionalOptionsCtrl', ['$scope', '$templateCache', '$mdMedia',
+												function($scope, $templateCache, $mdMedia){
 		var that = this;
 		$templateCache.remove('/views/messageAdditionalOptions.ejs');
-		this.emoticons = emoticons;
 		
-		this.inEmoticonView = true;
-		this.emoticonIndex = 0;
+		this.pageKey = 'people';
 
 		this.isLarge = $mdMedia('gt-xs');
 		this.isAndroid = getMobileOperatingSystem() === 'Android';
@@ -68,9 +66,10 @@ app.controller('MessageAdditionalOptionsCtrl', ['$scope', '$templateCache', '$md
 	  };
 
 	  $scope.handlePageChange = function(selected) {
-	  	that.inEmoticonView = selected.inEmoticonView;
-	  	that.emoticonIndex = selected.emoticonIndex;
+	  	that.pageKey = selected.pageKey;
 	  };
+
+	  $('body').click(function(){console.log('m6onkey');})
 
 	  $scope.$on('destroy', function(){
 	  	//$('#message-input-box').off();
