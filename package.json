@@ -17,6 +17,7 @@
     "ejs": "^2.5.1",
     "express": "~4.13.4",
     "express-session": "^1.14.0",
+    "htmlmin": "0.0.7",
     "imagemin": "^5.2.2",
     "imagemin-mozjpeg": "^6.0.0",
     "imagemin-pngquant": "^5.0.0",

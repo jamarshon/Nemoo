@@ -6,7 +6,10 @@ var PassportRoutes      = require('./passportRoutes');
 var Util                = require('../util/util');
 var _                   = require('underscore');
 
-module.exports = function(app, passport, index) {
+module.exports = function(app, passport, isProduction) {
+  var index = isProduction ? 'productionIndex': 'index';
+  var componentsPath = isProduction ? 'components/production/': 'components/';
+  console.log(index, componentsPath);
   var renderIndex = function(req, res) {
     var loggedIn = req.isAuthenticated(),
         user = loggedIn ? req.user : Util.generateAnonUser();
@@ -32,7 +35,7 @@ module.exports = function(app, passport, index) {
       discussion.data.forEach(function(messageObject){
         messageObject.message = Util.decodeUTF8(messageObject.message);
       });
-      res.render('components/discussion', {name: discussion.displayName, description: discussion.description, data: discussion.data});
+      res.render(componentsPath + 'discussion', {name: discussion.displayName, description: discussion.description, data: discussion.data});
     }, function(err) {
       res.render('error', {message: err, error: {} });
     });
@@ -47,7 +50,7 @@ module.exports = function(app, passport, index) {
   app.get('/views/:filename', function(req, res){
     var filename = req.params.filename,
         data = req.params.data;
-    res.render('components/' + filename, {data: data});
+    res.render(componentsPath + filename, {data: data});
   });
 
   // Logout

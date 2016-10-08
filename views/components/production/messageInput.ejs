@@ -1,0 +1,4 @@
+<form layout layout-align="center" ng-init="messageCtrl.init(main)"><div layout="row" flex><md-input-container flex class="md-no-momentum no-error" md-no-float><textarea md-no-resize id="message-input-box" ng-model="messageCtrl.message" type="text" placeholder="Enter message here!" on-enter-pressed="messageCtrl.enterHandler()" autocomplete="off" on-ctrl-enter-pressed="messageCtrl.ctrlEnterHandler()" rows="1" ng-trim="false" custom-key-press>
+            </textarea><nemoo-message-additional-options></nemoo-message-additional-options></md-input-container><div><md-button class="md-accent md-raised" ng-click="messageCtrl.send()" ng-disabled="messageCtrl.message.length === 0" ng-style="messageCtrl.isLarge ? {}: {'min-width': '0px', 'padding-left': '8px', 'padding-right': '8px'}">
+                  Send
+      </md-button></div></div></form>

@@ -2,6 +2,7 @@
 // npm run minify --i
 
 var minifier = require('minifier');
+var htmlmin = require('htmlmin');
 var fs = require('fs');
 
 var imagemin = require('imagemin');
@@ -42,6 +43,17 @@ function minifyAssets() {
 
 	console.log('Minifying CSS');
 	minifier.minify(rootDir + cssPath, {template: outputDir + cssPath + '{{filename}}.{{ext}}'});
+
+	
+	fs.readdir('./views/components/', function(err, files){
+		console.log('Minifying HTML');
+		files.forEach(function(file){
+			fs.readFile('./views/components/' + file, 'utf8', function(err, data){
+				var min = htmlmin(data);
+				fs.writeFile('./views/components/production/' + file, min);
+			});
+		});
+	});
 }
 
 function minifyImages() {

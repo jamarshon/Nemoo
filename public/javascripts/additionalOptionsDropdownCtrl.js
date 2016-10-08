@@ -1,6 +1,6 @@
 var app = angular.module('App');
 
-app.controller('AdditionalOptionsDropdownCtrl', function($scope) {
+app.controller('AdditionalOptionsDropdownCtrl', ['$scope', function($scope) {
     $scope.ddSelectOptions = [
         {
             text: 'Emoticon (People)',
@@ -32,7 +32,7 @@ app.controller('AdditionalOptionsDropdownCtrl', function($scope) {
     $scope.selectHandler = function(selected) {
         $scope.$parent.handlePageChange(selected);
     };
-});
+}]);
 
 app.directive('nemooAdditionalOptionsDropdown', function(){
     return {

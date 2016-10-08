@@ -45,12 +45,10 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 
 var isProduction = app.get('env') === 'production';
 var suffix = isProduction ? '/production' : '';
-var index = isProduction ? 'productionIndex': 'index';
 var cacheTime = 1000*60*60;
 var productionCache = {setHeaders: function (res, path) {
     var type = mime.lookup(path);
-    if(type === 'application/javascript' || type === 'text/css') {
-      console.log('cache');
+    if(type === 'application/javascript' || type === 'text/css' || type === 'image/png') {
       res.setHeader('Cache-Control', 'public, max-age=' + cacheTime);
     }
   }
@@ -58,7 +56,7 @@ var productionCache = {setHeaders: function (res, path) {
 var options = isProduction ? productionCache : {};
 app.use(express.static(path.join(__dirname, 'public' + suffix), options));
 
-routes(app, passport, index); // load our routes and pass in our app and fully configured passport
+routes(app, passport, isProduction); // load our routes and pass in our app and fully configured passport
 
 // error handlers
 
