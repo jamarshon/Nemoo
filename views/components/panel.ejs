@@ -7,9 +7,9 @@
       <a ng-click="panelCtrl.unfocus($event, item)">
       <md-item-content md-ink-ripple layout="row" layout-align="start center" style="cursor: pointer;" >
         <div class="inset">
-          <md-icon class="material-icons">{{item.icon}}</md-icon>
+          <md-icon class="material-icons" ng-bind="item.icon"></md-icon>
         </div>
-        <div class="inset">{{item.title}} </div>
+        <div class="inset" ng-bind="item.title"></div>
       </md-item-content>
       </a>
   </md-item>
@@ -19,7 +19,7 @@
   <md-item ng-repeat="item in panelCtrl.trending">
     <a ng-click="panelCtrl.unfocus($event, item)">
       <md-item-content md-ink-ripple layout="row" layout-align="start center" style="cursor: pointer;">
-        <div class="inset" style="word-break: break-all">{{item.title}} </div>
+        <div class="inset" style="word-break: break-all" ng-bind="item.title"></div>
       </md-item-content>
       <md-divider></md-divider>
     </a>

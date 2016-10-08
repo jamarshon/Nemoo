@@ -12,7 +12,10 @@
     </md-input-container>
     <div>
       <md-button class="md-accent md-raised" ng-click="messageCtrl.send()" 
-                  ng-disabled="messageCtrl.message.length === 0">Send</md-button>
+                  ng-disabled="messageCtrl.message.length === 0" 
+                  ng-style="messageCtrl.isLarge ? {}: {'min-width': '0px', 'padding-left': '8px', 'padding-right': '8px'}">
+                  Send
+      </md-button>
     </div>
   </div>  
 </form>

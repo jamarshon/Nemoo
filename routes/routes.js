@@ -29,6 +29,9 @@ module.exports = function(app, passport, index) {
   app.get('/partials/:discussion', function(req, res){
     var discussionName = req.params.discussion;
     DiscussionHandler.getDiscussion(discussionName).then(function(discussion){
+      discussion.data.forEach(function(messageObject){
+        messageObject.message = Util.decodeUTF8(messageObject.message);
+      });
       res.render('components/discussion', {name: discussion.displayName, description: discussion.description, data: discussion.data});
     }, function(err) {
       res.render('error', {message: err, error: {} });

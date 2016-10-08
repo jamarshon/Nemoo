@@ -1,7 +1,9 @@
 var app = angular.module('App', ['ngRoute', 'ngMaterial', 'ngMessages', 'ngAnimate', 'ngSanitize']);
 
 // configure our routes
-app.config(['$routeProvider', '$locationProvider', '$mdThemingProvider', function($routeProvider, $locationProvider, $mdThemingProvider) {
+app.config(['$routeProvider', '$locationProvider', '$mdThemingProvider', '$compileProvider',
+    function($routeProvider, $locationProvider, $mdThemingProvider, $compileProvider) {
+  // Routing
   $routeProvider
     .when('/page/:page', {
         templateUrl : function(params){ return '/partials/' + params.page; } ,
@@ -16,7 +18,10 @@ app.config(['$routeProvider', '$locationProvider', '$mdThemingProvider', functio
     requireBase: false
   });
 
+  // Optimization for production (comment out during development)
+  //$compileProvider.debugInfoEnabled(false);
   
+  // Theme
   var customMap = $mdThemingProvider.extendPalette('indigo', {
     'contrastDefaultColor': 'light',
     'contrastDarkColors': ['50'],

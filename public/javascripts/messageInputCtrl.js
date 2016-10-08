@@ -5,9 +5,10 @@ app.controller('MessageInputCtrl', ['$timeout', '$scope', '$mdMedia', '$compile'
   var that = this;
   this.message = '';
   this.rows = 1;
+  this.isLarge = $mdMedia('gt-xs');
 
   $timeout(function(){
-      if($mdMedia('gt-xs')){
+      if(that.isLarge){
         $('#message-input-box').focus();
       }
   });
@@ -33,8 +34,8 @@ app.controller('MessageInputCtrl', ['$timeout', '$scope', '$mdMedia', '$compile'
     this.message += '\n'; 
   };
 
-  this.enterHandler = $mdMedia('xs') ? this.increaseRows : this.send;
-  this.ctrlEnterHandler = $mdMedia('xs') ? this.send : this.increaseRows;
+  this.enterHandler = this.isLarge ? this.increaseRows : this.send;
+  this.ctrlEnterHandler = this.isLarge ? this.send : this.increaseRows;
 
   $scope.emoticonHandler = function(emoticon) {
     that.message += ' ' + emoticon + ' ';

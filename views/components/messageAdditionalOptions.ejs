@@ -6,9 +6,10 @@
 <div id="myContent" style="display: none;"
 				ng-style="messageAddCtrl.isLarge ? {'width': '550px'} : {width: '250px'}">
 	<div class="flex-container" 
-				ng-style="!messageAddCtrl.isLarge ? {'max-height': '40vh', 'overflow-y': auto} : {}">
-		<div ng-repeat="emoji in messageAddCtrl.cheatSheet" style="width: 10%; margin-top: 5px; margin-bottom: 5px;">
-				<div ng-bind-html="emoji" ng-click="messageAddCtrl.addEmoji($event)" 
+				style="max-height: 40vh; overflow-y: auto;">
+		<div ng-repeat="emoji in messageAddCtrl.emoticons[messageAddCtrl.emoticonIndex].value" 
+				style="min-width:10%; margin-top: 5px; margin-bottom: 5px;">
+				<div ng-bind-html="emoji" ng-mousedown="messageAddCtrl.addEmoji($event)" 
 						style="display: inline-block; cursor: pointer;">
 				</div>
 		</div>

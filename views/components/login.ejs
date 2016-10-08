@@ -9,7 +9,7 @@
 			<md-icon class="material-icons">vpn_key</md-icon>
 			<input ng-model="loginCtrl.data.password" type="password" name="password" placeholder="Password" required>
 		</md-input-container>
-		<div style="color: red; font-style: italic;">{{loginCtrl.message}}</div>
+		<div style="color: red; font-style: italic;" ng-bind="loginCtrl.message"></div>
 		<md-button type="submit" class="md-accent md-raised" ng-disabled="loginForm.$invalid">Login</md-button>
 	</form>
 </md-content>

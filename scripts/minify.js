@@ -14,7 +14,7 @@ var outputDir = '../production';
 var jsPath = '/javascripts/';
 var cssPath = '/stylesheets/';
 //var imgDir = ['', 'anonymous/', 'user/', 'emoji/'];
-var imgDir = ['user/'];
+var imgDir = ['emoji/'];
 var minfiyImg = process.env.npm_config_i;
 
 if(minfiyImg) {
@@ -46,6 +46,7 @@ function minifyAssets() {
 
 function minifyImages() {
 	// Compress the images
+	console.log('Minifying Images');
 	var imgPath = rootDir + '/images/';
 	var outputImgPath = rootDir + '/production/images/';
 	var test = [];

@@ -74,4 +74,12 @@ Util.toTitleCase = function(str) {
   return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
 };
 
+Util.encodeUTF8 = function(s) {
+  return unescape(encodeURIComponent(s));
+};
+
+Util.decodeUTF8 = function(s) {
+  return decodeURIComponent(escape(s));
+};
+
 module.exports = Util;

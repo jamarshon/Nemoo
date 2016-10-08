@@ -16,7 +16,7 @@
           <md-icon class="material-icons">storage</md-icon>
           <md-select ng-model="dlgCtrl.data.category" placeholder="Select a Category" class="md-no-underline" required
                       style="margin-left: 3px; margin-top: 3px;">
-            <md-option value="{{option.val}}" ng-repeat="option in dlgCtrl.options">{{option.text}}</md-option>
+            <md-option value="{{option.val}}" ng-repeat="option in dlgCtrl.options" ng-bind="option.text"></md-option>
           </md-select>
         </md-input-container>
 
@@ -30,7 +30,7 @@
           <textarea ng-model="dlgCtrl.data.description" type="text" name="description" placeholder="Description" rows="3" required></textarea>
         </md-input-container>
 
-        <div style="color: red; font-style: italic;">{{dlgCtrl.message}}</div>
+        <div style="color: red; font-style: italic;" ng-bind="dlgCtrl.message"></div>
         <div layout="row" layout-align="end center">
           <md-button type="submit" class="md-accent md-raised" ng-disabled="discussionForm.$invalid">Create Discusion</md-button>
         </div>
