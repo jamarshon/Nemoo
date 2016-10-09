@@ -19,6 +19,7 @@ app.controller('HeaderCtrl', ['$scope', '$mdSidenav', '$mdMedia', '$mdDialog', '
   };
 
   this.hardRedirect = optimizationService.hardRedirect;
+  this.softRedirect = optimizationService.softRedirect;
 
   this.showTabDialog = function(ev, tabIdx) {
     $mdDialog.show({

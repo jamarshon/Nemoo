@@ -45,8 +45,7 @@
           dropdownModel: '=',
           dropdownItemLabel: '@',
           dropdownOnchange: '&',
-          dropdownDisabled: '=',
-          toggleDropDownCallback: '@'
+          dropdownDisabled: '='
         },
 
         controller: ['$scope', '$element', function ($scope) {
@@ -68,7 +67,6 @@
             $event.preventDefault();
             if (!$scope.dropdownDisabled) {
               el.toggleClass('active');
-              $scope.toggleDropDownCallback(el);
             }
           };
         }],
