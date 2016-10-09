@@ -13,6 +13,7 @@ var userSchema = mongoose.Schema({
     _lastActive: Number,
     displayName: String,
     profilePic: String,
+    favorites: [String]
 });
 
 // generating a hash

@@ -1,11 +1,11 @@
 var app = angular.module('App');
 
-app.controller('UserNavCtrl', ['$window', '$location', '$mdSidenav', '$mdMedia',
-                      function($window, $location, $mdSidenav, $mdMedia) {
+app.controller('UserNavCtrl', ['$mdSidenav', '$mdMedia', 'optimizationService',
+                      function($mdSidenav, $mdMedia, optimizationService) {
   var that = this;
   
-  this.hardRedirect = function(path) { $window.location.href = path; };
-  this.softRedirect = function(path) { $location.url(path); };
+  this.hardRedirect = optimizationService.hardRedirect;
+  this.softRedirect = optimizationService.softRedirect;
 
   this.unfocus = function($event, additionalCallback) { 
   	var callback = additionalCallback || function(){};

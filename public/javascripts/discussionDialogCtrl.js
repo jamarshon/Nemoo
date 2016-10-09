@@ -31,9 +31,9 @@ var options = [
 	'Weather',
 ];
 
-app.controller('DiscussionDialogCtrl', ['$mdDialog', '$location', '$http', '$scope', 'user',
-													'toastManager',
-													function($mdDialog, $location, $http, $scope, user, toastManager){
+app.controller('DiscussionDialogCtrl', ['$mdDialog', '$http', '$scope', 'user',
+													'toastManager', 'optimizationService',
+													function($mdDialog, $http, $scope, user, toastManager, optimizationService){
 	var that = this;
 	this.options = options.map(function(e){
 		return {
@@ -54,7 +54,7 @@ app.controller('DiscussionDialogCtrl', ['$mdDialog', '$location', '$http', '$sco
   	var postData = that.cleanData(that.data);
     $http.post(url, postData).success(function(data){
       if(data.redirect) {
-          $location.path(data.redirect);
+          optimizationService.softRedirect(data.redirect);
           that.cancel();
           toastManager.showSimple('Successfully create discussion!!', 3000);
       } else {

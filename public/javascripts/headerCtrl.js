@@ -1,8 +1,7 @@
 var app = angular.module('App');
 
-app.controller('HeaderCtrl', ['$scope', '$window', '$mdSidenav', '$mdMedia', '$mdDialog', '$location',
-                    'loaderAnimation',
-                    function($scope, $window, $mdSidenav, $mdMedia, $mdDialog, $location, loaderAnimation) {
+app.controller('HeaderCtrl', ['$scope', '$mdSidenav', '$mdMedia', '$mdDialog', 'optimizationService',
+                    function($scope, $mdSidenav, $mdMedia, $mdDialog, optimizationService) {
   var that = this;
 
   $scope.$watch(function() { return $mdMedia('gt-sm'); }, function(open) {
@@ -19,21 +18,18 @@ app.controller('HeaderCtrl', ['$scope', '$window', '$mdSidenav', '$mdMedia', '$m
     }
   };
 
-  this.hardRedirect = function(path) { loaderAnimation.show(); $window.location.href = path; };
-  this.softRedirect = function(path) { $location.url(path); };
+  this.hardRedirect = optimizationService.hardRedirect;
 
   this.showTabDialog = function(ev, tabIdx) {
     $mdDialog.show({
-      controller: ['$mdDialog', '$window', function($mdDialog, $window){
+      controller: ['$mdDialog', 'optimizationService', function($mdDialog, optimizationService){
         this.hide = function() {
           $mdDialog.hide();
         };
         this.cancel = function() {
           $mdDialog.cancel();
         };
-        this.redirect = function(path) {
-          $window.location.href = path;
-        };
+        this.redirect = optimizationService.hardRedirect;
         this.selected = tabIdx;
       }],
       controllerAs: 'dlgCtrl',

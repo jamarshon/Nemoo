@@ -6,9 +6,9 @@ app.config(['$routeProvider', '$locationProvider', '$mdThemingProvider', '$compi
   // Routing
   $routeProvider
     .when('/page/:page', {
-        templateUrl : function(params){ return '/partials/' + params.page; } ,
-        controller  : 'DiscussionCtrl',
-        controllerAs: 'discussionCtrl'
+      templateUrl : function(params){ return '/partials/' + params.page; } ,
+      controller  : 'DiscussionCtrl',
+      controllerAs: 'discussionCtrl'
     })
     .when('/', {
         templateUrl : '/views/home.ejs'
@@ -20,6 +20,7 @@ app.config(['$routeProvider', '$locationProvider', '$mdThemingProvider', '$compi
 
   // Optimization for production (comment out during development)
   //$compileProvider.debugInfoEnabled(false);
+  checkAndUpdateFBURL();
   
   // Theme
   var customMap = $mdThemingProvider.extendPalette('indigo', {
@@ -62,10 +63,10 @@ app.config(['$routeProvider', '$locationProvider', '$mdThemingProvider', '$compi
 }]);
 
 // Fix for facebook issue where after authentication it adds #_=_ to the url
-$(window).on('load', function(e){
+function checkAndUpdateFBURL() {
   if (window.location.hash == '#_=_') {
     window.location.hash = ''; // for older browsers, leaves a # behind
     history.pushState('', document.title, window.location.pathname); // nice and clean
-    e.preventDefault(); // no page reload
+    //e.preventDefault(); // no page reload
   }
-});
+}

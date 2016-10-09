@@ -1,7 +1,7 @@
 var app = angular.module('App');
 
-app.controller('SearchBoxCtrl', ['$http', '$q', '$location', '$mdSidenav', '$mdMedia',
-                      function($http, $q, $location, $mdSidenav, $mdMedia) {
+app.controller('SearchBoxCtrl', ['$http', '$q', '$mdSidenav', '$mdMedia', 'optimizationService',
+                      function($http, $q, $mdSidenav, $mdMedia, optimizationService) {
   var that = this;
 
   this.querySearch = function(query) {
@@ -32,7 +32,7 @@ app.controller('SearchBoxCtrl', ['$http', '$q', '$location', '$mdSidenav', '$mdM
     }
   };
 
-  this.softRedirect = function(path) { $location.url(path); };
+  this.softRedirect = optimizationService.softRedirect;
 }]);
 
 app.directive('nemooSearchBox', function() {

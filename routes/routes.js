@@ -9,7 +9,6 @@ var _                   = require('underscore');
 module.exports = function(app, passport, isProduction) {
   var index = isProduction ? 'productionIndex': 'index';
   var componentsPath = isProduction ? 'components/production/': 'components/';
-  console.log(index, componentsPath);
   var renderIndex = function(req, res) {
     var loggedIn = req.isAuthenticated(),
         user = loggedIn ? req.user : Util.generateAnonUser();

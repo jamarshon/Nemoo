@@ -12,8 +12,8 @@ var general = [
   }
 ];
 
-app.controller('PanelCtrl', ['$location', '$mdDialog', '$mdSidenav', '$mdMedia', '$http',
-                  function($location, $mdDialog, $mdSidenav, $mdMedia, $http) {
+app.controller('PanelCtrl', ['$mdDialog', '$mdSidenav', '$mdMedia', '$http', 'optimizationService',
+                  function($mdDialog, $mdSidenav, $mdMedia, $http, optimizationService) {
   var that = this;
   var createDiscussion = {
     callback : function(ev) {
@@ -82,7 +82,7 @@ app.controller('PanelCtrl', ['$location', '$mdDialog', '$mdSidenav', '$mdMedia',
     }
   };
 
-  this.softRedirect = function(path) { $location.url(path); };
+  this.softRedirect = optimizationService.softRedirect;
 }]);
 
 app.directive('nemooPanel', function() {

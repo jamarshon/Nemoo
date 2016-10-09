@@ -45,7 +45,8 @@
           dropdownModel: '=',
           dropdownItemLabel: '@',
           dropdownOnchange: '&',
-          dropdownDisabled: '='
+          dropdownDisabled: '=',
+          toggleDropDownCallback: '@'
         },
 
         controller: ['$scope', '$element', function ($scope) {
@@ -67,18 +68,9 @@
             $event.preventDefault();
             if (!$scope.dropdownDisabled) {
               el.toggleClass('active');
+              $scope.toggleDropDownCallback(el);
             }
           };
-
-          $('body').on('click.dropdownSelect', function(e){
-            if(e.target !== el[0] && e.target !== el[0].firstChild) {
-              el.removeClass('active');
-            }
-          });
-
-          $scope.$on('$destroy', function () {
-            $('body').off('click.dropdownSelect');
-          });
         }],
         templateUrl: 'ngDropdowns/templates/dropdownSelect.html'
       };

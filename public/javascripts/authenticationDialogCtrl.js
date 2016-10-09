@@ -1,14 +1,13 @@
 var app = angular.module('App');
 
-app.controller('AuthenticationCtrl', ['$http', '$window', 'loaderAnimation', 
-                            function($http, $window, loaderAnimation) {
+app.controller('AuthenticationCtrl', ['$http', 'optimizationService', 
+                            function($http, optimizationService) {
   var that = this;
   this.data = {email: '', password: '', password2: ''};
   this.submit = function(url) {
     $http.post(url, that.data).success(function(data){
       if(data.redirect) {
-          loaderAnimation.show();
-          $window.location.href = data.redirect;
+        optimizationService.hardRedirect(data.redirect);
       } else {
           that.message = data.message;
       }
