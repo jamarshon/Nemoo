@@ -73,6 +73,10 @@
           $timeout(function(){
             that.$el = angular.element(document.getElementById('dropdown-custom-angular'));
           });
+
+          $scope.$on('$destroy', function(){
+            that.$el = null;
+          });
         }],
         templateUrl: 'ngDropdowns/templates/dropdownSelect.html'
       };

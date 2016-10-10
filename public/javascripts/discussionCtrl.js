@@ -7,7 +7,7 @@ app.controller('DiscussionCtrl', ['$mdMedia', '$routeParams', '$timeout', '$scop
   var that = this;
   var page = $routeParams.page;
   console.log(page);
-  $templateCache.remove('/partials/' + page);
+  //$templateCache.remove('/partials/' + page);
 
   this.init = function(main, name){
     main.page = page;

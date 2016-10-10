@@ -48,8 +48,8 @@
           dropdownDisabled: '='
         },
 
-        controller: ['$scope', '$element', function ($scope) {
-          var el = angular.element(document.getElementById('dropdown-custom-angular'));
+        controller: ['$scope', '$timeout', function ($scope, $timeout) {
+          var that = this;
           $scope.labelField = $scope.dropdownItemLabel || 'text';
 
           this.select = function (selected) {
@@ -59,16 +59,24 @@
             $scope.dropdownOnchange({
               selected: selected
             });
-            el.removeClass('active');
+            that.$el.removeClass('active');
           };
 
           $scope.toggleDropDown = function($event) {
             $event.stopPropagation();
             $event.preventDefault();
             if (!$scope.dropdownDisabled) {
-              el.toggleClass('active');
+              that.$el.toggleClass('active');
             }
           };
+
+          $timeout(function(){
+            that.$el = angular.element(document.getElementById('dropdown-custom-angular'));
+          });
+
+          $scope.$on('$destroy', function(){
+            that.$el = null;
+          });
         }],
         templateUrl: 'ngDropdowns/templates/dropdownSelect.html'
       };

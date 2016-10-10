@@ -5,13 +5,15 @@ var scrollBottom = function() {
   $(scrollContainer).scrollTop(scrollContainer.scrollHeight);
 };
 
-app.controller('MessageInputCtrl', ['$timeout', '$scope', '$mdMedia', 'toastManager',
-                            function($timeout, $scope, $mdMedia, toastManager) {
+app.controller('MessageInputCtrl', ['$timeout', '$scope', '$rootScope', '$mdMedia', 'toastManager',
+                            function($timeout, $scope, $rootScope, $mdMedia, toastManager) {
   var that = this;
-  this.rows = 1;
-  this.isLarge = $mdMedia('gt-xs');
-  this.placeholder = this.isLarge ? 'Enter your message here! Use Ctrl + Enter for a new line' : 'Enter your message here!';
   this.disableSend = true;
+
+  var sizeHandler = $scope.$watch(function() { return $mdMedia('gt-xs'); }, function(open) {
+    that.isLarge = open;
+    that.placeholder = that.isLarge ? 'Enter your message here! Use Ctrl + Enter for a new line' : 'Enter your message here!';
+  });
 
   $timeout(function(){
     that.$el = document.getElementById('message-input-box');
@@ -25,13 +27,19 @@ app.controller('MessageInputCtrl', ['$timeout', '$scope', '$mdMedia', 'toastMana
     scrollBottom();
   });
 
+  var destroyHandler = $rootScope.$on('$routeChangeSuccess', function(){
+    that.$el = null;
+    sizeHandler();
+    destroyHandler();
+  });
+
   this.send = function() {
     if(this.$el.innerHTML) {
       this.main.socket.emit('message sent', this.$el.innerHTML, this.main.user, this.main.page);
       this.$el.innerHTML = '';
-      this.rows = 1;
       this.resetCursor();
       $('#message-additional-button').webuiPopover('hide');
+      this.disableSend = true;
     }
   };
 
@@ -66,12 +74,10 @@ app.controller('MessageInputCtrl', ['$timeout', '$scope', '$mdMedia', 'toastMana
       sel.addRange(range);
     }, function() {
     });
-
-    this.rows++;
   };
 
   this.enterHandler = this.isLarge ? this.send : this.increaseRows;
-  this.ctrlEnterHandler = this.isLarge ? this.increaseRows: this.send;
+  this.ctrlEnterHandler = this.isLarge ? this.increaseRows : this.send;
 
   this.checkForDisableSend = function(isDelete, isSpace){
       var text = $(that.$el).text().trim();
@@ -79,35 +85,39 @@ app.controller('MessageInputCtrl', ['$timeout', '$scope', '$mdMedia', 'toastMana
         insertAtCursor(function(sel, range){
           var selectedRange = that.getRange(range, true, true, true);
           if(selectedRange.atStart && selectedRange.atEnd || text.length === 1) {
+            console.log('delete');
             that.disableSend = true;
           }
         }, function() {});
       } else {
         if(text.length === 0 && isSpace) {
+          console.log('empty');
           that.disableSend = true;
         } else if(that.disableSend) {
+          console.log('normal');
           that.disableSend = false;
         }
       }
   };
 
-  this.keypressHandler = _.throttle(function($event) {
-    var isSpace = $event.which === 0 || $event.which === 32;
-    this.checkForDisableSend(false, isSpace);
-  }, 500);
+  this.throttledKeyPressHandler = _.throttle(this.checkForDisableSend, 500);
 
+  var printableRegex = /^[a-z0-9!"#$%&'()*+,.\/:;<=>?@\[\] ^_`{|}~-]*$/i;
   this.keydownHandler = function($event) {
-    // Enter key
-    if($event.which === 13) {
+    var keyCode = $event.which;
+    var keyValue = String.fromCharCode(keyCode);
+    if(keyCode === 13) { // Enter key
       if($event.ctrlKey) {
         this.ctrlEnterHandler();
       } else {
         this.enterHandler();
       }
       $event.preventDefault();
-    // Delete key
-    } else if($event.which == 8 || $event.which === 46){
-      this.checkForDisableSend(true, false);
+    } else if(keyCode == 8 || keyCode === 46){ // Delete key
+      this.throttledKeyPressHandler(true, false);
+    } else if(printableRegex.test(keyValue)) {
+      var isSpace = keyCode === 0 || keyCode === 32;
+      this.throttledKeyPressHandler(false, isSpace);
     }
   };
 
@@ -127,7 +137,7 @@ app.controller('MessageInputCtrl', ['$timeout', '$scope', '$mdMedia', 'toastMana
     }, function() {
       that.$el.innerHTML += node.outerHTML;
     });
-    
+
     if(that.disableSend) {
       that.disableSend = false;
     }

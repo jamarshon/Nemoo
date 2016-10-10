@@ -1,10 +1,12 @@
 var app = angular.module('App');
 
-app.controller('HeaderCtrl', ['$scope', '$mdSidenav', '$mdMedia', '$mdDialog', 'optimizationService',
+app.controller('HeaderCtrl', ['$scope', '$mdSidenav', '$mdMedia', '$mdDialog', 
+                    'optimizationService',
                     function($scope, $mdSidenav, $mdMedia, $mdDialog, optimizationService) {
   var that = this;
 
-  $scope.$watch(function() { return $mdMedia('gt-sm'); }, function(open) {
+  // This controller is never removed as it is not part of ng-view so it will never need to be unbinded
+  var sizeHandler = $scope.$watch(function() { return $mdMedia('gt-sm'); }, function(open) {
     that.open = open;
   });
 
