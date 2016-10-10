@@ -10,24 +10,27 @@ app.controller('MessageInputCtrl', ['$timeout', '$scope', '$mdMedia', 'toastMana
   var that = this;
   this.rows = 1;
   this.isLarge = $mdMedia('gt-xs');
-  this.el = document.getElementById('message-input-box');
+  this.placeholder = this.isLarge ? 'Enter your message here! Use Ctrl + Enter for a new line' : 'Enter your message here!';
+  this.disableSend = true;
 
   $timeout(function(){
-      if(that.isLarge){
-        $('#message-input-box').focus();
-        var bottom = $('#message-input-box').offset().top + 26 + 48;
-        if(bottom < $(window).height()){
-          toastManager.showSimpleWithAction('Currently on ' + that.main.page, 1000);
-        }
+    that.$el = document.getElementById('message-input-box');
+    if(that.isLarge){
+      $(that.$el).focus();
+      var bottom = $('#message-input-box').offset().top + 26 + 48;
+      if(bottom < $(window).height()){
+        toastManager.showSimpleWithAction('Currently on ' + that.main.page, 1000);
       }
-      scrollBottom();
+    }
+    scrollBottom();
   });
 
   this.send = function() {
-    if(this.el.innerHTML) {
-      this.main.socket.emit('message sent', this.el.innerHTML, this.main.user, this.main.page);
-      this.el.innerHTML = '';
+    if(this.$el.innerHTML) {
+      this.main.socket.emit('message sent', this.$el.innerHTML, this.main.user, this.main.page);
+      this.$el.innerHTML = '';
       this.rows = 1;
+      this.resetCursor();
       $('#message-additional-button').webuiPopover('hide');
     }
   };
@@ -36,26 +39,31 @@ app.controller('MessageInputCtrl', ['$timeout', '$scope', '$mdMedia', 'toastMana
     this.main = main;
   };
 
+  this.resetCursor = function() {
+    var range = document.createRange();
+    range.setStart(this.$el, 0);
+    range.setEnd(this.$el, 0);
+    var sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+  };
+
   this.increaseRows = function(){
     var br = document.createElement("br");
     var textNode = document.createTextNode("\u00a0");
+    // Only insert the textNode if it is at the end of element
     insertAtCursor(function(sel, range){
-        var testRange = range.cloneRange();
-        testRange.selectNodeContents(that.el);
-        testRange.setStart(range.endContainer, range.endOffset);
-
-        var atEnd = (testRange.toString() == "");
-
-        range.deleteContents();
-        if(atEnd) {
-          range.insertNode(textNode);
-        }
-        range.insertNode(br);
-        range.setStartAfter(br);
-        range.setEndAfter(br);
-        range.collapse(false);
-        sel.removeAllRanges();
-        sel.addRange(range);
+      var atEnd = that.getRange(range, false, true, false).atEnd;
+      range.deleteContents();
+      if(atEnd) {
+        range.insertNode(textNode);
+      }
+      range.insertNode(br);
+      range.setStartAfter(br);
+      range.setEndAfter(br);
+      range.collapse(false);
+      sel.removeAllRanges();
+      sel.addRange(range);
     }, function() {
     });
 
@@ -64,6 +72,44 @@ app.controller('MessageInputCtrl', ['$timeout', '$scope', '$mdMedia', 'toastMana
 
   this.enterHandler = this.isLarge ? this.send : this.increaseRows;
   this.ctrlEnterHandler = this.isLarge ? this.increaseRows: this.send;
+
+  this.checkForDisableSend = function(isDelete, isSpace){
+      var text = $(that.$el).text().trim();
+      if(isDelete) {
+        insertAtCursor(function(sel, range){
+          var selectedRange = that.getRange(range, true, true, true);
+          if(selectedRange.atStart && selectedRange.atEnd || text.length === 1) {
+            that.disableSend = true;
+          }
+        }, function() {});
+      } else {
+        if(text.length === 0 && isSpace) {
+          that.disableSend = true;
+        } else if(that.disableSend) {
+          that.disableSend = false;
+        }
+      }
+  };
+
+  this.keypressHandler = _.throttle(function($event) {
+    var isSpace = $event.which === 0 || $event.which === 32;
+    this.checkForDisableSend(false, isSpace);
+  }, 500);
+
+  this.keydownHandler = function($event) {
+    // Enter key
+    if($event.which === 13) {
+      if($event.ctrlKey) {
+        this.ctrlEnterHandler();
+      } else {
+        this.enterHandler();
+      }
+      $event.preventDefault();
+    // Delete key
+    } else if($event.which == 8 || $event.which === 46){
+      this.checkForDisableSend(true, false);
+    }
+  };
 
   var emptyUri = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
   $scope.emoticonHandler = function(emoticon) {
@@ -79,33 +125,35 @@ app.controller('MessageInputCtrl', ['$timeout', '$scope', '$mdMedia', 'toastMana
       sel.removeAllRanges();
       sel.addRange(newRange);
     }, function() {
-      that.el.innerHTML += node.outerHTML;
+      that.$el.innerHTML += node.outerHTML;
     });
+    
+    if(that.disableSend) {
+      that.disableSend = false;
+    }
   };
 
-  // $scope.$watch(function(){ return $('#message-input-box').height(); }, 
-  //               function(newVal, oldVal){
-  //   if(newVal) {
-  //     var newHeight = Math.min(that.rows * 30, newVal);
-  //     $('#message-input-box').attr("rows", that.rows).height(newHeight);
-  //   }
-  // });
+  this.getRange = function(range, getStart, getEnd, trim) {
+    var atStart, atEnd;
+    var testRange = range.cloneRange();
+
+    if(getStart) {
+      testRange.selectNodeContents(that.$el);
+      testRange.setEnd(range.startContainer, range.startOffset);
+      atStart = trim ? testRange.toString().trim() === '' : testRange.toString() === '';
+    }
+    
+    if(getEnd) {
+      testRange.selectNodeContents(that.$el);
+      testRange.setStart(range.endContainer, range.endOffset);
+
+      atEnd = trim ? testRange.toString().trim() === '' : testRange.toString() === '';
+    }
+    
+    return {atStart: atStart, atEnd: atEnd};
+  };
+
 }]);
-
-app.directive('customKeyPress', function () {
-  return function (scope, element, attrs) {
-    element.bind("keydown keypress", function (event) {
-      if(event.which === 13) {
-        var action = event.ctrlKey ? 'onCtrlEnterPressed' : 'onEnterPressed';
-        scope.$apply(function (){
-            scope.$eval(attrs[action]);
-        });
-
-        event.preventDefault();
-      }
-    });
-  };
-});
 
 app.directive('nemooMessageInput', function() {
   return {

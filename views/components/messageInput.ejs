@@ -4,14 +4,16 @@
       <div id="message-input-box" class="md-input"
             spellcheck="false" autocomplete="off"
             contenteditable="true" style="height: auto;"
-            on-enter-pressed="messageCtrl.enterHandler()"
-            on-ctrl-enter-pressed="messageCtrl.ctrlEnterHandler()"
-            custom-key-press></div>
+            placeholder="{{messageCtrl.placeholder}}"
+            ng-model="messageCtrl.lesson"
+            ng-change="alert('hi')"
+            ng-keydown="messageCtrl.keydownHandler($event)"
+            ng-keypress="messageCtrl.keypressHandler($event)"></div>
             <nemoo-message-additional-options> </nemoo-message-additional-options>
     </md-input-container>
     <div>
       <md-button class="md-accent md-raised" ng-click="messageCtrl.send()" 
-                  ng-disabled="messageCtrl.message.length === 0" 
+                  ng-disabled="messageCtrl.disableSend" 
                   ng-style="messageCtrl.isLarge ? {}: {'min-width': '0px', 'padding-left': '8px', 'padding-right': '8px'}">
                   Send
       </md-button>

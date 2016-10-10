@@ -9,24 +9,13 @@ app.controller('MessageAdditionalOptionsCtrl', ['$scope', '$timeout', '$template
 		this.pageKey = 'people';
 		this.isLarge = $mdMedia('gt-xs');
 
-		var emoticon = $('#message-additional-button > .material-icons');
-		var additionalButtonEl = $('#message-additional-button');
-
-		var onShowHandler = this.isLarge ? function(){} : function(element) {
+		this.onShowHandler = this.isLarge ? function(){} : function(element) {
 			var windowWidth = $(window).width();
 			var elementLeft = (windowWidth - 278)/2;
-			var arrowLeft = emoticon.offset().left + emoticon.width()/2 - elementLeft;
+			var arrowLeft = that.$el.offset().left + that.$el.width()/2 - elementLeft;
 			element.css("left", elementLeft);
 			element.find('.webui-arrow').css("left", arrowLeft);
 		};
-
-		additionalButtonEl.webuiPopover({
-	    animation: 'pop', 
-	    url: '#myContent',
-	    onShow: onShowHandler,
-	    trigger: 'manual',
-	    closeable: true
-	  });
 
 	  this.addEmoji = function($event){
 	  	var target = $($event.target);
@@ -40,8 +29,10 @@ app.controller('MessageAdditionalOptionsCtrl', ['$scope', '$timeout', '$template
 	  };
 
 	  $timeout(function(){
+	  	that.$el = $('#message-additional-button > .material-icons');
 	  	optimizationService.bindBodyBackDrop();
 	  	optimizationService.bindFocusHandler();
+	  	optimizationService.attachUIPopover();
 	  	that.showMenu = optimizationService.handleMenuClick;
 	  });
 	}]);

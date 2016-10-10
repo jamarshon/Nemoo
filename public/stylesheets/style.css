@@ -70,11 +70,6 @@ p > img.emoji {
       flex-wrap:         wrap;
 }
 
-/*#additional-options-dropdown > .wrap-dd-select {
-  width: 80%;
-  margin-bottom: 10px;
-}*/
-
 #additional-options-dropdown .wrap-dd-select > .dropdown {
   margin-top: 0px;
 }
@@ -110,4 +105,11 @@ p > img.emoji {
   height: 24px;
   overflow: hidden;
   display: inline-block;
+}
+
+[contenteditable=true]:empty:before{
+  content: attr(placeholder);
+  display: block; /* For Firefox */
+  color: rgba(0, 0, 0, 0.35);
+  font-family: Roboto,Helvetica Neue,sans-serif;
 }

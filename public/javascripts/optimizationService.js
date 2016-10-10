@@ -42,6 +42,16 @@ app.factory('optimizationService', ['$window', '$location', 'loaderAnimation',
     });
   };
 
+  ret.attachUIPopover = function(onShowHandler) {
+    ret.additionalButtonEl.webuiPopover({
+      animation: 'pop', 
+      url: '#myContent',
+      onShow: onShowHandler,
+      trigger: 'manual',
+      closeable: true
+    });
+  };
+
   // When the menu is clicked, the message box should always be focused on
   ret.handleMenuClick = function($event) {
     if(ret.isFocused) {
