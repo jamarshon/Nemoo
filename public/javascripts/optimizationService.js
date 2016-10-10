@@ -31,7 +31,7 @@ app.factory('optimizationService', ['$window', '$location', 'loaderAnimation',
     ret.isAndroid = getMobileOperatingSystem() === 'Android';
     ret.additionalButtonEl = $('#message-additional-button');
     $('#message-input-box').on({
-      'focus.messageBox' : function(){ console.log('hi'); ret.isFocused = true; },
+      'focus.messageBox' : function(){ ret.isFocused = true; },
       'blur.messageBox' : function(){
         // When an android device unfocuses from the message box, the popover will be stuck in the middle so hide it
         if(ret.isAndroid) {

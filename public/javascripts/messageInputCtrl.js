@@ -8,9 +8,9 @@ var scrollBottom = function() {
 app.controller('MessageInputCtrl', ['$timeout', '$scope', '$mdMedia', 'toastManager',
                             function($timeout, $scope, $mdMedia, toastManager) {
   var that = this;
-  this.message = '';
   this.rows = 1;
   this.isLarge = $mdMedia('gt-xs');
+  this.el = document.getElementById('message-input-box');
 
   $timeout(function(){
       if(that.isLarge){
@@ -24,12 +24,9 @@ app.controller('MessageInputCtrl', ['$timeout', '$scope', '$mdMedia', 'toastMana
   });
 
   this.send = function() {
-    if(this.message) {
-      var emotifiedMsg = emojify.replace(this.message);
-      this.message = emotifiedMsg;
-      this.message = this.message.replace(/(?:\r\n|\r|\n)/g, '<br />');
-      this.main.socket.emit('message sent', this.message, this.main.user, this.main.page);
-      this.message = '';
+    if(this.el.innerHTML) {
+      this.main.socket.emit('message sent', this.el.innerHTML, this.main.user, this.main.page);
+      this.el.innerHTML = '';
       this.rows = 1;
       $('#message-additional-button').webuiPopover('hide');
     }
@@ -39,25 +36,60 @@ app.controller('MessageInputCtrl', ['$timeout', '$scope', '$mdMedia', 'toastMana
     this.main = main;
   };
 
-  this.increaseRows = function(){  
+  this.increaseRows = function(){
+    var br = document.createElement("br");
+    var textNode = document.createTextNode("\u00a0");
+    insertAtCursor(function(sel, range){
+        var testRange = range.cloneRange();
+        testRange.selectNodeContents(that.el);
+        testRange.setStart(range.endContainer, range.endOffset);
+
+        var atEnd = (testRange.toString() == "");
+
+        range.deleteContents();
+        if(atEnd) {
+          range.insertNode(textNode);
+        }
+        range.insertNode(br);
+        range.setStartAfter(br);
+        range.setEndAfter(br);
+        range.collapse(false);
+        sel.removeAllRanges();
+        sel.addRange(range);
+    }, function() {
+    });
+
     this.rows++;
-    this.message += '\n'; 
   };
 
   this.enterHandler = this.isLarge ? this.send : this.increaseRows;
   this.ctrlEnterHandler = this.isLarge ? this.increaseRows: this.send;
 
+  var emptyUri = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
   $scope.emoticonHandler = function(emoticon) {
-    that.message += ' ' + emoticon + ' ';
+    var emoticonStr = '<img class="' + emoticon.attr('class') + ' small' + '" src="' + emptyUri + '">';
+    var node = $(emoticonStr)[0];
+
+    insertAtCursor(function(sel, range){
+      // Insert emoticon and set cursor after it
+      var newRange = document.createRange();
+      range.insertNode(node);
+      newRange.setStartAfter(node);
+      newRange.setEndAfter(node);
+      sel.removeAllRanges();
+      sel.addRange(newRange);
+    }, function() {
+      that.el.innerHTML += node.outerHTML;
+    });
   };
 
-  $scope.$watch(function(){ return $('#message-input-box').height(); }, 
-                function(newVal, oldVal){
-    if(newVal) {
-      var newHeight = Math.min(that.rows * 30, newVal);
-      $('#message-input-box').attr("rows", that.rows).height(newHeight);
-    }
-  });
+  // $scope.$watch(function(){ return $('#message-input-box').height(); }, 
+  //               function(newVal, oldVal){
+  //   if(newVal) {
+  //     var newHeight = Math.min(that.rows * 30, newVal);
+  //     $('#message-input-box').attr("rows", that.rows).height(newHeight);
+  //   }
+  // });
 }]);
 
 app.directive('customKeyPress', function () {
@@ -83,3 +115,21 @@ app.directive('nemooMessageInput', function() {
     controllerAs: 'messageCtrl'
   };
 });
+
+
+function insertAtCursor(hasSelectionCallback, noSelectionCallback) {
+  var sel, range;
+  if (window.getSelection) {
+    sel = window.getSelection();
+    if (sel.getRangeAt && sel.rangeCount) {
+      range = window.getSelection().getRangeAt(0);
+      cursorElement = range.commonAncestorContainer;
+
+      if(cursorElement.id === 'message-input-box' || cursorElement.parentElement.id === 'message-input-box') {
+        hasSelectionCallback(sel, range);
+        return;
+      }
+    }
+  }
+  noSelectionCallback();
+}

@@ -4,6 +4,78 @@
 		"selected_items":
 		[
 			[
+				"get",
+				"getElementById"
+			],
+			[
+				"nod",
+				"nodeStr"
+			],
+			[
+				"mes",
+				"messageBox"
+			],
+			[
+				"o",
+				"optimizationService"
+			],
+			[
+				"com",
+				"componentsPath"
+			],
+			[
+				"is",
+				"isProduction"
+			],
+			[
+				"pa",
+				"pageKey"
+			],
+			[
+				"ret",
+				"retStr"
+			],
+			[
+				"add",
+				"additionalOptions"
+			],
+			[
+				"tog",
+				"toggleClass"
+			],
+			[
+				"marg",
+				"margin-bottom"
+			],
+			[
+				"messa",
+				"messageAddCtrl"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"sym",
+				"symbolsEmoji"
+			],
+			[
+				"enc",
+				"encodedMessage"
+			],
+			[
+				"mess",
+				"messageObject"
+			],
+			[
+				"dis",
+				"discussion"
+			],
+			[
 				"ele",
 				"elementLeft"
 			],
@@ -28,10 +100,6 @@
 				"jsPath"
 			],
 			[
-				"is",
-				"isProduction"
-			],
-			[
 				"page",
 				"pageName"
 			],
@@ -40,19 +108,11 @@
 				"displayName"
 			],
 			[
-				"dis",
-				"discussions"
-			],
-			[
 				"new",
 				"newVal"
 			],
 			[
 				"message",
-				"messageCtrl"
-			],
-			[
-				"mes",
 				"messageCtrl"
 			],
 			[
@@ -116,10 +176,6 @@
 				"LoadingPage"
 			],
 			[
-				"ret",
-				"retObj"
-			],
-			[
 				"arr",
 				"arrOfObj"
 			],
@@ -142,10 +198,6 @@
 			[
 				"spl",
 				"splitArr"
-			],
-			[
-				"margin",
-				"margin-bottom"
 			],
 			[
 				"overflow-",
@@ -312,10 +364,6 @@
 				"font-size"
 			],
 			[
-				"get",
-				"getPageId"
-			],
-			[
 				"_arrow",
 				"_arrowHelper"
 			],
@@ -412,28 +460,46 @@
 	"buffers":
 	[
 		{
-			"file": "public/javascripts/messageInputCtrl.js",
+			"file": "views/components/messageInput.ejs",
 			"settings":
 			{
-				"buffer_size": 2043,
+				"buffer_size": 1263,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "views/components/messageAdditionalOptions.ejs",
+			"file": "public/javascripts/messageInputCtrl.js",
 			"settings":
 			{
-				"buffer_size": 802,
+				"buffer_size": 3193,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "public/stylesheets/style.css",
+			"settings":
+			{
+				"buffer_size": 1889,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "public/javascripts/messageAdditionalOptionsCtrl.js",
 			"settings":
 			{
-				"buffer_size": 113582,
+				"buffer_size": 1783,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "views/productionIndex.ejs",
+			"settings":
+			{
+				"buffer_size": 2850,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -528,57 +594,79 @@
 	[
 		"/C/Users/simon/Documents/Web Dev/nemoo",
 		"/C/Users/simon/Documents/Web Dev/nemoo/app",
+		"/C/Users/simon/Documents/Web Dev/nemoo/app/models",
 		"/C/Users/simon/Documents/Web Dev/nemoo/public",
-		"/C/Users/simon/Documents/Web Dev/nemoo/routes",
-		"/C/Users/simon/Documents/Web Dev/nemoo/scripts",
-		"/C/Users/simon/Documents/Web Dev/nemoo/views"
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/production/images",
+		"/C/Users/simon/Documents/Web Dev/nemoo/views",
+		"/C/Users/simon/Documents/Web Dev/nemoo/views/components",
+		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/production"
 	],
 	"file_history":
 	[
-		"/C/Users/simon/Documents/Web Dev/nemoo/public/stylesheets/style.css",
-		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/discussionCtrl.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/messageInput.ejs",
-		"/C/Users/simon/Documents/Web Dev/nemoo/util/discussionHandler.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/util/util.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/public/production/javascripts/templates.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/gulpfile.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/views/productionIndex.ejs",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/optimizationService.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/views/index.ejs",
-		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/toastManagerService.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/production/production",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/headerCtrl.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/discussion.ejs",
-		"/C/Users/simon/Documents/Web Dev/nemoo/scripts/generateEmoji.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/scripts/emoji-cheatsheet.txt",
+		"/C/Users/simon/Documents/Web Dev/nemoo/app/models/userModel.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/util/discussionHandler.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/messageAdditionalOptionsCtrl.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/package.json",
-		"/C/Users/simon/Documents/Web Dev/nemoo/test.txt",
-		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/panel.ejs",
-		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/createDiscussionDialog.ejs",
-		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/initApp.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/userNavPanel.ejs",
-		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/loginDialog.ejs",
-		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/messageInputCtrl.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/additionalOptionsDropdownCtrl.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/libs/angular-dropdowns.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/libs/angular-dropdowns.min.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/routes/routes.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/home.ejs",
-		"/C/Users/simon/Documents/Web Dev/nemoo/app.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/public/production/javascripts/bundle.min.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/public/images/anonymous/generator.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/scripts/minify.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/searchBox.ejs",
-		"/C/Users/simon/Documents/Web Dev/nemoo/scripts/test.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/additionalOptionsDropdown.ejs",
+		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/messageAdditionalOptions.ejs",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/production/javascripts/libs/angular-dropdowns.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/discussionDialogCtrl.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/panelCtrl.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/searchBoxCtrl.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/test/authenticationDialogCtrl.min.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/userNavPanelCtrl.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/headerCtrl.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/app/models/discussionModel.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/header.ejs",
-		"/C/Users/simon/Documents/Web Dev/nemoo/config/passport.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/signup.ejs",
-		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/login.ejs",
-		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/discussionDialogCtrl.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/views/productionIndex.ejs",
 		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/authenticationDialogCtrl.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/initApp.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/config/passport.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/routes/passportRoutes.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/header.ejs",
+		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/loginDialog.ejs",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/toastManagerService.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/loaderAnimationService.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/nemoo.sublime-workspace",
+		"/C/Users/simon/Documents/Web Dev/nemoo/app.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/scripts/minify.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/package.json",
+		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/production/additionalOptionsDropdown.ejs",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/emoticonConstants.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/emoji-content.ejs",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/stylesheets/style.css",
+		"/C/Users/simon/Documents/Web Dev/nemoo/scripts/emoji-cheatsheet.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/messageInputCtrl.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/discussionCtrl.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/scripts/raw-css-emoticons.txt",
+		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/messageInput.ejs",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/stylesheets/angular-dropdowns.min.css",
+		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/login.ejs",
+		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/panel.ejs",
+		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/searchBox.ejs",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/stylesheets/emojify.min.css",
+		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/signup.ejs",
+		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/createDiscussionDialog.ejs",
+		"/C/Users/simon/Documents/Web Dev/nemoo/app/models/discussionModel.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/util/util.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/mainCtrl.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/.gitignore",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/production/javascripts/templates.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/gulpfile.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/scripts/generateEmoji.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/scripts/emoji-cheatsheet.txt",
+		"/C/Users/simon/Documents/Web Dev/nemoo/test.txt",
+		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/userNavPanel.ejs",
+		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/home.ejs",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/production/javascripts/bundle.min.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/images/anonymous/generator.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/scripts/test.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/test/authenticationDialogCtrl.min.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/loader.ejs",
 		"/C/Users/simon/Documents/Web Dev/nemoo/views/loader.ejs",
 		"/C/Users/simon/AppData/Local/Temp/7zO8DDB.tmp/index.ejs",
@@ -588,7 +676,6 @@
 		"/C/Users/simon/Documents/Web Dev/nemoo/util/appHandler.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/header.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/authenticationDialog.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/routes/passportRoutes.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/panel.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/messageInput.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/ga.js",
@@ -599,7 +686,6 @@
 		"/C/Users/simon/Documents/Web Dev/nemoo/public/production/javascripts/messageInput.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/public/production/javascripts/authenticationDialog.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/public/production/images/anonymous/badger_lg.png",
-		"/C/Users/simon/Documents/Web Dev/nemoo/nemoo.sublime-workspace",
 		"/C/Users/simon/Documents/Web Dev/nemoo/app/models/app.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/app/models/discussion.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/app/models/user.js",
@@ -645,24 +731,7 @@
 		"/C/Users/simon/Documents/Web Dev/nemoo/server.js",
 		"/G/hello.js",
 		"/C/Users/simon/Documents/Web Dev/FP-Tech-Challenge/public/js/app.js",
-		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/lib/BabbelgamesDb.ex",
-		"/C/Users/simon/Documents/Web Dev/FP-Tech-Challenge/public/js/controllers.js",
-		"/C/Users/simon/Documents/Web Dev/FP-Tech-Challenge/public/js/directives.js",
-		"/C/Users/simon/Documents/Web Dev/FP-Tech-Challenge/public/js/filters.js",
-		"/C/Users/simon/Documents/Web Dev/FP-Tech-Challenge/public/js/services.js",
-		"/C/Users/simon/Documents/Web Dev/FP-Tech-Challenge/app.js",
-		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/drop_and_redirect.html",
-		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/js/components/MatchingGame.jsx",
-		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/data/screenplay/sherlock/s01e02.txt",
-		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/data/subtitles/de-got-s01e01.srt",
-		"/C/Users/simon/Downloads/dft.java",
-		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/js/components/LoadingPage.jsx",
-		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/js/components/App.jsx",
-		"/C/Users/simon/Documents/Web Dev/react-hot-boilerplate/src/App.js",
-		"/C/Users/simon/Documents/Web Dev/react-hot-boilerplate/src/index.js",
-		"/C/Users/simon/Documents/Web Dev/react-hot-boilerplate/webpack.config.js",
-		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/js/components/ShuffledGameSlab.jsx",
-		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/frontend/css/episodeTile.css"
+		"/C/Users/simon/Documents/Web Dev/frex-backend/frex-backend/lib/BabbelgamesDb.ex"
 	],
 	"find":
 	{
@@ -688,6 +757,79 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			".message",
+			".setProperties",
+			"additionalButtonEl",
+			"selectHandler",
+			"handlePageChange",
+			"dropdownOnchange",
+			"toggleDropDownCallback",
+			"dropdownOnchange",
+			"toggleDropDown",
+			".on(",
+			"optimizationService",
+			"$window",
+			"$location",
+			"optimizationService",
+			"$location",
+			"$window",
+			"optimizationService",
+			"toastManager",
+			"optimizationService",
+			"loaderAnimation",
+			"hardRedirect",
+			"$window",
+			".render(",
+			"emoticons",
+			"emoticonIndex",
+			"inEmoticonView",
+			"true,",
+			"emoticonIndex",
+			"event",
+			"attrs",
+			"event",
+			"labelField",
+			"select(",
+			"dropdownOnchange",
+			"DropdownService.",
+			"isActive",
+			"clearActive",
+			"dropdownMenuWrap",
+			"'click'",
+			"fa-",
+			"emoticon",
+			"getMobileOperatingSystem",
+			"android",
+			"$compile",
+			"toastManager",
+			"Emoticon (",
+			"Emoticon",
+			"emoticon",
+			"Emoticon",
+			"displayName",
+			"mdmedia",
+			"',",
+			"key",
+			"Emoji",
+			"INT",
+			",",
+			"1",
+			"+1",
+			"\\t",
+			"]t",
+			"\t",
+			"heart_eyes",
+			"heart_eyes \nheart_eyes \nsmiley",
+			"relieved",
+			"flushed",
+			"bowtie",
+			"laughing",
+			"simple_smile",
+			"background-position",
+			"emoji",
+			"background-image",
+			"{{",
+			"background-image",
 			"/* Safari */",
 			".ejs",
 			"media",
@@ -742,80 +884,7 @@
 			"png",
 			"generateAnonUser",
 			".who",
-			"backgroundColor",
-			"global",
-			"req.session",
-			"console.log",
-			"globalapp",
-			"console.log",
-			"globalDiscussion",
-			"globalDiscussionName",
-			"socket",
-			"solid lightgrey",
-			"$http.post",
-			"$http.get",
-			".get",
-			"ng-init",
-			"init",
-			"trending",
-			"$route",
-			"main",
-			"Automotive",
-			"/logout",
-			"$window",
-			"$mdDialog",
-			"$window",
-			"Android",
-			"currentNumOnline",
-			"removeSettings",
-			"console.log",
-			"unfocus",
-			"console.log",
-			"alert",
-			"$",
-			"breakFilter",
-			"breakfilter",
-			"$",
-			"/views/",
-			"loginCtrl",
-			"/views/",
-			".ejs'",
-			"page/",
-			"direct(",
-			"href",
-			"$window",
-			"/views/",
-			"ng-include",
-			"event",
-			"hue",
-			"md-primary",
-			"class=\"fa",
-			"fa",
-			"scrollHeight",
-			"link",
-			"models/",
-			"snow",
-			"apps",
-			"ng-style",
-			"req.user",
-			"console.log",
-			"discussion.",
-			"templateUrl",
-			"render(",
-			"User",
-			"user'",
-			"/views/",
-			"lightgoldenrodyellow",
-			"ctrl",
-			"friends",
-			"tolowercase()",
-			"dlg",
-			"ctrl",
-			"login",
-			"toLowerCase",
-			"ctrl",
-			"LoginCtrl",
-			"auto-fo"
+			"backgroundColor"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -847,19 +916,49 @@
 			[
 				{
 					"buffer": 0,
-					"file": "public/javascripts/messageInputCtrl.js",
+					"file": "views/components/messageInput.ejs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2043,
+						"buffer_size": 1263,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1147,
-								1147
+								202,
+								202
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "public/javascripts/messageInputCtrl.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3193,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1755,
+								1755
 							]
 						],
 						"settings":
@@ -869,35 +968,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 323.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "views/components/messageAdditionalOptions.ejs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 802,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								768,
-								768
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 682.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
@@ -905,30 +976,91 @@
 				},
 				{
 					"buffer": 2,
-					"file": "public/javascripts/messageAdditionalOptionsCtrl.js",
+					"file": "public/stylesheets/style.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 113582,
+						"buffer_size": 1889,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								112883,
-								112909
+								1821,
+								1821
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 277.0,
+						"translation.y": 1518.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "public/javascripts/messageAdditionalOptionsCtrl.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1783,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1226,
+								1226
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 442.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "views/productionIndex.ejs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2850,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2485,
+								2485
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 442.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
 					"type": "text"
 				}
 			]
@@ -971,13 +1103,13 @@
 	},
 	"output.find_results":
 	{
-		"height": 318.0
+		"height": 275.0
 	},
 	"pinned_build_system": "",
 	"project": "nemoo.sublime-project",
 	"replace":
 	{
-		"height": 48.0
+		"height": 62.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -987,40 +1119,260 @@
 		"selected_items":
 		[
 			[
-				"mes",
-				"views\\components\\messageInput.ejs"
-			],
-			[
-				"dis",
-				"public\\javascripts\\discussionCtrl.js"
-			],
-			[
-				"discus",
-				"public\\javascripts\\discussionCtrl.js"
-			],
-			[
-				"util",
-				"util\\util.js"
-			],
-			[
-				"styl",
+				"style",
 				"public\\stylesheets\\style.css"
 			],
 			[
-				"messa",
+				"op",
+				"public\\javascripts\\optimizationService.js"
+			],
+			[
+				"ma",
 				"public\\javascripts\\messageAdditionalOptionsCtrl.js"
 			],
 			[
-				"messageadd",
+				"mic",
+				"public\\javascripts\\messageInputCtrl.js"
+			],
+			[
+				"mess",
+				"views\\components\\messageInput.ejs"
+			],
+			[
+				"production",
+				"views\\components\\production\\production"
+			],
+			[
+				"produ",
+				"views\\productionIndex.ejs"
+			],
+			[
+				"ind",
+				"views\\index.ejs"
+			],
+			[
+				"heade",
+				"public\\javascripts\\headerCtrl.js"
+			],
+			[
+				"routes",
+				"routes\\routes.js"
+			],
+			[
+				"d",
+				"util\\discussionHandler.js"
+			],
+			[
+				"discuss",
+				"views\\components\\discussion.ejs"
+			],
+			[
+				"aode",
+				"views\\components\\additionalOptionsDropdown.ejs"
+			],
+			[
+				"add",
+				"public\\javascripts\\additionalOptionsDropdownCtrl.js"
+			],
+			[
+				"ao",
+				"public\\javascripts\\additionalOptionsDropdownCtrl.js"
+			],
+			[
+				"drop",
+				"public\\javascripts\\libs\\angular-dropdowns.js"
+			],
+			[
+				"angula",
+				"public\\javascripts\\libs\\angular-dropdowns.js"
+			],
+			[
+				"angular-drop",
+				"public\\production\\javascripts\\libs\\angular-dropdowns.js"
+			],
+			[
+				"aod",
+				"public\\javascripts\\additionalOptionsDropdownCtrl.js"
+			],
+			[
+				"ado",
+				"views\\components\\additionalOptionsDropdown.ejs"
+			],
+			[
+				"mao",
 				"views\\components\\messageAdditionalOptions.ejs"
+			],
+			[
+				"mes",
+				"public\\javascripts\\messageAdditionalOptionsCtrl.js"
+			],
+			[
+				"pas",
+				"config\\passport.js"
+			],
+			[
+				"passpor",
+				"routes\\passportRoutes.js"
+			],
+			[
+				"init",
+				"public\\javascripts\\initApp.js"
+			],
+			[
+				"passpo",
+				"routes\\passportRoutes.js"
+			],
+			[
+				"login",
+				"views\\components\\loginDialog.ejs"
+			],
+			[
+				"aut",
+				"public\\javascripts\\authenticationDialogCtrl.js"
+			],
+			[
+				"loader",
+				"public\\javascripts\\loaderAnimationService.js"
+			],
+			[
+				"toast",
+				"public\\javascripts\\toastManagerService.js"
+			],
+			[
+				"head",
+				"views\\components\\header.ejs"
+			],
+			[
+				"in",
+				"views\\index.ejs"
 			],
 			[
 				"pro",
 				"views\\productionIndex.ejs"
 			],
 			[
-				"",
+				"app.j",
+				"app.js"
+			],
+			[
+				"mini",
+				"scripts\\minify.js"
+			],
+			[
+				"app",
+				"app.js"
+			],
+			[
+				"min",
+				"scripts\\minify.js"
+			],
+			[
+				"inde",
+				"views\\index.ejs"
+			],
+			[
+				"message",
+				"public\\javascripts\\messageAdditionalOptionsCtrl.js"
+			],
+			[
+				"maod",
+				"views\\components\\additionalOptionsDropdown.ejs"
+			],
+			[
+				"sty",
+				"public\\stylesheets\\style.css"
+			],
+			[
+				"messa",
+				"public\\javascripts\\messageInputCtrl.js"
+			],
+			[
+				"em",
+				"public\\javascripts\\emoticonConstants.js"
+			],
+			[
+				"angul",
+				"public\\stylesheets\\angular-dropdowns.min.css"
+			],
+			[
+				"mi",
+				"public\\javascripts\\messageInputCtrl.js"
+			],
+			[
+				"meip",
 				"views\\components\\messageInput.ejs"
+			],
+			[
+				"madoc",
+				"public\\javascripts\\messageAdditionalOptionsCtrl.js"
+			],
+			[
+				"mado",
+				"views\\components\\messageAdditionalOptions.ejs"
+			],
+			[
+				"emot",
+				"public\\javascripts\\emoticonConstants.js"
+			],
+			[
+				"messi",
+				"views\\components\\messageInput.ejs"
+			],
+			[
+				"con",
+				"public\\javascripts\\emoticonConstants.js"
+			],
+			[
+				"emoji",
+				"public\\stylesheets\\emojify.min.css"
+			],
+			[
+				"ini",
+				"public\\javascripts\\initApp.js"
+			],
+			[
+				"mainc",
+				"public\\javascripts\\mainCtrl.js"
+			],
+			[
+				"route",
+				"routes\\routes.js"
+			],
+			[
+				"addition",
+				"views\\components\\messageAdditionalOptions.ejs"
+			],
+			[
+				"util",
+				"util\\util.js"
+			],
+			[
+				"discus",
+				"app\\models\\discussionModel.js"
+			],
+			[
+				"rou",
+				"routes\\routes.js"
+			],
+			[
+				"",
+				".gitignore"
+			],
+			[
+				"disc",
+				"public\\javascripts\\discussionCtrl.js"
+			],
+			[
+				"dis",
+				"public\\javascripts\\discussionCtrl.js"
+			],
+			[
+				"styl",
+				"public\\stylesheets\\style.css"
+			],
+			[
+				"messageadd",
+				"views\\components\\messageAdditionalOptions.ejs"
 			],
 			[
 				"input",
@@ -1031,24 +1383,12 @@
 				"public\\javascripts\\discussionCtrl.js"
 			],
 			[
-				"mess",
-				"views\\components\\messageInput.ejs"
-			],
-			[
-				"disc",
-				"public\\javascripts\\discussionCtrl.js"
-			],
-			[
 				"m",
 				"views\\components\\messageInput.ejs"
 			],
 			[
 				"toas",
 				"public\\javascripts\\toastManagerService.js"
-			],
-			[
-				"ind",
-				"views\\index.ejs"
 			],
 			[
 				"mesa",
@@ -1067,10 +1407,6 @@
 				"views\\components\\discussion.ejs"
 			],
 			[
-				"emoji",
-				"scripts\\generateEmoji.js"
-			],
-			[
 				"messagead",
 				"public\\javascripts\\messageAdditionalOptionsCtrl.js"
 			],
@@ -1083,52 +1419,16 @@
 				"package.json"
 			],
 			[
-				"inde",
-				"views\\index.ejs"
-			],
-			[
-				"sty",
-				"public\\stylesheets\\style.css"
-			],
-			[
 				"user",
 				"views\\components\\userNavPanel.ejs"
-			],
-			[
-				"init",
-				"public\\javascripts\\initApp.js"
 			],
 			[
 				"home",
 				"views\\components\\home.ejs"
 			],
 			[
-				"route",
-				"routes\\routes.js"
-			],
-			[
-				"mi",
-				"scripts\\minify.js"
-			],
-			[
 				"bund",
 				"public\\production\\javascripts\\bundle.min.js"
-			],
-			[
-				"rou",
-				"routes\\routes.js"
-			],
-			[
-				"app",
-				"app.js"
-			],
-			[
-				"mini",
-				"scripts\\minify.js"
-			],
-			[
-				"min",
-				"scripts\\minify.js"
 			],
 			[
 				"sear",
@@ -1143,14 +1443,6 @@
 				"views\\components\\discussion.ejs"
 			],
 			[
-				"head",
-				"public\\javascripts\\headerCtrl.js"
-			],
-			[
-				"routes",
-				"routes\\routes.js"
-			],
-			[
 				"discussionmo",
 				"app\\models\\discussionModel.js"
 			],
@@ -1161,10 +1453,6 @@
 			[
 				"userna",
 				"views\\components\\userNavPanel.ejs"
-			],
-			[
-				"style",
-				"public\\stylesheets\\style.css"
 			],
 			[
 				"se",
@@ -1181,10 +1469,6 @@
 			[
 				"nav",
 				"views\\components\\userNavPanel.ejs"
-			],
-			[
-				"discuss",
-				"util\\discussionHandler.js"
 			],
 			[
 				"pass",
@@ -1255,10 +1539,6 @@
 				"public\\javascripts\\mainCtrl.js"
 			],
 			[
-				"message",
-				"public\\javascripts\\messageInputCtrl.js"
-			],
-			[
 				"authen",
 				"public\\javascripts\\authenticationDialogCtrl.js"
 			],
@@ -1285,10 +1565,6 @@
 			[
 				"create",
 				"views\\components\\createDiscussionDialog.ejs"
-			],
-			[
-				"d",
-				"util\\discussionHandler.js"
 			],
 			[
 				"discussionct",
@@ -1343,10 +1619,6 @@
 				"views\\components\\panel.ejs"
 			],
 			[
-				"in",
-				"views\\index.ejs"
-			],
-			[
 				"scr",
 				"public\\javascripts\\script.js"
 			],
@@ -1357,146 +1629,6 @@
 			[
 				"he",
 				"views\\components\\header.ejs"
-			],
-			[
-				"routs",
-				"routes\\routes.js"
-			],
-			[
-				"usernav",
-				"views\\components\\userNavPanel.ejs"
-			],
-			[
-				"login",
-				"views\\components\\login.ejs"
-			],
-			[
-				"header",
-				"views\\components\\header.ejs"
-			],
-			[
-				".ejs",
-				"views\\components\\login.ejs"
-			],
-			[
-				"script",
-				"public\\javascripts\\script.js"
-			],
-			[
-				"apphan",
-				"util\\appHandler.js"
-			],
-			[
-				"ap.js",
-				"app\\models\\app.js"
-			],
-			[
-				"discuh",
-				"util\\discussionHandler.js"
-			],
-			[
-				"sc",
-				"public\\javascripts\\script.js"
-			],
-			[
-				"di",
-				"app\\models\\discussion.js"
-			],
-			[
-				"s",
-				"public\\javascripts\\script.js"
-			],
-			[
-				"loi",
-				"views\\components\\login.ejs"
-			],
-			[
-				"scrip",
-				"public\\javascripts\\script.js"
-			],
-			[
-				"discussion.js",
-				"app\\models\\discussion.js"
-			],
-			[
-				"app.js",
-				"app.js"
-			],
-			[
-				"use",
-				"app\\models\\user.js"
-			],
-			[
-				"ut",
-				"util\\util.js"
-			],
-			[
-				"uti",
-				"util\\util.js"
-			],
-			[
-				"us",
-				"app\\models\\user.js"
-			],
-			[
-				"proifle",
-				"views\\profile.ejs"
-			],
-			[
-				"user.",
-				"app\\models\\user.js"
-			],
-			[
-				"navigat",
-				"frontend\\js\\components\\NavigationBar.jsx"
-			],
-			[
-				"epiosdetile",
-				"frontend\\js\\components\\EpisodeTile.jsx"
-			],
-			[
-				"episode",
-				"frontend\\js\\components\\EpisodeTileGalleryContainer.jsx"
-			],
-			[
-				"mgcont",
-				"frontend\\js\\components\\MatchingGameContainer.jsx"
-			],
-			[
-				"matching",
-				"frontend\\js\\components\\MatchingGame.jsx"
-			],
-			[
-				"aboup",
-				"frontend\\js\\components\\AboutPage.jsx"
-			],
-			[
-				"navi",
-				"frontend\\js\\components\\NavigationBar.jsx"
-			],
-			[
-				"app.jsx",
-				"frontend\\js\\components\\App.jsx"
-			],
-			[
-				".srt",
-				"data\\subtitles\\de-got-s01e01.srt"
-			],
-			[
-				".txt",
-				"data\\screenplay\\sherlock\\s01e02.txt"
-			],
-			[
-				"episo",
-				"frontend\\js\\components\\EpisodeTile.jsx"
-			],
-			[
-				"matchingc",
-				"frontend\\js\\components\\MatchingGameContainer.jsx"
-			],
-			[
-				"matchinggamecon",
-				"frontend\\js\\components\\MatchingGameContainer.jsx"
 			]
 		],
 		"width": 0.0
@@ -1527,11 +1659,11 @@
 	"settings":
 	{
 	},
-	"show_minimap": true,
+	"show_minimap": false,
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 278.0,
+	"side_bar_width": 252.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

@@ -88,9 +88,26 @@ p > img.emoji {
 }
 
 .emoticon-outer-container {
-  min-width:10%; margin-top: 5px; margin-bottom: 5px;
+  min-width:10%; 
+  margin-top: 5px; 
+  margin-bottom: 5px;
 }
 
 .emoticon-outer-container > div {
-  display: inline-block; cursor: pointer;
+  display: inline-block; 
+  cursor: pointer;
+}
+
+.rendered-emoticon {
+  -webkit-transform: scale(0.75);
+          transform: scale(0.75);
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+}
+
+.rendered-emoticon-container {
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+  display: inline-block;
 }

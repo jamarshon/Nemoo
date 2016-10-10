@@ -31,7 +31,7 @@ app.controller('MessageAdditionalOptionsCtrl', ['$scope', '$timeout', '$template
 	  this.addEmoji = function($event){
 	  	var target = $($event.target);
 	  	var span = target.prop("tagName") === 'SPAN' ? target : target.find('span');
-	  	$scope.$parent.emoticonHandler(span.attr('title'));
+	  	$scope.$parent.emoticonHandler(span);
 	  	$event.preventDefault();
 	  };
 

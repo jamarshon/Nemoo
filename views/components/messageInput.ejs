@@ -1,13 +1,12 @@
 <form layout layout-align="center" ng-init="messageCtrl.init(main)">
   <div layout="row" flex>
     <md-input-container flex class="md-no-momentum no-error" md-no-float>
-      <textarea
-            md-no-resize id="message-input-box" ng-model="messageCtrl.message" 
-            type="text" placeholder="Enter message here!"
-            on-enter-pressed="messageCtrl.enterHandler()" autocomplete="off"
-            on-ctrl-enter-pressed="messageCtrl.ctrlEnterHandler()" rows="1"
-            ng-trim="false" custom-key-press>
-            </textarea>
+      <div id="message-input-box" class="md-input"
+            spellcheck="false" autocomplete="off"
+            contenteditable="true" style="height: auto;"
+            on-enter-pressed="messageCtrl.enterHandler()"
+            on-ctrl-enter-pressed="messageCtrl.ctrlEnterHandler()"
+            custom-key-press></div>
             <nemoo-message-additional-options> </nemoo-message-additional-options>
     </md-input-container>
     <div>
