@@ -2,6 +2,7 @@ var Q                   = require('q');
 
 var AppHandler          = require('../util/appHandler');
 var DiscussionHandler   = require('../util/discussionHandler');
+var DiscussionRenderer  = require('../util/discussionRenderer');
 var PassportRoutes      = require('./passportRoutes');
 var Util                = require('../util/util');
 var _                   = require('underscore');
@@ -31,10 +32,9 @@ module.exports = function(app, passport, isProduction) {
   app.get('/partials/:discussion', function(req, res){
     var discussionName = req.params.discussion;
     DiscussionHandler.getDiscussion(discussionName).then(function(discussion){
-      discussion.data.forEach(function(messageObject){
-        messageObject.message = Util.decodeUTF8(messageObject.message);
-      });
-      res.render(componentsPath + 'discussion', {name: discussion.displayName, description: discussion.description, data: discussion.data});
+      var prerendered = DiscussionRenderer.getPrerendered(discussion);
+      var prerenderedLen = discussion.data.length;
+      res.render(componentsPath + 'discussion', {name: discussion.displayName, description: discussion.description, prerenderedLen: prerenderedLen, prerendered: prerendered});
     }, function(err) {
       res.render('error', {message: err, error: {} });
     });

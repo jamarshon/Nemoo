@@ -5,7 +5,8 @@ gulp.task('default', function () {
     .pipe(templateCache({
     	transformUrl: function(url) {
 		    return '/views/' + url;
-		}
+			},
+			standalone: true
     }))
     .pipe(gulp.dest('public/production/javascripts'));
 });

@@ -19,7 +19,7 @@ app.config(['$routeProvider', '$locationProvider', '$mdThemingProvider', '$compi
   });
 
   // Optimization for production (comment out during development)
-  //$compileProvider.debugInfoEnabled(false);
+  $compileProvider.debugInfoEnabled(false);
   checkAndUpdateFBURL();
   
   // Theme

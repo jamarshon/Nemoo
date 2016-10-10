@@ -76,8 +76,15 @@ app.controller('MessageInputCtrl', ['$timeout', '$scope', '$rootScope', '$mdMedi
     });
   };
 
-  this.enterHandler = this.isLarge ? this.send : this.increaseRows;
-  this.ctrlEnterHandler = this.isLarge ? this.increaseRows : this.send;
+  this.enterHandler = function() {
+    if(this.isLarge){ this.send(); }
+    else{ this.increaseRows(); }
+  };
+
+  this.ctrlEnterHandler = function() {
+    if(this.isLarge){ this.increaseRows(); }
+    else{ this.send(); }
+  };
 
   this.checkForDisableSend = function(isDelete, isSpace){
       var text = $(that.$el).text().trim();
@@ -113,8 +120,8 @@ app.controller('MessageInputCtrl', ['$timeout', '$scope', '$rootScope', '$mdMedi
         this.enterHandler();
       }
       $event.preventDefault();
-    } else if(keyCode == 8 || keyCode === 46){ // Delete key
-      this.throttledKeyPressHandler(true, false);
+    } else if(keyCode == 8 || keyCode === 46){ // Delete key, do not throttle
+      this.checkForDisableSend(true, false); 
     } else if(printableRegex.test(keyValue)) {
       var isSpace = keyCode === 0 || keyCode === 32;
       this.throttledKeyPressHandler(false, isSpace);

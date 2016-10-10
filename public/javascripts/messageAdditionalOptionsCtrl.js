@@ -7,7 +7,6 @@ app.controller('MessageAdditionalOptionsCtrl', ['$scope', '$rootScope', '$timeou
 	//$templateCache.remove('/views/messageAdditionalOptions.ejs');
 
 	this.pageKey = 'people';
-	//this.isLarge = $mdMedia('gt-xs');
 	var sizeHandler = $scope.$watch(function() { return $mdMedia('gt-xs'); }, function(open) {
     that.isLarge = open;
   });
