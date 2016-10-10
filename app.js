@@ -21,6 +21,7 @@ var app = express();
 var io           = socket_io();
 app.io           = io;
 
+var MongoStore = require('connect-mongo')(session);
 mongoose.connect(configDB.url()); // connect to our database
 
 // view engine setup
@@ -35,7 +36,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // required for passport
-var sessionInstance = session({ secret: 'iamlightningtheraintransformed', resave: false});
+var sessionInstance = session({ 
+  secret: 'iamlightningtheraintransformed', 
+  resave: false,
+  store: new MongoStore({ mongooseConnection: mongoose.connection })
+});
 app.use(sessionInstance);
 
 require('./config/passport')(passport); // pass passport for configuration

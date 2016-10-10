@@ -34,7 +34,7 @@ module.exports = function(app, passport, isProduction) {
     DiscussionHandler.getDiscussion(discussionName).then(function(discussion){
       var prerendered = DiscussionRenderer.getPrerendered(discussion);
       var prerenderedLen = discussion.data.length;
-      res.render(componentsPath + 'discussion', {name: discussion.displayName, description: discussion.description, prerenderedLen: prerenderedLen, prerendered: prerendered});
+      res.render(componentsPath + 'discussion', {name: discussion.displayName, description: discussion.description, prerenderedLen: prerenderedLen, prerendered: prerendered.join('')});
     }, function(err) {
       res.render('error', {message: err, error: {} });
     });
