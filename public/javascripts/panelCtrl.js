@@ -36,7 +36,8 @@ app.controller('PanelCtrl', ['$mdDialog', '$mdSidenav', '$mdMedia', '$http', 'op
   };
   general.unshift(createDiscussion);
   this.general = general;
-  
+  this.hideTrending = false;
+
   $http.get('/trendingDiscussions').then(function(res){
     that.trending = res.data.discussions.map(function(e){
       return {title: e};

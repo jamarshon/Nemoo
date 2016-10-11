@@ -9,10 +9,10 @@
 }
 
 md-tooltip.custom-tool-tip .md-content {
-    height: auto;
-    white-space: normal;
-    background-color: rgba(0,0,0,1.0);
-    font-size: 12px;
+  height: auto;
+  white-space: normal;
+  background-color: rgba(0,0,0,1.0);
+  font-size: 12px;
 }
 
 md-tooltip.custom-tool-tip {
@@ -113,3 +113,31 @@ p > img.emoji {
   color: rgba(0, 0, 0, 0.35);
   font-family: Roboto,Helvetica Neue,sans-serif;
 }
+
+.menu-toggle-dropdown {
+  max-height: 300px;
+  overflow-y: hidden;
+  
+  -webkit-transition: 0.5s cubic-bezier(0.26, 0.86, 0.44, 0.985) all;
+  transition: 0.5s cubic-bezier(0.26, 0.86, 0.44, 0.985) all;
+}
+
+.menu-toggle-dropdown.ng-hide {
+  max-height: 0;
+}
+
+.blue-box.removed:focus {
+  outline: none;
+ }
+
+ .expand-on-hover-parent:hover div.expand-on-hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  transform-origin: left;
+ }
+
+ .expand-on-hover-parent:hover i.expand-on-hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  transform-origin: right;
+ }

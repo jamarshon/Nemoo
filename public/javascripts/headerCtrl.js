@@ -16,6 +16,9 @@ app.controller('HeaderCtrl', ['$scope', '$mdSidenav', '$mdMedia', '$mdDialog',
     if(large) {
       that.open = !that.open;
     } else {
+      if(!sideNav.isOpen()){
+        $('#message-input-box').blur();
+      }
       sideNav.toggle();
     }
   };

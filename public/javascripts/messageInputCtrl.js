@@ -92,16 +92,13 @@ app.controller('MessageInputCtrl', ['$timeout', '$scope', '$rootScope', '$mdMedi
         insertAtCursor(function(sel, range){
           var selectedRange = that.getRange(range, true, true, true);
           if(selectedRange.atStart && selectedRange.atEnd || text.length === 1) {
-            console.log('delete');
             that.disableSend = true;
           }
         }, function() {});
       } else {
         if(text.length === 0 && isSpace) {
-          console.log('empty');
           that.disableSend = true;
         } else if(that.disableSend) {
-          console.log('normal');
           that.disableSend = false;
         }
       }

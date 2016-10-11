@@ -15,6 +15,7 @@ app.controller('DiscussionCtrl', ['$mdMedia', '$routeParams', '$rootScope', '$ti
     this.pageName = name;
     this.prerenderedLen = prerenderedLen;
     this.data = [];
+    this.test = Date.now().toString(16);
     this.main.socket.on(this.main.page + ' message received', function(msg, user){
       var dataLen = that.data.length;
       var message = {
@@ -49,6 +50,7 @@ app.controller('DiscussionCtrl', ['$mdMedia', '$routeParams', '$rootScope', '$ti
     that.$el = null;
     that.lastPrerenderedEl = null;
     that.data = null;
+    that.main.socket.removeAllListeners(that.main.page + ' message received');
     destroyHandler();
   });
 }]);

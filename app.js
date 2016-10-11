@@ -39,6 +39,7 @@ app.use(cookieParser());
 var sessionInstance = session({ 
   secret: 'iamlightningtheraintransformed', 
   resave: false,
+  saveUninitialized: false,
   store: new MongoStore({ mongooseConnection: mongoose.connection })
 });
 app.use(sessionInstance);
