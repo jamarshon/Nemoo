@@ -131,13 +131,13 @@ p > img.emoji {
  }
 
  .expand-on-hover-parent:hover div.expand-on-hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  -webkit-transform: scale(1.08);
+          transform: scale(1.08);
   transform-origin: left;
  }
 
  .expand-on-hover-parent:hover i.expand-on-hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
   transform-origin: right;
  }

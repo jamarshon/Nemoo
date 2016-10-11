@@ -36,12 +36,24 @@ app.controller('PanelCtrl', ['$mdDialog', '$mdSidenav', '$mdMedia', '$http', 'op
   };
   general.unshift(createDiscussion);
   this.general = general;
-  this.hideTrending = false;
+  this.hideTrending = true;
+  this.hideGeneral = false;
 
   $http.get('/trendingDiscussions').then(function(res){
-    that.trending = res.data.discussions.map(function(e){
-      return {title: e};
+    that.trending = res.data.trending;
+  });
+
+  that.topDiscussions = [];
+  $http.get('/topDiscussions').then(function(res){
+    res.data.topDiscussions.forEach(function(result){
+      var topDiscussion = {
+        categoryLabel: result.category,
+        toggleBoolean: true,
+        discussions: result.discussionNames
+      };
+      that.topDiscussions.push(topDiscussion);
     });
+    console.log(that.topDiscussions);
   });
 
   this.init = function(main){
@@ -92,5 +104,24 @@ app.directive('nemooPanel', function() {
     templateUrl: '/views/panel.ejs',
     controller: 'PanelCtrl',
     controllerAs: 'panelCtrl'
+  };
+});
+
+app.directive('nemooTopDiscussions', function () {
+  return {
+    restrict: 'E',
+    replace: true,
+    scope: {
+      toggleBoolean: '=',
+      discussions: '=',
+      categoryLabel: '@',
+      onClickHandler: '&',
+    },
+    templateUrl: '/views/topDiscussions.ejs',
+    controller: ['$scope', function($scope){
+      $scope.localClickHandler = function($event, name) {
+        $scope.onClickHandler({localEvent: $event, localName: name});
+      };
+    }]
   };
 });

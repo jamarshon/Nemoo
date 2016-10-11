@@ -45,9 +45,9 @@ discussionHandler.createDiscussion = function(category, name, description, user)
 	return deferred.promise;
 };
 
-discussionHandler.getTrending = function() {
+discussionHandler._abstractTopSevenSearch = function(query) {
 	var deferred = Q.defer();
-	Discussion.find({}).sort({ messageCount : 'desc' }).limit(7).exec(function(err, discussions) {
+	Discussion.find(query).sort({ messageCount : 'desc' }).limit(7).exec(function(err, discussions) {
 		if(err) {
 			deferred.reject(err);
 		} else{
@@ -57,18 +57,39 @@ discussionHandler.getTrending = function() {
 	return deferred.promise;
 };
 
+discussionHandler.getTrending = function() {
+	return discussionHandler._abstractTopSevenSearch({});
+};
+
 discussionHandler.search = function(query) {
 	var deferred = Q.defer();
 	var searchName = {name: {$regex : query}};
 	var searchDescription = {description: {$regex : query}};
-	Discussion.find({$or: [searchName, searchDescription]}).limit(7).exec(function(err, discussions){
-		if(err) {
-			deferred.reject(err);
-		} else{
-			deferred.resolve(discussions);
-		}
-	});
-	return deferred.promise;
+	return discussionHandler._abstractTopSevenSearch({$or: [searchName, searchDescription]});
+};
+
+discussionHandler.getTopDiscussions = function() {
+	var deferred = Q.defer();
+	Discussion.aggregate(
+    [
+      { "$sort": { "category": 1, "messageCount": -1 } },
+      { "$group": {
+        "_id": "$category",
+        "items": { "$push": "$$ROOT" }
+      }},
+      { "$project": {
+        "items": { "$slice": [ "$items", 2] }
+      }}
+    ],
+    function(err, results) {
+    	if(err) {
+				deferred.reject(err);
+			} else{
+				deferred.resolve(results);
+			}
+    }
+  );
+  return deferred.promise;
 };
 
 discussionHandler.populateDummy = function() {
@@ -77,10 +98,17 @@ discussionHandler.populateDummy = function() {
 		displayName: 'jasonl96',
 		profilePic: '/images/user/tabby.jpg',
 	};
-	var discussions = ['cats', 'dogs', 'finance', 'memes'];
+	var discussions = [
+		{name: 'cats', category: 'animals'}, 
+		{name:'dogs', category: 'animals'}, 
+		{name:'rabbits', category: 'animals'}, 
+		{name:'lamborghini', category: 'automobile'}, 
+		{name:'ferrari', category: 'automobile'}, 
+		{name:'bugatti', category: 'automobile'}, 
+	];
 	var description = 'A discussion about ';
 	discussions.forEach(function(discussion){
-		discussionHandler.createDiscussion('animals', discussion, description + discussion, dummyUser);
+		discussionHandler.createDiscussion(discussion.category, discussion.name, description + discussion.name, dummyUser);
 	})
 }
 

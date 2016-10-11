@@ -77,8 +77,10 @@ module.exports = function(app, passport, isProduction) {
 
   app.get('/trendingDiscussions', function(req, res){
     DiscussionHandler.getTrending().then(function(discussions){
-      var discussionNames = _.pluck(discussions, 'displayName');
-      res.json({discussions: discussionNames});
+      var trending = _.map(discussions, function(discussion){
+        return {title: discussion.displayName};
+      });
+      res.json({trending: trending});
     }, function(err){
       res.json({discussions: []});
     });
@@ -96,6 +98,22 @@ module.exports = function(app, passport, isProduction) {
       res.json({discussions: []});
     })
   });
+
+  app.get('/topDiscussions', function(req, res){
+    DiscussionHandler.getTopDiscussions().then(function(results){
+      var topDiscussions = _.map(results, function(result){ 
+        return {
+          category: Util.toTitleCase(result._id), 
+          discussionNames: _.map(result.items, function(discussion){
+            return {title: discussion.displayName};
+          })
+        }; 
+      });
+      res.json({topDiscussions: topDiscussions});
+    }, function(err){
+      res.json({topDiscussions: []});
+    });
+  })
 
   app.io.on('connection', function(socket){
     AppHandler.getApp().then(function(app){
