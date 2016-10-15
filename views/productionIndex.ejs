@@ -16,8 +16,8 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <!-- load angular via CDN -->
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.min.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
@@ -48,7 +48,7 @@
 
 <!-- define angular controller -->
 <body ng-controller="MainCtrl as main" 
-      ng-init="main.user = <%=JSON.stringify(user)%>; main.loggedIn = <%=loggedIn%>; main.currentNumOnline = <%=currentNumOnline%>;" 
+      ng-init="main.init(<%=JSON.stringify(user)%>, <%=loggedIn%>, <%=currentNumOnline%>)" 
       class="ng-cloak">
       <nemoo-header></nemoo-header>
 </body>

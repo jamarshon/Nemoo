@@ -6,14 +6,15 @@
       </md-button>
       <h1 style="cursor: default;"> Nemoo </h1>
       <span flex></span>
-      <span hide show-gt-sm style="padding-right: 15px;" class="ellipsis" ng-bind="main.user.displayName"></span>
-      <img hide show-gt-sm ng-src="{{main.user.profilePic}}" style="border-radius: 50%; width: 50px; height: 50px" ng-style="{'background-color': '{{main.user.backgroundColor}}' } "/>
+      <span hide show-gt-sm style="padding-right: 15px;" class="ellipsis" ng-bind="header.state.user.displayName"></span>
+      <img hide show-gt-sm ng-src="{{header.state.user.profilePic}}" style="border-radius: 50%; width: 50px; height: 50px" 
+          ng-style="{'background-color': '{{header.state.user.backgroundColor}}' } "/>
 
       <div hide show-gt-sm>
         <md-button ng-click="header.softRedirect('/')" style="padding-right: 15px">Home</md-button> 
-        <md-button ng-hide="main.loggedIn" ng-click="header.showTabDialog($event, 0)" style="padding-right: 15px">Login</md-button> 
-        <md-button ng-hide="main.loggedIn" ng-click="header.showTabDialog($event, 1)" style="padding-right: 15px">Signup</md-button> 
-        <md-button ng-show="main.loggedIn" ng-click="header.hardRedirect('/logout')" style="padding-right: 15px">Logout</md-button> 
+        <md-button ng-hide="header.state.loggedIn" ng-click="header.showTabDialog($event, 0)" style="padding-right: 15px">Login</md-button> 
+        <md-button ng-hide="header.state.loggedIn" ng-click="header.showTabDialog($event, 1)" style="padding-right: 15px">Signup</md-button> 
+        <md-button ng-show="header.state.loggedIn" ng-click="header.hardRedirect('/logout')" style="padding-right: 15px">Logout</md-button> 
       </div>
     </div>
   </md-toolbar>
@@ -26,10 +27,11 @@
             md-is-locked-open="$mdMedia('gt-sm') && header.open"
             md-whiteframe="4">
           <md-toolbar  class="md-primary">
-            <h1 hide-gt-xs class="md-toolbar-tools"> {{main.user.displayName}} 
-              <img ng-src="{{main.user.profilePic}}" style="border-radius: 50%; width: 50px; height: 50px; margin-left: 10px;" ng-style="{'background-color': '{{main.user.backgroundColor}}' } "/>
+            <h1 hide-gt-xs class="md-toolbar-tools"> {{header.state.user.displayName}} 
+              <img ng-src="{{header.state.user.profilePic}}" style="border-radius: 50%; width: 50px; height: 50px; margin-left: 10px;" 
+                  ng-style="{'background-color': '{{header.state.user.backgroundColor}}' } "/>
             </h1>
-            <p hide-xs style="text-align: center;"> {{main.currentNumOnline}} users today</p>
+            <p hide-xs style="text-align: center;"> {{header.state.currentNumOnline}} users today</p>
           </md-toolbar>
           <div style="border-bottom: 1px solid lightgrey;">
             <nemoo-search-box></nemoo-search-box>

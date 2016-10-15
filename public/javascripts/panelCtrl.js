@@ -13,7 +13,8 @@ var general = [
 ];
 
 app.controller('PanelCtrl', ['$mdDialog', '$mdSidenav', '$mdMedia', '$http', 'optimizationService',
-                  function($mdDialog, $mdSidenav, $mdMedia, $http, optimizationService) {
+                  'stateService',
+                  function($mdDialog, $mdSidenav, $mdMedia, $http, optimizationService, stateService) {
   var that = this;
   var createDiscussion = {
     callback : function(ev) {
@@ -24,7 +25,7 @@ app.controller('PanelCtrl', ['$mdDialog', '$mdSidenav', '$mdMedia', '$http', 'op
             templateUrl: '/views/createDiscussionDialog.ejs',
             parent: angular.element(document.body),
             locals: {
-              user: that.main.user,
+              user: stateService._state.user,
             },
             targetEvent: ev,
             clickOutsideToClose:true
@@ -34,6 +35,10 @@ app.controller('PanelCtrl', ['$mdDialog', '$mdSidenav', '$mdMedia', '$http', 'op
     title: 'Create Discussion',
     icon: 'message'
   };
+
+  if(!stateService._state.loggedIn) {
+    general.pop();
+  }
   general.unshift(createDiscussion);
   this.general = general;
   this.hideTrending = true;
@@ -53,12 +58,7 @@ app.controller('PanelCtrl', ['$mdDialog', '$mdSidenav', '$mdMedia', '$http', 'op
       };
       that.topDiscussions.push(topDiscussion);
     });
-    console.log(that.topDiscussions);
   });
-
-  this.init = function(main){
-    that.main = main;
-  };
 
   this.unfocus = function($event, item) {
     // This is for the Create Discussion

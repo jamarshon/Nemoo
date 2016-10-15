@@ -3,20 +3,21 @@ var app = angular.module('App');
 var MAX_QUEUE_LENGTH = 25;
 
 app.controller('DiscussionCtrl', ['$mdMedia', '$routeParams', '$rootScope', '$timeout', '$scope', '$templateCache',
-                    function($mdMedia, $routeParams, $rootScope, $timeout, $scope, $templateCache) {
+                    'stateService',
+                    function($mdMedia, $routeParams, $rootScope, $timeout, $scope, $templateCache, stateService) {
   var that = this;
   var page = $routeParams.page;
   console.log(page);
-  //$templateCache.remove('/partials/' + page);
+  $templateCache.remove('/partials/' + page);
 
-  this.init = function(main, name, prerenderedLen){
-    main.page = page;
-    this.main = main;
-    this.pageName = name;
+  this.init = function(pageName, prerenderedLen){
+    stateService._state.page = page;
+    stateService._state.pageName = pageName;
+
     this.prerenderedLen = prerenderedLen;
     this.data = [];
-    this.test = Date.now().toString(16);
-    this.main.socket.on(this.main.page + ' message received', function(msg, user){
+    
+    stateService._state.socket.on(stateService._state.page + ' message received', function(msg, user){
       var dataLen = that.data.length;
       var message = {
         displayName: user.displayName,
@@ -50,7 +51,7 @@ app.controller('DiscussionCtrl', ['$mdMedia', '$routeParams', '$rootScope', '$ti
     that.$el = null;
     that.lastPrerenderedEl = null;
     that.data = null;
-    that.main.socket.removeAllListeners(that.main.page + ' message received');
+    stateService._state.socket.removeAllListeners(stateService._state.page + ' message received');
     destroyHandler();
   });
 }]);

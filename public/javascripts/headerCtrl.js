@@ -1,8 +1,8 @@
 var app = angular.module('App');
 
 app.controller('HeaderCtrl', ['$scope', '$mdSidenav', '$mdMedia', '$mdDialog', 
-                    'optimizationService',
-                    function($scope, $mdSidenav, $mdMedia, $mdDialog, optimizationService) {
+                    'optimizationService', 'stateService',
+                    function($scope, $mdSidenav, $mdMedia, $mdDialog, optimizationService, stateService) {
   var that = this;
 
   // This controller is never removed as it is not part of ng-view so it will never need to be unbinded
@@ -18,6 +18,7 @@ app.controller('HeaderCtrl', ['$scope', '$mdSidenav', '$mdMedia', '$mdDialog',
     } else {
       if(!sideNav.isOpen()){
         $('#message-input-box').blur();
+        window.getSelection().removeAllRanges();
       }
       sideNav.toggle();
     }
@@ -25,6 +26,7 @@ app.controller('HeaderCtrl', ['$scope', '$mdSidenav', '$mdMedia', '$mdDialog',
 
   this.hardRedirect = optimizationService.hardRedirect;
   this.softRedirect = optimizationService.softRedirect;
+  this.state = stateService._state;
 
   this.showTabDialog = function(ev, tabIdx) {
     $mdDialog.show({

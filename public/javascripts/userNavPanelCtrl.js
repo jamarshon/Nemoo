@@ -1,11 +1,12 @@
 var app = angular.module('App');
 
-app.controller('UserNavCtrl', ['$mdSidenav', '$mdMedia', 'optimizationService',
-                      function($mdSidenav, $mdMedia, optimizationService) {
+app.controller('UserNavCtrl', ['$mdSidenav', '$mdMedia', 'optimizationService', 'stateService',
+                      function($mdSidenav, $mdMedia, optimizationService, stateService) {
   var that = this;
   
   this.hardRedirect = optimizationService.hardRedirect;
   this.softRedirect = optimizationService.softRedirect;
+  this.isLoggedIn = stateService._state.isLoggedIn;
 
   this.unfocus = function($event, additionalCallback) { 
   	var callback = additionalCallback || function(){};

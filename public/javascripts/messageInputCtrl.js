@@ -6,7 +6,8 @@ var scrollBottom = function() {
 };
 
 app.controller('MessageInputCtrl', ['$timeout', '$scope', '$rootScope', '$mdMedia', 'toastManager',
-                            function($timeout, $scope, $rootScope, $mdMedia, toastManager) {
+                            'stateService',
+                            function($timeout, $scope, $rootScope, $mdMedia, toastManager, stateService) {
   var that = this;
   this.disableSend = true;
 
@@ -21,7 +22,7 @@ app.controller('MessageInputCtrl', ['$timeout', '$scope', '$rootScope', '$mdMedi
       $(that.$el).focus();
       var bottom = $('#message-input-box').offset().top + 26 + 48;
       if(bottom < $(window).height()){
-        toastManager.showSimpleWithAction('Currently on ' + that.main.page, 1000);
+        toastManager.showSimpleWithAction('Currently on ' + stateService._state.pageName, 1000);
       }
     }
     scrollBottom();
@@ -35,16 +36,12 @@ app.controller('MessageInputCtrl', ['$timeout', '$scope', '$rootScope', '$mdMedi
 
   this.send = function() {
     if(this.$el.innerHTML) {
-      this.main.socket.emit('message sent', this.$el.innerHTML, this.main.user, this.main.page);
+      stateService._state.socket.emit('message sent', this.$el.innerHTML, stateService._state.user, stateService._state.page);
       this.$el.innerHTML = '';
       this.resetCursor();
       $('#message-additional-button').webuiPopover('hide');
       this.disableSend = true;
     }
-  };
-
-  this.init = function(main){
-    this.main = main;
   };
 
   this.resetCursor = function() {

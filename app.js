@@ -1,8 +1,8 @@
 var bodyParser      = require('body-parser');
 var cookieParser    = require('cookie-parser');
+var compression     = require('compression');
 var express         = require('express');
 var favicon         = require('serve-favicon');
-var flash           = require('connect-flash');
 var logger          = require('morgan');
 var mime            = require('mime-types')
 var mongoose        = require('mongoose');
@@ -24,6 +24,8 @@ app.io           = io;
 var MongoStore = require('connect-mongo')(session);
 mongoose.connect(configDB.url()); // connect to our database
 
+app.use(compression());
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs'); // set up ejs for templating
@@ -40,6 +42,7 @@ var sessionInstance = session({
   secret: 'iamlightningtheraintransformed', 
   resave: false,
   saveUninitialized: false,
+  cookie: {maxAge: 3600000*24}, // one day
   store: new MongoStore({ mongooseConnection: mongoose.connection })
 });
 app.use(sessionInstance);
@@ -47,7 +50,6 @@ app.use(sessionInstance);
 require('./config/passport')(passport); // pass passport for configuration
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
-app.use(flash()); // use connect-flash for flash messages stored in session
 
 var isProduction = app.get('env') === 'production';
 var suffix = isProduction ? '/production' : '';

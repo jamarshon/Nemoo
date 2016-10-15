@@ -1,3 +1,4 @@
+var moment              = require('moment');
 var Q                   = require('q');
 
 var AppHandler          = require('../util/appHandler');
@@ -28,11 +29,17 @@ module.exports = function(app, passport, isProduction) {
     renderIndex(req, res);
   });
 
+  app.post('/setTimezone', function(req, res) {
+    req.session.offset = req.body.offset;
+    res.sendStatus(200);
+  });
+
   // Used by the routeProvider to include it in the html
   app.get('/partials/:discussion', function(req, res){
     var discussionName = req.params.discussion;
+    var offset = typeof req.session.offset === 'undefined' ? 240: req.session.offset;
     DiscussionHandler.getDiscussion(discussionName).then(function(discussion){
-      var prerendered = DiscussionRenderer.getPrerendered(discussion);
+      var prerendered = DiscussionRenderer.getPrerendered(discussion, -1*offset);
       var prerenderedLen = discussion.data.length;
       res.render(componentsPath + 'discussion', {name: discussion.displayName, description: discussion.description, prerenderedLen: prerenderedLen, prerendered: prerendered.join('')});
     }, function(err) {

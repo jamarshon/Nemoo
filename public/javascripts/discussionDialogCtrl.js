@@ -50,7 +50,7 @@ app.controller('DiscussionDialogCtrl', ['$mdDialog', '$http', '$scope', 'user',
 	};
 
   this.data = {category: '', name: '', description: '', user: user};
-  this.submit = function(url, user) {
+  this.submit = function(url) {
   	var postData = that.cleanData(that.data);
     $http.post(url, postData).success(function(data){
       if(data.redirect) {

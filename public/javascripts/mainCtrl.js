@@ -1,8 +1,12 @@
 var app = angular.module('App');
 
-app.controller('MainCtrl', [function() {
+app.controller('MainCtrl', ['stateService', '$http', function(stateService, $http) {
   var that = this;
-  this.socket = io();
+  
+  this.init = stateService.initialize;
+
+  $http.post('/setTimezone', {offset: new Date().getTimezoneOffset()});
+  
   emojify.setConfig({
     mode: 'sprite'
 	});
