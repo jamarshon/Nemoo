@@ -6,7 +6,7 @@
             contenteditable="true" style="height: auto; padding-right: 30px"
             placeholder="{{messageCtrl.placeholder}}"
             ng-model="messageCtrl.lesson"
-            ng-change="alert('hi')"
+            ng-keyup="messageCtrl.keyUpHandler($event)"
             ng-keydown="messageCtrl.keydownHandler($event)"></div>
             <nemoo-message-additional-options> </nemoo-message-additional-options>
     </md-input-container>

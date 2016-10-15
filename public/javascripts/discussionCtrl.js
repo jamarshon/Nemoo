@@ -57,6 +57,10 @@ app.controller('DiscussionCtrl', ['$mdMedia', '$routeParams', '$rootScope', '$ti
 }]);
 
 app.animation('.animate-message', [function() {
+  var scrollBottom = function() {
+    var scrollContainer = document.getElementById('scrollable-container');
+    $(scrollContainer).scrollTop(scrollContainer.scrollHeight);
+  };
   return {
     enter: function(element) {
       $(element).addClass('animated bounce');
