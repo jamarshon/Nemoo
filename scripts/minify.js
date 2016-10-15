@@ -27,19 +27,27 @@ if(minfiyImg) {
 function minifyAssets() {
 	// Minify the Javascript and CSS files
 	minifier.on('error', function(err) {
-	    // handle any potential error
-	    console.log('[ERROR]: ' + err);
+    console.log('[ERROR]: ' + err); // handle any potential error
 	});
 
 	fs.readdir(rootDir + jsPath, function(err, files){
+		var allFiles = files.reduce((memo, file) => {
+			if(file.indexOf(".js") === -1) {
+				var internalFiles = fs.readdirSync(rootDir + jsPath + file + '/').map(x => file + '/' + x);
+				memo = memo.concat(internalFiles);
+			} else {
+				memo.push(file);
+			}
+			return memo;
+		}, []);
+
+		console.log(allFiles);
 		console.log('Minifying JS');
-		files.splice(files.indexOf('initApp.js'), 1);
-		files.unshift('initApp.js');
-		var jsFiles = files.map(file => rootDir + jsPath + file);
+		allFiles.splice(allFiles.indexOf('initApp.js'), 1);
+		allFiles.unshift('initApp.js');
+		var jsFiles = allFiles.map(file => rootDir + jsPath + file);
 		minifier.minify(jsFiles, {template: outputDir + jsPath + 'bundle.min.js'});
 	});
-	// console.log('Minifying JS');
-	// minifier.minify(rootDir + jsPath, {template: outputDir + jsPath + '{{filename}}.{{ext}}'});
 
 	console.log('Minifying CSS');
 	minifier.minify(rootDir + cssPath, {template: outputDir + cssPath + '{{filename}}.{{ext}}'});

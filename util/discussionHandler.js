@@ -102,9 +102,9 @@ discussionHandler.populateDummy = function() {
 		{name: 'cats', category: 'animals'}, 
 		{name:'dogs', category: 'animals'}, 
 		{name:'rabbits', category: 'animals'}, 
-		{name:'lamborghini', category: 'automobile'}, 
-		{name:'ferrari', category: 'automobile'}, 
-		{name:'bugatti', category: 'automobile'}, 
+		{name:'lamborghini', category: 'automotive'}, 
+		{name:'ferrari', category: 'automotive'}, 
+		{name:'bugatti', category: 'automotive'}, 
 	];
 	var description = 'A discussion about ';
 	discussions.forEach(function(discussion){

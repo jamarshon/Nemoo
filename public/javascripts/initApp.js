@@ -1,4 +1,4 @@
-var app = angular.module('App', ['ngRoute', 'ngMaterial', 'ngMessages', 'ngAnimate', 'ngSanitize', 'ngDropdowns']);
+var app = angular.module('App', ['ngRoute', 'ngMaterial', 'ngMessages', 'ngAnimate', 'ngSanitize']);
 
 // configure our routes
 app.config(['$routeProvider', '$locationProvider', '$mdThemingProvider', '$compileProvider',
@@ -70,3 +70,32 @@ function checkAndUpdateFBURL() {
     //e.preventDefault(); // no page reload
   }
 }
+
+app.run(['$templateCache', function ($templateCache) {
+  $templateCache.put('ngDropdowns/templates/dropdownSelect.html', [
+    '<div id="dropdown-custom-angular" ng-mousedown="toggleDropDown($event)" ng-class="{\'disabled\': dropdownDisabled}" class="wrap-dd-select" tabindex="0">',
+    '<span ng-mousedown="toggleDropDown($event)" class="selected">{{dropdownModel[labelField]}}</span>',
+    '<ul class="dropdown">',
+    '<li ng-repeat="item in dropdownSelect"',
+    ' class="dropdown-item"',
+    ' dropdown-select-item="item"',
+    ' dropdown-item-label="labelField">',
+    '</li>',
+    '</ul>',
+    '</div>'
+  ].join(''));
+
+  $templateCache.put('ngDropdowns/templates/dropdownSelectItem.html', [
+    '<li ng-class="{divider: (dropdownSelectItem.divider && !dropdownSelectItem[dropdownItemLabel]), \'divider-label\': (dropdownSelectItem.divider && dropdownSelectItem[dropdownItemLabel])}">',
+    '<a href="" class="dropdown-item"',
+    ' ng-if="!dropdownSelectItem.divider"',
+    ' ng-href="{{dropdownSelectItem.href}}"',
+    ' ng-mousedown="selectItem($event)">',
+    '{{dropdownSelectItem[dropdownItemLabel]}}',
+    '</a>',
+    '<span ng-if="dropdownSelectItem.divider">',
+    '{{dropdownSelectItem[dropdownItemLabel]}}',
+    '</span>',
+    '</li>'
+  ].join(''));
+}]);
