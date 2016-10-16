@@ -24,9 +24,18 @@ app.controller('MessageAdditionalOptionsCtrl', ['$scope', '$rootScope', '$timeou
 	this.addEmoji = function($event){
 		var target = $($event.target);
 		var span = target.prop("tagName") === 'SPAN' ? target : target.find('span');
-		$scope.$parent.emoticonHandler(span);
+		var emoticonClass = span.attr('class');
+		this.animateCss(span, 'tada');
+		$scope.$parent.emoticonHandler(emoticonClass);
 		$event.preventDefault();
 	};
+
+	this.animateCss = function (element, animationName) {
+    var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+    element.addClass('animated ' + animationName).one(animationEnd, function() {
+    	element.removeClass('animated ' + animationName);
+    });
+  };
 
 	$scope.handlePageChange = function(selected) {
 		that.pageKey = selected.pageKey;

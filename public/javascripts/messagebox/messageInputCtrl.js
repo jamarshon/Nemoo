@@ -91,8 +91,8 @@ app.controller('MessageInputCtrl', ['$timeout', '$scope', '$rootScope', '$mdMedi
   };
 
   var emptyUri = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
-  $scope.emoticonHandler = function(emoticon) {
-    var emoticonStr = '<img class="' + emoticon.attr('class') + ' small' + '" src="' + emptyUri + '">';
+  $scope.emoticonHandler = function(emoticonClass) {
+    var emoticonStr = '<img class="' + emoticonClass + ' small' + '" src="' + emptyUri + '">';
     var node = $(emoticonStr)[0];
 
     cursorService.insertAtCursor(function(sel, range){
