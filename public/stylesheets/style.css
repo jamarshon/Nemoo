@@ -124,6 +124,7 @@ p > img.emoji {
 
 .menu-toggle-dropdown.ng-hide {
   max-height: 0;
+  border-bottom: 1px solid rgba(0,0,0,0.12);
 }
 
 .blue-box.removed:focus {

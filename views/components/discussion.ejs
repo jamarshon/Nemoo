@@ -15,7 +15,7 @@
   <md-content id="scrollable-container" style="width:100%;">
     <md-list id="scrollable-container-list">
       <%-prerendered%>
-      <md-list-item class="md-3-line animate-message" ng-repeat="item in discussionCtrl.data">
+      <md-list-item class="md-3-line animate-message" ng-repeat="item in discussionCtrl.data track by $index">
         <img ng-src="{{item.profilePic}}" class="md-avatar" ng-style="{&#39;background-color&#39;: &#39;{{item.backgroundColor}}&#39; } "/>
         <div class="md-list-item-text">
           <h3 style="display:inline;">{{item.displayName}}</h3>

@@ -3,9 +3,9 @@ var app = angular.module('App');
 var MAX_QUEUE_LENGTH = 25;
 
 app.controller('DiscussionCtrl', ['$mdMedia', '$routeParams', '$rootScope', '$timeout', '$scope', '$templateCache',
-                    'stateService', '$mdDialog', '$http', 'discussionCacheService', 'optimizationService',
+                    'stateService', '$mdDialog', '$http', 'discussionCacheService', 'toastManager',
                     function($mdMedia, $routeParams, $rootScope, $timeout, $scope, $templateCache, 
-                      stateService, $mdDialog, $http, discussionCacheService, optimizationService) {
+                      stateService, $mdDialog, $http, discussionCacheService, toastManager) {
   var that = this;
   var page = $routeParams.page;
   console.log(page);
@@ -55,7 +55,9 @@ app.controller('DiscussionCtrl', ['$mdMedia', '$routeParams', '$rootScope', '$ti
 
     $mdDialog.show(confirm).then(function() {
       $http.post('/addToFavorite', {pageName: pageName}).then(function(){
-        optimizationService.refreshPage();
+        stateService._state.user.favorites.push(pageName);
+        toastManager.showSimpleWithAction('Successfully favorited ' + pageName, 1000);
+        that.addableToFavorites = false;
       });
     }, function() {
     });

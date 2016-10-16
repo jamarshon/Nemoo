@@ -48,9 +48,14 @@ app.controller('PanelCtrl', ['$scope', '$mdDialog', '$mdSidenav', '$mdMedia', '$
   this.hideFavorites = true;
   this.hideTopDiscussions = true;
 
-  var favorites = stateService._state.user.favorites || [];
-  this.favorites = favorites.map(function(x){ return {title: x};});
-
+  if(stateService._state.loggedIn) {
+    $scope.$watch(function(){ return stateService._state.user.favorites.length; }, function(newVal, oldVal){
+      that.favorites = stateService._state.user.favorites.map(function(x){ return {title: x};});
+    });
+  } else {
+    this.favorites = [];
+  }
+  
   $http.get('/trendingDiscussions').then(function(res){
     that.trending = res.data.trending;
   });
