@@ -7,6 +7,10 @@
     <div flex class="ellipsis" style="margin-left:20px;"><%=description%>
       <md-tooltip class="custom-tool-tip" md-direction="center"> <%=description%> </md-tooltip>
     </div>
+    <div class="expand-on-hover-parent blue-box removed" ng-if="discussionCtrl.addableToFavorites"
+          ng-click="discussionCtrl.addToFavorite($event)">
+      <i class="fa fa-plus-square expand-on-hover" style="cursor: pointer; font-size: 20px;"></i>
+    </div>
   </div>
   <md-content id="scrollable-container" style="width:100%;">
     <md-list id="scrollable-container-list">

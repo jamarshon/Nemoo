@@ -27,7 +27,7 @@ userSchema.methods.validPassword = function(password) {
 };
 
 userSchema.methods.setProperties = function(props) {
-    var newUser = _.extend(this, props);
+    var newUser = _.extend(this, props, {_lastActive: Date.now() });
     console.log(newUser);
     newUser.save(function (err) {
         if(err) 

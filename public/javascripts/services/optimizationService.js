@@ -17,7 +17,8 @@ app.factory('optimizationService', ['$window', '$location', 'loaderAnimation',
 
 	ret.hardRedirect = function(path) { loaderAnimation.show(); $window.location.href = path; };
   ret.softRedirect = function(path) { $location.url(path); ret.unbindAllEvents(); };
-  
+  ret.refreshPage = function(){ loaderAnimation.show(); $window.location.reload(); };
+
   ret.bindBodyBackDrop = function(){
     ret.dropdownEl = $('#dropdown-custom-angular');
   	$('body').on('click.dropdownSelect', function(e){

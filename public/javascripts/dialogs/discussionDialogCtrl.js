@@ -35,12 +35,7 @@ app.controller('DiscussionDialogCtrl', ['$mdDialog', '$http', '$scope', 'user',
 													'toastManager', 'optimizationService',
 													function($mdDialog, $http, $scope, user, toastManager, optimizationService){
 	var that = this;
-	this.options = options.map(function(e){
-		return {
-			text: e,
-			val: e.toLowerCase()
-		}
-	});
+	this.options = options;
 
 	this.hide = function() {
 	  $mdDialog.hide();

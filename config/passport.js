@@ -52,7 +52,7 @@ module.exports = function(passport) {
                 if (!user.validPassword(password))
                     return done(null, false, {message: 'Oops! Invalid password.'});
                 else { // all is well, return user
-                    user.setProperties({_lastActive: Date.now() });
+                    user.setProperties({});
                     return done(null, user);
                 }
             });
@@ -123,7 +123,7 @@ module.exports = function(passport) {
                     return done(err);
 
                 if (user) { // user found, return that user
-                    user.setProperties({_lastActive: Date.now() });
+                    user.setProperties({});
                     return done(null, user); 
                 } else { // if there is no user, create them
                     var newUser            = new User(),

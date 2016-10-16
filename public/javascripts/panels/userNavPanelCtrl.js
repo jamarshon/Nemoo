@@ -6,12 +6,11 @@ app.controller('UserNavCtrl', ['$mdSidenav', '$mdMedia', 'optimizationService', 
   
   this.hardRedirect = optimizationService.hardRedirect;
   this.softRedirect = optimizationService.softRedirect;
-  this.isLoggedIn = stateService._state.isLoggedIn;
+  this.isLoggedIn = stateService._state.loggedIn;
 
   this.unfocus = function($event, additionalCallback) { 
   	var callback = additionalCallback || function(){};
     that.togglePanel(function(){
-      $($event.target).blur();
       callback($event, 0);
     }); 
   };

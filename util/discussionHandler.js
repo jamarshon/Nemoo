@@ -99,12 +99,12 @@ discussionHandler.populateDummy = function() {
 		profilePic: '/images/user/tabby.jpg',
 	};
 	var discussions = [
-		{name: 'cats', category: 'animals'}, 
-		{name:'dogs', category: 'animals'}, 
-		{name:'rabbits', category: 'animals'}, 
-		{name:'lamborghini', category: 'automotive'}, 
-		{name:'ferrari', category: 'automotive'}, 
-		{name:'bugatti', category: 'automotive'}, 
+		{name: 'cats', category: 'Animals'}, 
+		{name:'dogs', category: 'Animals'}, 
+		{name:'rabbits', category: 'Animals'}, 
+		{name:'lamborghini', category: 'Automotive'}, 
+		{name:'ferrari', category: 'Automotive'}, 
+		{name:'bugatti', category: 'Automotive'}, 
 	];
 	var description = 'A discussion about ';
 	discussions.forEach(function(discussion){

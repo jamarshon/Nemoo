@@ -17,6 +17,7 @@ app.controller('PanelCtrl', ['$scope', '$mdDialog', '$mdSidenav', '$mdMedia', '$
                   function($scope, $mdDialog, $mdSidenav, $mdMedia, $http, 
                     optimizationService, stateService) {
   var that = this;
+
   var createDiscussion = {
     callback : function(ev) {
         that.togglePanel(function(){
@@ -44,6 +45,11 @@ app.controller('PanelCtrl', ['$scope', '$mdDialog', '$mdSidenav', '$mdMedia', '$
   this.general = general;
   this.hideTrending = true;
   this.hideGeneral = false;
+  this.hideFavorites = true;
+  this.hideTopDiscussions = true;
+
+  var favorites = stateService._state.user.favorites || [];
+  this.favorites = favorites.map(function(x){ return {title: x};});
 
   $http.get('/trendingDiscussions').then(function(res){
     that.trending = res.data.trending;
@@ -73,7 +79,6 @@ app.controller('PanelCtrl', ['$scope', '$mdDialog', '$mdSidenav', '$mdMedia', '$
         that.softRedirect(path);
       });
     }
-    $($event.target).blur();
   };
 
   this.togglePanel = function(callback) {
@@ -105,6 +110,9 @@ app.directive('nemooTopDiscussions', function () {
     scope: {
       toggleBoolean: '=',
       discussions: '=',
+      fontStyling: '=',
+      caretStyling: '=',
+      itemStyling: '=',
       categoryLabel: '@',
       onClickHandler: '&',
     },

@@ -1,12 +1,11 @@
-var moment              = require('moment');
-var Q                   = require('q');
+var _                   = require('underscore');
 
 var AppHandler          = require('../util/appHandler');
 var DiscussionHandler   = require('../util/discussionHandler');
 var DiscussionRenderer  = require('../util/discussionRenderer');
+var DiscussionRoutes      = require('./discussionRoutes');
 var PassportRoutes      = require('./passportRoutes');
 var Util                = require('../util/util');
-var _                   = require('underscore');
 
 module.exports = function(app, passport, isProduction) {
   var index = isProduction ? 'productionIndex': 'index';
@@ -16,10 +15,11 @@ module.exports = function(app, passport, isProduction) {
         user = loggedIn ? req.user : Util.generateAnonUser();
 
     console.log(user);
+    var filteredUser = _.pick(user, 'displayName', 'profilePic', 'favorites', 'backgroundColor');
     AppHandler.getApp().then(function(app){
-      res.render(index, {user: user, loggedIn: loggedIn, currentNumOnline: app.currentNumOnline});
+      res.render(index, {user: filteredUser, loggedIn: loggedIn, currentNumOnline: app.currentNumOnline});
     }, function(errDefaultValue) {
-      res.render(index, {user: user, loggedIn: loggedIn, currentNumOnline: errDefaultValue});
+      res.render(index, {user: filteredUser, loggedIn: loggedIn, currentNumOnline: errDefaultValue});
     });
   };
 
@@ -32,6 +32,18 @@ module.exports = function(app, passport, isProduction) {
   app.post('/setTimezone', function(req, res) {
     req.session.offset = req.body.offset;
     res.sendStatus(200);
+  });
+
+  app.post('/addToFavorite', function(req, res){
+    if(req.isAuthenticated()){
+      var user = req.user;
+      var addedFavorite = req.body.pageName;
+      user.favorites.push(addedFavorite);
+      user.setProperties({favorites: user.favorites});
+      res.sendStatus(200);
+    } else {
+      res.sendStatus(404);
+    }
   });
 
   // Used by the routeProvider to include it in the html
@@ -73,55 +85,6 @@ module.exports = function(app, passport, isProduction) {
     res.render('error', {message: 'Populated Data', error: {} });
   });
 
-  app.post('/createDiscussion', function(req, res){
-    var body = req.body;
-    DiscussionHandler.createDiscussion(body.category, body.name, body.description, body.user).then(function(discussion){
-      res.json( {redirect: '/page/' + discussion.name });
-    }, function(err){
-      res.json( { message: err });
-    });
-  });
-
-  app.get('/trendingDiscussions', function(req, res){
-    DiscussionHandler.getTrending().then(function(discussions){
-      var trending = _.map(discussions, function(discussion){
-        return {title: discussion.displayName};
-      });
-      res.json({trending: trending});
-    }, function(err){
-      res.json({discussions: []});
-    });
-  });
-
-  app.post('/searchDiscussion', function(req, res){
-    var searchText = req.body.searchText.toLowerCase();
-    DiscussionHandler.search(searchText).then(function(discussions){
-      var searchResults = _.map(discussions, function(discussion){ 
-        return _.pick(discussion, 'name', 'displayName', 'description', 'category');
-      });
-      res.json({discussions: searchResults});
-    }, function(err){
-      console.log('[SEARCH-DISCUSSION-ERROR] ' + err);
-      res.json({discussions: []});
-    })
-  });
-
-  app.get('/topDiscussions', function(req, res){
-    DiscussionHandler.getTopDiscussions().then(function(results){
-      var topDiscussions = _.map(results, function(result){ 
-        return {
-          category: Util.toTitleCase(result._id), 
-          discussionNames: _.map(result.items, function(discussion){
-            return {title: discussion.displayName};
-          })
-        }; 
-      });
-      res.json({topDiscussions: topDiscussions});
-    }, function(err){
-      res.json({topDiscussions: []});
-    });
-  })
-
   app.io.on('connection', function(socket){
     AppHandler.getApp().then(function(app){
       app.adjustNumOnline(1);
@@ -140,5 +103,6 @@ module.exports = function(app, passport, isProduction) {
     });
   });
 
+  DiscussionRoutes(app);
   PassportRoutes(app, passport);
 };

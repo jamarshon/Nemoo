@@ -7,9 +7,9 @@ app.controller('AuthenticationCtrl', ['$http', 'optimizationService',
   this.submit = function(url) {
     $http.post(url, that.data).success(function(data){
       if(data.redirect) {
-        optimizationService.hardRedirect(data.redirect);
+        optimizationService.refreshPage();
       } else {
-          that.message = data.message;
+        that.message = data.message;
       }
     });
   };

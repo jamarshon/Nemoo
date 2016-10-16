@@ -6,7 +6,7 @@ module.exports = function(app, passport) {
             if (!user) { return res.json( { message: info.message }) }
             req.logIn(user, function(err) {
               if (err) { return next(err); }
-              return res.json({redirect: '/'});
+              return res.json({redirect: true});
             });
         })(req, res, next);
     });
@@ -19,7 +19,7 @@ module.exports = function(app, passport) {
             req.logIn(user, function(err) {
               if (err) { return next(err); }
               req.url = '/';
-              return res.json({redirect: '/'});
+              return res.json({redirect: true});
             });
         })(req, res, next);
     });

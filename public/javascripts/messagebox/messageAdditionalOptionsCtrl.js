@@ -25,7 +25,7 @@ app.controller('MessageAdditionalOptionsCtrl', ['$scope', '$rootScope', '$timeou
 		var target = $($event.target);
 		var span = target.prop("tagName") === 'SPAN' ? target : target.find('span');
 		var emoticonClass = span.attr('class');
-		this.animateCss(span, 'tada');
+		this.animateCss(span, 'rubberBand');
 		$scope.$parent.emoticonHandler(emoticonClass);
 		$event.preventDefault();
 	};

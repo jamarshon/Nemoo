@@ -5,7 +5,6 @@ var DiscussionRenderer = {};
 
 DiscussionRenderer.getPrerendered = function(discussion, offset) {
 	var message;
-  console.log(offset);
 	return discussion.data.map(function(item, i){
     message = Util.decodeUTF8(item.message);
     return DiscussionRenderer._template(item, message, moment(item.created).utcOffset(offset));
