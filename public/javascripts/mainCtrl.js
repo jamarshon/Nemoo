@@ -6,8 +6,4 @@ app.controller('MainCtrl', ['stateService', '$http', function(stateService, $htt
   this.init = stateService.initialize;
 
   $http.post('/setTimezone', {offset: new Date().getTimezoneOffset()});
-  
-  emojify.setConfig({
-    mode: 'sprite'
-	});
 }]);

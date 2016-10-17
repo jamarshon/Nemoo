@@ -1,8 +1,9 @@
 var app = angular.module('App');
 
 app.controller('MessageAdditionalOptionsCtrl', ['$scope', '$rootScope', '$timeout', '$templateCache', '$mdMedia', 
-												'optimizationService',
-												function($scope, $rootScope, $timeout, $templateCache, $mdMedia, optimizationService){
+												'optimizationService', '$http', 'stateService', 'toastManager',
+												function($scope, $rootScope, $timeout, $templateCache, $mdMedia, optimizationService, 
+													$http, stateService, toastManager){
 	var that = this;
 	//$templateCache.remove('/views/messageAdditionalOptions.ejs');
 
@@ -37,6 +38,40 @@ app.controller('MessageAdditionalOptionsCtrl', ['$scope', '$rootScope', '$timeou
     });
   };
 
+  window.fd.logging = false;
+  this.beforeSend = false;
+  this.uri = null;
+  var zone = new FileDrop('zthumbs', {input: false});
+
+	zone.event('upload', function (e) {
+		var images = zone.eventFiles(e).images();
+		var file = images[0];
+		$(zone.el).find("img").remove();
+		file.readDataURI(function(uri) {
+	    var img = new Image();
+	    img.src = uri;
+	    zone.el.appendChild(img);
+	    that.uri = uri;
+	    that.beforeSend = true;
+	    $scope.$apply();
+	  });
+	});
+
+	this.submitFile = function() {
+		this.beforeSend = false;
+		$(zone.el).find("img").remove();
+  	$http.post('/uploadTempImage', {uri: this.uri, page: stateService._state.page}).then(function(result){
+  		var url = result.data.url;
+  		if(url) {
+  			$scope.$parent.imageHandler(url);
+  		} else {
+  			toastManager.showSimpleWithAction('Error image upload failed', 1000);
+  		}
+  	}, function(){
+  		toastManager.showSimpleWithAction('Error image upload failed', 1000);
+  	});
+	};
+
 	$scope.handlePageChange = function(selected) {
 		that.pageKey = selected.pageKey;
 	};
@@ -51,6 +86,7 @@ app.controller('MessageAdditionalOptionsCtrl', ['$scope', '$rootScope', '$timeou
 
 	var destroyHandler = $rootScope.$on('$routeChangeSuccess', function(){
     that.$el = null;
+    that.uri = null;
     sizeHandler();
     destroyHandler();
   });

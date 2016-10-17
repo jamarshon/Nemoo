@@ -3,6 +3,10 @@ var app = angular.module('App');
 app.controller('AdditionalOptionsDropdownCtrl', ['$scope', function($scope) {
     $scope.ddSelectOptions = [
         {
+            text: 'Upload Images or Gifs',
+            pageKey: 'images'
+        },
+        {
             text: 'Emoticon (People)',
             pageKey: 'people'
         },

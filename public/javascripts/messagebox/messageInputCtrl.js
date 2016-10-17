@@ -111,6 +111,13 @@ app.controller('MessageInputCtrl', ['$timeout', '$scope', '$rootScope', '$mdMedi
       that.disableSend = false;
     }
   };
+
+  $scope.imageHandler = function(url) {
+    var image = '<img src="' + url + '">';
+    stateService._state.socket.emit('message sent', image, stateService._state.user, stateService._state.page);
+    cursorService.resetCursor(that.$el);
+    $('#message-additional-button').webuiPopover('hide');
+  };
 }]);
 
 app.directive('nemooMessageInput', function() {

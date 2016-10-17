@@ -4,6 +4,7 @@ var AppHandler          = require('../util/appHandler');
 var DiscussionHandler   = require('../util/discussionHandler');
 var DiscussionRenderer  = require('../util/discussionRenderer');
 var DiscussionRoutes      = require('./discussionRoutes');
+var ImageRoutes      = require('./imageRoutes');
 var PassportRoutes      = require('./passportRoutes');
 var Util                = require('../util/util');
 
@@ -104,5 +105,6 @@ module.exports = function(app, passport, isProduction) {
   });
 
   DiscussionRoutes(app);
+  ImageRoutes(app);
   PassportRoutes(app, passport);
 };
