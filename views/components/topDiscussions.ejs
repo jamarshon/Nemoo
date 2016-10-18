@@ -1,10 +1,10 @@
 <div>
 <md-subheader class="blue-box removed expand-on-hover-parent md-no-sticky" 
   ng-click="toggleBoolean = !toggleBoolean" style="cursor: pointer;">
-  <div class="expand-on-hover" ng-style="fontStyling" 
-        style="display: inline-block; font-weight: bold; font-size: 16px;" ng-bind="categoryLabel"></div>
-  <i class="fa fa-lg expand-on-hover" ng-style="caretStyling"
-    ng-class="toggleBoolean ? 'fa-caret-down' : 'fa-caret-up'" style="float: right;"></i>
+    <i class="fa expand-on-hover" ng-style="caretStyling"
+        ng-class="toggleBoolean ? 'fa-chevron-right' : 'fa-chevron-down'"></i>
+    <div class="expand-on-hover" ng-style="fontStyling" 
+        style="display: inline-block;" ng-bind="categoryLabel"></div>
 </md-subheader>
 <md-divider></md-divider>
 

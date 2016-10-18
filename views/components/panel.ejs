@@ -3,8 +3,9 @@
 
   <md-subheader class="blue-box removed expand-on-hover-parent md-no-sticky" 
     ng-click="panelCtrl.hideGeneral = !panelCtrl.hideGeneral;" style="cursor: pointer;">
-    <div class="expand-on-hover" style="display: inline-block; font-weight: bold; font-size: 16px;">General</div>
-    <i class="fa fa-lg expand-on-hover" ng-class="panelCtrl.hideGeneral ? 'fa-caret-down' : 'fa-caret-up'" style="float: right;"></i>
+    <i class="fa expand-on-hover" style="margin-right: 5px; font-size: 15px;"
+        ng-class="panelCtrl.hideGeneral ? 'fa-chevron-right' : 'fa-chevron-down'"></i>
+    <div class="expand-on-hover" style="font-weight: bold; font-size: 16px; display: inline-block;">General</div>
   </md-subheader>
   <md-divider></md-divider>
 
@@ -27,19 +28,25 @@
     toggle-boolean="panelCtrl.hideFavorites"
     discussions="panelCtrl.favorites"
     category-label="Favorites"
+    caret-styling="{'margin-right': '5px', 'font-size': '15px'}"
+    font-styling="{'font-weight': 'bold', 'font-size': '16px'}"
+    item-styling="{'padding-left': '24px', 'font-size': '15px'}"
     on-click-handler="panelCtrl.unfocus(localEvent, localName)"></nemoo-top-discussions>
 
   <nemoo-top-discussions 
     toggle-boolean="panelCtrl.hideTrending"
     discussions="panelCtrl.trending"
     category-label="Trending"
-    item-styling="{'padding-left': '24px'}"
+    caret-styling="{'margin-right': '5px', 'font-size': '15px'}"
+    font-styling="{'font-weight': 'bold', 'font-size': '16px'}"
+    item-styling="{'padding-left': '24px', 'font-size': '15px'}"
     on-click-handler="panelCtrl.unfocus(localEvent, localName)"></nemoo-top-discussions>
 
   <md-subheader class="blue-box removed expand-on-hover-parent md-no-sticky" 
     ng-click="panelCtrl.hideTopDiscussions = !panelCtrl.hideTopDiscussions;" style="cursor: pointer;">
-    <div class="expand-on-hover" style="display: inline-block; font-weight: bold; font-size: 16px;">Top Discussions</div>
-    <i class="fa fa-lg expand-on-hover" ng-class="panelCtrl.hideTopDiscussions ? 'fa-caret-down' : 'fa-caret-up'" style="float: right;"></i>
+    <i class="fa expand-on-hover" style="margin-right: 5px; font-size: 15px;"
+        ng-class="panelCtrl.hideTopDiscussions ? 'fa-chevron-right' : 'fa-chevron-down'"></i>
+    <div class="expand-on-hover" style="font-weight: bold; font-size: 16px; display: inline-block;">Top Discussions</div>
   </md-subheader>
   <md-divider></md-divider>
 
@@ -48,9 +55,9 @@
       toggle-boolean="top.toggleBoolean"
       discussions="top.discussions"
       category-label="{{top.categoryLabel}}"
-      font-styling="{'font-size': '14px', 'font-style': 'italic', 'font-weight': 500, 'padding-left': '20px'}"
-      item-styling="{'padding-left': '48px'}"
-      caret-styling="{'line-height': '0.9375em', 'font-size': '1.06666666em'}"
+      font-styling="{'font-size': '16px', 'font-style': 'italic', 'font-weight': 500}"
+      item-styling="{'padding-left': '48px', 'font-size': '15px'}"
+      caret-styling="{'padding-left': '12px', 'margin-right': '3px'}"
       on-click-handler="panelCtrl.unfocus(localEvent, localName)"
       ng-repeat="top in panelCtrl.topDiscussions"></nemoo-top-discussions>
   </div>
