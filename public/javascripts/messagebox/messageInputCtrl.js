@@ -37,9 +37,16 @@ app.controller('MessageInputCtrl', ['$timeout', '$scope', '$rootScope', '$mdMedi
 
   this.send = function() {
     if(this.$el.innerHTML) {
+      var isFocused = $(this.$el).is(':focus');
       stateService._state.socket.emit('message sent', this.$el.innerHTML, stateService._state.user, stateService._state.page);
+      $scope.quickMessageHandler({msg: this.$el.innerHTML, user: stateService._state.user});
+
       this.$el.innerHTML = '';
-      cursorService.resetCursor(this.$el);
+
+      if(isFocused) {
+        cursorService.resetCursor(this.$el);
+      }
+
       $('#message-additional-button').webuiPopover('hide');
       this.disableSend = true;
     }
@@ -115,7 +122,7 @@ app.controller('MessageInputCtrl', ['$timeout', '$scope', '$rootScope', '$mdMedi
   $scope.imageHandler = function(url) {
     var image = '<img src="' + url + '">';
     stateService._state.socket.emit('message sent', image, stateService._state.user, stateService._state.page);
-    cursorService.resetCursor(that.$el);
+    $scope.quickMessageHandler({msg: image, user: stateService._state.user});
     $('#message-additional-button').webuiPopover('hide');
   };
 }]);
@@ -123,6 +130,9 @@ app.controller('MessageInputCtrl', ['$timeout', '$scope', '$rootScope', '$mdMedi
 app.directive('nemooMessageInput', function() {
   return {
     restrict: 'E',
+    scope: {
+      quickMessageHandler: '&'
+    },
     templateUrl: '/views/messageInput.ejs',
     controller: 'MessageInputCtrl',
     controllerAs: 'messageCtrl'

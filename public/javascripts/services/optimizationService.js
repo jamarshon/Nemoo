@@ -1,7 +1,7 @@
 var app = angular.module('App');
 
-app.factory('optimizationService', ['$window', '$location', 'loaderAnimation',
-												function($window, $location, loaderAnimation){
+app.factory('optimizationService', ['$window', '$location', 'animationService',
+												function($window, $location, animationService){
 	var ret = {};
   
   // Determine the mobile operating system ('iOS', 'Android', 'Windows Phone', or 'unknown')
@@ -15,9 +15,9 @@ app.factory('optimizationService', ['$window', '$location', 'loaderAnimation',
     return "unknown";
   };
 
-	ret.hardRedirect = function(path) { loaderAnimation.show(); $window.location.href = path; };
+	ret.hardRedirect = function(path) { animationService.show(); $window.location.href = path; };
   ret.softRedirect = function(path) { $location.url(path); ret.unbindAllEvents(); };
-  ret.refreshPage = function(){ loaderAnimation.show(); $window.location.reload(); };
+  ret.refreshPage = function(){ animationService.show(); $window.location.reload(); };
 
   ret.bindBodyBackDrop = function(){
     ret.dropdownEl = $('#dropdown-custom-angular');

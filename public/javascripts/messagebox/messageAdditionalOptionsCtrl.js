@@ -1,9 +1,9 @@
 var app = angular.module('App');
 
 app.controller('MessageAdditionalOptionsCtrl', ['$scope', '$rootScope', '$timeout', '$templateCache', '$mdMedia', 
-												'optimizationService', '$http', 'stateService', 'toastManager',
+												'optimizationService', '$http', 'stateService', 'toastManager', 'animationService',
 												function($scope, $rootScope, $timeout, $templateCache, $mdMedia, optimizationService, 
-													$http, stateService, toastManager){
+													$http, stateService, toastManager, animationService){
 	var that = this;
 	//$templateCache.remove('/views/messageAdditionalOptions.ejs');
 
@@ -26,17 +26,10 @@ app.controller('MessageAdditionalOptionsCtrl', ['$scope', '$rootScope', '$timeou
 		var target = $($event.target);
 		var span = target.prop("tagName") === 'SPAN' ? target : target.find('span');
 		var emoticonClass = span.attr('class');
-		this.animateCss(span, 'rubberBand');
+		animationService.animateCss(span, 'rubberBand');
 		$scope.$parent.emoticonHandler(emoticonClass);
 		$event.preventDefault();
 	};
-
-	this.animateCss = function (element, animationName) {
-    var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
-    element.addClass('animated ' + animationName).one(animationEnd, function() {
-    	element.removeClass('animated ' + animationName);
-    });
-  };
 
   window.fd.logging = false;
   this.beforeSend = false;
@@ -57,19 +50,21 @@ app.controller('MessageAdditionalOptionsCtrl', ['$scope', '$rootScope', '$timeou
 	  });
 	});
 
-	this.submitFile = function() {
+	this.submitFile = function($event) {
+		$event.stopPropagation();
+    $event.preventDefault();
 		this.beforeSend = false;
 		$(zone.el).find("img").remove();
-  	$http.post('/uploadTempImage', {uri: this.uri, page: stateService._state.page}).then(function(result){
-  		var url = result.data.url;
-  		if(url) {
-  			$scope.$parent.imageHandler(url);
-  		} else {
-  			toastManager.showSimpleWithAction('Error image upload failed', 1000);
-  		}
-  	}, function(){
-  		toastManager.showSimpleWithAction('Error image upload failed', 1000);
-  	});
+  	// $http.post('/uploadTempImage', {uri: this.uri, page: stateService._state.page}).then(function(result){
+  	// 	var url = result.data.url;
+  	// 	if(url) {
+  	// 		$scope.$parent.imageHandler(url);
+  	// 	} else {
+  	// 		toastManager.showSimpleWithAction('Error image upload failed', 3000);
+  	// 	}
+  	// }, function(){
+  	// 	toastManager.showSimpleWithAction('Error image upload failed', 3000);
+  	// });
 	};
 
 	$scope.handlePageChange = function(selected) {

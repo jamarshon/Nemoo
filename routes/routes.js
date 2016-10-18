@@ -3,8 +3,8 @@ var _                   = require('underscore');
 var AppHandler          = require('../util/appHandler');
 var DiscussionHandler   = require('../util/discussionHandler');
 var DiscussionRenderer  = require('../util/discussionRenderer');
-var DiscussionRoutes      = require('./discussionRoutes');
-var ImageRoutes      = require('./imageRoutes');
+var DiscussionRoutes    = require('./discussionRoutes');
+var ImageRoutes         = require('./imageRoutes');
 var PassportRoutes      = require('./passportRoutes');
 var Util                = require('../util/util');
 
@@ -97,7 +97,7 @@ module.exports = function(app, passport, isProduction) {
         user.created = currentTime;
         discussion.addMessage(user.displayName, user.profilePic, msg, 
                               user.backgroundColor, currentTime);
-        app.io.emit(discussionName + ' message received', msg, user);
+        socket.broadcast.emit(discussionName + ' message received', msg, user);
       }, function(err) {
         console.log('[IO-DISCUSSION-ERROR] ' + err);
       });
