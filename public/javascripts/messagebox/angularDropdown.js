@@ -15,6 +15,7 @@ app.directive('dropdownSelect', [
       controller: ['$scope', '$timeout', function ($scope, $timeout) {
         var that = this;
         $scope.labelField = $scope.dropdownItemLabel || 'text';
+        $scope.disabled = $scope.dropdownDisabled || false;
 
         this.select = function (selected) {
           if (!angular.equals(selected, $scope.dropdownModel)) {
@@ -42,7 +43,7 @@ app.directive('dropdownSelect', [
           that.$el = null;
         });
       }],
-      templateUrl: 'ngDropdowns/templates/dropdownSelect.html'
+      templateUrl: '/views/dropdownSelect.ejs'
     };
   }
 ]);
@@ -68,7 +69,7 @@ app.directive('dropdownSelectItem', [
         };
       },
 
-      templateUrl: 'ngDropdowns/templates/dropdownSelectItem.html'
+      templateUrl: '/views/dropdownSelectItem.ejs'
     };
   }
 ]);

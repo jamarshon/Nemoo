@@ -1,0 +1,9 @@
+<li ng-class="::{divider: (dropdownSelectItem.divider && !dropdownSelectItem[dropdownItemLabel]), 'divider-label': (dropdownSelectItem.divider && dropdownSelectItem[dropdownItemLabel])}">
+<a href="" class="dropdown-item"
+ ng-if="::!dropdownSelectItem.divider"
+ ng-href="{{::dropdownSelectItem.href}}"
+ ng-mousedown="selectItem($event)" ng-bind="::dropdownSelectItem[dropdownItemLabel]">
+</a>
+<span ng-if="::dropdownSelectItem.divider" ng-bind="::dropdownSelectItem[dropdownItemLabel]">
+</span>
+</li>
