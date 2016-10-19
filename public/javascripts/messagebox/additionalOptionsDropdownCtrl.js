@@ -55,7 +55,7 @@ app.controller('AdditionalOptionsDropdownCtrl', ['$scope', function($scope) {
 app.directive('nemooAdditionalOptionsDropdown', function(){
     return {
         restrict: 'E',
-        scope: {},
+        scope: true,
         templateUrl: '/views/additionalOptionsDropdown.ejs',
         controller: 'AdditionalOptionsDropdownCtrl',
     };

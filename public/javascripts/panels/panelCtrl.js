@@ -102,6 +102,7 @@ app.controller('PanelCtrl', ['$scope', '$mdDialog', '$mdSidenav', '$mdMedia', '$
 app.directive('nemooPanel', function() {
   return {
     restrict: 'E',
+    scope: true,
     templateUrl: '/views/panel.ejs',
     controller: 'PanelCtrl',
     controllerAs: 'panelCtrl'
@@ -115,11 +116,12 @@ app.directive('nemooTopDiscussions', function () {
     scope: {
       toggleBoolean: '=',
       discussions: '=',
+      dynamicDiscussion: '=',
       fontStyling: '=',
       caretStyling: '=',
       itemStyling: '=',
       categoryLabel: '@',
-      onClickHandler: '&',
+      onClickHandler: '&'
     },
     templateUrl: '/views/topDiscussions.ejs',
     controller: ['$scope', function($scope){

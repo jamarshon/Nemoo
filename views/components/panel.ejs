@@ -31,6 +31,7 @@
     caret-styling="{'margin-right': '5px', 'font-size': '15px'}"
     font-styling="{'font-weight': 'bold', 'font-size': '16px'}"
     item-styling="{'padding-left': '24px', 'font-size': '15px'}"
+    dynamic-discussion="true"
     on-click-handler="panelCtrl.unfocus(localEvent, localName)"></nemoo-top-discussions>
 
   <nemoo-top-discussions 
@@ -40,6 +41,7 @@
     caret-styling="{'margin-right': '5px', 'font-size': '15px'}"
     font-styling="{'font-weight': 'bold', 'font-size': '16px'}"
     item-styling="{'padding-left': '24px', 'font-size': '15px'}"
+    dynamic-discussion="false"
     on-click-handler="panelCtrl.unfocus(localEvent, localName)"></nemoo-top-discussions>
 
   <md-subheader class="blue-box removed expand-on-hover-parent md-no-sticky" 
@@ -59,6 +61,7 @@
       item-styling="{'padding-left': '48px', 'font-size': '15px'}"
       caret-styling="{'padding-left': '12px', 'margin-right': '3px'}"
       on-click-handler="panelCtrl.unfocus(localEvent, localName)"
+      dynamic-discussion="false"
       ng-repeat="top in ::panelCtrl.topDiscussions"></nemoo-top-discussions>
   </div>
 </md-list>

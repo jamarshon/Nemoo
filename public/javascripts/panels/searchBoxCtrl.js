@@ -38,6 +38,7 @@ app.controller('SearchBoxCtrl', ['$http', '$q', '$mdSidenav', '$mdMedia', 'optim
 app.directive('nemooSearchBox', function() {
     return {
         restrict: 'E',
+        scope: true,
         templateUrl: '/views/searchBox.ejs',
         controller: 'SearchBoxCtrl',
         controllerAs: 'searchBoxCtrl'

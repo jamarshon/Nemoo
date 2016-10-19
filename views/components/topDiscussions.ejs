@@ -9,7 +9,15 @@
 <md-divider></md-divider>
 
 <div class="menu-toggle-dropdown" ng-hide="toggleBoolean">
-  <md-item ng-repeat="item in discussions track by item.title">
+
+  <md-item ng-if="::dynamicDiscussion" ng-repeat="item in discussions track by item.title">
+    <a class="blue-box removed" ng-click="localClickHandler($event, item)">
+      <md-item-content md-ink-ripple layout="row" layout-align="start center" style="cursor: pointer;">
+        <div class="inset" ng-style="::itemStyling" style="word-break: break-all" ng-bind="::item.title"></div>
+      </md-item-content>
+      <md-divider></md-divider>
+    </a>
+  </md-item>
     <a class="blue-box removed" ng-click="localClickHandler($event, item)">
       <md-item-content md-ink-ripple layout="row" layout-align="start center" style="cursor: pointer;">
         <div class="inset" ng-style="::itemStyling" style="word-break: break-all" ng-bind="::item.title"></div>
