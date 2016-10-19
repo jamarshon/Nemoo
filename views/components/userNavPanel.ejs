@@ -9,7 +9,7 @@
 </a>
 
 <a class="blue-box removed" ng-click="userNavCtrl.unfocus($event, header.showTabDialog);">
-	<md-item-content md-ink-ripple layout="row" layout-align="start center" ng-hide="userNavCtrl.loggedIn" style="cursor: pointer;">
+	<md-item-content md-ink-ripple layout="row" layout-align="start center" ng-hide="::userNavCtrl.loggedIn" style="cursor: pointer;">
 		<div class="inset">
 			<md-icon class="material-icons">account_box</md-icon>
 		</div>
@@ -18,7 +18,7 @@
 </a>
 
 <a ng-click="userNavCtrl.hardRedirect('/logout')">
-	<md-item-content md-ink-ripple layout="row" layout-align="start center" ng-show="userNavCtrl.loggedIn" style="cursor: pointer;" >
+	<md-item-content md-ink-ripple layout="row" layout-align="start center" ng-show="::userNavCtrl.loggedIn" style="cursor: pointer;" >
 		<div class="inset">
 			<i class="fa fa-sign-out greyFA"></i>
 		</div>

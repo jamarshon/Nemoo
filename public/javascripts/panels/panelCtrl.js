@@ -60,16 +60,16 @@ app.controller('PanelCtrl', ['$scope', '$mdDialog', '$mdSidenav', '$mdMedia', '$
     that.trending = res.data.trending;
   });
 
-  that.topDiscussions = [];
   $http.get('/topDiscussions').then(function(res){
-    res.data.topDiscussions.forEach(function(result){
+    that.topDiscussions = res.data.topDiscussions.reduce(function(memo, result){
       var topDiscussion = {
         categoryLabel: result.category,
         toggleBoolean: true,
         discussions: result.discussionNames
       };
-      that.topDiscussions.push(topDiscussion);
-    });
+      memo.push(topDiscussion);
+      return memo;
+    }, []);
   });
 
   this.unfocus = function($event, item) {

@@ -4,8 +4,7 @@
       <div id="message-input-box" class="md-input"
             spellcheck="false" autocomplete="off"
             contenteditable="true" style="height: auto; padding-right: 30px"
-            placeholder="{{messageCtrl.placeholder}}"
-            ng-model="messageCtrl.lesson"
+            placeholder="{{::messageCtrl.placeholder}}"
             ng-keyup="messageCtrl.keyUpHandler($event)"
             ng-keydown="messageCtrl.keydownHandler($event)"></div>
             <nemoo-message-additional-options> </nemoo-message-additional-options>

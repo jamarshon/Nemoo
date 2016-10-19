@@ -16,7 +16,7 @@
           <md-icon class="material-icons">storage</md-icon>
           <md-select ng-model="dlgCtrl.data.category" placeholder="Select a Category" class="md-no-underline" required
                       style="margin-left: 3px; margin-top: 3px;">
-            <md-option value="{{option}}" ng-repeat="option in dlgCtrl.options" ng-bind="option"></md-option>
+            <md-option value="{{::option}}" ng-repeat="option in ::dlgCtrl.options" ng-bind="::option"></md-option>
           </md-select>
         </md-input-container>
 

@@ -11,13 +11,13 @@
 
   <div class="menu-toggle-dropdown" ng-hide="panelCtrl.hideGeneral">
     <nemoo-user-nav-panel></nemoo-user-nav-panel>
-    <md-item ng-repeat="item in panelCtrl.general">
+    <md-item ng-repeat="item in ::panelCtrl.general">
         <a class="blue-box removed" ng-click="panelCtrl.unfocus($event, item)">
         <md-item-content md-ink-ripple layout="row" layout-align="start center" style="cursor: pointer;" >
           <div class="inset">
-            <md-icon class="material-icons" ng-bind="item.icon"></md-icon>
+            <md-icon class="material-icons" ng-bind="::item.icon"></md-icon>
           </div>
-          <div class="inset" ng-bind="item.title"></div>
+          <div class="inset" ng-bind="::item.title"></div>
         </md-item-content>
         </a>
     </md-item>
@@ -35,7 +35,7 @@
 
   <nemoo-top-discussions 
     toggle-boolean="panelCtrl.hideTrending"
-    discussions="panelCtrl.trending"
+    discussions="::panelCtrl.trending"
     category-label="Trending"
     caret-styling="{'margin-right': '5px', 'font-size': '15px'}"
     font-styling="{'font-weight': 'bold', 'font-size': '16px'}"
@@ -53,12 +53,12 @@
   <div class="menu-toggle-dropdown" ng-hide="panelCtrl.hideTopDiscussions">
     <nemoo-top-discussions 
       toggle-boolean="top.toggleBoolean"
-      discussions="top.discussions"
-      category-label="{{top.categoryLabel}}"
+      discussions="::top.discussions"
+      category-label="{{::top.categoryLabel}}"
       font-styling="{'font-size': '16px', 'font-style': 'italic', 'font-weight': 500}"
       item-styling="{'padding-left': '48px', 'font-size': '15px'}"
       caret-styling="{'padding-left': '12px', 'margin-right': '3px'}"
       on-click-handler="panelCtrl.unfocus(localEvent, localName)"
-      ng-repeat="top in panelCtrl.topDiscussions"></nemoo-top-discussions>
+      ng-repeat="top in ::panelCtrl.topDiscussions"></nemoo-top-discussions>
   </div>
 </md-list>

@@ -18,7 +18,7 @@
       <md-item-template>
         <span class="item-title ellipsis">
           <i class="fa fa-angle-double-right"></i>
-          <strong> {{item.displayName}} </strong><span>{{' (' + item.category + ')'}}</span>
+          <strong ng-bind="item.displayName"></strong><span ng-bind="' (' + item.category + ')'"></span>
         </span>
         <span class="item-metadata ellipsis">
           <span class="item-metastat">
