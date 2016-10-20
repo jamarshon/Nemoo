@@ -75,7 +75,7 @@ module.exports = function(app, passport, isProduction) {
   // Logout
   app.get('/logout', function(req, res) {
     req.logout();
-    res.redirect('/');
+    res.json({redirect: true});
   });
 
   app.get('/test', function(req, res){

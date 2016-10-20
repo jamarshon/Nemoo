@@ -47,9 +47,10 @@ app.controller('DiscussionDialogCtrl', ['$mdDialog', '$http', '$scope', 'user',
   this.data = {category: '', name: '', description: '', user: user};
   this.submit = function(url) {
   	var postData = that.cleanData(that.data);
-    $http.post(url, postData).success(function(data){
-      if(data.redirect) {
-          optimizationService.softRedirect(data.redirect);
+    $http.post(url, postData).then(function(res){
+    	var redirect = res.data.redirect;
+      if(redirect) {
+          optimizationService.softRedirect(redirect);
           that.cancel();
           toastManager.showSimple('Successfully create discussion!!', 3000);
       } else {

@@ -1,10 +1,9 @@
 var app = angular.module('App');
 
-app.controller('UserNavCtrl', ['$mdSidenav', '$mdMedia', 'optimizationService', 'stateService',
-                      function($mdSidenav, $mdMedia, optimizationService, stateService) {
+app.controller('UserNavCtrl', ['$mdSidenav', '$mdMedia', 'optimizationService', 'stateService', '$http',
+                      function($mdSidenav, $mdMedia, optimizationService, stateService, $http) {
   var that = this;
   
-  this.hardRedirect = optimizationService.hardRedirect;
   this.softRedirect = optimizationService.softRedirect;
   this.isLoggedIn = stateService._state.loggedIn;
 
@@ -13,6 +12,11 @@ app.controller('UserNavCtrl', ['$mdSidenav', '$mdMedia', 'optimizationService', 
     that.togglePanel(function(){
       callback($event, 0);
     }); 
+  };
+
+  this.logout = function(){
+      }
+    })
   };
 
   this.togglePanel = function(callback) {

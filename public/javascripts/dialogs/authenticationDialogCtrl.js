@@ -5,8 +5,8 @@ app.controller('AuthenticationCtrl', ['$http', 'optimizationService',
   var that = this;
   this.data = {email: '', password: '', password2: ''};
   this.submit = function(url) {
-    $http.post(url, that.data).success(function(data){
-      if(data.redirect) {
+    $http.post(url, that.data).then(function(res){
+      if(res.data.redirect) {
         optimizationService.refreshPage();
       } else {
         that.message = data.message;
