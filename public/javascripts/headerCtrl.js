@@ -1,8 +1,9 @@
 var app = angular.module('App');
 
 app.controller('HeaderCtrl', ['$scope', '$mdSidenav', '$mdMedia', '$mdDialog', 
-                    'optimizationService', 'stateService',
-                    function($scope, $mdSidenav, $mdMedia, $mdDialog, optimizationService, stateService) {
+                    'optimizationService', 'stateService', '$http',
+                    function($scope, $mdSidenav, $mdMedia, $mdDialog, 
+                      optimizationService, stateService, $http) {
   var that = this;
 
   // This controller is never removed as it is not part of ng-view so it will never need to be unbinded
@@ -24,9 +25,16 @@ app.controller('HeaderCtrl', ['$scope', '$mdSidenav', '$mdMedia', '$mdDialog',
     }
   };
 
-  this.hardRedirect = optimizationService.hardRedirect;
   this.softRedirect = optimizationService.softRedirect;
   this.state = stateService._state;
+
+  this.logout = function(){
+    $http.get('/logout').then(function(res){
+      if(res.data.redirect) {
+        optimizationService.refreshPage();
+      }
+    })
+  };
 
   this.showTabDialog = function(ev, tabIdx) {
     $mdDialog.show({
@@ -40,7 +48,7 @@ app.controller('HeaderCtrl', ['$scope', '$mdSidenav', '$mdMedia', '$mdDialog',
         this.redirect = optimizationService.hardRedirect;
         this.selected = tabIdx;
       }],
-      controllerAs: 'dlgCtrl',
+      controllerAs: 'tabDlgCtrl',
       templateUrl: '/views/loginDialog.ejs',
       parent: angular.element(document.body),
       targetEvent: ev,

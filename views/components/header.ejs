@@ -14,7 +14,7 @@
         <md-button ng-click="header.softRedirect('/')" style="padding-right: 15px">Home</md-button> 
         <md-button ng-hide="::header.state.loggedIn" ng-click="header.showTabDialog($event, 0)" style="padding-right: 15px">Login</md-button> 
         <md-button ng-hide="::header.state.loggedIn" ng-click="header.showTabDialog($event, 1)" style="padding-right: 15px">Signup</md-button> 
-        <md-button ng-show="::header.state.loggedIn" ng-click="header.hardRedirect('/logout')" style="padding-right: 15px">Logout</md-button> 
+        <md-button ng-show="::header.state.loggedIn" ng-click="header.logout()" style="padding-right: 15px">Logout</md-button> 
       </div>
     </div>
   </md-toolbar>

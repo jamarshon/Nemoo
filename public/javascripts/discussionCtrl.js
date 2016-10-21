@@ -3,15 +3,15 @@ var app = angular.module('App');
 var MAX_QUEUE_LENGTH = 25;
 
 app.controller('DiscussionCtrl', ['$mdMedia', '$routeParams', '$rootScope', '$timeout', '$scope', '$templateCache',
-                    'stateService', '$mdDialog', '$http', 'toastManager',
+                    'stateService', '$mdDialog', '$http', 'toastManager', '$window',
                     function($mdMedia, $routeParams, $rootScope, $timeout, $scope, $templateCache, 
-                      stateService, $mdDialog, $http, toastManager) {
+                      stateService, $mdDialog, $http, toastManager, $window) {
   var that = this;
   var page = $routeParams.page;
-  console.log(page);
   $templateCache.remove('/partials/' + page);
 
   this.init = function(pageName, prerenderedLen){
+    $window.document.title = 'Nemoo - ' + pageName;
     stateService._state.page = page;
     stateService._state.pageName = pageName;
 

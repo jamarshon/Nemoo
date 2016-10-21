@@ -41,10 +41,11 @@ function minifyAssets() {
 			return memo;
 		}, []);
 
-		console.log(allFiles);
 		console.log('Minifying JS');
 		allFiles.splice(allFiles.indexOf('initApp.js'), 1);
+		allFiles.splice(allFiles.indexOf('templates.js'), 1);
 		allFiles.unshift('initApp.js');
+		console.log(allFiles);
 		var jsFiles = allFiles.map(file => rootDir + jsPath + file);
 		minifier.minify(jsFiles, {template: outputDir + jsPath + 'bundle.min.js'});
 	});

@@ -1,4 +1,4 @@
-var app = angular.module('App', ['ngRoute', 'ngMaterial', 'ngMessages', 'ngAnimate', 'ngSanitize']);
+var app = angular.module('App', ['ngRoute', 'ngMaterial', 'ngMessages', 'ngAnimate', 'ngSanitize', 'templates']);
 
 // configure our routes
 app.config(['$routeProvider', '$locationProvider', '$mdThemingProvider', '$compileProvider',
@@ -11,7 +11,10 @@ app.config(['$routeProvider', '$locationProvider', '$mdThemingProvider', '$compi
       controllerAs: 'discussionCtrl'
     })
     .when('/', {
-        templateUrl : '/views/home.ejs'
+        templateUrl : '/views/home.ejs',
+        controller: ['$window', function($window){
+          $window.document.title = 'Nemoo';
+        }]
     });
   $locationProvider.html5Mode({
     enabled: true,

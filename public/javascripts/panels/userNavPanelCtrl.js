@@ -15,6 +15,9 @@ app.controller('UserNavCtrl', ['$mdSidenav', '$mdMedia', 'optimizationService', 
   };
 
   this.logout = function(){
+    $http.get('/logout').then(function(res){
+      if(res.data.redirect) {
+        optimizationService.refreshPage();
       }
     })
   };
