@@ -67,8 +67,10 @@ app.factory('optimizationService', ['$window', '$location', 'animationService',
 
   // When the menu is clicked, the message box should always be focused on
   ret.handleMenuClick = function($event) {
-    if(ret.isFocused) {
-      // If the ui popover is already shown, then the android keyboard is probably showing as well
+    if($('#myContent').is(':visible')){
+      ret.additionalButtonEl.webuiPopover('hide');
+    } else if(ret.isFocused) {
+      // If the ui popover is already focused, then the android keyboard is probably showing as well
       ret.additionalButtonEl.webuiPopover('show');
     } else {
       $('#message-input-box').focus();

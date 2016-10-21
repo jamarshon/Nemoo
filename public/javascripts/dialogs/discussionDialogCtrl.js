@@ -52,7 +52,7 @@ app.controller('DiscussionDialogCtrl', ['$mdDialog', '$http', '$scope', 'user',
       if(redirect) {
           optimizationService.softRedirect(redirect);
           that.cancel();
-          toastManager.showSimple('Successfully create discussion!!', 3000);
+          toastManager.showSimpleWithAction('Successfully create discussion!', 3000);
       } else {
           that.message = data.message;
       }

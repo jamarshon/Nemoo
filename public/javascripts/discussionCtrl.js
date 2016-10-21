@@ -60,10 +60,11 @@ app.controller('DiscussionCtrl', ['$mdMedia', '$routeParams', '$rootScope', '$ti
     $mdDialog.show(confirm).then(function() {
       $http.post('/addToFavorite', {pageName: pageName}).then(function(){
         stateService._state.user.favorites.push(pageName);
-        toastManager.showSimpleWithAction('Successfully favorited ' + pageName, 1000);
+        toastManager.showSimpleWithAction('Successfully favorited ' + pageName, 3000);
         that.addableToFavorites = false;
       });
     }, function() {
+      toastManager.showSimpleWithAction('Error could not favorite', 3000);
     });
   };
 
