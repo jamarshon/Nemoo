@@ -48,8 +48,8 @@ app.controller('MessageAdditionalOptionsCtrl', ['$scope', '$rootScope', '$timeou
 		}
 	});
 
-	var loader = document.getElementById('zthumbs-loader');
 	this.previewImage = function(file) {
+		var loader = document.getElementById('zthumbs-loader');
 		loader.style.display = 'block';
 		file.readDataURI(function(uri) {
 			loader.style.display = 'none';
@@ -123,6 +123,7 @@ app.controller('MessageAdditionalOptionsCtrl', ['$scope', '$rootScope', '$timeou
 		// _.reduce(this.zone.events, function(memo, e, i){ if(e.length){ memo.push(i); }  return memo; }, []);
 		var events = ["dragEnter", "dragLeave", "dragOver", "upload", "uploadElsewhere", "inputSetup", "send"];
 		_.each(events, function(event){ that.zone.event(event, null); });
+		that.fileInput.off('change')
     that.$el = null;
     that.fileInput = null;
     that.zone = null;

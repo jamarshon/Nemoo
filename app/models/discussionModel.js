@@ -1,4 +1,5 @@
-var mongoose = require('mongoose');
+var ImageHandler    = require('../../util/imageHandler');
+var mongoose        = require('mongoose');
 
 var MAX_QUEUE_LENGTH = 25;
 
@@ -26,8 +27,10 @@ discussionSchema.methods.addMessage = function(displayName, profilePic, message,
     // The data is a queue of messages so it is automatically sorted by creation date
     // the maximum displayed messages is MAX_QUEUE_LENGTH so remove the element that was inserted first
     if(this.data.length > MAX_QUEUE_LENGTH) {
-        this.data.shift();
+        var firstItem = this.data.shift();
+        ImageHandler.process(firstItem.message);
     }
+
     this.data.push(message);
     this.messageCount++;
     this.save(function (err) {

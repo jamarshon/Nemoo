@@ -2,7 +2,6 @@ var bodyParser      = require('body-parser');
 var cookieParser    = require('cookie-parser');
 var compression     = require('compression');
 var express         = require('express');
-var fileUpload = require('express-fileupload');
 var favicon         = require('serve-favicon');
 var logger          = require('morgan');
 var mime            = require('mime-types')
@@ -65,7 +64,6 @@ var productionCache = {setHeaders: function (res, path) {
 var options = isProduction ? productionCache : {};
 app.use(express.static(path.join(__dirname, 'public' + suffix), options));
 
-app.use(fileUpload());
 routes(app, passport, isProduction); // load our routes and pass in our app and fully configured passport
 
 // error handlers
