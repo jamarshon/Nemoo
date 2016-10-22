@@ -31,13 +31,11 @@ app.controller('MessageAdditionalOptionsCtrl', ['$scope', '$rootScope', '$timeou
 		$event.preventDefault();
 	};
 
-  window.fd.logging = false;
   this.beforeSend = false;
   this.uri = null;
   this.fileInput = $("#zthumbs-input");
   this.zone = new FileDrop('zthumbs', {input: false});
 
-	this.zone.event('upload', function (e) {
 		var images = that.zone.eventFiles(e).images();
 		var file = images[0];
 		$(that.zone.el).find("img").remove();
@@ -122,6 +120,7 @@ app.controller('MessageAdditionalOptionsCtrl', ['$scope', '$rootScope', '$timeou
 	var destroyHandler = $rootScope.$on('$routeChangeSuccess', function(){
 		// _.reduce(this.zone.events, function(memo, e, i){ if(e.length){ memo.push(i); }  return memo; }, []);
 		var events = ["dragEnter", "dragLeave", "dragOver", "upload", "uploadElsewhere", "inputSetup", "send"];
+		//var events = ["upload"];
 		_.each(events, function(event){ that.zone.event(event, null); });
 		that.fileInput.off('change')
     that.$el = null;

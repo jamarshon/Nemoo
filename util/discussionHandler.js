@@ -10,7 +10,7 @@ discussionHandler.empty = function() {
 
 discussionHandler.getDiscussion = function(discussionName) {
 	var deferred = Q.defer();
-	Discussion.findOne({ 'name' :  discussionName }, function(err, discussion) {
+	Discussion.findOne({name : discussionName}, function(err, discussion) {
 	    if (err){ // if there are any errors, return the error
 	    	deferred.reject(err);
 	    } else if (!discussion) { // if no discussion is found, return the message
@@ -24,7 +24,7 @@ discussionHandler.getDiscussion = function(discussionName) {
 
 discussionHandler.createDiscussion = function(category, name, description, user) {
 	var deferred = Q.defer();
-	Discussion.findOne({ 'name' :  name }, function(err, discussion) {
+	Discussion.findOne({name : name}, function(err, discussion) {
 	    if (err){ // if there are any errors, return the error
 	    	deferred.reject(err);
 	    } else if (!discussion) { // if no discussion is found, create a new discussion

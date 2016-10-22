@@ -10,19 +10,21 @@ var passport        = require('passport');
 var path            = require('path');
 var session         = require('express-session');
 
-
 var configDB        = require('./config/database.js');
 var routes          = require('./routes/routes.js');
 var socket_io       = require( "socket.io" );
 
 var app = express();
+var isProduction = app.get('env') === 'production';
+var oneHour = 3600000;
 
 // Socket.io
 var io           = socket_io();
 app.io           = io;
 
+// Database
 var MongoStore = require('connect-mongo')(session);
-mongoose.connect(configDB.url()); // connect to our database
+mongoose.connect(configDB.url()); 
 
 app.use(compression());
 
@@ -42,32 +44,33 @@ var sessionInstance = session({
   secret: 'iamlightningtheraintransformed', 
   resave: false,
   saveUninitialized: false,
-  cookie: {maxAge: 3600000*24}, // one day
+  cookie: {maxAge: oneHour*24}, // one day
   store: new MongoStore({ mongooseConnection: mongoose.connection })
 });
 app.use(sessionInstance);
 
+// Passport
 require('./config/passport')(passport); // pass passport for configuration
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
-var isProduction = app.get('env') === 'production';
+// Static Resource caching
 var suffix = isProduction ? '/production' : '';
-var cacheTime = 1000*60*60;
 var productionCache = {setHeaders: function (res, path) {
     var type = mime.lookup(path);
-    if(type === 'application/javascript' || type === 'text/css' || type === 'image/png') {
-      res.setHeader('Cache-Control', 'public, max-age=' + cacheTime);
+    if(type === 'application/javascript' || type === 'text/css' || type.indexOf('image') !== -1) {
+      res.setHeader('Cache-Control', 'public, max-age=' + oneHour);
     }
   }
 };
 var options = isProduction ? productionCache : {};
 app.use(express.static(path.join(__dirname, 'public' + suffix), options));
 
-routes(app, passport, isProduction); // load our routes and pass in our app and fully configured passport
+// Routes
+routes(app, passport, isProduction); 
 
-// error handlers
 
+// Error handlers
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
