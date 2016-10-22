@@ -36,6 +36,7 @@ app.controller('MessageAdditionalOptionsCtrl', ['$scope', '$rootScope', '$timeou
   this.fileInput = $("#zthumbs-input");
   this.zone = new FileDrop('zthumbs', {input: false});
 
+	this.zone.event('upload', function(e) {
 		var images = that.zone.eventFiles(e).images();
 		var file = images[0];
 		$(that.zone.el).find("img").remove();
