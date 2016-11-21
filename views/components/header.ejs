@@ -25,7 +25,8 @@
             md-component-id="left"
             md-is-open="header.open"
             md-is-locked-open="$mdMedia('gt-sm') && header.open"
-            md-whiteframe="4">
+            md-whiteframe="4"
+            style="overflow-y: hidden">
           <md-toolbar  class="md-primary">
             <h1 hide-gt-xs class="md-toolbar-tools"> {{::header.state.user.displayName}} 
               <img ng-src="{{::header.state.user.profilePic}}" style="border-radius: 50%; width: 50px; height: 50px; margin-left: 10px;" 
@@ -37,7 +38,7 @@
             <nemoo-search-box></nemoo-search-box>
           </div>
 
-          <md-content style="overflow-x: hidden; height: 100%;">
+          <md-content style="overflow-x: hidden; height: calc(100% - 105px);">
             <nemoo-panel></nemoo-panel>
           </md-content>
         </md-sidenav>

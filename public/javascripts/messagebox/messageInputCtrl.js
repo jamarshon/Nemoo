@@ -1,8 +1,8 @@
 var app = angular.module('App');
 
-app.controller('MessageInputCtrl', ['$timeout', '$scope', '$rootScope', '$mdMedia', 'toastManager',
+app.controller('MessageInputCtrl', ['$timeout', '$scope', '$mdMedia', 'toastManager',
                             'stateService', 'cursorService',
-                            function($timeout, $scope, $rootScope, $mdMedia, toastManager, 
+                            function($timeout, $scope, $mdMedia, toastManager, 
                               stateService, cursorService) {
   var that = this;
   this.disableSend = true;
@@ -29,7 +29,7 @@ app.controller('MessageInputCtrl', ['$timeout', '$scope', '$rootScope', '$mdMedi
     scrollBottom();
   });
 
-  var destroyHandler = $rootScope.$on('$routeChangeSuccess', function(){
+  var destroyHandler = $scope.$on('$destroy', function(){
     that.$el = null;
     sizeHandler();
     destroyHandler();

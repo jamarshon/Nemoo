@@ -1,8 +1,8 @@
 var app = angular.module('App');
 
-app.controller('MessageAdditionalOptionsCtrl', ['$scope', '$rootScope', '$timeout', '$templateCache', '$mdMedia', 
+app.controller('MessageAdditionalOptionsCtrl', ['$scope', '$timeout', '$templateCache', '$mdMedia', 
 												'optimizationService', '$http', 'stateService', 'toastManager', 'animationService',
-												function($scope, $rootScope, $timeout, $templateCache, $mdMedia, optimizationService, 
+												function($scope, $timeout, $templateCache, $mdMedia, optimizationService, 
 													$http, stateService, toastManager, animationService){
 	var that = this;
 	//$templateCache.remove('/views/messageAdditionalOptions.ejs');
@@ -118,7 +118,7 @@ app.controller('MessageAdditionalOptionsCtrl', ['$scope', '$rootScope', '$timeou
 		that.showMenu = optimizationService.handleMenuClick;
 	});
 
-	var destroyHandler = $rootScope.$on('$routeChangeSuccess', function(){
+	var destroyHandler = $scope.$on('$destroy', function(){
 		// _.reduce(this.zone.events, function(memo, e, i){ if(e.length){ memo.push(i); }  return memo; }, []);
 		var events = ["dragEnter", "dragLeave", "dragOver", "upload", "uploadElsewhere", "inputSetup", "send"];
 		//var events = ["upload"];

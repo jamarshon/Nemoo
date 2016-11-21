@@ -10,6 +10,11 @@ app.config(['$routeProvider', '$locationProvider', '$mdThemingProvider', '$compi
       controller  : 'DiscussionCtrl',
       controllerAs: 'discussionCtrl'
     })
+    .when('/explore', {
+      templateUrl: '/views/explore.ejs',
+      controller: 'ExploreCtrl',
+      controllerAs: 'exploreCtrl'
+    })
     .when('/', {
         templateUrl : '/views/home.ejs',
         controller: ['$window', function($window){

@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"cont",
+				"controllerAs"
+			],
+			[
+				"templ",
+				"templateUrl"
+			],
+			[
 				"is",
 				"isTempImage"
 			],
@@ -506,100 +514,87 @@
 			[
 				"templa",
 				"templateId"
-			],
-			[
-				"remove",
-				"removeArrows"
-			],
-			[
-				"prev",
-				"previousEnv"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "public/javascripts/messagebox/messageAdditionalOptionsCtrl.js",
+			"file": "public/javascripts/initApp.js",
 			"settings":
 			{
-				"buffer_size": 4530,
+				"buffer_size": 2579,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "public/javascripts/messagebox/messageInputCtrl.js",
+			"file": "views/index.ejs",
 			"settings":
 			{
-				"buffer_size": 4399,
+				"buffer_size": 3884,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "routes/routes.js",
+			"settings":
+			{
+				"buffer_size": 4951,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "public/javascripts/discussionCtrl.js",
+			"contents": "{\n    \"rss\": {\n        \"$\": {\n            \"version\": \"2.0\",\n            \"xmlns:ht\": \"http://www.google.com/trends/hottrends\",\n            \"xmlns:atom\": \"http://www.w3.org/2005/Atom\"\n        },\n        \"channel\": [\n            {\n                \"title\": [\n                    \"Hot Trends\"\n                ],\n                \"link\": [\n                    \"http://www.google.us/trends/hottrends?pn=p1\"\n                ],\n                \"atom:link\": [\n                    {\n                        \"$\": {\n                            \"href\": \"http://www.google.us/trends/hottrends/atom/feed?pn=p1\",\n                            \"rel\": \"self\",\n                            \"type\": \"application/rss+xml\"\n                        }\n                    }\n                ],\n                \"description\": [\n                    \"Recent hot searches\"\n                ],\n                \"item\": [\n                    {\n                        \"title\": [\n                            \"Texas Football\"\n                        ],\n                        \"description\": [\n                            \"\"\n                        ],\n                        \"link\": [\n                            \"http://www.google.us/trends/hottrends?pn=p1#a=20161120-Texas+Football\"\n                        ],\n                        \"pubDate\": [\n                            \"Sun, 20 Nov 2016 09:00:00 -0800\"\n                        ],\n                        \"ht:picture\": [\n                            \"//t0.gstatic.com/images?q=tbn:ANd9GcTLymQQYwB4my6FlQpfKTbYrz8rPfz-vOpFoqKVOAFn-TyGZbNoObZduD9iaFBrnG1RVTwq_KBP\"\n                        ],\n                        \"ht:picture_source\": [\n                            \"SB Nation\"\n                        ],\n                        \"ht:approx_traffic\": [\n                            \"50,000+\"\n                        ],\n                        \"ht:news_item\": [\n                            {\n                                \"ht:news_item_title\": [\n                                    \"Charlie Strong is all but gone from <b>Texas</b>, but Ed Orgeron still has a chance <b>...</b>\"\n                                ],\n                                \"ht:news_item_snippet\": [\n                                    \"Charlie Strong&#39;s time as <b>Texas</b> head coach has all but officially concluded after a loss to the 2-9 Jayhawks on Saturday, UT&#39;s first loss to KU since 1938. Strong is 16-20 as the Longhorns head coach and below .500 in conference play. Since <b>Texas</b>&#39; loss <b>...</b>\"\n                                ],\n                                \"ht:news_item_url\": [\n                                    \"http://www.sbnation.com/college-football/2016/11/20/13689374/charlie-strong-texas-ed-orgeron-lsu\"\n                                ],\n                                \"ht:news_item_source\": [\n                                    \"SB Nation\"\n                                ]\n                            }\n                        ]\n                    },\n                    {\n                        \"title\": [\n                            \"Snl Trump\"\n                        ],\n                        \"description\": [\n                            \"\"\n                        ],\n                        \"link\": [\n                            \"http://www.google.us/trends/hottrends?pn=p1#a=20161120-Snl+Trump\"\n                        ],\n                        \"pubDate\": [\n                            \"Sun, 20 Nov 2016 09:00:00 -0800\"\n                        ],\n                        \"ht:picture\": [\n                            \"//t0.gstatic.com/images?q=tbn:ANd9GcQFHjB89sOrKnSqiXiinJtmb1sPJt3QV1YPLb7FLD0SWx-aY9CFGY7myXiWBua3NHbvK8161E3n\"\n                        ],\n                        \"ht:picture_source\": [\n                            \"USA TODAY\"\n                        ],\n                        \"ht:approx_traffic\": [\n                            \"20,000+\"\n                        ],\n                        \"ht:news_item\": [\n                            {\n                                \"ht:news_item_title\": [\n                                    \"<b>Trump</b> slams &#39;<b>SNL</b>,&#39; doubles down on &#39;Hamilton&#39;\"\n                                ],\n                                \"ht:news_item_snippet\": [\n                                    \"President-elect Donald <b>Trump</b> isn&#39;t done bashing Hamilton — at least not until the Sunday morning talk shows are done taping or perhaps the country has forgotten about the $25 million he paid to settle the <b>Trump</b> University fraud case on Friday <b>...</b>\"\n                                ],\n                                \"ht:news_item_url\": [\n                                    \"http://www.usatoday.com/story/life/tv/2016/11/20/trump-slams-snl-doubles-down-hamilton/94162650/\"\n                                ],\n                                \"ht:news_item_source\": [\n                                    \"USA TODAY\"\n                                ]\n                            },\n                            {\n                                \"ht:news_item_title\": [\n                                    \"See Alec Baldwin Return to &#39;<b>SNL</b>&#39; as Overwhelmed Donald...\"\n                                ],\n                                \"ht:news_item_snippet\": [\n                                    \"Baldwin isn&#39;t the only actor here reprising his <b>SNL</b> role: Former cast member Jason Sudeikis returns to play <b>Trump&#39;s</b> campaign trail critic-turned-potential advisor Mitt Romney, who Sudeikis portrayed four years ago during the 2012 presidential elections.\"\n                                ],\n                                \"ht:news_item_url\": [\n                                    \"http://www.rollingstone.com/tv/news/see-alec-baldwin-return-to-snl-as-overwhelmed-donald-trump-w451549\"\n                                ],\n                                \"ht:news_item_source\": [\n                                    \"RollingStone.com\"\n                                ]\n                            }\n                        ]\n                    },\n                    {\n                        \"title\": [\n                            \"USC vs UCLA\"\n                        ],\n                        \"description\": [\n                            \"\"\n                        ],\n                        \"link\": [\n                            \"http://www.google.us/trends/hottrends?pn=p1#a=20161120-USC+vs+UCLA\"\n                        ],\n                        \"pubDate\": [\n                            \"Sun, 20 Nov 2016 00:00:00 -0800\"\n                        ],\n                        \"ht:picture\": [\n                            \"//t0.gstatic.com/images?q=tbn:ANd9GcR99v5LfJH8caDEl0XEDE_T-fgkTAoPSdE8vJHf1_ZPG_4WIDngdllFpuKOx5mvMZdTEOCH5xxd\"\n                        ],\n                        \"ht:picture_source\": [\n                            \"Los Angeles Times\"\n                        ],\n                        \"ht:approx_traffic\": [\n                            \"20,000+\"\n                        ],\n                        \"ht:news_item\": [\n                            {\n                                \"ht:news_item_title\": [\n                                    \"No. 13 <b>USC</b> pounds <b>UCLA</b>, 36-14, in rivalry game\"\n                                ],\n                                \"ht:news_item_snippet\": [\n                                    \"<b>USC</b> receiver Juju Smith-Schuster is tackled at the one-yard line by <b>UCLA&#39;s</b> Fabian Moreau as Randall Goforth closes in during the first quarter of a game at the Rose Bowl on Nov. 19. (Wally Skalij / Los Angeles Times). The <b>UCLA</b> defense puts the wraps on&nbsp;...\"\n                                ],\n                                \"ht:news_item_url\": [\n                                    \"http://www.latimes.com/sports/ucla/la-live-ucla-vs-usc-20161118-htmlstory.html\"\n                                ],\n                                \"ht:news_item_source\": [\n                                    \"Los Angeles Times\"\n                                ]\n                            },\n                            {\n                                \"ht:news_item_title\": [\n                                    \"<b>USC vs UCLA</b> 2016: Who Were The Studs and Duds?\"\n                                ],\n                                \"ht:news_item_snippet\": [\n                                    \"Jones accounted for 121 yards and two touchdowns, both of which were essential to <b>USC&#39;s</b> surge past the Bruins. His first score was also the Trojans&#39; first of the evening, tying the game at seven after <b>UCLA</b> took the early lead. His second drew the game <b>...</b>\"\n                                ],\n                                \"ht:news_item_url\": [\n                                    \"http://reignoftroy.com/2016/11/20/usc-vs-ucla-2016-studs-duds/\"\n                                ],\n                                \"ht:news_item_source\": [\n                                    \"Reign of Troy\"\n                                ]\n                            }\n                        ]\n                    },\n                    {\n                        \"title\": [\n                            \"Chattanooga football\"\n                        ],\n                        \"description\": [\n                            \"\"\n                        ],\n                        \"link\": [\n                            \"http://www.google.us/trends/hottrends?pn=p1#a=20161120-Chattanooga+football\"\n                        ],\n                        \"pubDate\": [\n                            \"Sun, 20 Nov 2016 00:00:00 -0800\"\n                        ],\n                        \"ht:picture\": [\n                            \"//t2.gstatic.com/images?q=tbn:ANd9GcSyPMruKlSSbgdXN6ta62E7oI_SeTaKyqxNex6HbCPtuBmA4afPwc7KhOu_n6UBD7mhALLFJEmU\"\n                        ],\n                        \"ht:picture_source\": [\n                            \"AL.com\"\n                        ],\n                        \"ht:approx_traffic\": [\n                            \"20,000+\"\n                        ],\n                        \"ht:news_item\": [\n                            {\n                                \"ht:news_item_title\": [\n                                    \"Alabama vs. <b>Chattanooga</b> live stream, live score updates; college <b>football</b> 2016\"\n                                ],\n                                \"ht:news_item_snippet\": [\n                                    \"Alabama wide receiver Trevon Diggs runs into for a touchdown against Mississippi State defensive back Lashard Durr during the second half of an NCAA college <b>football</b> game, Saturday, Nov. 12, 2016, in Tuscaloosa, Ala. (AP Photo/Brynn Anderson).\"\n                                ],\n                                \"ht:news_item_url\": [\n                                    \"http://www.al.com/sports/index.ssf/2016/11/what_time_tv_channel_is_alabam_7.html\"\n                                ],\n                                \"ht:news_item_source\": [\n                                    \"AL.com\"\n                                ]\n                            },\n                            {\n                                \"ht:news_item_title\": [\n                                    \"Alabama <b>football</b>: What Nick Saban said after Tide&#39;s win over <b>Chattanooga</b>\"\n                                ],\n                                \"ht:news_item_snippet\": [\n                                    \"Well that wasn&#39;t probably our best effort. You have to give <b>Chattanooga</b> a lot of credit. They played with a lot of toughness. I thought our players responded well in the second half. The defensive did a good job of only giving up three points. We didn <b>...</b>\"\n                                ],\n                                \"ht:news_item_url\": [\n                                    \"https://www.seccountry.com/alabama/alabama-football-what-nick-saban-said-result-chattanooga\"\n                                ],\n                                \"ht:news_item_source\": [\n                                    \"SECcountry.com\"\n                                ]\n                            }\n                        ]\n                    },\n                    {\n                        \"title\": [\n                            \"Hamilton\"\n                        ],\n                        \"description\": [\n                            \"Pence Hamilton, Hamilton Pence, Mike Pence Hamilton, Hamilton tickets\"\n                        ],\n                        \"link\": [\n                            \"http://www.google.us/trends/hottrends?pn=p1#a=20161119-Hamilton\"\n                        ],\n                        \"pubDate\": [\n                            \"Sat, 19 Nov 2016 07:00:00 -0800\"\n                        ],\n                        \"ht:picture\": [\n                            \"//t2.gstatic.com/images?q=tbn:ANd9GcSXXiavWNh0JJ9YPtIlb2x7ZydP2Z248pyiYgrwGhWA0exRnOKpDadjlSe0dbmPEd1pjCdnsr0w\"\n                        ],\n                        \"ht:picture_source\": [\n                            \"New York Times\"\n                        ],\n                        \"ht:approx_traffic\": [\n                            \"500,000+\"\n                        ],\n                        \"ht:news_item\": [\n                            {\n                                \"ht:news_item_title\": [\n                                    \"&#39;<b>Hamilton</b>&#39; Cast&#39;s Appeal to Pence Ignites Showdown With Trump\"\n                                ],\n                                \"ht:news_item_snippet\": [\n                                    \"The clash between the “<b>Hamilton</b>” actors and Mr. Trump captured the sharply divergent feelings of many Americans 11 days after the election: a showdown between the values of multiculturalism on the left, including the racially diverse “<b>Hamilton</b>” cast <b>...</b>\"\n                                ],\n                                \"ht:news_item_url\": [\n                                    \"http://www.nytimes.com/2016/11/20/us/politics/hamilton-cast-mike-pence-donald-trump.html\"\n                                ],\n                                \"ht:news_item_source\": [\n                                    \"New York Times\"\n                                ]\n                            },\n                            {\n                                \"ht:news_item_title\": [\n                                    \"Trump demands apology from &#39;<b>Hamilton</b>&#39; after cast&#39;s message to Pence\"\n                                ],\n                                \"ht:news_item_snippet\": [\n                                    \"The cast of “<b>Hamilton</b>” was not going to throw away its shot. After Friday evening&#39;s performance, at which Vice President-elect Mike Pence was in the audience, several dozen of the Broadway musical&#39;s cast zeroed in on Pence during their curtain call <b>...</b>\"\n                                ],\n                                \"ht:news_item_url\": [\n                                    \"https://www.washingtonpost.com/news/arts-and-entertainment/wp/2016/11/20/trump-demands-apology-from-hamilton-after-casts-message-to-pence/\"\n                                ],\n                                \"ht:news_item_source\": [\n                                    \"Washington Post\"\n                                ]\n                            }\n                        ]\n                    },\n                    {\n                        \"title\": [\n                            \"Andre Ward\"\n                        ],\n                        \"description\": [\n                            \"Ward Kovalev, Kovalev Ward\"\n                        ],\n                        \"link\": [\n                            \"http://www.google.us/trends/hottrends?pn=p1#a=20161119-Andre+Ward\"\n                        ],\n                        \"pubDate\": [\n                            \"Sat, 19 Nov 2016 18:00:00 -0800\"\n                        ],\n                        \"ht:picture\": [\n                            \"//t0.gstatic.com/images?q=tbn:ANd9GcRyjyS3Lc9g6BZPHCJOnfaSiW8ddFDO5IwMUpS4CGLU7S-y-0iOfMhSQq7KmN2t00XLvvO9D-kI\"\n                        ],\n                        \"ht:picture_source\": [\n                            \"New York Times\"\n                        ],\n                        \"ht:approx_traffic\": [\n                            \"200,000+\"\n                        ],\n                        \"ht:news_item\": [\n                            {\n                                \"ht:news_item_title\": [\n                                    \"<b>Andre Ward</b> Takes Control and Then Crown From Sergey Kovalev\"\n                                ],\n                                \"ht:news_item_snippet\": [\n                                    \"LAS VEGAS — A few days before <b>Andre Ward</b> and Sergey Kovalev stepped into a boxing ring here to battle it out for light heavyweight supremacy, Kovalev&#39;s promoter said that this would be the super fight that everyone wanted between Floyd Mayweather Jr.\"\n                                ],\n                                \"ht:news_item_url\": [\n                                    \"http://www.nytimes.com/2016/11/20/sports/andre-ward-sergey-kovalev.html\"\n                                ],\n                                \"ht:news_item_source\": [\n                                    \"New York Times\"\n                                ]\n                            },\n                            {\n                                \"ht:news_item_title\": [\n                                    \"<b>Andre Ward</b> defeats Sergey Kovalev by decision in controversial title fight\"\n                                ],\n                                \"ht:news_item_snippet\": [\n                                    \"There were pro-<b>Andre Ward</b> chants of “S-O-G!” as the opening bell rang. It was a cautious start for both fighters. Sergey Kovalev looks like the fighter who outboxed Bernard Hopkins, which might not be what he wants to be today. It&#39;s one thing to outbox <b>...</b>\"\n                                ],\n                                \"ht:news_item_url\": [\n                                    \"http://www.latimes.com/sports/la-live-coverage-andre-ward-vs-sergey-kovalev-20161118-htmlstory.html\"\n                                ],\n                                \"ht:news_item_source\": [\n                                    \"Los Angeles Times\"\n                                ]\n                            }\n                        ]\n                    },\n                    {\n                        \"title\": [\n                            \"Kylie Jenner\"\n                        ],\n                        \"description\": [\n                            \"Tyga, Kylie Jenner Lingerie\"\n                        ],\n                        \"link\": [\n                            \"http://www.google.us/trends/hottrends?pn=p1#a=20161119-Kylie+Jenner\"\n                        ],\n                        \"pubDate\": [\n                            \"Sat, 19 Nov 2016 20:00:00 -0800\"\n                        ],\n                        \"ht:picture\": [\n                            \"//t0.gstatic.com/images?q=tbn:ANd9GcRy2PiZ7BgvQzCgpZceon2AHwa4FUo9ik9WxGO_3WfwfgxWYtiE9cjW2q7LhUSGmTFdPnx5NNNs\"\n                        ],\n                        \"ht:picture_source\": [\n                            \"Fox News\"\n                        ],\n                        \"ht:approx_traffic\": [\n                            \"200,000+\"\n                        ],\n                        \"ht:news_item\": [\n                            {\n                                \"ht:news_item_title\": [\n                                    \"<b>Kylie Jenner</b> shares NSFW topless pic with Tyga for his 27th birthday\"\n                                ],\n                                \"ht:news_item_snippet\": [\n                                    \"Happy Birthday, Tyga! The rapper turned 27 on Saturday and in honor of his special day, his girlfriend, <b>Kylie Jenner</b>, took to Instagram to share two very intimate (and NSFW!) pics. WATCH: <b>Kylie Jenner</b> Babysits Tyga and Blac Chyna&#39;s Son King as Family&nbsp;...\"\n                                ],\n                                \"ht:news_item_url\": [\n                                    \"http://www.foxnews.com/entertainment/2016/11/20/kylie-jenner-shares-nsfw-topless-pic-with-tyga-for-his-27th-birthday.html\"\n                                ],\n                                \"ht:news_item_source\": [\n                                    \"Fox News\"\n                                ]\n                            },\n                            {\n                                \"ht:news_item_title\": [\n                                    \"<b>Kylie Jenner</b> Wishes Tyga A Happy Birthday\"\n                                ],\n                                \"ht:news_item_snippet\": [\n                                    \"1119-tyga-<b>kylie</b>-<b>jenner</b>-instagram-01 <b>Kylie Jenner</b> wished bf Tyga a VERY happy birthday ... and she wanted to let everybody know exactly what she gave him. Jenner posted the NSFW pic Saturday -- T&#39;s 27th bday -- with a, &quot;happy birthday baby.&quot; The two are&nbsp;...\"\n                                ],\n                                \"ht:news_item_url\": [\n                                    \"http://www.tmz.com/2016/11/19/kylie-jenner-happy-birthday-tyga-heres-your-presents/\"\n                                ],\n                                \"ht:news_item_source\": [\n                                    \"TMZ.com\"\n                                ]\n                            }\n                        ]\n                    },\n                    {\n                        \"title\": [\n                            \"Real Madrid\"\n                        ],\n                        \"description\": [\n                            \"La Liga, Real Madrid vs Atletico Madrid\"\n                        ],\n                        \"link\": [\n                            \"http://www.google.us/trends/hottrends?pn=p1#a=20161119-Real+Madrid\"\n                        ],\n                        \"pubDate\": [\n                            \"Sat, 19 Nov 2016 09:00:00 -0800\"\n                        ],\n                        \"ht:picture\": [\n                            \"//t2.gstatic.com/images?q=tbn:ANd9GcSm5njC2uber4rFV4ixrUlGDzWpE8Pj1gkLX1C8M1WQmfWNWy4OapjUT4wfmoIylfMX5AbWcyq4\"\n                        ],\n                        \"ht:picture_source\": [\n                            \"Bleacher Report\"\n                        ],\n                        \"ht:approx_traffic\": [\n                            \"200,000+\"\n                        ],\n                        \"ht:news_item\": [\n                            {\n                                \"ht:news_item_title\": [\n                                    \"<b>Real Madrid</b> and Ronaldo Find Form, but Squad Stars Are to Thank for El Derbi Win\"\n                                ],\n                                \"ht:news_item_snippet\": [\n                                    \"<b>Real Madrid</b> displayed an enormous show of strength, quality and togetherness to take victory in the weekend&#39;s big match in La Liga, seeing off city rivals Atletico Madrid 3-0 at the Vicente Calderon in what is likely to be the final league meeting <b>...</b>\"\n                                ],\n                                \"ht:news_item_url\": [\n                                    \"http://bleacherreport.com/articles/2677151-real-madrid-and-ronaldo-find-form-but-squad-stars-are-to-thank-for-el-derbi-win\"\n                                ],\n                                \"ht:news_item_source\": [\n                                    \"Bleacher Report\"\n                                ]\n                            },\n                            {\n                                \"ht:news_item_title\": [\n                                    \"Cristiano Ronaldo&#39;s hat trick answered <b>Real Madrid&#39;s</b> biggest question\"\n                                ],\n                                \"ht:news_item_snippet\": [\n                                    \"On Saturday, Cristiano Ronaldo silenced his critics yet again, as the 31-year-old Portuguese superstar netted a hat trick to lead <b>Real Madrid</b> to a 3-0 victory over rival Atletico Madrid and give Real a clear line of sight to its first La Liga title in <b>...</b>\"\n                                ],\n                                \"ht:news_item_url\": [\n                                    \"http://sports.yahoo.com/news/cristiano-ronaldos-hat-trick-answered-real-madrids-biggest-question-000118936.html\"\n                                ],\n                                \"ht:news_item_source\": [\n                                    \"Yahoo Sports\"\n                                ]\n                            }\n                        ]\n                    },\n                    {\n                        \"title\": [\n                            \"LSU football\"\n                        ],\n                        \"description\": [\n                            \"LSU\"\n                        ],\n                        \"link\": [\n                            \"http://www.google.us/trends/hottrends?pn=p1#a=20161119-LSU+football\"\n                        ],\n                        \"pubDate\": [\n                            \"Sat, 19 Nov 2016 12:00:00 -0800\"\n                        ],\n                        \"ht:picture\": [\n                            \"//t1.gstatic.com/images?q=tbn:ANd9GcRIPQGdjOjQ8HBrrsXBkfSkqU6k05LYIDaU2rdO6cFL7mUyxUj9-GfUewmOdmTREL2njDCF0f3D\"\n                        ],\n                        \"ht:picture_source\": [\n                            \"NJ.com\"\n                        ],\n                        \"ht:approx_traffic\": [\n                            \"100,000+\"\n                        ],\n                        \"ht:news_item\": [\n                            {\n                                \"ht:news_item_title\": [\n                                    \"Florida vs. <b>LSU</b> RECAP, score and stats (11/19/16), College <b>football</b>, SEC\"\n                                ],\n                                \"ht:news_item_snippet\": [\n                                    \"No. 16-ranked <b>LSU</b> faced No. 21-ranked Florida on Saturday, November 19, 2016, at Tiger Stadium in Baton Rouge, La. The Gators entered 7-2, while the Tigers were 6-3. This game was rescheduled from Oct. 8 because of a storm. Check the scoreboard&nbsp;...\"\n                                ],\n                                \"ht:news_item_url\": [\n                                    \"http://www.nj.com/sports/index.ssf/2016/11/florida_vs_lsu_live_score_updates_and_stats_111916.html\"\n                                ],\n                                \"ht:news_item_source\": [\n                                    \"NJ.com\"\n                                ]\n                            },\n                            {\n                                \"ht:news_item_title\": [\n                                    \"Video: Join <b>LSU football</b> in march down Victory Hill before Florida showdown\"\n                                ],\n                                \"ht:news_item_snippet\": [\n                                    \"Escorted by Louisiana State Trooper Brian Madden, right, LSU interim head coach Ed Orgeron fires up the LSU fans as the <b>LSU football</b> team walks down Victory Hill before the game Saturday Nov. 19, 2016, at Tiger Stadium. prev. next. Ever wanted to march&nbsp;...\"\n                                ],\n                                \"ht:news_item_url\": [\n                                    \"http://www.theadvocate.com/baton_rouge/sports/lsu/article_46374d1a-ae8e-11e6-bf13-3b7609bce5aa.html\"\n                                ],\n                                \"ht:news_item_source\": [\n                                    \"The Advocate\"\n                                ]\n                            }\n                        ]\n                    },\n                    {\n                        \"title\": [\n                            \"Western Michigan football\"\n                        ],\n                        \"description\": [\n                            \"\"\n                        ],\n                        \"link\": [\n                            \"http://www.google.us/trends/hottrends?pn=p1#a=20161119-Western+Michigan+football\"\n                        ],\n                        \"pubDate\": [\n                            \"Sat, 19 Nov 2016 09:00:00 -0800\"\n                        ],\n                        \"ht:picture\": [\n                            \"//t0.gstatic.com/images?q=tbn:ANd9GcQXlPXcTERVEUKyQbfaJUnqLX8NE0KqWu6k4vaZsHIlSqzgKjTnU-J4r3n1vRmN02nrzFTlVXRg\"\n                        ],\n                        \"ht:picture_source\": [\n                            \"Washington Post\"\n                        ],\n                        \"ht:approx_traffic\": [\n                            \"100,000+\"\n                        ],\n                        \"ht:news_item\": [\n                            {\n                                \"ht:news_item_title\": [\n                                    \"A brief history of PJ Fleck&#39;s &#39;Row the Boat&#39; phenomenon at <b>Western Michigan</b>\"\n                                ],\n                                \"ht:news_item_snippet\": [\n                                    \"<b>Western Michigan football</b> was almost completely anonymous when P.J. Fleck took over as coach in December 2012, the kind of vague obscurity that comes with having a cardinal direction in your name. The Broncos had been to four bowl games, but they&nbsp;...\"\n                                ],\n                                \"ht:news_item_url\": [\n                                    \"https://www.washingtonpost.com/news/early-lead/wp/2016/11/19/a-brief-history-of-p-j-flecks-row-the-boat-phenomenon-at-western-michigan/\"\n                                ],\n                                \"ht:news_item_source\": [\n                                    \"Washington Post\"\n                                ]\n                            },\n                            {\n                                \"ht:news_item_title\": [\n                                    \"Why Is College Gameday at <b>Western Michigan</b>?\"\n                                ],\n                                \"ht:news_item_snippet\": [\n                                    \"ESPN College Gameday has been at sites like LSU, Clemson, Washington and now, <b>Western Michigan</b> this season. You may be curious why ESPN decided to make a stop at Kalamazoo over more recognizable college <b>football</b> powerhouses. There are&nbsp;...\"\n                                ],\n                                \"ht:news_item_url\": [\n                                    \"http://heavy.com/sports/2016/11/espn-college-gameday-western-michigan-why-where-today-row-the-boat-about-kalamazoo-p-j-fleck-corey-davis/\"\n                                ],\n                                \"ht:news_item_source\": [\n                                    \"Heavy.com\"\n                                ]\n                            }\n                        ]\n                    },\n                    {\n                        \"title\": [\n                            \"Ohio State\"\n                        ],\n                        \"description\": [\n                            \"Ohio State Score\"\n                        ],\n                        \"link\": [\n                            \"http://www.google.us/trends/hottrends?pn=p1#a=20161119-Ohio+State\"\n                        ],\n                        \"pubDate\": [\n                            \"Sat, 19 Nov 2016 13:00:00 -0800\"\n                        ],\n                        \"ht:picture\": [\n                            \"//t0.gstatic.com/images?q=tbn:ANd9GcRdYPbpqB4iiV1ejL95EYRQaXIQPHIrRfadMB-FSGTdEZ7fzJccgvdQVQr_YVeDLGLH8kAYa5g7\"\n                        ],\n                        \"ht:picture_source\": [\n                            \"New York Times\"\n                        ],\n                        \"ht:approx_traffic\": [\n                            \"100,000+\"\n                        ],\n                        \"ht:news_item\": [\n                            {\n                                \"ht:news_item_title\": [\n                                    \"<b>Ohio State</b> and Michigan Eke Out Wins Before a Showdown\"\n                                ],\n                                \"ht:news_item_snippet\": [\n                                    \"2 <b>Ohio State</b> held off host Michigan State, 17-16, after the Spartans missed a 2-point conversion with 4 minutes 41 seconds remaining that would have given them the lead. The Buckeyes (10-1, 7-1 Big Ten) can now turn their attention to next weekend&#39;s&nbsp;...\"\n                                ],\n                                \"ht:news_item_url\": [\n                                    \"http://www.nytimes.com/2016/11/20/sports/ncaafootball/ohio-state-and-michigan-eke-out-wins-before-a-showdown.html\"\n                                ],\n                                \"ht:news_item_source\": [\n                                    \"New York Times\"\n                                ]\n                            },\n                            {\n                                \"ht:news_item_title\": [\n                                    \"Michigan, <b>Ohio State</b> set stage for epic showdown\"\n                                ],\n                                \"ht:news_item_snippet\": [\n                                    \"Both No. 2 <b>Ohio State</b> and No. 3 Michigan almost spit the bit. The Buckeyes had to intercept a two-point conversion try at Michigan State to escape with a 17-16 victory, while the Wolverines trailed Indiana into the third quarter before pulling away at <b>...</b>\"\n                                ],\n                                \"ht:news_item_url\": [\n                                    \"http://www.espn.com/college-football/story/_/id/18090247/michigan-wolverines-ohio-state-buckeyes-set-epic-showdown\"\n                                ],\n                                \"ht:news_item_source\": [\n                                    \"ESPN\"\n                                ]\n                            }\n                        ]\n                    },\n                    {\n                        \"title\": [\n                            \"Charlie Strong\"\n                        ],\n                        \"description\": [\n                            \"\"\n                        ],\n                        \"link\": [\n                            \"http://www.google.us/trends/hottrends?pn=p1#a=20161119-Charlie+Strong\"\n                        ],\n                        \"pubDate\": [\n                            \"Sat, 19 Nov 2016 19:00:00 -0800\"\n                        ],\n                        \"ht:picture\": [\n                            \"//t1.gstatic.com/images?q=tbn:ANd9GcRW1MbhkiPQy4l_1-4qE_BB8bzDWONOvD4nTLZAcEVygAK4pht8C7CI4iPm_TsTRTO0iX_J7GSY\"\n                        ],\n                        \"ht:picture_source\": [\n                            \"ESPN (blog)\"\n                        ],\n                        \"ht:approx_traffic\": [\n                            \"100,000+\"\n                        ],\n                        \"ht:news_item\": [\n                            {\n                                \"ht:news_item_title\": [\n                                    \"Losing to Kansas should be <b>Charlie Strong&#39;s</b> last straw\"\n                                ],\n                                \"ht:news_item_snippet\": [\n                                    \"<b>Charlie Strong</b> made that path painfully obvious with the Longhorns&#39; 24-21 overtime loss to a 1-9 Kansas team Saturday night. The embattled head coach&#39;s time at Texas is likely coming to an end. Fenves and Perrin badly wanted Strong to succeed.\"\n                                ],\n                                \"ht:news_item_url\": [\n                                    \"http://www.espn.com/blog/big12/post/_/id/116595/losing-to-kansas-should-be-charlie-strongs-last-straw\"\n                                ],\n                                \"ht:news_item_source\": [\n                                    \"ESPN (blog)\"\n                                ]\n                            },\n                            {\n                                \"ht:news_item_title\": [\n                                    \"Texas can&#39;t hold &#39;em: Embattled Coach <b>Charlie Strong</b> is sinking along with his <b>...</b>\"\n                                ],\n                                \"ht:news_item_snippet\": [\n                                    \"We can look at Texas&#39; 24-21 overtime loss at Kansas and feel haunted for Coach <b>Charlie Strong</b>, whose three-season Texas tenure appears acutely non-tenured. We can recoil that before anything happened in the country on a fairly tepid Saturday, Brett&nbsp;...\"\n                                ],\n                                \"ht:news_item_url\": [\n                                    \"https://www.washingtonpost.com/news/sports/wp/2016/11/20/texas-cant-hold-em-embattled-coach-charlie-strong-and-the-longhorns-falter-at-kansas/\"\n                                ],\n                                \"ht:news_item_source\": [\n                                    \"Washington Post\"\n                                ]\n                            }\n                        ]\n                    },\n                    {\n                        \"title\": [\n                            \"Dragon Ball Super Episode 67\"\n                        ],\n                        \"description\": [\n                            \"\"\n                        ],\n                        \"link\": [\n                            \"http://www.google.us/trends/hottrends?pn=p1#a=20161119-Dragon+Ball+Super+Episode+67\"\n                        ],\n                        \"pubDate\": [\n                            \"Sat, 19 Nov 2016 21:00:00 -0800\"\n                        ],\n                        \"ht:picture\": [\n                            \"//t1.gstatic.com/images?q=tbn:ANd9GcRZHy9Tr7AOXf7gA8Uovcm3KKhLUNkdC-W_vnCDec-aL__bJH5wVUfVHMZSOg59BCP2yGQcSNxN\"\n                        ],\n                        \"ht:picture_source\": [\n                            \"News Every day\"\n                        ],\n                        \"ht:approx_traffic\": [\n                            \"50,000+\"\n                        ],\n                        \"ht:news_item\": [\n                            {\n                                \"ht:news_item_title\": [\n                                    \"[SPOILER] <b>Dragon Ball Super Episode 67</b> Recap - JUMP PREVIEW Dragon Ball Super <b>...</b>\"\n                                ],\n                                \"ht:news_item_snippet\": [\n                                    \"Goku charged into <b>Super</b> Saiyan Blue, but his Ki was canceled, same with Vegeta. Kaioshin then explained that their bodies are too weak to proceed with <b>Super</b> Saiyan Blue. Trunks were able to change in his <b>super</b> Saiyan form, and together with Goku and&nbsp;...\"\n                                ],\n                                \"ht:news_item_url\": [\n                                    \"http://www.newseveryday.com/articles/54494/20161120/spoiler-dragon-ball-super-episode-67-recap-jump-preview-68.htm\"\n                                ],\n                                \"ht:news_item_source\": [\n                                    \"News Every day\"\n                                ]\n                            },\n                            {\n                                \"ht:news_item_title\": [\n                                    \"<b>Dragon Ball Super Episode 67</b>, 68 Review, Spoilers: Future Trunks Arc finally <b>...</b>\"\n                                ],\n                                \"ht:news_item_snippet\": [\n                                    \"<b>Dragon Ball Super Episode 67</b> revealed some vital information about the popular anime. In every timeline, there are different sets of Gods including the King of All. Son Goku pressed the button and Omni-King Zeno appeared. After learning what happened,&nbsp;...\"\n                                ],\n                                \"ht:news_item_url\": [\n                                    \"http://www.sportsrageous.com/others/dragon-ball-super-episode-67-68-review-spoilers-future-trunks-arc-finally-comes-end-strongest-fighter-arc-coming-soon/58032/\"\n                                ],\n                                \"ht:news_item_source\": [\n                                    \"Sportsrageous\"\n                                ]\n                            }\n                        ]\n                    },\n                    {\n                        \"title\": [\n                            \"Liga MX\"\n                        ],\n                        \"description\": [\n                            \"\"\n                        ],\n                        \"link\": [\n                            \"http://www.google.us/trends/hottrends?pn=p1#a=20161119-Liga+MX\"\n                        ],\n                        \"pubDate\": [\n                            \"Sat, 19 Nov 2016 18:00:00 -0800\"\n                        ],\n                        \"ht:picture\": [\n                            \"//t2.gstatic.com/images?q=tbn:ANd9GcSRwRIcX_Wu9usOJZRTfFEN4IgIJDNW6XpnAoz1dwZJC-_qbxhAU3TmYV3vj0_L-uOBflcEoSAl\"\n                        ],\n                        \"ht:picture_source\": [\n                            \"FOXSports.com\"\n                        ],\n                        \"ht:approx_traffic\": [\n                            \"50,000+\"\n                        ],\n                        \"ht:news_item\": [\n                            {\n                                \"ht:news_item_title\": [\n                                    \"<b>Liga MX</b> interested in starting tournament against MLS teams\"\n                                ],\n                                \"ht:news_item_snippet\": [\n                                    \"The United States and Mexico have a great international soccer rivalry, but it hasn&#39;t quite translated over to the club level. That&#39;s in part because of the lack of matches between MLS and <b>Liga MX</b> teams, but the Mexican league&#39;s president thinks that <b>...</b>\"\n                                ],\n                                \"ht:news_item_url\": [\n                                    \"http://www.foxsports.com/soccer/story/mls-liga-mx-tournament-superliga-111916\"\n                                ],\n                                \"ht:news_item_source\": [\n                                    \"FOXSports.com\"\n                                ]\n                            },\n                            {\n                                \"ht:news_item_title\": [\n                                    \"<b>Liga MX</b> and Mexican football worse off for 2017 Copa Libertadores exclusion\"\n                                ],\n                                \"ht:news_item_snippet\": [\n                                    \"Probably not if the South American organization didn&#39;t actually even bother to consult with the Mexican clubs before announcing the February to November schedule, as <b>Liga MX</b> president Enrique Bonilla suggested on Friday. Could the <b>Liga MX</b> have done&nbsp;...\"\n                                ],\n                                \"ht:news_item_url\": [\n                                    \"http://www.mexicostar.com/index.php/sid/249521229\"\n                                ],\n                                \"ht:news_item_source\": [\n                                    \"Mexico Star\"\n                                ]\n                            }\n                        ]\n                    },\n                    {\n                        \"title\": [\n                            \"Joe Thomas Sr\"\n                        ],\n                        \"description\": [\n                            \"\"\n                        ],\n                        \"link\": [\n                            \"http://www.google.us/trends/hottrends?pn=p1#a=20161119-Joe+Thomas+Sr\"\n                        ],\n                        \"pubDate\": [\n                            \"Sat, 19 Nov 2016 17:00:00 -0800\"\n                        ],\n                        \"ht:picture\": [\n                            \"//t0.gstatic.com/images?q=tbn:ANd9GcSOUC-b0pyBXdz_xUjbL3EOELiiwGF-ARhKMRT8dlpyVFO0qxmsvIjcBkwE0TESa_BZODrJ0ybn\"\n                        ],\n                        \"ht:picture_source\": [\n                            \"USA TODAY\"\n                        ],\n                        \"ht:approx_traffic\": [\n                            \"50,000+\"\n                        ],\n                        \"ht:news_item\": [\n                            {\n                                \"ht:news_item_title\": [\n                                    \"<b>Joe Thomas Sr</b>., 55, makes history as oldest player in Division I football\"\n                                ],\n                                \"ht:news_item_snippet\": [\n                                    \"<b>Joe Thomas Sr</b>. made college football history by appearing as a running back for South Carolina State. Thomas at the age of 55 is believed to be the oldest player to participate in a Division I football game. The father of Green Bay Packers linebacker <b>...</b>\"\n                                ],\n                                \"ht:news_item_url\": [\n                                    \"http://www.usatoday.com/story/sports/ncaaf/2016/11/19/joe-thomas-55-years-old-south-carolina-state/94128238/\"\n                                ],\n                                \"ht:news_item_source\": [\n                                    \"USA TODAY\"\n                                ]\n                            },\n                            {\n                                \"ht:news_item_title\": [\n                                    \"<b>Joe Thomas Sr</b>., 55, becomes oldest player in NCAA football history\"\n                                ],\n                                \"ht:news_item_snippet\": [\n                                    \"<b>Joe Thomas Sr</b>., the 55-year-old father of Green Bay Packers linebacker Joe Thomas, got into S.C. State&#39;s game against Savannah State in the first quarter, picking up three yards on a carry in his first career appearance. While records of this type are <b>...</b>\"\n                                ],\n                                \"ht:news_item_url\": [\n                                    \"http://sports.yahoo.com/news/joe-thomas-sr-55-becomes-204106377.html\"\n                                ],\n                                \"ht:news_item_source\": [\n                                    \"Yahoo Sports\"\n                                ]\n                            }\n                        ]\n                    },\n                    {\n                        \"title\": [\n                            \"Kristen Wiig\"\n                        ],\n                        \"description\": [\n                            \"\"\n                        ],\n                        \"link\": [\n                            \"http://www.google.us/trends/hottrends?pn=p1#a=20161119-Kristen+Wiig\"\n                        ],\n                        \"pubDate\": [\n                            \"Sat, 19 Nov 2016 22:00:00 -0800\"\n                        ],\n                        \"ht:picture\": [\n                            \"//t2.gstatic.com/images?q=tbn:ANd9GcTQ7Oxt1mh_j1W-mzuFdvOU8T2k-8fSaPHsjc7xu8lQHp--E-jbfAKJBL3mJavrk4foIvkkwZAl\"\n                        ],\n                        \"ht:picture_source\": [\n                            \"RollingStone.com\"\n                        ],\n                        \"ht:approx_traffic\": [\n                            \"50,000+\"\n                        ],\n                        \"ht:news_item\": [\n                            {\n                                \"ht:news_item_title\": [\n                                    \"<b>Kristen Wiig</b> on &#39;SNL&#39;: 3 Sketches You Have to See\"\n                                ],\n                                \"ht:news_item_snippet\": [\n                                    \"... two all-time sketch comedy pros clearly enjoying each other&#39;s company is a sweet relief. You could take each single joke and tease out an entire history behind it: In what bunker was <b>Wiig&#39;s</b> character trapped, and for how long? How did McKinnon&#39;s <b>...</b>\"\n                                ],\n                                \"ht:news_item_url\": [\n                                    \"http://www.rollingstone.com/tv/recaps/kristen-wiig-on-snl-3-sketches-you-have-to-see-w451550\"\n                                ],\n                                \"ht:news_item_source\": [\n                                    \"RollingStone.com\"\n                                ]\n                            },\n                            {\n                                \"ht:news_item_title\": [\n                                    \"Meet Furonica! <b>Kristen Wiig</b> Returns to SNL to Play the Ultimate Cat Lady\"\n                                ],\n                                \"ht:news_item_snippet\": [\n                                    \"Barbara DeDrew and Furonica are the cat ladies of our dreams. On Saturday night&#39;s episode of Saturday Night Live, Kate McKinnon and host <b>Kristen Wiig</b> donned wigs and questionable outfit selections as they portrayed two women working at a cat shelter.\"\n                                ],\n                                \"ht:news_item_url\": [\n                                    \"http://people.com/tv/kristen-wiig-kate-mckinnon-cat-ladies-snl-skit/\"\n                                ],\n                                \"ht:news_item_source\": [\n                                    \"PEOPLE.com\"\n                                ]\n                            }\n                        ]\n                    },\n                    {\n                        \"title\": [\n                            \"the xx\"\n                        ],\n                        \"description\": [\n                            \"\"\n                        ],\n                        \"link\": [\n                            \"http://www.google.us/trends/hottrends?pn=p1#a=20161119-the+xx\"\n                        ],\n                        \"pubDate\": [\n                            \"Sat, 19 Nov 2016 22:00:00 -0800\"\n                        ],\n                        \"ht:picture\": [\n                            \"//t0.gstatic.com/images?q=tbn:ANd9GcRUT1ZG5VKWc4p32fp-HpB5buzkOnAVLHhgQ35vsHxekr_4rXr106d44BNDpRhWKbG1igxayxaK\"\n                        ],\n                        \"ht:picture_source\": [\n                            \"RollingStone.com\"\n                        ],\n                        \"ht:approx_traffic\": [\n                            \"50,000+\"\n                        ],\n                        \"ht:news_item\": [\n                            {\n                                \"ht:news_item_title\": [\n                                    \"Watch <b>the xx</b> Break Out &#39;On Hold&#39; for Energetic &#39;SNL&#39; Debut\"\n                                ],\n                                \"ht:news_item_snippet\": [\n                                    \"The London trio of Jamie <b>xx</b>, Romy Madley Croft and Oliver Sim opened up their musical guest spot with &quot;On Hold,&quot; the Hall &amp; Oates-sampling single from the new album, with Croft and Sim trading verses while Jamie <b>xx</b> constructed the dancefloor-ready <b>...</b>\"\n                                ],\n                                \"ht:news_item_url\": [\n                                    \"http://www.rollingstone.com/music/news/watch-the-xx-break-out-on-hold-for-energetic-snl-debut-w451553\"\n                                ],\n                                \"ht:news_item_source\": [\n                                    \"RollingStone.com\"\n                                ]\n                            },\n                            {\n                                \"ht:news_item_title\": [\n                                    \"<b>The xx</b> Bring Major Vibes to the &#39;Saturday Night Live&#39; Stage\"\n                                ],\n                                \"ht:news_item_snippet\": [\n                                    \"<b>The xx</b> made its Saturday Night Live debut Saturday (Nov. 19), and the appearance made for some serious grooves. To kick off their big SNL night, the British trio played their new single &quot;On Hold&quot; off the band&#39;s forthcoming record I See You. With <b>...</b>\"\n                                ],\n                                \"ht:news_item_url\": [\n                                    \"http://www.billboard.com/articles/news/dance/7581439/the-xx-saturday-night-live-performance\"\n                                ],\n                                \"ht:news_item_source\": [\n                                    \"Billboard\"\n                                ]\n                            }\n                        ]\n                    },\n                    {\n                        \"title\": [\n                            \"Colorado football\"\n                        ],\n                        \"description\": [\n                            \"\"\n                        ],\n                        \"link\": [\n                            \"http://www.google.us/trends/hottrends?pn=p1#a=20161119-Colorado+football\"\n                        ],\n                        \"pubDate\": [\n                            \"Sat, 19 Nov 2016 17:00:00 -0800\"\n                        ],\n                        \"ht:picture\": [\n                            \"//t0.gstatic.com/images?q=tbn:ANd9GcRApAbmeIS75MmpSWT3sJ5bL8LAY9BkdVZ3QNj25jWyvMvb2U8tSFOX5214QPaTekFjapb8cDG3\"\n                        ],\n                        \"ht:picture_source\": [\n                            \"ESPN\"\n                        ],\n                        \"ht:approx_traffic\": [\n                            \"50,000+\"\n                        ],\n                        \"ht:news_item\": [\n                            {\n                                \"ht:news_item_title\": [\n                                    \"&#39;We do not blink&#39;: <b>Colorado</b> stares down a Pac-12 title\"\n                                ],\n                                \"ht:news_item_snippet\": [\n                                    \"<b>Colorado</b> is a testament to hard work and belief and love amongst teammates and all those qualities that makes us escape to college <b>football</b>. But the Buffaloes demonstrated at Folsom Field on Saturday that they check all the fairy tale boxes and they <b>...</b>\"\n                                ],\n                                \"ht:news_item_url\": [\n                                    \"http://www.espn.com/college-football/story/_/id/18091486/colorado-buffaloes-continue-surprising-run-pac-12\"\n                                ],\n                                \"ht:news_item_source\": [\n                                    \"ESPN\"\n                                ]\n                            },\n                            {\n                                \"ht:news_item_title\": [\n                                    \"Kiszla: Chasing spot in college <b>football</b> playoff, the <b>Colorado</b> Buffaloes fear <b>...</b>\"\n                                ],\n                                \"ht:news_item_snippet\": [\n                                    \"Kiszla: Chasing spot in college <b>football</b> playoff, the <b>Colorado</b> Buffaloes fear no one, not even &#39;Bama. “No matter who we play, they play like they&#39;re the best team in the world. But that really brings out the best in us,” said cornerback Chidobe Awuzie,&nbsp;...\"\n                                ],\n                                \"ht:news_item_url\": [\n                                    \"http://www.denverpost.com/2016/11/20/kiszla-chasing-spot-in-college-football-playoff-the-colorado-buffaloes-fear-no-one-not-even-bama/\"\n                                ],\n                                \"ht:news_item_source\": [\n                                    \"The Denver Post\"\n                                ]\n                            }\n                        ]\n                    },\n                    {\n                        \"title\": [\n                            \"Premier League\"\n                        ],\n                        \"description\": [\n                            \"\"\n                        ],\n                        \"link\": [\n                            \"http://www.google.us/trends/hottrends?pn=p1#a=20161119-Premier+League\"\n                        ],\n                        \"pubDate\": [\n                            \"Sat, 19 Nov 2016 09:00:00 -0800\"\n                        ],\n                        \"ht:picture\": [\n                            \"//t2.gstatic.com/images?q=tbn:ANd9GcRjFSIYcgWWXTmWB-BM-Di7gMQXQKUZt7ykQmzdA9b1y1RifbE4qwtYSBF-w1_jCCYHc61tdB9a\"\n                        ],\n                        \"ht:picture_source\": [\n                            \"Bleacher Report\"\n                        ],\n                        \"ht:approx_traffic\": [\n                            \"50,000+\"\n                        ],\n                        \"ht:news_item\": [\n                            {\n                                \"ht:news_item_title\": [\n                                    \"Middlesbrough vs. Chelsea: Live Score, Highlights from <b>Premier League</b>\"\n                                ],\n                                \"ht:news_item_snippet\": [\n                                    \"Hello, and welcome to coverage of the <b>Premier League</b> clash between Middlesbrough and Chelsea at the Riverside. The Blues have been cruising of late, reeling off five successive league wins to shoot up the table. If they can make it a perfect half-a <b>...</b>\"\n                                ],\n                                \"ht:news_item_url\": [\n                                    \"http://bleacherreport.com/articles/2676838-middlesbrough-vs-chelsea-live-score-highlights-from-premier-league\"\n                                ],\n                                \"ht:news_item_source\": [\n                                    \"Bleacher Report\"\n                                ]\n                            },\n                            {\n                                \"ht:news_item_title\": [\n                                    \"Middlesbrough v Chelsea: <b>Premier League</b> – live!\"\n                                ],\n                                \"ht:news_item_snippet\": [\n                                    \"A question for the floor: what&#39;s the least appealing fixture in the <b>Premier League</b>? Of course not this one, but looking at West Brom v Burnley tomorrow night, there aren&#39;t many less exciting for neutrals than that … Email me: alan.smith@theguardian <b>...</b>\"\n                                ],\n                                \"ht:news_item_url\": [\n                                    \"https://www.theguardian.com/football/live/2016/nov/20/middlesbrough-chelsea-premier-league-live\"\n                                ],\n                                \"ht:news_item_source\": [\n                                    \"The Guardian\"\n                                ]\n                            }\n                        ]\n                    },\n                    {\n                        \"title\": [\n                            \"Gwen Ifill\"\n                        ],\n                        \"description\": [\n                            \"\"\n                        ],\n                        \"link\": [\n                            \"http://www.google.us/trends/hottrends?pn=p1#a=20161119-Gwen+Ifill\"\n                        ],\n                        \"pubDate\": [\n                            \"Sat, 19 Nov 2016 07:00:00 -0800\"\n                        ],\n                        \"ht:picture\": [\n                            \"//t1.gstatic.com/images?q=tbn:ANd9GcRcFrIcHJSjfQqJH5-638jt-SJS8yUY134gNJrd7SvmmqAm_rcZidhkDPBwwQUZtSpZMr7f0EXb\"\n                        ],\n                        \"ht:picture_source\": [\n                            \"New York Times\"\n                        ],\n                        \"ht:approx_traffic\": [\n                            \"50,000+\"\n                        ],\n                        \"ht:news_item\": [\n                            {\n                                \"ht:news_item_title\": [\n                                    \"Thousands of Mourners Celebrate <b>Gwen Ifill&#39;s</b> Tenacity and Grace\"\n                                ],\n                                \"ht:news_item_snippet\": [\n                                    \"WASHINGTON — When former Attorney General Eric H. Holder Jr. learned he would be sitting down for an interview with <b>Gwen Ifill</b>, he prematurely breathed a sigh of relief, thinking about the down-to-earth woman he had befriended through house parties&nbsp;...\"\n                                ],\n                                \"ht:news_item_url\": [\n                                    \"http://www.nytimes.com/2016/11/20/us/gwen-ifill-funeral.html\"\n                                ],\n                                \"ht:news_item_source\": [\n                                    \"New York Times\"\n                                ]\n                            },\n                            {\n                                \"ht:news_item_title\": [\n                                    \"Thousands gather to mourn, celebrate, journalist <b>Gwen Ifill</b>\"\n                                ],\n                                \"ht:news_item_snippet\": [\n                                    \"Thousands of mourners — including first lady Michelle Obama — remembered and celebrated veteran Washington journalist <b>Gwen Ifill</b> on Saturday, recalling her as a standard bearer, cherished friend, devoted mentor and woman of abiding faith. Ifill died&nbsp;...\"\n                                ],\n                                \"ht:news_item_url\": [\n                                    \"http://www.chicagotribune.com/news/nationworld/ct-gwen-ifill-memorial-service-20161119-story.html\"\n                                ],\n                                \"ht:news_item_source\": [\n                                    \"Chicago Tribune\"\n                                ]\n                            }\n                        ]\n                    }\n                ]\n            }\n        ]\n    }\n}",
 			"settings":
 			{
-				"buffer_size": 3806,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "routes/imageRoutes.js",
-			"settings":
-			{
-				"buffer_size": 190,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "README.txt",
-			"settings":
-			{
-				"buffer_size": 68,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": ".env",
-			"settings":
-			{
-				"buffer_size": 274,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "init.bat",
-			"settings":
-			{
-				"buffer_size": 344,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "util/imageHandler.js",
-			"settings":
-			{
-				"buffer_size": 1042,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "npm run minify\ngulp",
-			"file": "production.bat",
-			"file_size": 20,
-			"file_write_time": 131214963614544474,
-			"settings":
-			{
-				"buffer_size": 19,
-				"encoding": "UTF-8",
+				"buffer_size": 62531,
 				"line_ending": "Windows",
-				"name": "npm run minify"
+				"name": "{"
+			}
+		},
+		{
+			"contents": "var googleTrends \t= require('google-trends-api');\nvar Q\t\t\t\t\t\t\t= require('q');\nvar Discussion  \t= require('../app/models/discussionModel');\nvar Util\t\t\t\t\t= require('../util/util');\n\nvar discussionHandler = {};\n\ndiscussionHandler.empty = function() {\n\tDiscussion.remove({}, function(){});\n};\n\ndiscussionHandler.getDiscussion = function(discussionName) {\n\tvar deferred = Q.defer();\n\tDiscussion.findOne({name : discussionName}, function(err, discussion) {\n\t    if (err){ // if there are any errors, return the error\n\t    \tdeferred.reject(err);\n\t    } else if (!discussion) { // if no discussion is found, return the message\n\t    \tdeferred.reject(discussionName + ' does not exist. Be the first to create it!');\n\t    } else{\n\t    \tdeferred.resolve(discussion);\n\t    }\n\t});\n\treturn deferred.promise;\n};\n\ndiscussionHandler.createDiscussion = function(category, name, description, user) {\n\tvar deferred = Q.defer();\n\tDiscussion.findOne({name : name}, function(err, discussion) {\n\t    if (err){ // if there are any errors, return the error\n\t    \tdeferred.reject(err);\n\t    } else if (!discussion) { // if no discussion is found, create a new discussion\n\t    \tconsole.log('New discussion created: ' + name);\n\t    \tvar newDiscussion       \t\t\t\t\t= new Discussion();\n\t\t\t\t    newDiscussion.name     \t\t\t\t= name;\n\t\t\t\t    newDiscussion.displayName     = Util.toTitleCase(name);\n\t\t\t\t    newDiscussion.description     = description;\n\t\t\t\t    newDiscussion.category\t\t\t\t= category;\n\t\t\t\t    newDiscussion.messageCount\t\t= 0;\n\t\t\t\t    newDiscussion.data\t\t\t\t\t\t= [];\n\t\t\t\tnewDiscussion.addMessage(user.displayName, user.profilePic, description, user.backgroundColor, Date.now());\n\t    \tdeferred.resolve(newDiscussion);\n\t    } else{\n\t    \tdeferred.reject('The discussion \"' + name + '\" already exists. Please select an unique one');\n\t    }\n\t});\n\treturn deferred.promise;\n};\n\ndiscussionHandler._abstractTopSevenSearch = function(query) {\n\tvar deferred = Q.defer();\n\tDiscussion.find(query).sort({ messageCount : 'desc' }).limit(7).exec(function(err, discussions) {\n\t\tif(err) {\n\t\t\tdeferred.reject(err);\n\t\t} else{\n\t\t\tdeferred.resolve(discussions);\n\t\t}\n\t});\n\treturn deferred.promise;\n};\n\ndiscussionHandler.getTrending = function() {\n\treturn discussionHandler._abstractTopSevenSearch({});\n};\n\ndiscussionHandler.search = function(query) {\n\tvar deferred = Q.defer();\n\tvar searchName = {name: {$regex : query}};\n\tvar searchDescription = {description: {$regex : query}};\n\treturn discussionHandler._abstractTopSevenSearch({$or: [searchName, searchDescription]});\n};\n\ndiscussionHandler.getTopDiscussions = function() {\n\tvar deferred = Q.defer();\n\tDiscussion.aggregate(\n    [\n      { \"$sort\": { \"category\": 1, \"messageCount\": -1 } },\n      { \"$group\": {\n        \"_id\": \"$category\",\n        \"items\": { \"$push\": \"$$ROOT\" }\n      }},\n      { \"$project\": {\n        \"items\": { \"$slice\": [ \"$items\", 2] }\n      }}\n    ],\n    function(err, results) {\n    \tif(err) {\n\t\t\t\tdeferred.reject(err);\n\t\t\t} else{\n\t\t\t\tdeferred.resolve(results);\n\t\t\t}\n    }\n  );\n  return deferred.promise;\n};\n\ndiscussionHandler.populateDummy = function() {\n\tconsole.log('Populate Dummy Script')\n\tvar dummyUser = {\n\t\tdisplayName: 'Admin',\n\t\tprofilePic: '/images/user/tabby.jpg',\n\t};\n\tvar discussions = [\n\t\t{name: 'cats', category: 'Animals'}, \n\t\t{name:'dogs', category: 'Animals'}, \n\t\t{name:'rabbits', category: 'Animals'}, \n\t\t{name:'lamborghini', category: 'Automotive'}, \n\t\t{name:'ferrari', category: 'Automotive'}, \n\t\t{name:'bugatti', category: 'Automotive'}, \n\t];\n\tvar description = 'A discussion about ';\n\tdiscussions.forEach(function(discussion){\n\t\tdiscussionHandler.createDiscussion(discussion.category, discussion.name, description + discussion.name, dummyUser);\n\t})\n}\n\nmodule.exports = discussionHandler;",
+			"file": "util/discussionHandler.js",
+			"file_size": 3849,
+			"file_write_time": 131241390571104281,
+			"settings":
+			{
+				"buffer_size": 3731,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "public/javascripts/dialogs/discussionDialogCtrl.js",
+			"settings":
+			{
+				"buffer_size": 1478,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "routes/discussionRoutes.js",
+			"settings":
+			{
+				"buffer_size": 1844,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "views/components/home.ejs",
+			"settings":
+			{
+				"buffer_size": 1657,
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -690,41 +685,53 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/simon/Documents/Web Dev/nemoo"
+		"/C/Users/simon/Documents/Web Dev/nemoo",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts",
+		"/C/Users/simon/Documents/Web Dev/nemoo/views",
+		"/C/Users/simon/Documents/Web Dev/nemoo/views/components"
 	],
 	"file_history":
 	[
-		"/C/Users/simon/Documents/Web Dev/nemoo/app.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/.env",
-		"/C/Users/simon/Documents/Web Dev/nemoo/bin/www",
-		"/C/Users/simon/Documents/Web Dev/nemoo/util/imageHandler.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/discussion.ejs",
-		"/C/Users/simon/Documents/Web Dev/nemoo/app/models/discussionModel.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/headerCtrl.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/routes/routes.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/services/optimizationService.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/messageAdditionalOptions.ejs",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/services/discussionCacheService.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/header.ejs",
-		"/C/Users/simon/Documents/Web Dev/nemoo/public/stylesheets/style.css",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/initApp.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/dialogs/discussionDialogCtrl.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/dialogs/authenticationDialogCtrl.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/mainCtrl.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/messagebox/messageAdditionalOptionsCtrl.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/views/productionIndex.ejs",
-		"/C/Users/simon/Documents/Web Dev/nemoo/views/index.ejs",
+		"/C/Users/simon/Documents/Web Dev/nemoo/app.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/util/discussionHandler.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/routes/discussionRoutes.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/app/models/userModel.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/messagebox/messageInputCtrl.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/discussionCtrl.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/dialogs/discussionDialogCtrl.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/initApp.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/headerCtrl.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/routes/imageRoutes.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/README.txt",
+		"/C/Users/simon/Documents/Web Dev/nemoo/init.bat",
+		"/C/Users/simon/Documents/Web Dev/nemoo/util/imageHandler.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/production.bat",
+		"/C/Users/simon/Documents/Web Dev/nemoo/.env",
+		"/C/Users/simon/Documents/Web Dev/nemoo/bin/www",
+		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/discussion.ejs",
+		"/C/Users/simon/Documents/Web Dev/nemoo/app/models/discussionModel.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/services/optimizationService.js",
+		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/messageAdditionalOptions.ejs",
+		"/C/Users/simon/Documents/Web Dev/nemoo/public/stylesheets/style.css",
+		"/C/Users/simon/Documents/Web Dev/nemoo/views/productionIndex.ejs",
+		"/C/Users/simon/Documents/Web Dev/nemoo/views/index.ejs",
 		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/loginDialog.ejs",
 		"/C/Users/simon/Documents/Web Dev/nemoo/scripts/minify.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/gulpfile.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/public/production/javascripts/templates.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/userNavPanel.ejs",
 		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/panels/userNavPanelCtrl.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/README.txt",
 		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/templates.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/jquery-webui.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/panels/panelCtrl.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/routes/passportRoutes.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/dialogs/authenticationDialogCtrl.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/panel.ejs",
 		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/topDiscussions.ejs",
 		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/messagebox/additionalOptionsDropdownCtrl.js",
@@ -736,16 +743,12 @@
 		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/messageInput.ejs",
 		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/searchBox.ejs",
 		"/C/Users/simon/Documents/Web Dev/nemoo/util/discussionRenderer.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/mainCtrl.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/createDiscussionDialog.ejs",
 		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/home.ejs",
 		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/services/animationService.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/services/discussionCacheService.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/services/cursorService.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/routes/imageRoutes.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/config/auth.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/config/database.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/init.bat",
 		"/C/Users/simon/AppData/Local/Temp/7zO79A1.tmp/filedrop.css",
 		"/C/Users/simon/Documents/Web Dev/nemoo/public/stylesheets/filedrop.css",
 		"/C/Users/simon/AppData/Local/Temp/7zEDDC0.tmp/filedrop.css",
@@ -753,12 +756,9 @@
 		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/dropzone2.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/public/javascripts/dropzone.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/util/util.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/app/models/userModel.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/routes/discussionRoutes.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/signup.ejs",
 		"/C/Users/simon/Documents/Web Dev/nemoo/views/components/login.ejs",
 		"/C/Users/simon/Documents/Web Dev/nemoo/config/passport.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/util/discussionHandler.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/util/appHandler.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/public/stylesheets/emojify-small.css",
 		"/C/Users/simon/Documents/Web Dev/nemoo/public/production/stylesheets/emojify-small.min.css",
@@ -820,8 +820,7 @@
 		"/C/Users/simon/Documents/Web Dev/nemoo/public/production/javascripts/messageInput.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/public/production/javascripts/authenticationDialog.js",
 		"/C/Users/simon/Documents/Web Dev/nemoo/public/production/images/anonymous/badger_lg.png",
-		"/C/Users/simon/Documents/Web Dev/nemoo/app/models/app.js",
-		"/C/Users/simon/Documents/Web Dev/nemoo/app/models/discussion.js"
+		"/C/Users/simon/Documents/Web Dev/nemoo/app/models/app.js"
 	],
 	"find":
 	{
@@ -832,6 +831,9 @@
 		"height": 96.0,
 		"where_history":
 		[
+			"C:\\Users\\simon\\Documents\\Web Dev\\nemoo, *.js",
+			"C:\\Users\\simon\\Documents\\Web Dev\\nemoo, *.ejs",
+			"C:\\Users\\simon\\Documents\\Web Dev\\nemoo, *.js",
 			"",
 			"C:\\Users\\simon\\Documents\\Web Dev\\frex-backend\\frex-backend\\frontend",
 			"C:\\Users\\simon\\Dropbox\\WATERLOO\\Programming",
@@ -847,6 +849,21 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"404",
+			"descrip",
+			"'Animals'",
+			"_abstractTopSevenSearch",
+			"discussionCacheService",
+			"sizeHandler",
+			"$watch",
+			"style=\"float: right; display: inline-block; max-height: 100%; width: auto; height: auto; margin-left: 20px; margin-right: 20px;\">",
+			"float: right; display: inline-block; max-height: 100%; ",
+			" Welcome to Nemoo, a friendly and vibrant community where you can interact anonymously or using an account\n\t  with strangers and friends. Similar to a real-time Reddit, you can create discussions about topics that you\n\t  are interested in and quickly message others with very little wait time. <br/><br/>\n\t  If you enjoy using this site, please share it and like us on <a href=\"https://www.facebook.com/nemoo27\"> Facebook</a>. Keep on exploring!\n\t</p>",
+			"style=\"font-weight: 300; line-height: 1.4; font-size: 20px; padding-left: 20px; text-align: justify;\"",
+			"\t<p hide-gt-xs style=\"font-weight: 300; line-height: 1.4; font-size: 20px; padding-left: 20px; text-align: justify;\">\n",
+			"\t<p hide-gt-xs style=\"font-weight: 300; line-height: 1.4; font-size: 20px; padding-left: 20px; text-align: justify;\">\nmyna",
+			"getTopDiscussions",
+			"oneDay",
 			"FACEBOOK_ID",
 			"'error'",
 			"uploadTempImage",
@@ -959,22 +976,7 @@
 			"DiscussionRenderer",
 			"AppHandler",
 			"Q",
-			"moment",
-			"emoticonHandler",
-			"addEmoji",
-			"that",
-			"cursorservice",
-			"getrange",
-			".$el",
-			"getrange",
-			"disableSend",
-			"resetCursor",
-			"automotive",
-			"animation(",
-			"animat(",
-			"enter",
-			"dialogs/",
-			"messagebox/"
+			"moment"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1002,82 +1004,84 @@
 	"groups":
 	[
 		{
-			"selected": 6,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "public/javascripts/messagebox/messageAdditionalOptionsCtrl.js",
+					"file": "public/javascripts/initApp.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4530,
+						"buffer_size": 2579,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4254,
-								4254
+								732,
+								732
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
-						"translation.x": -0.0,
-						"translation.y": 2297.0,
+						"translation.x": 0.0,
+						"translation.y": 122.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "public/javascripts/messagebox/messageInputCtrl.js",
+					"file": "views/index.ejs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4399,
+						"buffer_size": 3884,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4247,
-								4266
+								2085,
+								2085
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": -0.0,
-						"translation.y": 2201.0,
+						"translation.x": 0.0,
+						"translation.y": 581.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "public/javascripts/discussionCtrl.js",
+					"file": "routes/routes.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3806,
+						"buffer_size": 4951,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2696,
-								2699
+								1364,
+								1364
 							]
 						],
 						"settings":
@@ -1087,37 +1091,35 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1121.0,
+						"translation.y": 442.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "routes/imageRoutes.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 190,
+						"buffer_size": 62531,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								190,
-								190
+								27944,
+								27944
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"auto_name": "{",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 8077.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
@@ -1125,103 +1127,76 @@
 				},
 				{
 					"buffer": 4,
-					"file": "README.txt",
+					"file": "util/discussionHandler.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 68,
+						"buffer_size": 3731,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								29,
-								29
+								859,
+								870
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": ".env",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 274,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								274,
-								274
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 405.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "init.bat",
+					"buffer": 5,
+					"file": "public/javascripts/dialogs/discussionDialogCtrl.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 344,
+						"buffer_size": 1478,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								344,
-								308
+								60,
+								60
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Batch File/Batch File.sublime-syntax"
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
-					"file": "util/imageHandler.js",
+					"buffer": 6,
+					"file": "routes/discussionRoutes.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1042,
+						"buffer_size": 1844,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								925,
-								925
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1230,40 +1205,68 @@
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": -0.0,
-						"translation.y": 177.0,
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
-					"file": "production.bat",
+					"buffer": 7,
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 19,
+						"buffer_size": 0,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								19,
-								19
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"auto_name": "npm run minify",
-							"syntax": "Packages/Batch File/Batch File.sublime-syntax"
+							"default_dir": "C:\\Users\\simon\\Documents\\Web Dev\\nemoo\\views\\components",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "views/components/home.ejs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1657,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1027,
+								1027
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
 					"type": "text"
 				}
 			]
@@ -1306,7 +1309,7 @@
 	},
 	"output.find_results":
 	{
-		"height": 329.0
+		"height": 145.0
 	},
 	"pinned_build_system": "",
 	"project": "nemoo.sublime-project",
@@ -1322,8 +1325,60 @@
 		"selected_items":
 		[
 			[
+				"routes",
+				"routes\\routes.js"
+			],
+			[
+				"discussion",
+				"routes\\discussionRoutes.js"
+			],
+			[
+				"discussionha",
+				"util\\discussionHandler.js"
+			],
+			[
+				"index.",
+				"views\\index.ejs"
+			],
+			[
+				"discus",
+				"public\\javascripts\\services\\discussionCacheService.js"
+			],
+			[
+				"header",
+				"views\\components\\header.ejs"
+			],
+			[
 				"init",
-				"init.bat"
+				"public\\javascripts\\initApp.js"
+			],
+			[
+				"home",
+				"views\\components\\home.ejs"
+			],
+			[
+				"main",
+				"public\\javascripts\\mainCtrl.js"
+			],
+			[
+				"mao",
+				"public\\javascripts\\messagebox\\messageAdditionalOptionsCtrl.js"
+			],
+			[
+				"dis",
+				"routes\\discussionRoutes.js"
+			],
+			[
+				"user",
+				"app\\models\\userModel.js"
+			],
+			[
+				"dih",
+				"util\\discussionHandler.js"
+			],
+			[
+				"app",
+				"app.js"
 			],
 			[
 				"imageh",
@@ -1374,16 +1429,8 @@
 				"views\\index.ejs"
 			],
 			[
-				"mao",
-				"views\\components\\messageAdditionalOptions.ejs"
-			],
-			[
 				"style",
 				"public\\stylesheets\\style.css"
-			],
-			[
-				"routes",
-				"routes\\routes.js"
 			],
 			[
 				"minif",
@@ -1410,20 +1457,12 @@
 				"views\\components\\discussion.ejs"
 			],
 			[
-				"discus",
-				"public\\javascripts\\discussionCtrl.js"
-			],
-			[
 				"ini",
 				"public\\javascripts\\initApp.js"
 			],
 			[
 				"prod",
 				"views\\productionIndex.ejs"
-			],
-			[
-				"user",
-				"views\\components\\userNavPanel.ejs"
 			],
 			[
 				"authe",
@@ -1490,10 +1529,6 @@
 				"public\\javascripts\\panels\\searchBoxCtrl.js"
 			],
 			[
-				"header",
-				"views\\components\\header.ejs"
-			],
-			[
 				"angula",
 				"public\\javascripts\\messagebox\\angularDropdown.js"
 			],
@@ -1526,10 +1561,6 @@
 				"public\\javascripts\\messagebox\\angularDropdown.js"
 			],
 			[
-				"home",
-				"views\\components\\home.ejs"
-			],
-			[
 				"animationservice",
 				"public\\javascripts\\services\\animationService.js"
 			],
@@ -1544,10 +1575,6 @@
 			[
 				"ao",
 				"views\\components\\additionalOptionsDropdown.ejs"
-			],
-			[
-				"discussion",
-				"views\\components\\discussion.ejs"
 			],
 			[
 				"panel.",
@@ -1580,10 +1607,6 @@
 			[
 				"produ",
 				"views\\productionIndex.ejs"
-			],
-			[
-				"main",
-				"public\\javascripts\\mainCtrl.js"
 			],
 			[
 				"topd",
@@ -1718,10 +1741,6 @@
 				"util\\discussionRenderer.js"
 			],
 			[
-				"app",
-				"app.js"
-			],
-			[
 				"pass",
 				"config\\passport.js"
 			],
@@ -1816,22 +1835,6 @@
 			[
 				"dmo",
 				"app\\models\\discussionModel.js"
-			],
-			[
-				"discussionhan",
-				"util\\discussionHandler.js"
-			],
-			[
-				"dis",
-				"views\\components\\production\\discussion.ejs"
-			],
-			[
-				"templ",
-				"public\\production\\javascripts\\templates.js"
-			],
-			[
-				"gul",
-				"gulpfile.js"
 			]
 		],
 		"width": 0.0
@@ -1844,7 +1847,7 @@
 		[
 			[
 				"",
-				"C:\\Users\\simon\\Documents\\Web Dev\\jamarshon.appspot.com\\jamarshon.sublime-project"
+				"C:\\Users\\simon\\Documents\\GitHub\\leetcode\\leetcode.sublime-project"
 			]
 		],
 		"width": 526.0
@@ -1865,7 +1868,7 @@
 	"show_minimap": false,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": true,
+	"side_bar_visible": false,
 	"side_bar_width": 274.0,
 	"status_bar_visible": true,
 	"template_settings":

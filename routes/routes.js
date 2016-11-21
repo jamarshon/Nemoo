@@ -86,6 +86,28 @@ module.exports = function(app, passport, isProduction) {
     res.render('error', {message: 'Populated Data', error: {} });
   });
 
+  app.get('/test2', function(req, res){
+    var googleTrends  = require('google-trends-api');
+    googleTrends.hotTrendsDetail('US')
+      .then(function(results){
+        var channel = results.rss.channel;
+        if(channel.length === 0){ res.sendStatus(404); return; }
+        var items = channel[0].item;
+        var data = items.reduce(function(memo, item){
+          var e = {};
+          if(item.title.length === 0){ return memo; }
+          //e.name = item.title[0];
+          if(item['ht:picture'].length === 0){ return memo; }
+          //e.picture = item['ht:picture'][0];
+          if(item['ht:news_item'].length === 0 || item['ht:news_item'][0]['ht:news_item_title'].length === 0){ return memo; }
+          e.description = item['ht:news_item'][0]['ht:news_item_title'][0];
+          memo.push(e);
+          return memo;
+        }, []);
+        res.json(data);
+      })
+  });
+
   app.io.on('connection', function(socket){
     AppHandler.getApp().then(function(app){
       app.adjustNumOnline(1);

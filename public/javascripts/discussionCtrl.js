@@ -2,9 +2,9 @@ var app = angular.module('App');
 
 var MAX_QUEUE_LENGTH = 25;
 
-app.controller('DiscussionCtrl', ['$mdMedia', '$routeParams', '$rootScope', '$timeout', '$scope', '$templateCache',
+app.controller('DiscussionCtrl', ['$mdMedia', '$routeParams', '$timeout', '$scope', '$templateCache',
                     'stateService', '$mdDialog', '$http', 'toastManager', '$window',
-                    function($mdMedia, $routeParams, $rootScope, $timeout, $scope, $templateCache, 
+                    function($mdMedia, $routeParams, $timeout, $scope, $templateCache, 
                       stateService, $mdDialog, $http, toastManager, $window) {
   var that = this;
   var page = $routeParams.page;
@@ -79,7 +79,7 @@ app.controller('DiscussionCtrl', ['$mdMedia', '$routeParams', '$rootScope', '$ti
     that.lastPrerenderedEl.find('md-divider').remove();
   });
 
-  var destroyHandler = $rootScope.$on('$routeChangeSuccess', function(){
+  var destroyHandler = $scope.$on('$destroy', function(){
     that.$el = null;
     that.lastPrerenderedEl = null;
     that.data = null;

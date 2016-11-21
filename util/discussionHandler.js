@@ -1,6 +1,6 @@
-var Q						= require('q');
-var Discussion  = require('../app/models/discussionModel');
-var Util				= require('../util/util');
+var Q							= require('q');
+var Discussion  	= require('../app/models/discussionModel');
+var Util					= require('../util/util');
 
 var discussionHandler = {};
 
@@ -95,7 +95,7 @@ discussionHandler.getTopDiscussions = function() {
 discussionHandler.populateDummy = function() {
 	console.log('Populate Dummy Script')
 	var dummyUser = {
-		displayName: 'jasonl96',
+		displayName: 'Admin',
 		profilePic: '/images/user/tabby.jpg',
 	};
 	var discussions = [

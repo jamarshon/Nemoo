@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-
-<!-- define angular app -->
-<html ng-app="App">
+<html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Nemoo</title>
@@ -44,6 +42,7 @@
   <script src="/javascripts/initApp.js"></script>
   <script src="/javascripts/mainCtrl.js"></script>
   <script src="/javascripts/discussionCtrl.js"></script>
+  <script src="/javascripts/exploreCtrl.js"></script>
   <script src="/javascripts/headerCtrl.js"></script>
 
   <script src="/javascripts/services/stateService.js"></script>
@@ -67,11 +66,12 @@
   <script src="/javascripts/ga.js"> </script>
 </head>
 
-<!-- define angular controller -->
-<body ng-controller="MainCtrl as main" 
+<body ng-app="App">
+<div ng-controller="MainCtrl as main" 
       ng-init="main.init(<%=JSON.stringify(user)%>, <%=loggedIn%>, <%=currentNumOnline%>)" 
       class="ng-cloak">
       <nemoo-header></nemoo-header>
+</div>
 </body>
 
 </html>
