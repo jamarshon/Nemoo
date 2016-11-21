@@ -2,6 +2,31 @@
   display: none !important;
 }
 
+.explore-tile {
+  width: 200px; 
+  background-color: white; 
+  overflow: hidden; 
+  display: inline-block; 
+  margin-bottom: 30px; 
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12);
+}
+
+.explore-title {
+  cursor: pointer;
+  padding-left: 5px; 
+  padding-right: 5px; 
+  font-size: 24px; 
+  font-weight: 300; 
+  line-height: 32px; 
+  max-width: 100%;
+}
+
+.explore-title:hover {
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+  text-decoration: underline;
+}
+
 /****************************** z-thumbs *******************************/
 .badge {
   display: inline-block;

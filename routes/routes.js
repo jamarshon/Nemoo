@@ -1,3 +1,4 @@
+var googleTrends        = require('google-trends-api');
 var _                   = require('underscore');
 
 var AppHandler          = require('../util/appHandler');
@@ -29,6 +30,8 @@ module.exports = function(app, passport, isProduction) {
     console.log('Root page');
     renderIndex(req, res);
   });
+
+  app.get('/explore', function(req, res){ renderIndex(req, res); });
 
   app.post('/setTimezone', function(req, res) {
     req.session.offset = req.body.offset;
@@ -86,8 +89,7 @@ module.exports = function(app, passport, isProduction) {
     res.render('error', {message: 'Populated Data', error: {} });
   });
 
-  app.get('/test2', function(req, res){
-    var googleTrends  = require('google-trends-api');
+  app.get('/googleTrends', function(req, res){
     googleTrends.hotTrendsDetail('US')
       .then(function(results){
         var channel = results.rss.channel;
@@ -96,9 +98,9 @@ module.exports = function(app, passport, isProduction) {
         var data = items.reduce(function(memo, item){
           var e = {};
           if(item.title.length === 0){ return memo; }
-          //e.name = item.title[0];
+          e.name = item.title[0];
           if(item['ht:picture'].length === 0){ return memo; }
-          //e.picture = item['ht:picture'][0];
+          e.picture = item['ht:picture'][0];
           if(item['ht:news_item'].length === 0 || item['ht:news_item'][0]['ht:news_item_title'].length === 0){ return memo; }
           e.description = item['ht:news_item'][0]['ht:news_item_title'][0];
           memo.push(e);
