@@ -64,6 +64,7 @@ app.controller('ExploreCtrl', ['$http', '$window', '$scope', '$timeout', 'optimi
 			profilePic: '/images/user/tabby.jpg',
 		};
   	return {
+  		category: window.nemooCategory || 'Recent',
   		name: data.name.toLowerCase().split(' ').join('-'),
   		description: description,
   		user: dummyUser
