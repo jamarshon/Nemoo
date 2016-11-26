@@ -1,13 +1,5 @@
-<!-- class="flex-container" -->
 <div id="explore-page">
-	<!-- <div ng-repeat="item in ::exploreCtrl.items" style="width: 300px; background-color: pink; overflow: hidden; display: inline-block; margin-bottom: 30px;"
-			ng-style="{'margin-left': exploreCtrl.margin, 'margin-right': exploreCtrl.margin}">
-		<img ng-src="{{::item.picture}}" style="width: 100%; height: 100%;" />
-	{{item}}
-	</div> -->
-  <div ng-repeat="item in ::exploreCtrl.items" 
-  			class="explore-tile"
-  			ng-style="{'margin-left': exploreCtrl.margin, 'margin-right': exploreCtrl.margin, 'height': exploreCtrl.getHeight($index) }">
+  <div ng-repeat="item in ::exploreCtrl.items" class="explore-tile">
 	    <img style="cursor: pointer; width: 100%; cursor: pointer" ng-src="{{::item.picture}}" 
 	    			ng-click="exploreCtrl.handleClick(item, $event)">
 	    <div class="ellipsis explore-title blue-box removed" ng-bind="::item.name" title="{{::item.name}}" 
