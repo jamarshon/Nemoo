@@ -22,7 +22,7 @@ app.controller('DiscussionCtrl', ['$mdMedia', '$routeParams', '$timeout', '$scop
     stateService._state.socket.on(stateService._state.page + ' message received', this.receiveMessage);
   };
 
-  this.receiveMessage = function(msg, user, silent){
+  this.receiveMessage = function(msg, user, silent, youtube){
     var dataLen = that.data.length;
     var message = {
       displayName: user.displayName,
@@ -40,6 +40,9 @@ app.controller('DiscussionCtrl', ['$mdMedia', '$routeParams', '$timeout', '$scop
         that.$el.find('md-list-item').first().remove();
         that.prerenderedLen--;
       }
+    }
+    if(youtube) {
+      that.youtubeHandler(message);
     }
     that.data.push(message);
     if(!silent) {
@@ -68,9 +71,26 @@ app.controller('DiscussionCtrl', ['$mdMedia', '$routeParams', '$timeout', '$scop
     });
   };
 
-  this.quickMessageHandler = function(msg, user){
+  this.youtubeHandler = function(message) {
+    var iframe = $(message.message);
+    var uuid = this.getUUID();
+    message.message = '';
+    message.class = ['discussion-youtube', uuid];
+    $timeout(function(){
+      $('.discussion-youtube.' + uuid).append(iframe);
+    });
+  };
+
+  this.getUUID = function() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
+        return v.toString(16);
+    });
+  };
+
+  this.quickMessageHandler = function(msg, user, youtube){
     var clonedUser = {displayName: user.displayName, profilePic: user.profilePic, backgroundColor: user.backgroundColor, created: Date.now()};
-    this.receiveMessage(msg, clonedUser, true);
+    this.receiveMessage(msg, clonedUser, true, youtube);
   };
 
   $timeout(function(){

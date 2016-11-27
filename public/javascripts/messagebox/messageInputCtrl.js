@@ -38,8 +38,9 @@ app.controller('MessageInputCtrl', ['$timeout', '$scope', '$mdMedia', 'toastMana
   this.send = function() {
     if(this.$el.innerHTML) {
       var isFocused = $(this.$el).is(':focus');
-      stateService._state.socket.emit('message sent', this.$el.innerHTML, stateService._state.user, stateService._state.page);
-      $scope.quickMessageHandler({msg: this.$el.innerHTML, user: stateService._state.user});
+      var messageArr = this.checkYoutubeVideo(this.$el.innerHTML);
+      stateService._state.socket.emit('message sent', messageArr[0], stateService._state.user, stateService._state.page);
+      $scope.quickMessageHandler({msg: messageArr[0], user: stateService._state.user, youtube: messageArr[1]});
 
       this.$el.innerHTML = '';
 
@@ -95,6 +96,17 @@ app.controller('MessageInputCtrl', ['$timeout', '$scope', '$mdMedia', 'toastMana
 
   this.keyUpHandler = function() {
     that.disableSend = that.$el.innerHTML.length === 0;
+  };
+
+  this.checkYoutubeVideo = function(msg) {
+    var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+    var match = msg.match(regExp);
+    if (match && match[2].length == 11) {
+      var youtubeMsg = '<iframe width="560" height="315" src="//www.youtube.com/embed/' + match[2] + '" frameborder="0" allowfullscreen></iframe>';
+      return [youtubeMsg, true]
+    } else {
+        return [msg, false];
+    }
   };
 
   var emptyUri = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
